@@ -4,12 +4,12 @@ import sys
 argLen = 1
 sentence = ''
 
-for arg in range(1,len(sys.argv)):
-	sentence = sentence + "%20" + str(sys.argv[arg])
-
-sentence = sentence.strip()
+sentence = input(" Enter the keyword query : ")
+sentence = sentence.replace(' ','%20')
 
 url = "http://spotlight.dbpedia.org/rest/annotate?text="+sentence+"&confidence=0.2&support=20"
+#url = "http://spotlight.dbpedia.org/rest/annotate?types=DBPedia:Person&text="+sentence+"&confidence=0.2&support=20"
+#print(url)
 request = urllib.request.Request(url)
 request.add_header('Accept', 'application/json')
 response = urllib.request.urlopen(request)
