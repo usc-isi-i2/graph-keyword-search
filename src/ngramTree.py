@@ -19,6 +19,18 @@ class NgramTree(object):
 	def __init__(self,rootNode):
 		self.rootNode = rootNode
 
+
+	def printNode(self,node):
+		if node is None:
+			return
+	
+		print(node.data)
+
+		for c in node.children:
+			self.printNode(c)
+
+
+
 	# This module builds the n-gram tree with the basic idea of BFS traversal
 	# Input : List1, List2
 	# List1 : ['a b c d', 'a b c', 'b c d', 'a b', 'b c', 'c d', 'a', 'b', 'c', 'd']
@@ -66,6 +78,8 @@ class NgramTree(object):
 
 						currentNode.add_child(newNode)
 
+		self.printNode(self.rootNode)
+
 
 def main():
 	ngramsEngineObj = ngramsEngine()
@@ -76,6 +90,7 @@ def main():
 
 	treeObj = NgramTree(rootNode)
 	treeObj.constructTree(listNgrams,lookupList)
+
 
 
 if __name__ == '__main__':
