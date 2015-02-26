@@ -71,10 +71,13 @@ class Spotlight:
 
 		# This happens when the return type has multiple entity keywords
 		elif(type(pivotTerms) is list):
+			
 			for resources in pivotTerms:
 				# This happens only when the return type has one entity key word
 				if(type(resources) is dict):
-
+					#If there is no pivot entity
+					if('resource' not in resources):
+						continue						
 					# If there is only one entity identified for the keyword
 					if(type(resources['resource']) is dict):
 						#If there is only one pivot identified for the query
