@@ -63,7 +63,7 @@ class NgramTree(object):
 			currentNode = nodeQueue.pop(0)
 			data = currentNode.data
 
-			dataLen = len(data.replace(' ',''))
+			dataLen = len(data.split(' '))
 
 			if(dataLen-2 >= 0):
 				listChildren = lookupList[dataLen-2]
@@ -81,9 +81,11 @@ class NgramTree(object):
 		self.printNode(self.rootNode)
 
 
-def main():
+	
+
+def main(query):
 	ngramsEngineObj = ngramsEngine()
-	listNgrams,lookupList = ngramsEngineObj.generateNGrams('a b c d')
+	listNgrams,lookupList = ngramsEngineObj.generateNGrams(query)
 
 	rootWord = listNgrams[0]
 	rootNode = Node(rootWord)

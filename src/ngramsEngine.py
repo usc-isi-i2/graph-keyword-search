@@ -17,6 +17,9 @@ class ngramsEngine(object):
 	# Output : Two lists are returned.
 	# 1st list : This has all the n-grams arranged hierarchically
 	# 2nd list : This is a list that as list of n-grams grouped together based on the length
+				# All n-grams of length 1 goes in index 0 of the List2
+				# All n-grams of length 2 goes in index 1 of the List2
+				# All n-grams of length 3 goes in index 2 of the List2 
 	# EX:  i/p - a b c d 
 	# List1 : ['a b c d', 'a b c', 'b c d', 'a b', 'b c', 'c d', 'a', 'b', 'c', 'd']
 	# List2 : [['a', 'b', 'c', 'd'], ['a b', 'b c', 'c d'], ['a b c', 'b c d'], ['a b c d']]
