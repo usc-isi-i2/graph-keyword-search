@@ -11,7 +11,8 @@ class Pivot:
 		self.label = label
 		# Importance/ represents the number of incoming links in DBPedia on to the resource
 		self.support = support
-
+		# Keyword represented by the resource
+		self.keyword = ''
 
 
 # Spotlight service for pivot entity recognition
@@ -46,8 +47,17 @@ class Spotlight:
 	# Main logic of parsing implemented here
 	def parseJson(self,jsonStr):
 		
+		#print(jsonStr)
+
 		# Return list of pivot objects
 		resourceList = []
+
+		if('annotation' not in jsonStr):
+			return resourceList
+
+		if('surfaceForm' not in jsonStr['annotation']):
+			return resourceList
+
 		pivotTerms = jsonStr['annotation']['surfaceForm']
 		
 		#print(pivotTerms)
@@ -62,11 +72,13 @@ class Spotlight:
 				#If there is only one pivot identified for the query
 				pivotElement = self.getPivotObject(pivotTerms['resource'])
 				if(pivotElement is not None):
+					pivotElement.keyword = pivotTerms['@name']
 					resourceList.append(pivotElement)
 			else:
 				for resource in pivotTerms['resource']:
 					pivotElement = self.getPivotObject(resource)
 					if(pivotElement is not None):
+						pivotElement.keyword = pivotTerms['@name']
 						resourceList.append(pivotElement)
 
 		# This happens when the return type has multiple entity keywords
@@ -83,11 +95,13 @@ class Spotlight:
 						#If there is only one pivot identified for the query
 						pivotElement = self.getPivotObject(resources['resource'])
 						if(pivotElement is not None):
+							pivotElement.keyword = resources['@name']
 							resourceList.append(pivotElement)
 					else:
 						for resource in resources['resource']:
 							pivotElement = self.getPivotObject(resource)
 							if(pivotElement is not None):
+								pivotElement.keyword = resources['@name']
 								resourceList.append(pivotElement)	
 		#for res in resourceList:
 			#print(res.uri+" "+res.label+" "+str(res.support))
@@ -130,5 +144,5 @@ if __name__ == '__main__':
 		print('no pivot entity found')
 	else:
 		for res in resourceList:
-			print(res.uri+" "+res.label+" "+str(res.support))
+			print(res.uri+" "+res.label+" "+str(res.support)+" "+res.keyword)
 
