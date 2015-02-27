@@ -6,7 +6,7 @@ import json
 class Pivot:
 	def __init__(self,uri,label,support):
 		# URI of the resource. DBPedia vocabulary
-		self.uri = uri
+		self.uri = '<http://dbpedia.org/resource/'+uri+'>'
 		# Label of the resource
 		self.label = label
 		# Importance/ represents the number of incoming links in DBPedia on to the resource
