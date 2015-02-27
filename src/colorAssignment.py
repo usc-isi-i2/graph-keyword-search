@@ -38,7 +38,7 @@ class ColorAssignment:
 						stack.append(childNodes)
 		
 
-		return rootNode	
+		#return rootNode	
 
 
 
