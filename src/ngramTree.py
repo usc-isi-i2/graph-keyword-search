@@ -5,8 +5,12 @@ from ngramsEngine import ngramsEngine
 class Node(object):
 
     def __init__(self, data):
-        self.data = data
-        self.children = []
+        self.data = data 			# Data in the node
+        self.color = ''				# Colour assignment for the node
+        self.children = []			# Represents the child nodes
+        self.isDuplicate = False	# Checks if this node is the child of 2 different nodes
+        self.isVisited = False		# This flag helps is traversal
+
 
     #Used to add child node to current node    
     def add_child(self, obj):
@@ -19,12 +23,23 @@ class NgramTree(object):
 	def __init__(self,rootNode):
 		self.rootNode = rootNode
 
+	# Post order traversal of the tree (DFS)
+	def post_order(self,node):
+		for n in node.children:
+			self.post_order(n)
 
+		if not node.isVisited:
+			node.isVisited = True
+			print(node.data)
+
+
+	# BFS traversal
 	def printNode(self,node):
 		if node is None:
 			return
-	
-		print(node.data)
+		if not node.isVisited:
+			node.isVisited = True
+			print(node.data)
 
 		for c in node.children:
 			self.printNode(c)
@@ -46,42 +61,41 @@ class NgramTree(object):
 	#	add the token nodes as the children of CurrentNode
 
 	def constructTree(self,listNgrams,lookupList):
-		
+
 		# This dictionary is used to track the nodes that are in the tree
 		# key:Nodevalue  value:Node
 		treeDictionary = {}
 
-		# This list exhibits behaviour of a Queue
-		nodeQueue = []
-
-		#Add the root node to the Queue to begin search
-		nodeQueue.append(self.rootNode)
-		treeDictionary[self.rootNode.data] = self.rootNode
+		nodeQueue = []											# This list exhibits behaviour of a Queue
+		nodeQueue.append(self.rootNode)							# Add the root node to the Queue to begin search
+		treeDictionary[self.rootNode.data] = self.rootNode		# Add the root to the treeDictionary as it is seen
 
 
 		while(nodeQueue):
-			currentNode = nodeQueue.pop(0)
-			data = currentNode.data
+			currentNode = nodeQueue.pop(0)						# Pop the queue
+			data = currentNode.data 							# Get the data of the node
 
-			dataLen = len(data.split(' '))
+			dataLen = len(data.split(' '))						# Get the length of the n-grams in the current token
 
-			if(dataLen-2 >= 0):
-				listChildren = lookupList[dataLen-2]
+			if(dataLen-2 >= 0):									# Stop if we have reached situation where current iteration is for individual tokens
+				listChildren = lookupList[dataLen-2]			# Get the tokens that have a lenghth 1 less than that of the current token from the look up list
 
-				for child in listChildren:
-					if child in data:
-						if child not in treeDictionary:
+				for child in listChildren:						
+					if child in data:							# Check if the child is a sustring of the token
+
+						if child not in treeDictionary:			# Check if a node for 'child' is already created. If so retrieve that node and set it as a duplicate
 							newNode = Node(child)
 							nodeQueue.append(newNode)
+							treeDictionary[child] = newNode
 						else:
 							newNode = treeDictionary[child]
+							newNode.isDuplicate = True
 
-						currentNode.add_child(newNode)
+						currentNode.add_child(newNode)			# Add this child to the parent node
 
-		self.printNode(self.rootNode)
+		#self.printNode(self.rootNode)
+		#self.post_order(self.rootNode)
 
-
-	
 
 def main(query):
 	ngramsEngineObj = ngramsEngine()
