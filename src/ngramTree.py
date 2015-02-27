@@ -6,7 +6,7 @@ class Node(object):
 
     def __init__(self, data):
         self.data = data 			# Data in the node
-        self.color = ''				# Colour assignment for the node
+        self.color = []				# Colour assignment for the node
         self.children = []			# Represents the child nodes
         self.isDuplicate = False	# Checks if this node is the child of 2 different nodes
         self.isVisited = False		# This flag helps is traversal
@@ -23,6 +23,12 @@ class NgramTree(object):
 	def __init__(self,rootNode):
 		self.rootNode = rootNode
 
+	# Reset the visited flag to False
+	def resetVisitedFlag(self,node):
+		for n in node.children:
+			self.resetVisitedFlag(n)
+		node.isVisited = False
+		
 	# Post order traversal of the tree (DFS)
 	def post_order(self,node):
 		for n in node.children:
@@ -92,6 +98,9 @@ class NgramTree(object):
 							newNode.isDuplicate = True
 
 						currentNode.add_child(newNode)			# Add this child to the parent node
+		
+		# Reset the visited flag for the traversal 
+		self.resetVisitedFlag(self.rootNode)
 
 		#self.printNode(self.rootNode)
 		#self.post_order(self.rootNode)
