@@ -2,6 +2,7 @@ from ngramsEngine import ngramsEngine
 from ngramTree import *
 from spotlight import *
 from colorAssignment import ColorAssignment
+from sparqlClient import SparqlClient
 
 import urllib.request
 import sys
@@ -37,11 +38,15 @@ def printpre(resourceList):
 		print('no pivot entity found')
 	else:
 		for res in resourceList:
-			print('Resource name : DBPedia:'+res.uri)
+			print('Resource name : '+res.uri)
 			print("Label : "+res.label)
 			print("Incoming Links :  "+str(res.support))
 			print("keyword : "+res.keyword)
 			print('------------------------')
+
+def printTriplets(tripleList):
+	for triple in tripleList:
+		print(triple.predicate)
 
 
 def main():
@@ -80,6 +85,8 @@ def main():
 	#print PRE
 	#printpre(resourceList)
 	
+	tripleList = SparqlClient.getAllTripletsForPivotElement(resourceList[0].uri)
+	printTriplets(tripleList)
 
 
 if __name__ == '__main__':
