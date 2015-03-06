@@ -93,6 +93,10 @@ class PivotEntityRecognition:
 								resourceList.append(pivotElement)	
 		#for res in resourceList:
 			#print(res.uri+" "+res.label+" "+str(res.support))
+
+		# Sort the resource list on the number of incoming links
+		resourceList.sort(key=lambda x: x.support, reverse=True)
+		
 		return resourceList
 
 	# Queries DBPedia spotlight to get the values
