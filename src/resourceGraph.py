@@ -5,7 +5,7 @@ class Resource:
 	def __init__(self,uri,label,support):
 		self.uri = '<http://dbpedia.org/resource/'+uri+'>'			# URI of the resource. DBPedia vocabulary
 		self.label = label  										# Label of the resource
-		self.support = support										# Importance/ represents the number of incoming links in DBPedia on to the resource
+		self.support = int(support)									# Importance/ represents the number of incoming links in DBPedia on to the resource
 		self.keyword = ''											# Keyword represented by the resource
 		self.colors = []											# Colors assigned
 		
