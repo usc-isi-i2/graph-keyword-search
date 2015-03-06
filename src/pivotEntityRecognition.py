@@ -2,12 +2,24 @@ import urllib.request
 import sys
 import json
 from resourceGraph import Resource
+from colorAssignment import ColorAssignment
 
 # Spotlight service for pivot entity recognition
 class PivotEntityRecognition:
 	
 	def __init__(self):
 		sentence = ''
+
+	# This method updates the colours covered by a resource
+	def updateColors(self,resourceList):
+		for res in resourceList:
+			tokens = res.keyword.split(' ')
+			for token in tokens:
+				if(token in ColorAssignment.colorDictionary):
+					res.colors.append(ColorAssignment.colorDictionary[token])
+
+		return resourceList
+
 
 	# Parses the final resource values into a Pivot Object
 	def getPivotObject(self,resource):
@@ -91,12 +103,12 @@ class PivotEntityRecognition:
 							if(pivotElement is not None):
 								pivotElement.keyword = resources['@name']
 								resourceList.append(pivotElement)	
-		#for res in resourceList:
-			#print(res.uri+" "+res.label+" "+str(res.support))
 
 		# Sort the resource list on the number of incoming links
 		resourceList.sort(key=lambda x: x.support, reverse=True)
-		
+		# Update the colors represented by the resources
+		resourceList = self.updateColors(resourceList)
+
 		return resourceList
 
 	# Queries DBPedia spotlight to get the values
