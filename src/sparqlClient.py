@@ -11,6 +11,18 @@ class DBPediaTriplet:
 
 class SparqlClient :
 
+	predicateDictionary = {}
+
+	def filterPredicates(predicate):
+		predicateValue = predicate.split('/')[-1]
+
+		if predicateValue in predicateDictionary:
+			predicateDictionary[predicateValue] = 1
+			print(predicateValue)
+
+		#http://vmdeb20.deri.ie:8890/esaservice?task=esa&term1=pen&term2=pencil
+
+
 	def getAllTripletsForPivotElement(pivotElement):
 
 		tripletList = []
@@ -36,6 +48,7 @@ class SparqlClient :
 
 		for result in results["results"]["bindings"]:
 			DBPediaTripletObj = DBPediaTriplet(pivotElement,result["p"]["value"],result["o"]["value"])
+			#SparqlClient.filterPredicates(result["p"]["value"])
 			tripletList.append(DBPediaTripletObj)
 
 		return tripletList

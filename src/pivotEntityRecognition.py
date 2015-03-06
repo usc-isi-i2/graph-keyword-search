@@ -1,22 +1,10 @@
 import urllib.request
 import sys
 import json
-
-# Model class for pivot elements
-class Pivot:
-	def __init__(self,uri,label,support):
-		# URI of the resource. DBPedia vocabulary
-		self.uri = '<http://dbpedia.org/resource/'+uri+'>'
-		# Label of the resource
-		self.label = label
-		# Importance/ represents the number of incoming links in DBPedia on to the resource
-		self.support = support
-		# Keyword represented by the resource
-		self.keyword = ''
-
+from resourceGraph import Resource
 
 # Spotlight service for pivot entity recognition
-class Spotlight:
+class PivotEntityRecognition:
 	
 	def __init__(self):
 		sentence = ''
@@ -39,7 +27,7 @@ class Spotlight:
 				except ValueError:
 					support = 0
 
-			pivotElement = Pivot(uri,label,support)
+			pivotElement = Resource(uri,label,support)
 			return pivotElement
 		else:
 			return None
@@ -136,7 +124,7 @@ class Spotlight:
 	
 	
 if __name__ == '__main__':
-	spotlightObj = Spotlight()
+	spotlightObj = PivotEntityRecognition()
 	sentence = input(" Enter the keyword query : ")
 	resourceList = spotlightObj.getPivotElement(sentence)
 

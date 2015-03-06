@@ -1,6 +1,6 @@
 from ngramsEngine import ngramsEngine
 from ngramTree import *
-from spotlight import *
+from pivotEntityRecognition import *
 from colorAssignment import ColorAssignment
 from sparqlClient import SparqlClient
 
@@ -77,9 +77,7 @@ def main():
 	#printColors(treeObj,rootNode)
 	
 	# Make use of the spotlight to get the pivot entity
-	spotlightObject = Spotlight()
-	spotlightObject.getPivotElement(sentence)
-
+	spotlightObject = PivotEntityRecognition()
 	resourceList = spotlightObject.getPivotElement(sentence)
 
 	#print PRE
