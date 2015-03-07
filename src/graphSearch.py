@@ -42,6 +42,7 @@ def printpre(resourceList):
 			print("Label : "+res.label)
 			print("Incoming Links :  "+str(res.support))
 			print("keyword : "+res.keyword)
+			print("colors : "+str(res.colors))
 			print('------------------------')
 
 def printTriplets(tripleList):
@@ -73,19 +74,21 @@ def main():
 	colorAssignmentObj = ColorAssignment()
 	colorAssignmentObj.assignInitialColors(rootNode,lookupList)
 	
+	
 	# Prints colours
 	#printColors(treeObj,rootNode)
 	
-	# Make use of the spotlight to get the pivot entity
+	
+	# Make use of the spotlight to get the pivot entities sorted on the number of incoming links
 	spotlightObject = PivotEntityRecognition()
 	resourceList = spotlightObject.getPivotElement(sentence)
-
+	
 	#print PRE
 	#printpre(resourceList)
 	
-	tripleList = SparqlClient.getAllTripletsForPivotElement(resourceList[0].uri)
-	printTriplets(tripleList)
-
+	tripleList = SparqlClient.getAllTripletsForPivotElement(resourceList[0])
+	#printTriplets(tripleList)
+	
 
 if __name__ == '__main__':
 	main()
