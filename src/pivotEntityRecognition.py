@@ -39,7 +39,7 @@ class PivotEntityRecognition:
 				except ValueError:
 					support = 0
 
-			pivotElement = Resource(uri,label,support)
+			pivotElement = Resource(uri,label,support,'',True)
 			return pivotElement
 		else:
 			return None

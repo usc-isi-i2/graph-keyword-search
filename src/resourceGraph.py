@@ -2,12 +2,18 @@ from collections import OrderedDict
 
 # Model class for resource elements
 class Resource:
-	def __init__(self,uri,label,support):
-		self.uri = '<http://dbpedia.org/resource/'+uri+'>'			# URI of the resource. DBPedia vocabulary
+	def __init__(self,uri,label,support,keyword,pivotElement):
+		
+		if(pivotElement):
+			self.uri = '<http://dbpedia.org/resource/'+uri+'>'		# URI of the resource. DBPedia vocabulary
+		else:
+			self.uri = uri
+
 		self.label = label  										# Label of the resource
 		self.support = int(support)									# Importance/ represents the number of incoming links in DBPedia on to the resource
 		self.keyword = ''											# Keyword represented by the resource
 		self.colors = []											# Colors assigned
+
 		
 # Fact node model class.
 # Fact node is a node that represents a RDF Triple.
