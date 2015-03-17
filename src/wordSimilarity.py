@@ -28,10 +28,10 @@ class WordSimilarity:
 
 		score = float(jsonStr['result'][0]['score'])
 		if(score>0.8):
-			return True
+			return score
 		elif(score==-1):
-			return False
+			return score
 		else:
-			return False
+			return -1
 		
 
