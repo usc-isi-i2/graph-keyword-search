@@ -39,12 +39,26 @@ class FactNode:
 
     # 		then the fact node covers 1,2,3
 	def set_colors(self):
-		aggregateColorString = ''
-		aggregateColorString = ''.join(self.subject.colors)
-		aggregateColorString = aggregateColorString + ''.join(self.predicate.colors)
-		aggregateColorString = aggregateColorString + ''.join(self.object.colors)
-		self.colors = list(OrderedDict.fromkeys(aggregateColorString))
+			
+		for color in self.subject.colors:
+			if(color not in self.colors):
+				self.colors.append(color)
 
+		for color in self.predicate.colors:
+			if(color not in self.colors):
+				self.colors.append(color)
+		
+		for color in self.object.colors:
+			if(color not in self.colors):
+				self.colors.append(color)
+		
+		'''
+		aggregateColorString = ''
+		aggregateColorString = ''.join(str(self.subject.colors))
+		aggregateColorString = aggregateColorString + ''.join(str(self.predicate.colors))
+		aggregateColorString = aggregateColorString + ''.join(str(self.object.colors))
+		self.colors = list(OrderedDict.fromkeys(aggregateColorString))
+		'''
 # Resource Graph Model class
 # This graph will have Fact nodes as the nodes which inturn will have Resources
 class ResourceGraph:
