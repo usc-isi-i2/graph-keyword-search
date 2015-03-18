@@ -25,7 +25,7 @@ class WordSimilarity:
 		score = -1
 		if(option!=1):
 			score = WordSimilarity.getEasyESAScore(word1,word2)
-			if(score!=0 or score!=-1):
+			if((score!=0 or score!=-1) and score>0.1):
 				return score
 			else:
 				return -1
@@ -33,7 +33,7 @@ class WordSimilarity:
 			score = WordSimilarity.getEasyESAScore(word1,word2)
 			#score = WordSimilarity.getWs4jScore(word1,word2)
 			#if(score>0.8):
-			if(score!=0 or score!=-1):
+			if((score!=0 or score!=-1) and score>0.1):
 				return score
 			else:
 				return -1
