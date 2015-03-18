@@ -16,7 +16,7 @@ class PivotEntityRecognition:
 			tokens = res.keyword.split(' ')
 			for token in tokens:
 				if(token in ColorAssignment.colorDictionary):
-					res.colors.append(ColorAssignment.colorDictionary[token])
+					res.colors.append(int(ColorAssignment.colorDictionary[token]))
 
 		return resourceList
 
