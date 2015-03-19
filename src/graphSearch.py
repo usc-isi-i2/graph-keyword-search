@@ -3,7 +3,7 @@ from ngramTree import *
 from pivotEntityRecognition import *
 from colorAssignment import ColorAssignment
 from sparqlClient import SparqlClient
-
+import inflection
 import urllib.request
 import sys
 
@@ -47,29 +47,43 @@ def printpre(resourceList):
 
 def printTriplets(tripleList):
 	for triple in tripleList:
-		print(triple.predicate)
-
-
+		print('----')
+		obj = triple.object
+		print(str(obj.score))
+		print(str(obj.colors))
+		print(str(obj.isUri))
+		print(str(triple.subject.uri) + ' ' + str(triple.predicate.uri) + ' ' + str(triple.object.uri))
+		
 def main():
 
 	# Ask the user to input the query
 	sentence = input("Enter the query : ")
-
+	#sentence = 'sachin tendulkar country label'
+	print()
+	print()
+	print('Phase 1 ... N GRAM Generation')
 	# Generate the n-grams
 	ngramsEngineObj = ngramsEngine()
 	listNgrams,lookupList = ngramsEngineObj.generateNGrams(sentence)
+	print('Generated N-grams')
+
 
 	# Start building the n-gram tree by selecting the root node 
 	rootWord = listNgrams[0]
 	rootNode = Node(rootWord)
 
+	
 	# Construct the tree with the root node
 	treeObj = NgramTree(rootNode)
 	treeObj.constructTree(listNgrams,lookupList)
 	
 	# Print tree 
 	#treeObj.printNode(rootNode)
+	print('N-gram tree constructed')
 
+	print()
+	print('Phase 2 ...  Color assignment')
+	
 	# Color assignment
 	colorAssignmentObj = ColorAssignment()
 	colorAssignmentObj.assignInitialColors(rootNode,lookupList)
@@ -77,18 +91,38 @@ def main():
 	
 	# Prints colours
 	#printColors(treeObj,rootNode)
+	print('Completed initial color assignment')
 	
-	
+	print()
+	print('Phase 3 ... PivotEntityRecognition')
 	# Make use of the spotlight to get the pivot entities sorted on the number of incoming links
 	spotlightObject = PivotEntityRecognition()
 	resourceList = spotlightObject.getPivotElement(sentence)
 	
+
 	#print PRE
 	#printpre(resourceList)
+	print('Got the pivot element')
+
+	print()
+
 	
-	tripleList = SparqlClient.getAllTripletsForPivotElement(resourceList[0])
-	#printTriplets(tripleList)
+	print('Phase 4 ... Search Phase')
+
+	# get the initial fact nodes
+	listFactNodes = []
+	for resource in resourceList :
+		listFactNodes.extend(SparqlClient.getAllTripletsForPivotElement(resource))
 	
+	
+	for factNode in listFactNodes:
+		if(factNode.isExplored == False and factNode.object.isUri):
+			listFactNodes.extend(SparqlClient.getAllTripletsForPivotElement(factNode.object))
+	
+	listFactNodes.sort(key=lambda x: len(x.colors), reverse=True)
+	#listFactNodes.sort(key=lambda x: x.score, reverse=True)
+
+	printTriplets(listFactNodes)
 
 if __name__ == '__main__':
 	main()
