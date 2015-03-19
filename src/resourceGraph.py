@@ -2,18 +2,13 @@ from collections import OrderedDict
 
 # Model class for resource elements
 class Resource:
-	def __init__(self,uri,label,support,keyword,pivotElement):
-		
-		if(pivotElement):
-			self.uri = '<http://dbpedia.org/resource/'+uri+'>'		# URI of the resource. DBPedia vocabulary
-		else:
-			self.uri = uri
-
+	def __init__(self,uri,label,support,keyword):		
+		self.uri = uri												# URI of the resource. 
 		self.label = label  										# Label of the resource
 		self.support = int(support)									# Importance/ represents the number of incoming links in DBPedia on to the resource
 		self.keyword = ''											# Keyword represented by the resource
 		self.colors = []											# Colors assigned
-
+		self.score = 0
 		
 # Fact node model class.
 # Fact node is a node that represents a RDF Triple.
@@ -25,6 +20,8 @@ class FactNode:
 		self.object = object										# Object
 		self.colors = []											# Colours
 		self.children = []											# Child Nodes
+		self.score = 0												# Represents the score of the the current fact node - This is a cumulative score
+		self.isExplored = False										# A boolean flag to check if the currect fact node is explored during search
 
 	# Used to add child node to current node    
 	def add_child(self, obj):
@@ -51,14 +48,7 @@ class FactNode:
 		for color in self.object.colors:
 			if(color not in self.colors):
 				self.colors.append(color)
-		
-		'''
-		aggregateColorString = ''
-		aggregateColorString = ''.join(str(self.subject.colors))
-		aggregateColorString = aggregateColorString + ''.join(str(self.predicate.colors))
-		aggregateColorString = aggregateColorString + ''.join(str(self.object.colors))
-		self.colors = list(OrderedDict.fromkeys(aggregateColorString))
-		'''
+
 # Resource Graph Model class
 # This graph will have Fact nodes as the nodes which inturn will have Resources
 class ResourceGraph:
