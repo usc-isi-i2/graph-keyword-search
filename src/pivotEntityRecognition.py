@@ -39,7 +39,7 @@ class PivotEntityRecognition:
 				except ValueError:
 					support = 0
 
-			pivotElement = Resource(uri,label,support,'',True)
+			pivotElement = Resource('<http://dbpedia.org/resource/'+uri+'>',label,support,'')
 			return pivotElement
 		else:
 			return None
