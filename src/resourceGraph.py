@@ -9,7 +9,8 @@ class Resource:
 		self.keyword = ''											# Keyword represented by the resource
 		self.colors = []											# Colors assigned
 		self.score = 0
-		
+		self.isUri = False
+
 # Fact node model class.
 # Fact node is a node that represents a RDF Triple.
 # In addition, we also maintain the keywords in the query that this fact node covers

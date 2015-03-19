@@ -40,6 +40,7 @@ class PivotEntityRecognition:
 					support = 0
 
 			pivotElement = Resource('<http://dbpedia.org/resource/'+uri+'>',label,support,'')
+			pivotElement.isUri = True
 			return pivotElement
 		else:
 			return None
