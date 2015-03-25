@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<dataset id="qald-5_train">
+
+<query id="1">
+<keyword_query lang="en"><![CDATA[cosmonauts]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Cosmonaut . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Astronaut . 
+      { ?uri dbo:nationality res:Russia . } 
+      UNION 
+      { ?uri dbo:nationality res:Soviet_Union . } 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Mikhail_Korniyenko</answer><answer>http://dbpedia.org/resource/Anatoli_Ivanishin</answer><answer>http://dbpedia.org/resource/Sergey_Alexandrovich_Volkov</answer><answer>http://dbpedia.org/resource/Yelena_Kondakova</answer><answer>http://dbpedia.org/resource/Sergei_Revin</answer><answer>http://dbpedia.org/resource/Evgeny_Tarelkin</answer><answer>http://dbpedia.org/resource/Oleg_Atkov</answer><answer>http://dbpedia.org/resource/Aleksandr_Poleshchuk</answer><answer>http://dbpedia.org/resource/Gennady_Padalka</answer><answer>http://dbpedia.org/resource/Anatoly_Solovyev</answer><answer>http://dbpedia.org/resource/Boris_Morukov</answer><answer>http://dbpedia.org/resource/Fyodor_Yurchikhin</answer><answer>http://dbpedia.org/resource/Mikhail_Tyurin</answer><answer>http://dbpedia.org/resource/Roman_Romanenko</answer><answer>http://dbpedia.org/resource/Salizhan_Sharipov</answer><answer>http://dbpedia.org/resource/Sergei_Treshchov</answer><answer>http://dbpedia.org/resource/Valeri_Tokarev</answer><answer>http://dbpedia.org/resource/Vladimir_Dezhurov</answer><answer>http://dbpedia.org/resource/Yury_Onufriyenko</answer><answer>http://dbpedia.org/resource/Yury_Usachov</answer><answer>http://dbpedia.org/resource/Yuri_Shargin</answer><answer>http://dbpedia.org/resource/Aleksandr_Ivanchenkov</answer><answer>http://dbpedia.org/resource/Aleksandr_Lazutkin</answer><answer>http://dbpedia.org/resource/Aleksandr_Serebrov</answer><answer>http://dbpedia.org/resource/Aleksandr_Viktorenko</answer><answer>http://dbpedia.org/resource/Gennadi_Manakov</answer><answer>http://dbpedia.org/resource/Sergei_Avdeyev</answer><answer>http://dbpedia.org/resource/Vasily_Tsibliyev</answer><answer>http://dbpedia.org/resource/Viktor_Savinykh</answer><answer>http://dbpedia.org/resource/Nikolai_Tikhonov_(cosmonaut)</answer><answer>http://dbpedia.org/resource/Oleg_Artemyev</answer><answer>http://dbpedia.org/resource/Svetlana_Savitskaya</answer><answer>http://dbpedia.org/resource/Valentina_Tereshkova</answer><answer>http://dbpedia.org/resource/Aleksandr_Kaleri</answer><answer>http://dbpedia.org/resource/Vladimir_Solovyov_(cosmonaut)</answer><answer>http://dbpedia.org/resource/Nikolai_Budarin</answer><answer>http://dbpedia.org/resource/Sergei_Zalyotin</answer><answer>http://dbpedia.org/resource/Yury_Lonchakov</answer><answer>http://dbpedia.org/resource/Vladimir_Georgiyevich_Titov</answer><answer>http://dbpedia.org/resource/Sergei_Krikalev</answer><answer>http://dbpedia.org/resource/Valery_Korzun</answer><answer>http://dbpedia.org/resource/Viktor_Mikhailovich_Afanasyev</answer><answer>http://dbpedia.org/resource/Yuri_Gidzenko</answer><answer>http://dbpedia.org/resource/Boris_Andreyev_(cosmonaut)</answer><answer>http://dbpedia.org/resource/Dmitri_Kondratyev</answer><answer>http://dbpedia.org/resource/Oleg_Skripochka</answer><answer>http://dbpedia.org/resource/Oleg_Grigoryevich_Makarov</answer><answer>http://dbpedia.org/resource/Talgat_Musabayev</answer><answer>http://dbpedia.org/resource/Yuri_Baturin</answer><answer>http://dbpedia.org/resource/Yuri_Malenchenko</answer><answer>http://dbpedia.org/resource/Oleg_Kotov</answer><answer>http://dbpedia.org/resource/Oleg_Novitskiy</answer><answer>http://dbpedia.org/resource/Aleksandr_Aleksandrovich_Skvortsov</answer><answer>http://dbpedia.org/resource/Andrei_Borisenko</answer><answer>http://dbpedia.org/resource/Pavel_Vinogradov</answer><answer>http://dbpedia.org/resource/Vladimir_Kovalyonok</answer><answer>http://dbpedia.org/resource/Oleg_Kononenko</answer><answer>http://dbpedia.org/resource/Maksim_Surayev</answer><answer>http://dbpedia.org/resource/Aleksandr_Nikolayevich_Balandin</answer><answer>http://dbpedia.org/resource/Alexander_Misurkin</answer><answer>http://dbpedia.org/resource/Anton_Shkaplerov</answer><answer>http://dbpedia.org/resource/Konstantin_Valkov</answer><answer>http://dbpedia.org/resource/Yury_Romanenko</answer><answer>http://dbpedia.org/resource/Yelena_Serova</answer><answer>http://dbpedia.org/resource/Anatoly_Artsebarsky</answer><answer>http://dbpedia.org/resource/Sergey_Ryazansky</answer><answer>http://dbpedia.org/resource/Aleksandr_Samokutyayev</answer><answer>http://dbpedia.org/resource/Toktar_Aubakirov</answer><answer>http://dbpedia.org/resource/Vladimir_Komarov</answer><answer>http://dbpedia.org/resource/Gennadi_Strekalov</answer><answer>http://dbpedia.org/resource/Valery_Ryumin</answer><answer>http://dbpedia.org/resource/Aleksandr_Laveykin</answer><answer>http://dbpedia.org/resource/Aleksandr_Pavlovich_Aleksandrov</answer><answer>http://dbpedia.org/resource/Anatoli_Levchenko</answer><answer>http://dbpedia.org/resource/Anatoly_Berezovoy</answer><answer>http://dbpedia.org/resource/Igor_Volk</answer><answer>http://dbpedia.org/resource/Leonid_Kizim</answer><answer>http://dbpedia.org/resource/Musa_Manarov</answer><answer>http://dbpedia.org/resource/Vladimir_Vasyutin</answer><answer>http://dbpedia.org/resource/Vyacheslav_Zudov</answer><answer>http://dbpedia.org/resource/Yury_Glazkov</answer><answer>http://dbpedia.org/resource/Yury_Vasilyevich_Malyshev</answer><answer>http://dbpedia.org/resource/Aleksei_Yeliseyev</answer><answer>http://dbpedia.org/resource/Anatoly_Filipchenko</answer><answer>http://dbpedia.org/resource/Andriyan_Nikolayev</answer><answer>http://dbpedia.org/resource/Boris_Volynov</answer><answer>http://dbpedia.org/resource/Georgy_Dobrovolsky</answer><answer>http://dbpedia.org/resource/Georgy_Shonin</answer><answer>http://dbpedia.org/resource/Gherman_Titov</answer><answer>http://dbpedia.org/resource/Nikolay_Rukavishnikov</answer><answer>http://dbpedia.org/resource/Pavel_Belyayev</answer><answer>http://dbpedia.org/resource/Pavel_Popovich</answer><answer>http://dbpedia.org/resource/Valeri_Kubasov</answer><answer>http://dbpedia.org/resource/Valery_Bykovsky</answer><answer>http://dbpedia.org/resource/Viktor_Gorbatko</answer><answer>http://dbpedia.org/resource/Viktor_Patsayev</answer><answer>http://dbpedia.org/resource/Vitaly_Sevastyanov</answer><answer>http://dbpedia.org/resource/Vladimir_Shatalov</answer><answer>http://dbpedia.org/resource/Vladislav_Volkov</answer><answer>http://dbpedia.org/resource/Yevgeny_Khrunov</answer><answer>http://dbpedia.org/resource/Leonid_Popov</answer><answer>http://dbpedia.org/resource/Aleksei_Gubarev</answer><answer>http://dbpedia.org/resource/Gennadi_Sarafanov</answer><answer>http://dbpedia.org/resource/Georgy_Grechko</answer><answer>http://dbpedia.org/resource/Lev_Dyomin</answer><answer>http://dbpedia.org/resource/Pyotr_Klimuk</answer><answer>http://dbpedia.org/resource/Valentin_Lebedev</answer><answer>http://dbpedia.org/resource/Vasily_Lazarev</answer><answer>http://dbpedia.org/resource/Yury_Artyukhin</answer><answer>http://dbpedia.org/resource/Vitaly_Zholobov</answer><answer>http://dbpedia.org/resource/Vladimir_Dzhanibekov</answer><answer>http://dbpedia.org/resource/Vladimir_Aksyonov</answer><answer>http://dbpedia.org/resource/Mars_Rafikov</answer><answer>http://dbpedia.org/resource/Valery_Rozhdestvensky</answer><answer>http://dbpedia.org/resource/Ivan_Anikeyev</answer><answer>http://dbpedia.org/resource/Aleksandr_Aleksandrovich_Volkov</answer></answers></query>
+
+<query id="2">
+<keyword_query lang="en"><![CDATA[German cities with more than 250000 inhabitants]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+         ?uri type GermanCities .  
+         ?uri inhabitants ?inhabitants . 
+         FILTER ( ?inhabitants > 250000 ) } 
+]]></schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+       { ?uri rdf:type dbo:City . } 
+       UNION 
+       { ?uri rdf:type dbo:Town . } 
+         ?uri dbo:country res:Germany . 
+         ?uri dbo:populationTotal ?population . 
+         FILTER ( ?population > 250000 ) } 
+]]></resolved_query>
+<answers><answer>http://dbpedia.org/resource/Braunschweig</answer><answer>http://dbpedia.org/resource/Dresden</answer><answer>http://dbpedia.org/resource/Wuppertal</answer><answer>http://dbpedia.org/resource/Bonn</answer><answer>http://dbpedia.org/resource/Cologne</answer><answer>http://dbpedia.org/resource/Frankfurt</answer><answer>http://dbpedia.org/resource/Hamburg</answer><answer>http://dbpedia.org/resource/Hanover</answer><answer>http://dbpedia.org/resource/Munich</answer><answer>http://dbpedia.org/resource/Nuremberg</answer><answer>http://dbpedia.org/resource/Duisburg</answer><answer>http://dbpedia.org/resource/Bielefeld</answer><answer>http://dbpedia.org/resource/Bochum</answer><answer>http://dbpedia.org/resource/Essen</answer><answer>http://dbpedia.org/resource/Gelsenkirchen</answer><answer>http://dbpedia.org/resource/M%C3%B6nchengladbach</answer><answer>http://dbpedia.org/resource/Augsburg</answer><answer>http://dbpedia.org/resource/Wiesbaden</answer><answer>http://dbpedia.org/resource/Aachen</answer><answer>http://dbpedia.org/resource/Leipzig</answer><answer>http://dbpedia.org/resource/Stuttgart</answer><answer>http://dbpedia.org/resource/Karlsruhe</answer><answer>http://dbpedia.org/resource/Mannheim</answer><answer>http://dbpedia.org/resource/Bremen</answer></answers></query>
+
+<query id="3">
+<keyword_query lang="en"><![CDATA[mayor of Berlin]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+      ?uri mayorOf Berlin . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Berlin dbo:leader ?uri . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Klaus_Wowereit</answer></answers></query>
+
+<query id="4">
+<keyword_query lang="en"><![CDATA[second highest mountain on Earth]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+		?uri locatedOn Earth .
+        ?uri type Mountain . 
+        ?uri height ?height . 
+} 
+ORDER BY DESC(?height) 
+OFFSET 1 LIMIT 1 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Mountain . 
+        ?uri dbo:elevation ?elevation . 
+} 
+ORDER BY DESC(?elevation) 
+OFFSET 1 LIMIT 1 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/K2</answer></answers></query>
+
+<query id="5">
+<keyword_query lang="en"><![CDATA[professional skateboarders from Sweden]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+
+SELECT DISTINCT ?uri 
+WHERE { 
+       ?uri type ProfessionalSkateboarders . 
+       ?uri nationality Sweden .
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:occupation res:Skateboarding . 
+      { ?uri dbo:birthPlace res:Sweden . } 
+      UNION 
+      { ?uri dbo:birthPlace ?place . 
+        ?place dbo:country res:Sweden . } 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Ali_Boulala</answer><answer>http://dbpedia.org/resource/Tony_Magnusson</answer></answers></query>
+
+<query id="6">
+<keyword_query lang="en"><![CDATA[band leaders that play trumpet]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Bandleader . 
+        ?uri play Trumpet . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:occupation res:Bandleader . 
+        ?uri dbo:instrument res:Trumpet . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Richard_Maltby,_Sr.</answer><answer>http://dbpedia.org/resource/Vic_Schoen</answer><answer>http://dbpedia.org/resource/Pete_Brown_(jazz_musician)</answer><answer>http://dbpedia.org/resource/W._C._Handy</answer><answer>http://dbpedia.org/resource/Jack_Jackson_(British_radio)</answer><answer>http://dbpedia.org/resource/Louis_Prima,_Jr.</answer><answer>http://dbpedia.org/resource/Ernest_%22Doc%22_Paulin</answer><answer>http://dbpedia.org/resource/George_Colligan</answer><answer>http://dbpedia.org/resource/Louis_Prima</answer><answer>http://dbpedia.org/resource/David_Weiss_(musician)</answer><answer>http://dbpedia.org/resource/Joe_Morris_(trumpeter)</answer><answer>http://dbpedia.org/resource/Hot_Lips_Page</answer><answer>http://dbpedia.org/resource/Erik_Truffaz</answer><answer>http://dbpedia.org/resource/Neil_Yates</answer><answer>http://dbpedia.org/resource/Henry_Jerome</answer><answer>http://dbpedia.org/resource/Hugh_Masekela</answer><answer>http://dbpedia.org/resource/Maynard_Ferguson</answer><answer>http://dbpedia.org/resource/Nick_LaRocca</answer><answer>http://dbpedia.org/resource/Tommy_Dorsey</answer><answer>http://dbpedia.org/resource/Wingy_Manone</answer><answer>http://dbpedia.org/resource/Orbert_Davis</answer><answer>http://dbpedia.org/resource/Joey_DeFrancesco</answer><answer>http://dbpedia.org/resource/Cleveland_Eaton</answer><answer>http://dbpedia.org/resource/Don_Albert</answer><answer>http://dbpedia.org/resource/Clifford_Thornton</answer><answer>http://dbpedia.org/resource/Ollie_Mitchell</answer><answer>http://dbpedia.org/resource/Ovie_Alston</answer><answer>http://dbpedia.org/resource/Al_Hirt</answer><answer>http://dbpedia.org/resource/Jimmy_Dorsey</answer><answer>http://dbpedia.org/resource/Sharkey_Bonano</answer><answer>http://dbpedia.org/resource/Dave_Douglas_(trumpeter)</answer><answer>http://dbpedia.org/resource/Willie_Mitchell_(musician)</answer><answer>http://dbpedia.org/resource/Charlie_Spivak</answer><answer>http://dbpedia.org/resource/Mark_Egan</answer><answer>http://dbpedia.org/resource/Joe_Wilder</answer><answer>http://dbpedia.org/resource/Benny_Carter</answer><answer>http://dbpedia.org/resource/Doc_Severinsen</answer><answer>http://dbpedia.org/resource/Freddie_Hubbard</answer><answer>http://dbpedia.org/resource/Kenny_Dorham</answer><answer>http://dbpedia.org/resource/Doc_Cheatham</answer><answer>http://dbpedia.org/resource/Nat_Gonella</answer><answer>http://dbpedia.org/resource/Gerard_Presencer</answer><answer>http://dbpedia.org/resource/Jimmy_Vivino</answer><answer>http://dbpedia.org/resource/Kenny_Ball</answer><answer>http://dbpedia.org/resource/Farnell_Newton</answer><answer>http://dbpedia.org/resource/Red_Perkins</answer><answer>http://dbpedia.org/resource/Theodore_Carpenter</answer><answer>http://dbpedia.org/resource/Alan_Silva</answer><answer>http://dbpedia.org/resource/Irvin_Mayfield</answer><answer>http://dbpedia.org/resource/Jens_Winther</answer><answer>http://dbpedia.org/resource/Danny_Davis_(country_musician)</answer><answer>http://dbpedia.org/resource/Rufus_Reid</answer><answer>http://dbpedia.org/resource/Dave_Bartholomew</answer><answer>http://dbpedia.org/resource/Avishai_Cohen_(trumpeter)</answer><answer>http://dbpedia.org/resource/Jack_Walrath</answer><answer>http://dbpedia.org/resource/Marlon_Jordan</answer><answer>http://dbpedia.org/resource/Theo_Croker</answer><answer>http://dbpedia.org/resource/Bobby_Hackett</answer><answer>http://dbpedia.org/resource/Gerald_Wilson</answer><answer>http://dbpedia.org/resource/Terumasa_Hino</answer><answer>http://dbpedia.org/resource/Sean_Jones_(trumpeter)</answer><answer>http://dbpedia.org/resource/Abatte_Barihun</answer><answer>http://dbpedia.org/resource/Billie_Rogers</answer><answer>http://dbpedia.org/resource/Woody_Shaw</answer><answer>http://dbpedia.org/resource/Papa_Celestin</answer><answer>http://dbpedia.org/resource/Lloyd_Hunter</answer><answer>http://dbpedia.org/resource/Guy_Barker</answer><answer>http://dbpedia.org/resource/Dominick_Farinacci</answer><answer>http://dbpedia.org/resource/Brad_Turner_(musician)</answer></answers></query>
+
+<query id="7">
+<keyword_query lang="en"><![CDATA[countries have more than ten caves]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Country .
+		?uri has ?cave .
+        ?cave type Cave . 
+} 
+GROUP BY ?uri 
+HAVING(COUNT(?cave) > 10) 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Country . 
+        ?cave rdf:type dbo:Cave . 
+      { ?cave dbo:location ?uri . } 
+      UNION 
+      { ?cave dbo:location ?loc . 
+        ?loc dbo:country ?uri . } 
+} 
+GROUP BY ?uri 
+HAVING(COUNT(?cave) > 10) 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/China</answer><answer>http://dbpedia.org/resource/England</answer><answer>http://dbpedia.org/resource/India</answer><answer>http://dbpedia.org/resource/Republic_of_Ireland</answer><answer>http://dbpedia.org/resource/Wales</answer><answer>http://dbpedia.org/resource/Mexico</answer><answer>http://dbpedia.org/resource/United_Kingdom</answer><answer>http://dbpedia.org/resource/Italy</answer><answer>http://dbpedia.org/resource/Jamaica</answer><answer>http://dbpedia.org/resource/United_States</answer><answer>http://dbpedia.org/resource/Gibraltar</answer></answers></query>
+
+<query id="8">
+<keyword_query lang="en"><![CDATA[Formula 1 driver with the most races]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Formula1Driver . 
+        ?uri numberOfRaces ?x . 
+} 
+ORDER BY DESC(?x) 
+OFFSET 0 LIMIT 1 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:FormulaOneRacer . 
+        ?uri dbo:races ?x . 
+} 
+ORDER BY DESC(?x) 
+OFFSET 0 LIMIT 1 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Rubens_Barrichello</answer></answers></query>
+
+<query id="9">
+<keyword_query lang="en"><![CDATA[youngest player in the Premier League]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Player . 
+        ?uri playsAt PremierLeague . 
+        ?uri birthDate ?y . 
+} 
+ORDER BY DESC(?y) 
+OFFSET 0 LIMIT 1 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:team ?x . 
+        ?x dbo:league res:Premier_League . 
+        ?uri dbo:birthDate ?y . 
+} 
+ORDER BY DESC(?y) 
+OFFSET 0 LIMIT 1 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Ernie_Pinkney</answer></answers></query>
+
+<query id="10">
+<keyword_query lang="en"><![CDATA[longest river]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+       ?uri type River . 
+       ?uri length ?l . 
+} 
+ORDER BY DESC(?l) 
+OFFSET 0 LIMIT 1 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:River . 
+      { ?uri dbo:length ?l . } 
+      UNION 
+      { ?uri dbp:length ?l . } 
+} 
+ORDER BY DESC(?l) 
+OFFSET 0 LIMIT 1 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Lochbach_(Itter)</answer></answers></query>
+
+<query id="11">
+<keyword_query lang="en"><![CDATA[cars that are produced in Germany]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Car . 
+        ?uri producedIn Germany .  
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Automobile . 
+      { ?uri dbo:assembly res:Germany . } 
+      UNION 
+      { ?uri dbp:assembly res:Germany . } 
+      UNION 
+      { { ?uri dbo:manufacturer ?x . } 
+        UNION 
+        { ?uri dbp:manufacturer ?x . } 
+        { ?x dbo:locationCountry res:Germany . } 
+        UNION 
+        { ?x dbo:location res:Germany . } 
+      } 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/BMW_New_Class</answer><answer>http://dbpedia.org/resource/Trabant_601</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_T2</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W142</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_320A</answer><answer>http://dbpedia.org/resource/Ford_C-Max__First_generation__1</answer><answer>http://dbpedia.org/resource/BMW_303__BMW_309__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_500E</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W15</answer><answer>http://dbpedia.org/resource/BMW_3_Series_(E90)</answer><answer>http://dbpedia.org/resource/Audi_Type_B</answer><answer>http://dbpedia.org/resource/Messerschmitt_KR175</answer><answer>http://dbpedia.org/resource/Volkswagen_Type_14A_(Hebm%C3%BCller_Cabriolet)</answer><answer>http://dbpedia.org/resource/Neoplan_Skyliner</answer><answer>http://dbpedia.org/resource/Audi_Type_M</answer><answer>http://dbpedia.org/resource/Porsche_928</answer><answer>http://dbpedia.org/resource/Porsche_944</answer><answer>http://dbpedia.org/resource/Porsche_968</answer><answer>http://dbpedia.org/resource/Porsche_Boxster</answer><answer>http://dbpedia.org/resource/Benz_10/30_PS</answer><answer>http://dbpedia.org/resource/Audi_Front</answer><answer>http://dbpedia.org/resource/E-Wolf_e2</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W204</answer><answer>http://dbpedia.org/resource/Audi_Type_D</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W11</answer><answer>http://dbpedia.org/resource/BMW_328</answer><answer>http://dbpedia.org/resource/Audi_A5</answer><answer>http://dbpedia.org/resource/Audi_Quattro</answer><answer>http://dbpedia.org/resource/BMW_i3</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_CLK_GTR</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_SSK</answer><answer>http://dbpedia.org/resource/Opel_Adam</answer><answer>http://dbpedia.org/resource/Porsche_550</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W201</answer><answer>http://dbpedia.org/resource/Porsche_996</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W212</answer><answer>http://dbpedia.org/resource/Artega_GT</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_500K</answer><answer>http://dbpedia.org/resource/Ford_Model_T</answer><answer>http://dbpedia.org/resource/Porsche_Cayenne</answer><answer>http://dbpedia.org/resource/Ford_Cougar</answer><answer>http://dbpedia.org/resource/Volkswagen_CC</answer><answer>http://dbpedia.org/resource/Volkswagen_Phaeton</answer><answer>http://dbpedia.org/resource/Cadillac_Catera</answer><answer>http://dbpedia.org/resource/Neoplan_Jumbocruiser</answer><answer>http://dbpedia.org/resource/BMW_Z4_(E89)</answer><answer>http://dbpedia.org/resource/MAN_NL202</answer><answer>http://dbpedia.org/resource/Volkswagen_Crafter</answer><answer>http://dbpedia.org/resource/Volkswagen_Polo_Mk4</answer><answer>http://dbpedia.org/resource/Audi_Coup%C3%A9_(B2)</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Mk2</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Mk3</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Mk4</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Mk5</answer><answer>http://dbpedia.org/resource/Mercedes_24/100/140_PS</answer><answer>http://dbpedia.org/resource/Opel_Kadett_B</answer><answer>http://dbpedia.org/resource/Audi_S4</answer><answer>http://dbpedia.org/resource/Audi_S5</answer><answer>http://dbpedia.org/resource/BMW_3_Series_(E36)</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_CLS-Class</answer><answer>http://dbpedia.org/resource/Porsche_Carrera_GT</answer><answer>http://dbpedia.org/resource/Audi_S6</answer><answer>http://dbpedia.org/resource/BMW_7_Series</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_300SL</answer><answer>http://dbpedia.org/resource/Porsche_993</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Mk1</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(E60)</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(F10)</answer><answer>http://dbpedia.org/resource/BMW_7_Series_(E38)</answer><answer>http://dbpedia.org/resource/Porsche_911_GT2</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Atego</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R230</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W108</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W08</answer><answer>http://dbpedia.org/resource/Volkswagen_Passat_(B4)</answer><answer>http://dbpedia.org/resource/Volkswagen_EA489_Basistransporter</answer><answer>http://dbpedia.org/resource/Neoplan_Megaliner</answer><answer>http://dbpedia.org/resource/Volkswagen_Polo_Mk3</answer><answer>http://dbpedia.org/resource/Meillerwagen</answer><answer>http://dbpedia.org/resource/Mercedes_15/70/100_PS</answer><answer>http://dbpedia.org/resource/Porsche_991</answer><answer>http://dbpedia.org/resource/Audi_Type_T</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W153</answer><answer>http://dbpedia.org/resource/Fiat_508</answer><answer>http://dbpedia.org/resource/Audi_RS_2_Avant</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W221</answer><answer>http://dbpedia.org/resource/Volkswagen_Polo_G40</answer><answer>http://dbpedia.org/resource/Neoplan_Centroliner</answer><answer>http://dbpedia.org/resource/Bentley_Continental_Flying_Spur_(2005)</answer><answer>http://dbpedia.org/resource/Audi_RS_4</answer><answer>http://dbpedia.org/resource/BMW_7_Series_(F01)</answer><answer>http://dbpedia.org/resource/Opel_Corsa__D__1</answer><answer>http://dbpedia.org/resource/BMW_1_Series_(E87)</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_S-Class</answer><answer>http://dbpedia.org/resource/BMW_3/20</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Mk6</answer><answer>http://dbpedia.org/resource/Merkur_Scorpio</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W110</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W113</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W211</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W219</answer><answer>http://dbpedia.org/resource/Porsche_Panamera</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W220</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W143</answer><answer>http://dbpedia.org/resource/Opel_Kadett_A</answer><answer>http://dbpedia.org/resource/Audi_Type_A</answer><answer>http://dbpedia.org/resource/Audi_Type_SS</answer><answer>http://dbpedia.org/resource/Volkswagen_Passat_(B6)</answer><answer>http://dbpedia.org/resource/Audi_A2</answer><answer>http://dbpedia.org/resource/BMW_8_Series_(E31)</answer><answer>http://dbpedia.org/resource/BMW_M6</answer><answer>http://dbpedia.org/resource/Ford_Model_A_(1927%E2%80%9331)</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_CL-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_SL-Class</answer><answer>http://dbpedia.org/resource/Opel_GT</answer><answer>http://dbpedia.org/resource/Porsche_Cayman</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W111</answer><answer>http://dbpedia.org/resource/Blitzen_Benz</answer><answer>http://dbpedia.org/resource/Porsche_Macan</answer><answer>http://dbpedia.org/resource/MAN_SL202</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R231</answer><answer>http://dbpedia.org/resource/BMW_7_Series__BMW_7-Series_E32__1</answer><answer>http://dbpedia.org/resource/BMW_7_Series__BMW_7-Series_E38__1</answer><answer>http://dbpedia.org/resource/BMW_7_Series__BMW_7-Series_E65/E66/E67/E68__1</answer><answer>http://dbpedia.org/resource/BMW_7_Series__BMW_7-Series_F01/F02__1</answer><answer>http://dbpedia.org/resource/Opel_Ascona__scona_A__1</answer><answer>http://dbpedia.org/resource/Opel_Ascona__scona_B__1</answer><answer>http://dbpedia.org/resource/Opel_Omega__A__1</answer><answer>http://dbpedia.org/resource/Opel_Omega__B_FL__1</answer><answer>http://dbpedia.org/resource/Opel_Omega__B__1</answer><answer>http://dbpedia.org/resource/Opel_Omega__V8_prototypes__1</answer><answer>http://dbpedia.org/resource/BMW_M6__Third_generation_F12/F13__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W128</answer><answer>http://dbpedia.org/resource/Audi_Type_P</answer><answer>http://dbpedia.org/resource/Opel_Kadett_C</answer><answer>http://dbpedia.org/resource/Ford_Kuga</answer><answer>http://dbpedia.org/resource/Toyota_Hilux__Fifth_generation_N50_series__1</answer><answer>http://dbpedia.org/resource/Ford_Fusion_(Europe)</answer><answer>http://dbpedia.org/resource/Ford_Puma</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_SLS_AMG</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Vario</answer><answer>http://dbpedia.org/resource/Opel_Signum</answer><answer>http://dbpedia.org/resource/Volkswagen_Amarok</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(E34)</answer><answer>http://dbpedia.org/resource/Citro%C3%ABn_Traction_Avant</answer><answer>http://dbpedia.org/resource/Maybach_57_and_62</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W18</answer><answer>http://dbpedia.org/resource/Audi_Type_E</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W180</answer><answer>http://dbpedia.org/resource/Opel_Insignia__Insignia__1</answer><answer>http://dbpedia.org/resource/BMW_6_Series_(E63)</answer><answer>http://dbpedia.org/resource/BMW_7_Series_(E32)</answer><answer>http://dbpedia.org/resource/Maybach_Zeppelin</answer><answer>http://dbpedia.org/resource/Audi_920</answer><answer>http://dbpedia.org/resource/Audi_Le_Mans_quattro</answer><answer>http://dbpedia.org/resource/BMW_303</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W02</answer><answer>http://dbpedia.org/resource/TMG_EV_P001</answer><answer>http://dbpedia.org/resource/Audi_Type_C</answer><answer>http://dbpedia.org/resource/BMW_320</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W03</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W21</answer><answer>http://dbpedia.org/resource/MAN_NG272</answer><answer>http://dbpedia.org/resource/MAN_NG272(2)</answer><answer>http://dbpedia.org/resource/Ford_Escape__First_generation__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W112</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W136</answer><answer>http://dbpedia.org/resource/Audi_Type_R</answer><answer>http://dbpedia.org/resource/Callaway_Cars__Callaway_C16__1</answer><answer>http://dbpedia.org/resource/Veritas_(automobile)</answer><answer>http://dbpedia.org/resource/BMW_7_Series_(E65)</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_190SL</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_380_(1933)</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_CLK-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Sprinter</answer><answer>http://dbpedia.org/resource/Volkswagen_Taro</answer><answer>http://dbpedia.org/resource/BMW_1_Series_(F20)</answer><answer>http://dbpedia.org/resource/BMW_3_Series_(F30)</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_C215</answer><answer>http://dbpedia.org/resource/Audi_Type_K</answer><answer>http://dbpedia.org/resource/BMW_303__BMW_315/1,_BMW_319/1__1</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Variant__Volkswagen_Golf_Mk4_Variant_1J__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_GLK-Class</answer><answer>http://dbpedia.org/resource/Opel_Calibra</answer><answer>http://dbpedia.org/resource/Porsche_964</answer><answer>http://dbpedia.org/resource/NSU_Ro_80</answer><answer>http://dbpedia.org/resource/Audi_R8</answer><answer>http://dbpedia.org/resource/Opel_Astra__stra_F__1</answer><answer>http://dbpedia.org/resource/Opel_Astra__stra_G__1</answer><answer>http://dbpedia.org/resource/Opel_Astra__stra_H__1</answer><answer>http://dbpedia.org/resource/Opel_Astra__stra_J__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_170S</answer><answer>http://dbpedia.org/resource/Ford_Focus_(first_generation)</answer><answer>http://dbpedia.org/resource/BMW_327</answer><answer>http://dbpedia.org/resource/Audi_Type_G</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(F10)__BMW_F10_M5__1</answer><answer>http://dbpedia.org/resource/Bentley_Continental_Flying_Spur_(2005)__Flying_Spur__1</answer><answer>http://dbpedia.org/resource/Ford_Escort_(Europe)__Fifth_generation__1</answer><answer>http://dbpedia.org/resource/Ford_Escort_(Europe)__First_generation__1</answer><answer>http://dbpedia.org/resource/Ford_Escort_(Europe)__Fourth_generation__1</answer><answer>http://dbpedia.org/resource/Ford_Escort_(Europe)__Second_generation__1</answer><answer>http://dbpedia.org/resource/Ford_Escort_(Europe)__Third_generation__1</answer><answer>http://dbpedia.org/resource/BMW_1_Series__BMW_1-Series_E87__1</answer><answer>http://dbpedia.org/resource/Mercury_Capri__First_generation__1</answer><answer>http://dbpedia.org/resource/Audi_Quattro__Audi_Sport_Quattro_S1_E2__1</answer><answer>http://dbpedia.org/resource/BMW_M3__E30__1</answer><answer>http://dbpedia.org/resource/BMW_M3__E36__1</answer><answer>http://dbpedia.org/resource/BMW_M3__E46_M3__1</answer><answer>http://dbpedia.org/resource/BMW_M3__E90/92/93__1</answer><answer>http://dbpedia.org/resource/BMW_M3__F80__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_A-Class__W176__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_B-Class__First_generation__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_B-Class__econd_generation__1</answer><answer>http://dbpedia.org/resource/Opel_Senator__A__1</answer><answer>http://dbpedia.org/resource/Opel_Senator__B__1</answer><answer>http://dbpedia.org/resource/Opel_Corsa__B__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_C-Class__W202__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_C-Class__W204__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_C-Class__W205__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_E-Class__Mercedes-Benz_W212__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_E-Class__W124__1</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_E-Class__W211__1</answer><answer>http://dbpedia.org/resource/Opel_Kadett__A__1</answer><answer>http://dbpedia.org/resource/Opel_Kadett__B__1</answer><answer>http://dbpedia.org/resource/Opel_Kadett__C__1</answer><answer>http://dbpedia.org/resource/Opel_Kadett__E__1</answer><answer>http://dbpedia.org/resource/Opel_Kadett__I__1</answer><answer>http://dbpedia.org/resource/BMW_Z4__E89__1</answer><answer>http://dbpedia.org/resource/BMW_5_Series__BMW_5-Series_E34__1</answer><answer>http://dbpedia.org/resource/BMW_5_Series__BMW_5-Series_E60/E61__1</answer><answer>http://dbpedia.org/resource/BMW_5_Series__BMW_5-series_F10/F11/F07__1</answer><answer>http://dbpedia.org/resource/Ford_Transit__Ford_Taunus_Transit__1</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Variant__Volkswagen_Golf_Mk3_Variant_1H__1</answer><answer>http://dbpedia.org/resource/Opel_Corsa__C__1</answer><answer>http://dbpedia.org/resource/BMW_1_Series__BMW_F20,_F21__1</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Variant</answer><answer>http://dbpedia.org/resource/BMW_1_Series</answer><answer>http://dbpedia.org/resource/Ford_Escort_(Europe)</answer><answer>http://dbpedia.org/resource/Ford_Transit</answer><answer>http://dbpedia.org/resource/Opel_Senator</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_E-Class</answer><answer>http://dbpedia.org/resource/Mercury_Capri</answer><answer>http://dbpedia.org/resource/BMW_Z4</answer><answer>http://dbpedia.org/resource/Opel_Omega</answer><answer>http://dbpedia.org/resource/Opel_Astra</answer><answer>http://dbpedia.org/resource/Opel_Kadett</answer><answer>http://dbpedia.org/resource/Opel_Insignia</answer><answer>http://dbpedia.org/resource/BMW_M3</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_C-Class</answer><answer>http://dbpedia.org/resource/Ford_Escape</answer><answer>http://dbpedia.org/resource/BMW_5_Series</answer><answer>http://dbpedia.org/resource/Opel_Ascona</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_A-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_B-Class</answer><answer>http://dbpedia.org/resource/BMW_335_(1939%E2%80%9341)</answer><answer>http://dbpedia.org/resource/Goggomobil</answer><answer>http://dbpedia.org/resource/BMW_X3_(F25)</answer><answer>http://dbpedia.org/resource/BMW_3_Series_Compact__E46/5__1</answer><answer>http://dbpedia.org/resource/BMW_501__BMW_502__1</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(E28)</answer><answer>http://dbpedia.org/resource/BMW_3_Series_(E46)</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(E39)</answer><answer>http://dbpedia.org/resource/Mini_Hatch</answer><answer>http://dbpedia.org/resource/Mini_E</answer><answer>http://dbpedia.org/resource/BMW_Turbo</answer><answer>http://dbpedia.org/resource/BMW_503</answer><answer>http://dbpedia.org/resource/Mini_Clubman</answer><answer>http://dbpedia.org/resource/BMW_Concept_7_Series_ActiveHybrid</answer><answer>http://dbpedia.org/resource/BMW_ActiveE</answer><answer>http://dbpedia.org/resource/BMW_6_Series_(F06/F12/F13)</answer><answer>http://dbpedia.org/resource/Mini_Coup%C3%A9</answer><answer>http://dbpedia.org/resource/BMW_X5_(F15)</answer><answer>http://dbpedia.org/resource/BMW_Z18</answer><answer>http://dbpedia.org/resource/BMW_3_Series</answer><answer>http://dbpedia.org/resource/BMW_New_Six</answer><answer>http://dbpedia.org/resource/BMW_Z8_(E52)</answer><answer>http://dbpedia.org/resource/BMW_6_Series</answer><answer>http://dbpedia.org/resource/Ford_Taunus_P6</answer><answer>http://dbpedia.org/resource/BMW_5_Series_Gran_Turismo</answer><answer>http://dbpedia.org/resource/BMW_M1</answer><answer>http://dbpedia.org/resource/BMW_Dixi</answer><answer>http://dbpedia.org/resource/BMW_7_Series_(E23)</answer><answer>http://dbpedia.org/resource/BMW_X3_(E83)</answer><answer>http://dbpedia.org/resource/BMW_X5_(E53)</answer><answer>http://dbpedia.org/resource/BMW_Z4_(E85)</answer><answer>http://dbpedia.org/resource/BMW_326</answer><answer>http://dbpedia.org/resource/BMW_507</answer><answer>http://dbpedia.org/resource/BMW_3_Series_Gran_Turismo</answer><answer>http://dbpedia.org/resource/BMW_3_Series_(E30)</answer><answer>http://dbpedia.org/resource/BMW_E9</answer><answer>http://dbpedia.org/resource/BMW_GINA</answer><answer>http://dbpedia.org/resource/BMW_X3</answer><answer>http://dbpedia.org/resource/BMW_X6</answer><answer>http://dbpedia.org/resource/BMW_Z1</answer><answer>http://dbpedia.org/resource/Volkswagen_Touareg</answer><answer>http://dbpedia.org/resource/BMW_3_Series_(E21)</answer><answer>http://dbpedia.org/resource/Bertone_Birusa</answer><answer>http://dbpedia.org/resource/BMW_Vision_ConnectedDrive</answer><answer>http://dbpedia.org/resource/BMW_F3</answer><answer>http://dbpedia.org/resource/BMW_CS_Concept</answer><answer>http://dbpedia.org/resource/BMW_321</answer><answer>http://dbpedia.org/resource/Mini_Paceman</answer><answer>http://dbpedia.org/resource/Volkswagen_Karmann_Ghia</answer><answer>http://dbpedia.org/resource/BMW_X5_(E70)</answer><answer>http://dbpedia.org/resource/BMW_Nazca_C2</answer><answer>http://dbpedia.org/resource/BMW_3_Series_Compact</answer><answer>http://dbpedia.org/resource/BMW_M_Coupe</answer><answer>http://dbpedia.org/resource/BMW_M_Roadster</answer><answer>http://dbpedia.org/resource/BMW_New_Class_coup%C3%A9</answer><answer>http://dbpedia.org/resource/Ford_Eifel</answer><answer>http://dbpedia.org/resource/Ford_K%C3%B6ln</answer><answer>http://dbpedia.org/resource/BMW_501</answer><answer>http://dbpedia.org/resource/BMW_3/15</answer><answer>http://dbpedia.org/resource/BMW_3200_CS</answer><answer>http://dbpedia.org/resource/BMW_X4</answer><answer>http://dbpedia.org/resource/Ford_Taunus_P4</answer><answer>http://dbpedia.org/resource/BMW_2_Series</answer><answer>http://dbpedia.org/resource/BMW_3/15__BMW_Dixi_3/15_DA-2BMW_Wartburg_DA-3BMW_3/15_DA-4__1</answer><answer>http://dbpedia.org/resource/BMW_New_Class__BMW_2000C/CS__1</answer><answer>http://dbpedia.org/resource/BMW_X1</answer><answer>http://dbpedia.org/resource/BMW_i8</answer><answer>http://dbpedia.org/resource/Isetta</answer><answer>http://dbpedia.org/resource/BMW_Hydrogen_7</answer><answer>http://dbpedia.org/resource/BMW_V7</answer><answer>http://dbpedia.org/resource/BMW_4_Series_(F32)</answer><answer>http://dbpedia.org/resource/Ford_P7</answer><answer>http://dbpedia.org/resource/BMW_700</answer><answer>http://dbpedia.org/resource/Ford_Taunus_P5</answer><answer>http://dbpedia.org/resource/BMW_Z3</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(E12)</answer><answer>http://dbpedia.org/resource/BMW_6_Series_(E24)</answer><answer>http://dbpedia.org/resource/BMW_4_Series</answer><answer>http://dbpedia.org/resource/BMW_X5</answer><answer>http://dbpedia.org/resource/BMW_Z_Models</answer><answer>http://dbpedia.org/resource/BMW_600</answer><answer>http://dbpedia.org/resource/Mini_Countryman</answer><answer>http://dbpedia.org/resource/Ford_Taunus_TC</answer><answer>http://dbpedia.org/resource/BMW_X-Coupe</answer><answer>http://dbpedia.org/resource/Ford_Taunus_P3</answer><answer>http://dbpedia.org/resource/Mini_Hatch__Third_Generation_F56__1</answer><answer>http://dbpedia.org/resource/Mini_Hatch__Second_Generation_R56__1</answer><answer>http://dbpedia.org/resource/BMW_M_Roadster__BMW_E85_M_Roadster__1</answer><answer>http://dbpedia.org/resource/Mini_Hatch__First_Generation_R50/53__1</answer><answer>http://dbpedia.org/resource/BMW_5_Series_(E60)__BMW_5-Series_Touring_E61__1</answer><answer>http://dbpedia.org/resource/BMW_Z4__E85__1</answer><answer>http://dbpedia.org/resource/BMW_5_Series__BMW_5-Series_E28__1</answer><answer>http://dbpedia.org/resource/Isetta__BMW_300_Isetta__1</answer><answer>http://dbpedia.org/resource/Opel_Monza</answer><answer>http://dbpedia.org/resource/Opel_1.8_litre</answer><answer>http://dbpedia.org/resource/Opel_5/12_PS</answer><answer>http://dbpedia.org/resource/Opel_Insignia__2003_Insignia_Concept__1</answer><answer>http://dbpedia.org/resource/Opel_Rekord_Series_E__1__1</answer><answer>http://dbpedia.org/resource/Opel_Rekord_Series_E</answer><answer>http://dbpedia.org/resource/Opel_(Olympia)_Rekord_P1</answer><answer>http://dbpedia.org/resource/Opel_Super_6</answer><answer>http://dbpedia.org/resource/Opel_10/30_(10/35)_PS</answer><answer>http://dbpedia.org/resource/Opel_10/40_PS</answer><answer>http://dbpedia.org/resource/Opel_GTC</answer><answer>http://dbpedia.org/resource/Opel_Patent_Motor_Car</answer><answer>http://dbpedia.org/resource/Holden_Barina</answer><answer>http://dbpedia.org/resource/Opel_Blitz</answer><answer>http://dbpedia.org/resource/Opel_Commodore</answer><answer>http://dbpedia.org/resource/Opel_Corsa</answer><answer>http://dbpedia.org/resource/Opel_Olympia</answer><answer>http://dbpedia.org/resource/GM_HydroGen3</answer><answer>http://dbpedia.org/resource/Opel_4/8_PS</answer><answer>http://dbpedia.org/resource/Holden_Astra</answer><answer>http://dbpedia.org/resource/Opel_Vectra</answer><answer>http://dbpedia.org/resource/Opel_Admiral</answer><answer>http://dbpedia.org/resource/Opel_Antara</answer><answer>http://dbpedia.org/resource/Opel_Cascada</answer><answer>http://dbpedia.org/resource/Opel_Tigra</answer><answer>http://dbpedia.org/resource/Opel_Rekord_Series_E__2__1</answer><answer>http://dbpedia.org/resource/Opel_2.0_litre</answer><answer>http://dbpedia.org/resource/Opel_Rekord_Series_C</answer><answer>http://dbpedia.org/resource/Vauxhall_Carlton</answer><answer>http://dbpedia.org/resource/Opel_Frogster</answer><answer>http://dbpedia.org/resource/Opel_Flextreme</answer><answer>http://dbpedia.org/resource/Opel_Monza__2013_Monza_Concept__1</answer><answer>http://dbpedia.org/resource/Opel_Rekord__Series_E__1</answer><answer>http://dbpedia.org/resource/Opel_Rekord</answer><answer>http://dbpedia.org/resource/Opel_Rekord_Series_A</answer><answer>http://dbpedia.org/resource/Opel_Mokka</answer><answer>http://dbpedia.org/resource/Opel_Combo</answer><answer>http://dbpedia.org/resource/Opel_Manta</answer><answer>http://dbpedia.org/resource/Opel_Zafira</answer><answer>http://dbpedia.org/resource/Opel_Slalom</answer><answer>http://dbpedia.org/resource/Opel_Agila</answer><answer>http://dbpedia.org/resource/Opel_Diplomat</answer><answer>http://dbpedia.org/resource/Opel_Meriva</answer><answer>http://dbpedia.org/resource/Opel_Rekord_Series_B</answer><answer>http://dbpedia.org/resource/Opel_Flextreme_GT/E</answer><answer>http://dbpedia.org/resource/Opel_Kapit%C3%A4n</answer><answer>http://dbpedia.org/resource/Opel_Speedster</answer><answer>http://dbpedia.org/resource/Opel_8/40_PS</answer><answer>http://dbpedia.org/resource/Opel_Olympia_Rekord</answer><answer>http://dbpedia.org/resource/Opel_Rekord_Series_D</answer><answer>http://dbpedia.org/resource/Opel_RAK_e</answer><answer>http://dbpedia.org/resource/Opel_Regent</answer><answer>http://dbpedia.org/resource/Opel_Rekord_P2</answer><answer>http://dbpedia.org/resource/Opel_1.2_litre</answer><answer>http://dbpedia.org/resource/Opel_1.3_litre</answer><answer>http://dbpedia.org/resource/Opel_Laubfrosch</answer><answer>http://dbpedia.org/resource/Opel_Junior</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_MB100</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Type_300</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Econic</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_540K</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W105</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_M110_engine</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_TN</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W140</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_SLK-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_G-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W116</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W126</answer><answer>http://dbpedia.org/resource/Benz_Patent-Motorwagen</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_F125</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_F800</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W10</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Citaro</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R129</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W123</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W124</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W210</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R107_and_C107</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R170</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Actros</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W31</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_GL-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_GLA-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Bionic</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Vito</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_260_D</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Citan</answer><answer>http://dbpedia.org/resource/Benz_Velo</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_600</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_NG</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Viano</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W222</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_M-Class</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_W187</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_BlueZERO</answer><answer>http://dbpedia.org/resource/Heinkel_Kabine</answer><answer>http://dbpedia.org/resource/Isdera_Imperator_108i</answer><answer>http://dbpedia.org/resource/Gumpert_Apollo</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_4G-Tronic_transmission</answer><answer>http://dbpedia.org/resource/Chrysler_300M</answer><answer>http://dbpedia.org/resource/Plymouth_X2S</answer><answer>http://dbpedia.org/resource/Dodge_Intrepid</answer><answer>http://dbpedia.org/resource/Smart_Fortwo</answer><answer>http://dbpedia.org/resource/Chrysler_Cirrus</answer><answer>http://dbpedia.org/resource/Chrysler_Pacifica</answer><answer>http://dbpedia.org/resource/Plymouth_Voyager</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R171</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Vaneo</answer><answer>http://dbpedia.org/resource/Smart_electric_drive</answer><answer>http://dbpedia.org/resource/Smart_Crosstown</answer><answer>http://dbpedia.org/resource/Chrysler_Concorde</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_7G-Tronic_transmission</answer><answer>http://dbpedia.org/resource/Mitsubishi_GS_platform</answer><answer>http://dbpedia.org/resource/Dodge_Dakota</answer><answer>http://dbpedia.org/resource/Mitsubishi_Z_platform</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_Vision_SLA</answer><answer>http://dbpedia.org/resource/Volkswagen_Beetle</answer><answer>http://dbpedia.org/resource/Volkswagen_Taigun</answer><answer>http://dbpedia.org/resource/Volkswagen_Passat_Lingyu</answer><answer>http://dbpedia.org/resource/Volkswagen_Plattenwagen</answer><answer>http://dbpedia.org/resource/Volkswagen_K%C3%BCbelwagen</answer><answer>http://dbpedia.org/resource/Volkswagen_Fox</answer><answer>http://dbpedia.org/resource/Volkswagen_Lupo</answer><answer>http://dbpedia.org/resource/Volkswagen_Type_3</answer><answer>http://dbpedia.org/resource/Volkswagen_Sharan</answer><answer>http://dbpedia.org/resource/Volkswagen_GX3</answer><answer>http://dbpedia.org/resource/Volkswagen_Lavida</answer><answer>http://dbpedia.org/resource/VW_New_Compact_Coup%C3%A9</answer><answer>http://dbpedia.org/resource/Volkswagen_Schwimmwagen</answer><answer>http://dbpedia.org/resource/Volkswagen_Beetle_(A5)</answer><answer>http://dbpedia.org/resource/Volkswagen_Derby</answer><answer>http://dbpedia.org/resource/Volkswagen_New_Beetle</answer><answer>http://dbpedia.org/resource/Volkswagen_Type_2</answer><answer>http://dbpedia.org/resource/Volkswagen_Type_2_(T3)</answer><answer>http://dbpedia.org/resource/Volkswagen_Up</answer><answer>http://dbpedia.org/resource/Volkswagen_Jetta</answer><answer>http://dbpedia.org/resource/Volkswagen_Type_147_Kleinlieferwagen</answer><answer>http://dbpedia.org/resource/Volkswagen_Passat_(B5)</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf</answer><answer>http://dbpedia.org/resource/Volkswagen_Scirocco</answer><answer>http://dbpedia.org/resource/Volkswagen_Santana</answer><answer>http://dbpedia.org/resource/Volkswagen_Gol</answer><answer>http://dbpedia.org/resource/Volkswagen_Type_4</answer><answer>http://dbpedia.org/resource/Volkswagen_181</answer><answer>http://dbpedia.org/resource/Volkswagen_Polo_Mk5</answer><answer>http://dbpedia.org/resource/Volkswagen_Polo</answer><answer>http://dbpedia.org/resource/Chrysler_Natrium</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_9G-Tronic_transmission</answer><answer>http://dbpedia.org/resource/Chrysler_LHS</answer><answer>http://dbpedia.org/resource/Dodge_Copperhead</answer><answer>http://dbpedia.org/resource/Dodge_Stratus</answer><answer>http://dbpedia.org/resource/Volkswagen_LT</answer><answer>http://dbpedia.org/resource/Volkswagen_Tiguan</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_5G-Tronic_transmission</answer><answer>http://dbpedia.org/resource/Volkswagen_Passat_Variant</answer><answer>http://dbpedia.org/resource/Chrysler_300__First_generation__1</answer><answer>http://dbpedia.org/resource/Volkswagen_Sharan__Mk1_7M__1</answer><answer>http://dbpedia.org/resource/Chrysler_Sebring</answer><answer>http://dbpedia.org/resource/Volkswagen_Eos</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_CLA-Class</answer><answer>http://dbpedia.org/resource/Mitsubishi_Raider</answer><answer>http://dbpedia.org/resource/Volkswagen_Corrado</answer><answer>http://dbpedia.org/resource/Volkswagen_Passat</answer><answer>http://dbpedia.org/resource/Volkswagen_Passat_NMS</answer><answer>http://dbpedia.org/resource/Volkswagen_SP2</answer><answer>http://dbpedia.org/resource/Volkswagen_Brasilia</answer><answer>http://dbpedia.org/resource/Plymouth_Prowler</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_R172</answer><answer>http://dbpedia.org/resource/Sterling_Bullet</answer><answer>http://dbpedia.org/resource/Jeep_Trailhawk</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_SLK-Class__Mercedes-Benz_R172__1</answer><answer>http://dbpedia.org/resource/Dodge_Magnum</answer><answer>http://dbpedia.org/resource/Dodge_Super_Bee</answer><answer>http://dbpedia.org/resource/Mercedes-Benz_F-Cell</answer><answer>http://dbpedia.org/resource/Volkswagen_Iltis</answer><answer>http://dbpedia.org/resource/Volkswagen_Bora_(2007)</answer><answer>http://dbpedia.org/resource/Volkswagen_Caddy__First_generation__1</answer><answer>http://dbpedia.org/resource/Volkswagen_Caddy__Second_generation__1</answer><answer>http://dbpedia.org/resource/Volkswagen_Caddy__Third_generation__1</answer><answer>http://dbpedia.org/resource/Volkswagen_LT__1st_generation__1</answer><answer>http://dbpedia.org/resource/Volkswagen_ARVW</answer><answer>http://dbpedia.org/resource/Volkswagen_Concept_BlueSport</answer><answer>http://dbpedia.org/resource/Volkswagen_Citi_Golf</answer><answer>http://dbpedia.org/resource/Volkswagen_K70</answer><answer>http://dbpedia.org/resource/Volkswagen_Touran</answer><answer>http://dbpedia.org/resource/Volkswagen_CrossBlue</answer><answer>http://dbpedia.org/resource/Volkswagen_Golf_Mk7</answer><answer>http://dbpedia.org/resource/Porsche_911_GT1</answer><answer>http://dbpedia.org/resource/Porsche_914</answer><answer>http://dbpedia.org/resource/Porsche_356</answer><answer>http://dbpedia.org/resource/Porsche_912</answer><answer>http://dbpedia.org/resource/Porsche_924</answer><answer>http://dbpedia.org/resource/Porsche_918</answer><answer>http://dbpedia.org/resource/MAN_NL323F</answer><answer>http://dbpedia.org/resource/Porsche_997</answer><answer>http://dbpedia.org/resource/Porsche_934</answer><answer>http://dbpedia.org/resource/Porsche_935</answer><answer>http://dbpedia.org/resource/Neoplan_Transliner</answer><answer>http://dbpedia.org/resource/Porsche_910</answer><answer>http://dbpedia.org/resource/Volkswagen_Caddy</answer><answer>http://dbpedia.org/resource/Porsche_930</answer><answer>http://dbpedia.org/resource/Volkswagen_Transporter_(T4)</answer><answer>http://dbpedia.org/resource/Porsche_911_classic</answer><answer>http://dbpedia.org/resource/Porsche_914-6_GT</answer><answer>http://dbpedia.org/resource/Volkswagen_Transporter_(T5)</answer><answer>http://dbpedia.org/resource/Porsche_959</answer><answer>http://dbpedia.org/resource/Porsche_908</answer><answer>http://dbpedia.org/resource/MAN_Fortuna</answer><answer>http://dbpedia.org/resource/Porsche_906</answer><answer>http://dbpedia.org/resource/Porsche_911</answer><answer>http://dbpedia.org/resource/Porsche_911_GT3</answer><answer>http://dbpedia.org/resource/Porsche_WSC-95</answer><answer>http://dbpedia.org/resource/Porsche_P1</answer><answer>http://dbpedia.org/resource/Porsche_597</answer><answer>http://dbpedia.org/resource/MAN_Lion's_City</answer><answer>http://dbpedia.org/resource/Volkswagen_LT__2nd_generation__1</answer><answer>http://dbpedia.org/resource/Porsche_356/1</answer><answer>http://dbpedia.org/resource/Porsche_Boxster__981__1</answer><answer>http://dbpedia.org/resource/Porsche_Boxster__986__1</answer><answer>http://dbpedia.org/resource/Porsche_Boxster__987__1</answer><answer>http://dbpedia.org/resource/Borgward_P100</answer><answer>http://dbpedia.org/resource/Borgward_Hansa_2400</answer><answer>http://dbpedia.org/resource/Goliath_GP700</answer><answer>http://dbpedia.org/resource/Borgward_Isabella</answer><answer>http://dbpedia.org/resource/Goliath_Pioneer</answer><answer>http://dbpedia.org/resource/Borgward_Hansa_1500</answer><answer>http://dbpedia.org/resource/Goliath_1100</answer><answer>http://dbpedia.org/resource/Maybach_Exelero</answer><answer>http://dbpedia.org/resource/Ruf_Turbo_R</answer><answer>http://dbpedia.org/resource/Brabus_Rocket</answer><answer>http://dbpedia.org/resource/Ruf_CTR2</answer><answer>http://dbpedia.org/resource/Ruf_RK_Coupe</answer><answer>http://dbpedia.org/resource/Ruf_CTR</answer><answer>http://dbpedia.org/resource/Brabus_E_V12</answer><answer>http://dbpedia.org/resource/Ruf_RGT</answer><answer>http://dbpedia.org/resource/ERuf_Model_A</answer><answer>http://dbpedia.org/resource/Brabus_Bullit</answer><answer>http://dbpedia.org/resource/Ruf_Rt_12</answer><answer>http://dbpedia.org/resource/Brabus_C_V8</answer><answer>http://dbpedia.org/resource/TechArt_997_Turbo</answer><answer>http://dbpedia.org/resource/TechArt_Magnum</answer><answer>http://dbpedia.org/resource/TECHART_GTsport</answer><answer>http://dbpedia.org/resource/TechArt_997_Carrera</answer><answer>http://dbpedia.org/resource/Neoplan_N4009</answer><answer>http://dbpedia.org/resource/Audi_RS_6</answer><answer>http://dbpedia.org/resource/Neoplan_N4016</answer><answer>http://dbpedia.org/resource/Merkur_XR4Ti</answer><answer>http://dbpedia.org/resource/Chrysler_Crossfire</answer><answer>http://dbpedia.org/resource/Smart_Formore</answer><answer>http://dbpedia.org/resource/Trabant</answer><answer>http://dbpedia.org/resource/Smart_Forfour</answer><answer>http://dbpedia.org/resource/Sachsenring_P240</answer><answer>http://dbpedia.org/resource/Smart_Roadster</answer><answer>http://dbpedia.org/resource/Chrysler_300</answer><answer>http://dbpedia.org/resource/Volvo_FE</answer></answers></query>
+
+<query id="12">
+<keyword_query lang="en"><![CDATA[People that were born in Vienna and died in Berlin]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+		?uri type Person .
+        ?uri bornIn Vienna . 
+        ?uri diedIn Berlin . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:birthPlace res:Vienna . 
+        ?uri dbo:deathPlace res:Berlin . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Alfred_Halm</answer><answer>http://dbpedia.org/resource/Richard_Thurnwald</answer><answer>http://dbpedia.org/resource/Grete_von_Zieritz</answer><answer>http://dbpedia.org/resource/Eduard_von_Winterstein</answer><answer>http://dbpedia.org/resource/Karl_Hellmer</answer><answer>http://dbpedia.org/resource/Hilde_K%C3%B6rber</answer><answer>http://dbpedia.org/resource/Adolf_Klein</answer><answer>http://dbpedia.org/resource/Michael_von_Newlinsky</answer><answer>http://dbpedia.org/resource/Hugo_Flink</answer><answer>http://dbpedia.org/resource/Erik_Jan_Hanussen</answer><answer>http://dbpedia.org/resource/Therese_Gr%C3%BCnbaum</answer><answer>http://dbpedia.org/resource/Karl_Etlinger</answer><answer>http://dbpedia.org/resource/Steffie_Spira</answer></answers></query>
+
+<query id="13">
+<keyword_query lang="en"><![CDATA[Mother and father of Prince Harry and Prince William ]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT ?father ?mother
+WHERE { 
+        Prince_William hasFather ?father . 
+        Prince_Harry hasFather ?father .
+		Prince_William hasMother ?mother . 
+        Prince_Harry hasMother ?mother .
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT ?x
+WHERE { 
+        <http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> dbo:parent ?x . 
+        <http://dbpedia.org/resource/Prince_Harry> dbo:parent ?x .
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Diana,_Princess_of_Wales</answer><answer>http://dbpedia.org/resource/Charles,_Princess_of_Wales</answer></answers></query>
+
+<query id="14">
+<keyword_query lang="en"><![CDATA[latest U.S. state admitted]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type US_State . 
+        ?uri admittedAt ?x . 
+} ORDER BY DESC(?x) 
+OFFSET 0 LIMIT 1 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX yago: <http://dbpedia.org/class/yago/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type yago:StatesOfTheUnitedStates . 
+        ?uri dbp:admittancedate ?x . 
+} ORDER BY DESC(?x) 
+OFFSET 0 LIMIT 1 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Hawaii</answer></answers></query>
+
+<query id="15">
+<keyword_query lang="en"><![CDATA[number of languages spoken in Turkmenistan]]></keyword_query>
+
+<schema_agnostic_query><![CDATA[ 
+SELECT COUNT(DISTINCT ?x)
+WHERE { 
+		?x type Language .
+		?x spokenIn Turkmenistan .
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT COUNT(DISTINCT ?x) 
+WHERE { 
+        res:Turkmenistan dbo:language ?x . 
+} 
+]]>
+</resolved_query>
+<answers><answer>2</answer></answers></query>
+
+<query id="16">
+<keyword_query lang="en"><![CDATA[movies directed by Francis Ford Coppola]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Movie . 
+        ?uri directedBy Francis_Ford_Coppola . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Film . 
+        ?uri dbo:director res:Francis_Ford_Coppola . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Hammett_(film)</answer><answer>http://dbpedia.org/resource/The_Rain_People</answer><answer>http://dbpedia.org/resource/Twixt_(film)</answer><answer>http://dbpedia.org/resource/The_Conversation</answer><answer>http://dbpedia.org/resource/The_Godfather_Part_II</answer><answer>http://dbpedia.org/resource/The_Godfather_Part_III</answer><answer>http://dbpedia.org/resource/The_Terror_(1963_film)</answer><answer>http://dbpedia.org/resource/The_Cotton_Club_(film)</answer><answer>http://dbpedia.org/resource/The_Rainmaker_(1997_film)</answer><answer>http://dbpedia.org/resource/Apocalypse_Now</answer><answer>http://dbpedia.org/resource/Dementia_13</answer><answer>http://dbpedia.org/resource/Tucker:_The_Man_and_His_Dream</answer><answer>http://dbpedia.org/resource/Tonight_for_Sure</answer><answer>http://dbpedia.org/resource/The_Bellboy_and_the_Playgirls</answer><answer>http://dbpedia.org/resource/Peggy_Sue_Got_Married</answer><answer>http://dbpedia.org/resource/Bram_Stoker's_Dracula</answer><answer>http://dbpedia.org/resource/Battle_Beyond_the_Sun</answer><answer>http://dbpedia.org/resource/Gardens_of_Stone</answer><answer>http://dbpedia.org/resource/Rumble_Fish</answer><answer>http://dbpedia.org/resource/You're_a_Big_Boy_Now</answer><answer>http://dbpedia.org/resource/Jack_(1996_film)</answer><answer>http://dbpedia.org/resource/The_Godfather</answer><answer>http://dbpedia.org/resource/The_Godfather_(film_series)</answer><answer>http://dbpedia.org/resource/The_Godfather_Saga</answer><answer>http://dbpedia.org/resource/Tetro</answer><answer>http://dbpedia.org/resource/The_Outsiders_(film)</answer><answer>http://dbpedia.org/resource/Youth_Without_Youth_(film)</answer><answer>http://dbpedia.org/resource/One_from_the_Heart</answer><answer>http://dbpedia.org/resource/Apocalypse_Now_Redux</answer><answer>http://dbpedia.org/resource/New_York_Stories</answer></answers></query>
+
+<query id="17">
+<keyword_query lang="en"><![CDATA[maiden name of Angela Merkel]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?string 
+WHERE { 
+        Angela_Merkel maidenName ?string . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?string 
+WHERE { 
+        res:Angela_Merkel dbp:birthName ?string . 
+} 
+]]>
+</resolved_query>
+<answers><answer>Angela Dorothea Kasner</answer></answers></query>
+
+<query id="18">
+<keyword_query lang="en"><![CDATA[Methodist politicians]]></keyword_query>
+
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type MethodistPolitician . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Politician . 
+        ?uri dbo:religion res:Methodism . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/James_F._Hinkle</answer><answer>http://dbpedia.org/resource/Richie_Robb</answer><answer>http://dbpedia.org/resource/Kathy_Afzali</answer><answer>http://dbpedia.org/resource/Samantha_Shaw</answer><answer>http://dbpedia.org/resource/Shane_Robinson_(politician)</answer><answer>http://dbpedia.org/resource/Luren_Dickinson</answer><answer>http://dbpedia.org/resource/Carte_Goodwin</answer><answer>http://dbpedia.org/resource/William_Horner_Fletcher</answer><answer>http://dbpedia.org/resource/Bill_O'Brien_(Mayor)</answer><answer>http://dbpedia.org/resource/Chiang_Ching-kuo</answer><answer>http://dbpedia.org/resource/Harold_Washington</answer><answer>http://dbpedia.org/resource/John_L._Bates</answer><answer>http://dbpedia.org/resource/John_McWilliams_Ford</answer><answer>http://dbpedia.org/resource/Randy_Nix</answer><answer>http://dbpedia.org/resource/Roy_J._Turner</answer><answer>http://dbpedia.org/resource/Willis_Benson_Machen</answer><answer>http://dbpedia.org/resource/Laurie_Monnes_Anderson</answer><answer>http://dbpedia.org/resource/David_Delano_Glover</answer><answer>http://dbpedia.org/resource/Frank_R._Gooding</answer><answer>http://dbpedia.org/resource/George_W._Atkinson</answer><answer>http://dbpedia.org/resource/Roxann_Robinson</answer><answer>http://dbpedia.org/resource/William_A._Pile</answer><answer>http://dbpedia.org/resource/Keiffer_J._Mitchell,_Jr.</answer><answer>http://dbpedia.org/resource/Danny_Morgan_(politician)</answer><answer>http://dbpedia.org/resource/John_Cann</answer><answer>http://dbpedia.org/resource/Sam_Lumpkin</answer><answer>http://dbpedia.org/resource/Charles_C._Ellsworth</answer><answer>http://dbpedia.org/resource/Bob_Anspach</answer><answer>http://dbpedia.org/resource/Ronald_C._Green</answer><answer>http://dbpedia.org/resource/Stephen_Fincher</answer><answer>http://dbpedia.org/resource/Samuel_Lees</answer><answer>http://dbpedia.org/resource/Tom_Bolack</answer><answer>http://dbpedia.org/resource/Herbert_Charles_Wilson</answer><answer>http://dbpedia.org/resource/Alf_Landon</answer><answer>http://dbpedia.org/resource/Syngman_Rhee</answer><answer>http://dbpedia.org/resource/Alpheus_Felch</answer><answer>http://dbpedia.org/resource/Floyd_H._Flake</answer><answer>http://dbpedia.org/resource/Fred_M._Warner</answer><answer>http://dbpedia.org/resource/Norman_Makin</answer><answer>http://dbpedia.org/resource/Robert_Bradford_(Northern_Irish_politician)</answer><answer>http://dbpedia.org/resource/William_G._Conley</answer><answer>http://dbpedia.org/resource/Lurleen_Wallace</answer><answer>http://dbpedia.org/resource/Martin_Sennet_Conner</answer><answer>http://dbpedia.org/resource/Harry_G._Leslie</answer><answer>http://dbpedia.org/resource/John_William_Mitchell</answer><answer>http://dbpedia.org/resource/Nehemiah_Green</answer><answer>http://dbpedia.org/resource/David_L._Boren</answer><answer>http://dbpedia.org/resource/Elmore_Y._Sarles</answer><answer>http://dbpedia.org/resource/Norman_Harold_Moss</answer><answer>http://dbpedia.org/resource/William_L._Andrews</answer><answer>http://dbpedia.org/resource/George_Thomas,_1st_Viscount_Tonypandy</answer><answer>http://dbpedia.org/resource/Coke_R._Stevenson</answer><answer>http://dbpedia.org/resource/Max_T._Malone</answer><answer>http://dbpedia.org/resource/Paul_Peek_(politician)</answer><answer>http://dbpedia.org/resource/Winthrop_Rockefeller</answer><answer>http://dbpedia.org/resource/Arthur_Henderson</answer><answer>http://dbpedia.org/resource/Frank_O'Bannon</answer><answer>http://dbpedia.org/resource/Homer_Martin_Adkins</answer><answer>http://dbpedia.org/resource/John_Sparkman</answer><answer>http://dbpedia.org/resource/Charles_E._Potter</answer><answer>http://dbpedia.org/resource/Ernest_McFarland</answer><answer>http://dbpedia.org/resource/Jim_Chapman_(congressman)</answer><answer>http://dbpedia.org/resource/Melvin_L._Stukes</answer><answer>http://dbpedia.org/resource/Henry_Justin_Allen</answer><answer>http://dbpedia.org/resource/Henry_Smith_Lane</answer><answer>http://dbpedia.org/resource/Joe_Turnham</answer><answer>http://dbpedia.org/resource/Charles_Albert_Plumley</answer><answer>http://dbpedia.org/resource/John_N._Sandlin</answer><answer>http://dbpedia.org/resource/John_T._Watkins</answer><answer>http://dbpedia.org/resource/Brian_Aungst</answer><answer>http://dbpedia.org/resource/David_G._P._Taylor</answer><answer>http://dbpedia.org/resource/Patrick_H._Drewry</answer><answer>http://dbpedia.org/resource/Lee_Chee_Leong</answer><answer>http://dbpedia.org/resource/Bob_Barr</answer><answer>http://dbpedia.org/resource/Canaan_Banana</answer><answer>http://dbpedia.org/resource/Elizabeth_Dole</answer><answer>http://dbpedia.org/resource/Kirk_Fordice</answer><answer>http://dbpedia.org/resource/Doug_Hoffman</answer><answer>http://dbpedia.org/resource/John_B._Kendrick</answer><answer>http://dbpedia.org/resource/Johnston_Murray</answer><answer>http://dbpedia.org/resource/William_H._Murray</answer><answer>http://dbpedia.org/resource/Mark_Ritchie</answer><answer>http://dbpedia.org/resource/D._W._Davis</answer><answer>http://dbpedia.org/resource/George_S._Mickelson</answer><answer>http://dbpedia.org/resource/Page_Belcher</answer><answer>http://dbpedia.org/resource/Henry_Olin</answer><answer>http://dbpedia.org/resource/John_Wiley_Bryant</answer><answer>http://dbpedia.org/resource/Paul_Fannin</answer><answer>http://dbpedia.org/resource/Paul_Gillmor</answer><answer>http://dbpedia.org/resource/J._Millard_Tawes</answer><answer>http://dbpedia.org/resource/Jack_Stewart_(politician)</answer><answer>http://dbpedia.org/resource/John_Brodhead_(New_Hampshire_politician)</answer><answer>http://dbpedia.org/resource/Leonidas_C._Houk</answer><answer>http://dbpedia.org/resource/Paul_Rogers_(politician)</answer><answer>http://dbpedia.org/resource/Don_Samuelson</answer><answer>http://dbpedia.org/resource/Frederick_Stewart_(Australian_politician)</answer><answer>http://dbpedia.org/resource/Harry_Kneebone</answer><answer>http://dbpedia.org/resource/Joe_Appiah</answer><answer>http://dbpedia.org/resource/William_C._Marland</answer><answer>http://dbpedia.org/resource/Leon_C._Phillips</answer><answer>http://dbpedia.org/resource/Joseph_A._Wright</answer><answer>http://dbpedia.org/resource/Leonard_B._Jordan</answer><answer>http://dbpedia.org/resource/Barzilla_W._Clark</answer><answer>http://dbpedia.org/resource/Paris_C._Dunning</answer><answer>http://dbpedia.org/resource/Robert_E._Smylie</answer><answer>http://dbpedia.org/resource/Kingsley_Rasanayagam</answer><answer>http://dbpedia.org/resource/Fred_Hall</answer><answer>http://dbpedia.org/resource/Gracie_Pfost</answer><answer>http://dbpedia.org/resource/Mildred_Fay_Jefferson</answer><answer>http://dbpedia.org/resource/Walter_R._Stubbs</answer><answer>http://dbpedia.org/resource/Robert_G._Jones</answer><answer>http://dbpedia.org/resource/William_Wattison</answer><answer>http://dbpedia.org/resource/Chester_B._McMullen</answer><answer>http://dbpedia.org/resource/Thomas_A._Osborn</answer><answer>http://dbpedia.org/resource/Jan_C._Ting</answer><answer>http://dbpedia.org/resource/Andrew_Ryan_McGill</answer><answer>http://dbpedia.org/resource/Ernest_Lundeen</answer><answer>http://dbpedia.org/resource/Fielding_L._Wright</answer><answer>http://dbpedia.org/resource/John_Edward_Brownlee</answer><answer>http://dbpedia.org/resource/Lynn_Frazier</answer><answer>http://dbpedia.org/resource/Milton_Margai</answer><answer>http://dbpedia.org/resource/Paul_B._Johnson,_Jr.</answer><answer>http://dbpedia.org/resource/Samuel_Rinnah_Van_Sant</answer><answer>http://dbpedia.org/resource/Skip_Humphrey</answer><answer>http://dbpedia.org/resource/Vincent_Massey</answer><answer>http://dbpedia.org/resource/Ben_Nelson</answer><answer>http://dbpedia.org/resource/Boris_Trajkovski</answer><answer>http://dbpedia.org/resource/Bourke_B._Hickenlooper</answer><answer>http://dbpedia.org/resource/Craig_L._Thomas</answer><answer>http://dbpedia.org/resource/Debbie_Stabenow</answer><answer>http://dbpedia.org/resource/Larry_Craig</answer><answer>http://dbpedia.org/resource/Pat_Roberts</answer><answer>http://dbpedia.org/resource/Doris_Matsui</answer><answer>http://dbpedia.org/resource/Edward_W._Hoch</answer><answer>http://dbpedia.org/resource/John_E._Rickards</answer><answer>http://dbpedia.org/resource/Sheryl_Davis_Kohl</answer><answer>http://dbpedia.org/resource/Emanuel_Cleaver</answer><answer>http://dbpedia.org/resource/Russ_Carnahan</answer><answer>http://dbpedia.org/resource/W._Haydon_Burns</answer><answer>http://dbpedia.org/resource/John_Marshall_Butler</answer><answer>http://dbpedia.org/resource/William_Claflin</answer><answer>http://dbpedia.org/resource/George_W._Geddes</answer><answer>http://dbpedia.org/resource/William_E._Stanley</answer><answer>http://dbpedia.org/resource/John_Karefa-Smart</answer><answer>http://dbpedia.org/resource/Nancy_Boyda</answer><answer>http://dbpedia.org/resource/C._Harding_Walker</answer><answer>http://dbpedia.org/resource/Ulysses_S._Grant_presidential_administration_reforms</answer><answer>http://dbpedia.org/resource/Alan_Beith</answer><answer>http://dbpedia.org/resource/Allen_Boyd</answer><answer>http://dbpedia.org/resource/Cecil_H._Underwood</answer><answer>http://dbpedia.org/resource/Colin_Breed</answer><answer>http://dbpedia.org/resource/Ed_Whitfield</answer><answer>http://dbpedia.org/resource/Jeff_Miller_(Florida_politician)</answer><answer>http://dbpedia.org/resource/Jim_Saxton</answer><answer>http://dbpedia.org/resource/Johnny_Isakson</answer><answer>http://dbpedia.org/resource/Mike_Rogers_(Michigan_politician)</answer><answer>http://dbpedia.org/resource/Ralph_Hall</answer><answer>http://dbpedia.org/resource/Ric_Keller</answer><answer>http://dbpedia.org/resource/Richard_Baker_(U.S._politician)</answer><answer>http://dbpedia.org/resource/Rick_Larsen</answer><answer>http://dbpedia.org/resource/Steve_Buyer</answer><answer>http://dbpedia.org/resource/Wayne_Gilchrest</answer><answer>http://dbpedia.org/resource/Bob_Ehrlich</answer><answer>http://dbpedia.org/resource/Robert_Marion_Berry</answer><answer>http://dbpedia.org/resource/Selwyn_Lloyd</answer><answer>http://dbpedia.org/resource/Tom_Osborne</answer><answer>http://dbpedia.org/resource/John_A._Olszewski,_Jr.</answer><answer>http://dbpedia.org/resource/John_Adamson_(Queensland_politician)</answer><answer>http://dbpedia.org/resource/Papa_Owusu-Ankomah</answer><answer>http://dbpedia.org/resource/James_B._A._Robertson</answer><answer>http://dbpedia.org/resource/Bill_Graves</answer><answer>http://dbpedia.org/resource/Frank_Hanly</answer><answer>http://dbpedia.org/resource/Steve_Symms</answer><answer>http://dbpedia.org/resource/Thomas_Holliday_Hicks</answer><answer>http://dbpedia.org/resource/James_Whitcomb</answer><answer>http://dbpedia.org/resource/Billy_Davies_(politician)</answer><answer>http://dbpedia.org/resource/David_Loebsack</answer><answer>http://dbpedia.org/resource/William_L._Moore_(Virginia_politician)</answer><answer>http://dbpedia.org/resource/Evelyn_Momsen_Hailey</answer><answer>http://dbpedia.org/resource/William_Henry_Piddington</answer><answer>http://dbpedia.org/resource/Lorenzo_English</answer><answer>http://dbpedia.org/resource/Aaron_T._Bliss</answer><answer>http://dbpedia.org/resource/Bart_Gordon</answer><answer>http://dbpedia.org/resource/Bob_Taft</answer><answer>http://dbpedia.org/resource/Hubert_D._Stephens</answer><answer>http://dbpedia.org/resource/Preston_Smith_(governor)</answer><answer>http://dbpedia.org/resource/Terry_Sanford</answer><answer>http://dbpedia.org/resource/W._Willard_Wirtz</answer><answer>http://dbpedia.org/resource/John_H._Bartlett</answer><answer>http://dbpedia.org/resource/Virginia_D._Smith</answer><answer>http://dbpedia.org/resource/Davis_Floyd</answer><answer>http://dbpedia.org/resource/George_E._Allen,_Sr.</answer><answer>http://dbpedia.org/resource/Hugh_Mason</answer><answer>http://dbpedia.org/resource/Betty_Sutton</answer><answer>http://dbpedia.org/resource/Jim_Rodgers_(politician)</answer><answer>http://dbpedia.org/resource/Mike_Hayden</answer><answer>http://dbpedia.org/resource/George_N._Craig</answer><answer>http://dbpedia.org/resource/Elisha_Standiford</answer><answer>http://dbpedia.org/resource/Carl_W._Riddick</answer><answer>http://dbpedia.org/resource/Charles_N._Haskell</answer><answer>http://dbpedia.org/resource/Nelson_McCausland</answer><answer>http://dbpedia.org/resource/William_L._Hungate</answer><answer>http://dbpedia.org/resource/Margaret_Ransone</answer><answer>http://dbpedia.org/resource/Nathaniel_B._Early</answer><answer>http://dbpedia.org/resource/Harry_Nice</answer><answer>http://dbpedia.org/resource/Jonathan_M._Davis</answer><answer>http://dbpedia.org/resource/Rudolph_C._Cane</answer><answer>http://dbpedia.org/resource/Mendel_Jackson_Davis</answer><answer>http://dbpedia.org/resource/Oscar_Tompkins</answer><answer>http://dbpedia.org/resource/John_Hunt_(Australian_politician)</answer><answer>http://dbpedia.org/resource/William_E._Glasscock</answer><answer>http://dbpedia.org/resource/Donald_W._Riegle,_Jr.</answer><answer>http://dbpedia.org/resource/James_B._Ray</answer><answer>http://dbpedia.org/resource/Willis_Smith</answer><answer>http://dbpedia.org/resource/Kim_Sigler</answer><answer>http://dbpedia.org/resource/Okey_L._Patteson</answer><answer>http://dbpedia.org/resource/Oliver_Badman</answer><answer>http://dbpedia.org/resource/Roy_Bennett_(politician)</answer><answer>http://dbpedia.org/resource/Nga_Kor_Ming</answer><answer>http://dbpedia.org/resource/Dennis_Pennington</answer><answer>http://dbpedia.org/resource/Charles_N._Orr</answer><answer>http://dbpedia.org/resource/William_Shepherd_Allen</answer><answer>http://dbpedia.org/resource/Ephraim_F._Morgan</answer><answer>http://dbpedia.org/resource/Thomas_Ferens</answer><answer>http://dbpedia.org/resource/John_Jacob_Rhodes</answer><answer>http://dbpedia.org/resource/Edwin_L._Mechem</answer><answer>http://dbpedia.org/resource/John_Cooksey</answer><answer>http://dbpedia.org/resource/Tim_Mahoney</answer><answer>http://dbpedia.org/resource/Harley_Orrin_Staggers</answer><answer>http://dbpedia.org/resource/Henry_D._Hatfield</answer><answer>http://dbpedia.org/resource/Clyde_M._Reed</answer><answer>http://dbpedia.org/resource/Edgar_Hager</answer><answer>http://dbpedia.org/resource/Aaron_Bean</answer><answer>http://dbpedia.org/resource/Ryan_Kiesel</answer><answer>http://dbpedia.org/resource/Laura_Richardson</answer><answer>http://dbpedia.org/resource/A._C._Clemons</answer><answer>http://dbpedia.org/resource/Presidency_of_Ulysses_S._Grant</answer><answer>http://dbpedia.org/resource/Hugh_O'Bryant</answer><answer>http://dbpedia.org/resource/John_H._Bankhead_II</answer><answer>http://dbpedia.org/resource/L._M._Shaw</answer><answer>http://dbpedia.org/resource/Richard_Burr</answer><answer>http://dbpedia.org/resource/Andrew_Frank_Schoeppel</answer><answer>http://dbpedia.org/resource/Beauford_H._Jester</answer><answer>http://dbpedia.org/resource/Chet_Edwards</answer><answer>http://dbpedia.org/resource/Dave_Hobson</answer><answer>http://dbpedia.org/resource/Forrest_H._Anderson</answer><answer>http://dbpedia.org/resource/Howell_Heflin</answer><answer>http://dbpedia.org/resource/William_H._Avery_(politician)</answer><answer>http://dbpedia.org/resource/Gil_Duthie</answer><answer>http://dbpedia.org/resource/Mike_Coffman</answer><answer>http://dbpedia.org/resource/Robert_S._Vessey</answer><answer>http://dbpedia.org/resource/Keith_Hodges</answer><answer>http://dbpedia.org/resource/John_Ingram_(politician)</answer><answer>http://dbpedia.org/resource/Charles_R._Clason</answer><answer>http://dbpedia.org/resource/David_Hollingsworth</answer><answer>http://dbpedia.org/resource/Gianni_De_Michelis</answer><answer>http://dbpedia.org/resource/Paul_V._McNutt</answer><answer>http://dbpedia.org/resource/Robert_L._Williams</answer><answer>http://dbpedia.org/resource/W._H._Eba</answer><answer>http://dbpedia.org/resource/Andrew_Horne</answer><answer>http://dbpedia.org/resource/Percy_Nolan</answer><answer>http://dbpedia.org/resource/A._N._R._Robinson</answer><answer>http://dbpedia.org/resource/Garfield_Barwick</answer><answer>http://dbpedia.org/resource/Jay_Hammond</answer><answer>http://dbpedia.org/resource/Jim_Gilmore</answer><answer>http://dbpedia.org/resource/William_F._Knowland</answer><answer>http://dbpedia.org/resource/Arthur_I._Boreman</answer><answer>http://dbpedia.org/resource/Pete_Sessions</answer><answer>http://dbpedia.org/resource/Gene_Green</answer><answer>http://dbpedia.org/resource/J._J._Pickle</answer><answer>http://dbpedia.org/resource/Joe_Barton</answer><answer>http://dbpedia.org/resource/Joe_Frank_Harris</answer><answer>http://dbpedia.org/resource/John_E._Peterson</answer><answer>http://dbpedia.org/resource/Kay_Granger</answer><answer>http://dbpedia.org/resource/Lee_M._Russell</answer><answer>http://dbpedia.org/resource/Thomas_L._Bailey</answer><answer>http://dbpedia.org/resource/James_D._Williams</answer><answer>http://dbpedia.org/resource/Albert_G._Porter</answer><answer>http://dbpedia.org/resource/Ashbel_P._Willard</answer><answer>http://dbpedia.org/resource/M._Clifford_Townsend</answer><answer>http://dbpedia.org/resource/Winfield_T._Durbin</answer><answer>http://dbpedia.org/resource/John_C._Sanborn</answer><answer>http://dbpedia.org/resource/Campbell_C._Hyatt</answer><answer>http://dbpedia.org/resource/Kwadwo_Baah_Wiredu</answer><answer>http://dbpedia.org/resource/Ted_Weill</answer><answer>http://dbpedia.org/resource/Phil_Roe_(politician)</answer><answer>http://dbpedia.org/resource/Alfred_Hunt_(Australian_politician)</answer><answer>http://dbpedia.org/resource/Thomas_Atcitty</answer><answer>http://dbpedia.org/resource/J._Powell_Royall</answer><answer>http://dbpedia.org/resource/George_N._Conrad</answer></answers></query>
+
+<query id="19">
+<keyword_query lang="en"><![CDATA[number of times that Jane Fonda married]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT COUNT(DISTINCT ?uri) 
+WHERE { 
+        Jane_Fonda marriedTo ?uri . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT COUNT(DISTINCT ?uri) 
+WHERE { 
+        res:Jane_Fonda dbo:spouse ?uri . 
+} 
+]]>
+</resolved_query>
+<answers><answer>3</answer></answers></query>
+
+<query id="20">
+<keyword_query lang="en"><![CDATA[Australian nonprofit organizations]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type NonprofitOrganization . 
+        ?uri country Australia . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:type res:Nonprofit_organization . 
+      { ?uri dbo:locationCountry res:Australia . } 
+      UNION 
+      { ?uri dbo:location ?x . 
+        ?x dbo:country res:Australia . } 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/The_Conversation_(website)</answer><answer>http://dbpedia.org/resource/YourView</answer><answer>http://dbpedia.org/resource/Arc_@_UNSW_Limited</answer><answer>http://dbpedia.org/resource/The_Co-op_Bookshop</answer><answer>http://dbpedia.org/resource/Aboriginal_Literacy_Foundation</answer><answer>http://dbpedia.org/resource/Cooperative_Research_Centre_for_Advanced_Composite_Structures</answer><answer>http://dbpedia.org/resource/Fair_Trade_Association_of_Australia_and_New_Zealand</answer><answer>http://dbpedia.org/resource/Victorian_Employers'_Chamber_of_Commerce_and_Industry</answer><answer>http://dbpedia.org/resource/Australia_21</answer><answer>http://dbpedia.org/resource/Forum_for_European%E2%80%93Australian_Science_and_Technology_Cooperation</answer><answer>http://dbpedia.org/resource/National_Science_Summer_School_Inc.</answer><answer>http://dbpedia.org/resource/National_Youth_Science_Forum</answer><answer>http://dbpedia.org/resource/Snow_Foundation</answer><answer>http://dbpedia.org/resource/GMHBA_Limited</answer><answer>http://dbpedia.org/resource/Sustainable_Tourism_CRC</answer><answer>http://dbpedia.org/resource/Outward_Bound_Australia</answer><answer>http://dbpedia.org/resource/Poultry_CRC</answer><answer>http://dbpedia.org/resource/LIXI</answer><answer>http://dbpedia.org/resource/Currency_House</answer><answer>http://dbpedia.org/resource/HBF_Health_Fund</answer></answers></query>
+
+<query id="21">
+<keyword_query lang="en"><![CDATA[Military conflicts in which Lawrence of Arabia participated]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        Lawrence_of_Arabia militaryConflicts ?uri . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:T._E._Lawrence dbo:battle ?uri . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Capture_of_Damascus_(1918)</answer><answer>http://dbpedia.org/resource/Arab_Revolt</answer><answer>http://dbpedia.org/resource/Battle_of_Megiddo_(1918)</answer><answer>http://dbpedia.org/resource/World_War_I</answer><answer>http://dbpedia.org/resource/Battle_of_Aqaba</answer><answer>http://dbpedia.org/resource/Siege_of_Medina</answer><answer>http://dbpedia.org/resource/Battle_of_Aba_el_Lissan</answer><answer>http://dbpedia.org/resource/Battle_of_Deraa</answer><answer>http://dbpedia.org/resource/Battle_of_Fwelia</answer><answer>http://dbpedia.org/resource/Battle_of_Talifeh</answer></answers></query>
+
+<query id="22">
+<keyword_query lang="en"><![CDATA[number of inhabitants in Maribor]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?num 
+WHERE { 
+        Maribor numberOfInhabitants ?num . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?num 
+WHERE { 
+        res:Maribor dbo:populationTotal ?num . 
+} 
+]]>
+</resolved_query>
+<answers><answer>114487</answer></answers></query>
+
+<query id="23">
+<keyword_query lang="en"><![CDATA[companies in Munich]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type MunichCompany . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Company . 
+      { ?uri dbo:location res:Munich . } 
+      UNION 
+      { ?uri dbo:headquarter res:Munich . } 
+      UNION 
+      { ?uri dbo:locationCity res:Munich . } 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Keil_(company)</answer><answer>http://dbpedia.org/resource/Augustiner_Br%C3%A4u</answer><answer>http://dbpedia.org/resource/Klotz_Digital</answer><answer>http://dbpedia.org/resource/Certina_Holding</answer><answer>http://dbpedia.org/resource/30_Digits</answer><answer>http://dbpedia.org/resource/Torry_Harris_Business_Solutions</answer><answer>http://dbpedia.org/resource/M%C3%BCnchner_Bank</answer><answer>http://dbpedia.org/resource/Biomax_Informatics_AG</answer><answer>http://dbpedia.org/resource/MAN_Truck_&amp;_Bus</answer><answer>http://dbpedia.org/resource/RedSpotGames</answer><answer>http://dbpedia.org/resource/Impuls</answer><answer>http://dbpedia.org/resource/Target_Partners</answer><answer>http://dbpedia.org/resource/Travelzoo</answer><answer>http://dbpedia.org/resource/Coreplay</answer><answer>http://dbpedia.org/resource/MAN_SE</answer><answer>http://dbpedia.org/resource/Siemens</answer><answer>http://dbpedia.org/resource/Chimera_Entertainment</answer><answer>http://dbpedia.org/resource/Wellington_Partners</answer><answer>http://dbpedia.org/resource/HgCapital</answer><answer>http://dbpedia.org/resource/ACT_Music</answer><answer>http://dbpedia.org/resource/Fraunhofer_Society</answer><answer>http://dbpedia.org/resource/Dehns</answer><answer>http://dbpedia.org/resource/HypoVereinsbank</answer><answer>http://dbpedia.org/resource/Wacker_Chemie</answer><answer>http://dbpedia.org/resource/Wacker_Neuson</answer><answer>http://dbpedia.org/resource/Auer+Weber+Assoziierte</answer><answer>http://dbpedia.org/resource/Nemetschek</answer><answer>http://dbpedia.org/resource/Arri</answer><answer>http://dbpedia.org/resource/Tokyo_Dawn_Records</answer><answer>http://dbpedia.org/resource/Dresdner-Cetelem_Kreditbank_GmbH</answer><answer>http://dbpedia.org/resource/Unify_GmbH_&amp;_Co._KG</answer><answer>http://dbpedia.org/resource/Allianz</answer><answer>http://dbpedia.org/resource/Equistone_Partners_Europe</answer><answer>http://dbpedia.org/resource/Rohde_&amp;_Schwarz</answer><answer>http://dbpedia.org/resource/Epcos</answer><answer>http://dbpedia.org/resource/Bumblehood</answer><answer>http://dbpedia.org/resource/White_Line_Hotels</answer><answer>http://dbpedia.org/resource/Munich_Re</answer><answer>http://dbpedia.org/resource/Osram</answer><answer>http://dbpedia.org/resource/MCON_GROUP</answer><answer>http://dbpedia.org/resource/HAWE_Hydraulik_SE</answer><answer>http://dbpedia.org/resource/BSH_Bosch_und_Siemens_Hausger%C3%A4te</answer><answer>http://dbpedia.org/resource/ECM_Records</answer><answer>http://dbpedia.org/resource/Gigaset_Communications</answer><answer>http://dbpedia.org/resource/Roland_Berger_Strategy_Consultants</answer><answer>http://dbpedia.org/resource/Shin'en_Multimedia</answer><answer>http://dbpedia.org/resource/Realmforge_Studios</answer><answer>http://dbpedia.org/resource/Siemens_Financial_Services</answer><answer>http://dbpedia.org/resource/Hugendubel</answer><answer>http://dbpedia.org/resource/MTU_Aero_Engines</answer><answer>http://dbpedia.org/resource/Qimonda</answer><answer>http://dbpedia.org/resource/Dyckerhoff_&amp;_Widmann</answer><answer>http://dbpedia.org/resource/Discovery_Networks_Deutschland</answer><answer>http://dbpedia.org/resource/Scanline_VFX</answer><answer>http://dbpedia.org/resource/Stern_Stewart_&amp;_Co</answer><answer>http://dbpedia.org/resource/Kuckuck_Schallplatten</answer><answer>http://dbpedia.org/resource/Hypo_Real_Estate</answer><answer>http://dbpedia.org/resource/Rodenstock_GmbH</answer><answer>http://dbpedia.org/resource/Neff_GmbH</answer><answer>http://dbpedia.org/resource/Escada</answer><answer>http://dbpedia.org/resource/Iobox</answer><answer>http://dbpedia.org/resource/MAN_Turbo</answer><answer>http://dbpedia.org/resource/Dubbing_Brothers</answer><answer>http://dbpedia.org/resource/Genomatix</answer><answer>http://dbpedia.org/resource/BayernLB</answer><answer>http://dbpedia.org/resource/Haarmann_Hemmelrath</answer><answer>http://dbpedia.org/resource/Jetair_(Germany)</answer><answer>http://dbpedia.org/resource/Noerr</answer><answer>http://dbpedia.org/resource/BayWa</answer><answer>http://dbpedia.org/resource/Cirquent</answer><answer>http://dbpedia.org/resource/T%C3%9CV_S%C3%9CD</answer><answer>http://dbpedia.org/resource/Railpool</answer><answer>http://dbpedia.org/resource/Vogtlandbahn</answer><answer>http://dbpedia.org/resource/Fujitsu_Technology_Solutions</answer><answer>http://dbpedia.org/resource/BMW</answer><answer>http://dbpedia.org/resource/Finsterwalder</answer><answer>http://dbpedia.org/resource/DaimlerChrysler_Aerospace</answer><answer>http://dbpedia.org/resource/Proximic</answer><answer>http://dbpedia.org/resource/Telef%C3%B3nica_Germany</answer><answer>http://dbpedia.org/resource/Paulaner_Brewery</answer><answer>http://dbpedia.org/resource/Gaggenau_Hausger%C3%A4te</answer><answer>http://dbpedia.org/resource/Tomorrow_Focus</answer><answer>http://dbpedia.org/resource/Coriant</answer><answer>http://dbpedia.org/resource/Rapp_Motorenwerke</answer><answer>http://dbpedia.org/resource/Grouptime</answer><answer>http://dbpedia.org/resource/Megazebra</answer><answer>http://dbpedia.org/resource/Turner_Broadcasting_System_Germany</answer><answer>http://dbpedia.org/resource/Bayerische_Eisenbahngesellschaft</answer><answer>http://dbpedia.org/resource/Siemens_Mobile</answer><answer>http://dbpedia.org/resource/Constantin_Film</answer><answer>http://dbpedia.org/resource/Hacker-Pschorr_Brewery</answer><answer>http://dbpedia.org/resource/ADESS_AG</answer><answer>http://dbpedia.org/resource/Celemony</answer><answer>http://dbpedia.org/resource/Softlab</answer><answer>http://dbpedia.org/resource/Koch_Media</answer><answer>http://dbpedia.org/resource/L%C3%B6wenbr%C3%A4u</answer><answer>http://dbpedia.org/resource/Travian_Games</answer><answer>http://dbpedia.org/resource/M%C3%BCnchner_Verkehrs-_und_Tarifverbund</answer><answer>http://dbpedia.org/resource/Gemalto_M2M</answer><answer>http://dbpedia.org/resource/Amiando</answer><answer>http://dbpedia.org/resource/Ed_Meier</answer><answer>http://dbpedia.org/resource/Stadtwerke_M%C3%BCnchen</answer><answer>http://dbpedia.org/resource/Maurer_S%C3%B6hne</answer><answer>http://dbpedia.org/resource/Fujitsu_Siemens_Computers</answer><answer>http://dbpedia.org/resource/Rheinmetall_MAN_Military_Vehicles</answer><answer>http://dbpedia.org/resource/Metaio_GmbH</answer><answer>http://dbpedia.org/resource/Carpooling.com</answer><answer>http://dbpedia.org/resource/Edelsbrunner_Automobile_M%C3%BCnchen</answer><answer>http://dbpedia.org/resource/Schaltbau_Group</answer><answer>http://dbpedia.org/resource/Pilotfish_(company)</answer><answer>http://dbpedia.org/resource/Langenscheidt</answer><answer>http://dbpedia.org/resource/3Dconnexion</answer><answer>http://dbpedia.org/resource/The_Linde_Group</answer><answer>http://dbpedia.org/resource/Crossgate_AG</answer><answer>http://dbpedia.org/resource/M%C3%BCnchner_Verkehrsgesellschaft</answer><answer>http://dbpedia.org/resource/Mitropa</answer><answer>http://dbpedia.org/resource/Framepool</answer><answer>http://dbpedia.org/resource/DriveNow</answer><answer>http://dbpedia.org/resource/NorCom</answer><answer>http://dbpedia.org/resource/ECircle</answer></answers></query>
+
+<query id="24">
+<keyword_query lang="en"><![CDATA[games developed by GMT]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Games . 
+        ?uri developedBy GMT . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:publisher res:GMT_Games . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Fields_of_Fire_(game)</answer><answer>http://dbpedia.org/resource/Commands_&amp;_Colors:_Ancients</answer><answer>http://dbpedia.org/resource/Chandragupta_(board_game)</answer><answer>http://dbpedia.org/resource/Sword_of_Rome</answer><answer>http://dbpedia.org/resource/Paths_of_Glory_(board_game)</answer><answer>http://dbpedia.org/resource/Washington's_War</answer><answer>http://dbpedia.org/resource/Twilight_Struggle</answer></answers></query>
+
+<query id="25">
+<keyword_query lang="en"><![CDATA[husband of Amanda Palmer]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri husbandOf Amanda_Palmer . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Amanda_Palmer dbp:spouse ?uri . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Neil_Gaiman</answer></answers></query>
+
+<query id="26">
+<keyword_query lang="en"><![CDATA[countries connected by the Rhine]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Country .
+		?uri hasRiver Rhine .		
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Rhine dbp:country ?string .  
+        ?uri rdf:type dbo:Country .  
+        ?uri rdfs:label ?string . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Germany</answer><answer>http://dbpedia.org/resource/Liechtenstein</answer><answer>http://dbpedia.org/resource/Netherlands</answer><answer>http://dbpedia.org/resource/Switzerland</answer><answer>http://dbpedia.org/resource/Austria</answer><answer>http://dbpedia.org/resource/France</answer></answers></query>
+
+<query id="27">
+<keyword_query lang="en"><![CDATA[professional surfers born in Australia]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type ProfessionalSurfers .  
+        ?uri bornIn Australia .  
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:occupation res:Surfing .  
+       { ?uri dbo:birthPlace res:Australia . }
+       UNION 
+       { ?uri dbo:birthPlace ?x . 
+         ?x dbo:country res:Australia . }
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Midget_Farrelly</answer><answer>http://dbpedia.org/resource/Ian_Cairns</answer><answer>http://dbpedia.org/resource/Koby_Abberton</answer></answers></query>
+
+<query id="28">
+<keyword_query lang="en"><![CDATA[islands that belong to Japan]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Island .  
+        ?uri belongTo Japan . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri rdf:type dbo:Island .  
+        ?uri dbo:country res:Japan . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Kume_Island</answer><answer>http://dbpedia.org/resource/Honshu</answer><answer>http://dbpedia.org/resource/Shikoku</answer><answer>http://dbpedia.org/resource/Rishiri_Island</answer><answer>http://dbpedia.org/resource/Yagishiri_Island</answer><answer>http://dbpedia.org/resource/Akusekijima</answer><answer>http://dbpedia.org/resource/Gajajima</answer><answer>http://dbpedia.org/resource/Kogajajima</answer><answer>http://dbpedia.org/resource/Mageshima</answer><answer>http://dbpedia.org/resource/Takeshima_(Kagoshima)</answer><answer>http://dbpedia.org/resource/Kyushu</answer><answer>http://dbpedia.org/resource/Zamami_Island</answer><answer>http://dbpedia.org/resource/Izena_Island</answer><answer>http://dbpedia.org/resource/%C5%8Cnohara_Islands</answer><answer>http://dbpedia.org/resource/%C5%8Csumi_Islands</answer><answer>http://dbpedia.org/resource/Iki_Island</answer><answer>http://dbpedia.org/resource/Tori-shima_(Izu_Islands)</answer><answer>http://dbpedia.org/resource/Yonaguni</answer><answer>http://dbpedia.org/resource/Iwo_Jima</answer><answer>http://dbpedia.org/resource/Aka_Island</answer><answer>http://dbpedia.org/resource/Ishigaki_Island</answer><answer>http://dbpedia.org/resource/Tairajima</answer><answer>http://dbpedia.org/resource/Teuri_Island</answer><answer>http://dbpedia.org/resource/Tokara_Islands</answer><answer>http://dbpedia.org/resource/Minami-Tori-shima</answer><answer>http://dbpedia.org/resource/Yaeyama_Islands</answer><answer>http://dbpedia.org/resource/Minamidait%C5%8Djima</answer><answer>http://dbpedia.org/resource/Okinawa_Island</answer><answer>http://dbpedia.org/resource/Iriomote-jima</answer><answer>http://dbpedia.org/resource/Taketomi_Island</answer><answer>http://dbpedia.org/resource/Kitadait%C5%8Djima</answer><answer>http://dbpedia.org/resource/Bayonnaise_Rocks</answer><answer>http://dbpedia.org/resource/Tanegashima</answer><answer>http://dbpedia.org/resource/Yakushima</answer><answer>http://dbpedia.org/resource/Okinotorishima</answer><answer>http://dbpedia.org/resource/Hateruma</answer><answer>http://dbpedia.org/resource/Geruma_Island</answer><answer>http://dbpedia.org/resource/Nakanoshima_(Kagoshima)</answer><answer>http://dbpedia.org/resource/Inamba-jima</answer><answer>http://dbpedia.org/resource/Fukaji_Island</answer><answer>http://dbpedia.org/resource/Tobishima_(Yamagata)</answer><answer>http://dbpedia.org/resource/Awaji_Island</answer><answer>http://dbpedia.org/resource/Oki_Islands</answer><answer>http://dbpedia.org/resource/Tsushima_Island</answer><answer>http://dbpedia.org/resource/Kuchinoerabu-jima</answer><answer>http://dbpedia.org/resource/Okidait%C5%8Djima</answer><answer>http://dbpedia.org/resource/Udone-shima</answer><answer>http://dbpedia.org/resource/Kozukumi_Island</answer><answer>http://dbpedia.org/resource/Miyako-jima</answer><answer>http://dbpedia.org/resource/Oshima,_Hokkaido</answer><answer>http://dbpedia.org/resource/Yokoate-jima</answer><answer>http://dbpedia.org/resource/Kamome_Island</answer><answer>http://dbpedia.org/resource/Daikon_Island</answer><answer>http://dbpedia.org/resource/Kuroshima_(Kagoshima)</answer><answer>http://dbpedia.org/resource/Dait%C5%8D_Islands</answer><answer>http://dbpedia.org/resource/I%C5%8Djima_(Kagoshima)</answer><answer>http://dbpedia.org/resource/Lot's_Wife_(crag)</answer><answer>http://dbpedia.org/resource/Okushiri_Island</answer><answer>http://dbpedia.org/resource/Benten-jima_(Wakkanai)</answer><answer>http://dbpedia.org/resource/Smith_Island_(Japan)</answer><answer>http://dbpedia.org/resource/Amami_Islands</answer><answer>http://dbpedia.org/resource/Hachij%C5%8D-kojima</answer><answer>http://dbpedia.org/resource/Kojima_(Hokkaido)</answer><answer>http://dbpedia.org/resource/Rebun_Island</answer><answer>http://dbpedia.org/resource/Tokashiki_Island</answer><answer>http://dbpedia.org/resource/Iejima</answer><answer>http://dbpedia.org/resource/Sh%C5%8Dwa_I%C5%8Djima</answer><answer>http://dbpedia.org/resource/Jinai-t%C5%8D</answer><answer>http://dbpedia.org/resource/Tsuken_Island</answer><answer>http://dbpedia.org/resource/Denshima</answer><answer>http://dbpedia.org/resource/Hokkaido__island__1</answer></answers></query>
+
+<query id="29">
+<keyword_query lang="en"><![CDATA[ruling party in Lisbon]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        Lisbon rulingParty ?uri . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbp: <http://dbpedia.org/property/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        res:Lisbon dbp:leaderParty ?uri . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Socialist_Party_(Portugal)</answer></answers></query>
+
+<query id="30">
+<keyword_query lang="en"><![CDATA[Apollo 14 astronauts]]></keyword_query>
+<schema_agnostic_query><![CDATA[ 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri type Apollo14Astronauts . 
+} 
+]]>
+</schema_agnostic_query>
+<resolved_query><![CDATA[ 
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+PREFIX res: <http://dbpedia.org/resource/> 
+SELECT DISTINCT ?uri 
+WHERE { 
+        ?uri dbo:mission res:Apollo_14 . 
+} 
+]]>
+</resolved_query>
+<answers><answer>http://dbpedia.org/resource/Alan_Shepard</answer><answer>http://dbpedia.org/resource/Edgar_Mitchell</answer><answer>http://dbpedia.org/resource/Stuart_Roosa</answer></answers></query>
+
+</dataset>
