@@ -6,7 +6,7 @@ class Resource:
 		self.uri = uri												# URI of the resource. 
 		self.label = label  										# Label of the resource
 		self.support = int(support)									# Importance/ represents the number of incoming links in DBPedia on to the resource
-		self.keyword = ''											# Keyword represented by the resource
+		self.keyword = keyword										# Keyword represented by the resource
 		self.colors = []											# Colors assigned
 		self.score = 0
 		self.isUri = False
