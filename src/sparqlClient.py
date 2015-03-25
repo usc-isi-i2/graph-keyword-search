@@ -1,8 +1,8 @@
+import json
+import inflection
 from SPARQLWrapper import SPARQLWrapper, JSON , XML
-import json 
 from colorAssignment import ColorAssignment
 from wordSimilarity import WordSimilarity
-import inflection
 from collections import OrderedDict
 from resourceGraph import Resource
 from resourceGraph import FactNode
@@ -19,70 +19,97 @@ class DBPediaTriplet:
 # This represents the sparql quering engine
 class SparqlClient :
 
-	predicateDictionary = {}
-	
-
 	# This method is used to filter the predicates
 	def filterPredicates(predicate,keywordList):
-		vocabDictionary = ['rdf-schema#comment','22-rdf-syntax-ns#type','abstract','owl#sameAs']
+
+		# vocab dictionary contains the predicates that we do not want to consider
+		vocabDictionary = ['rdf-schema#comment','22-rdf-syntax-ns#type','abstract','owl#sameAs','subject']
+
 		predicateList = []
 
+		# from the predicate URI, just consider the property and ignore the vocabulary
+		# http://dbpedia.org/resource/Name  -----> consider 'Name'
 		predicateValue = predicate.split('/')[-1]
 
+		# ignore if the predicate property is in vocab dictionary
 		if(predicateValue in vocabDictionary):
 			return predicateList
 		
+
+		# Handles the camel case properties
+		# camel cases will be returned seperated by _
 		predicateValues = inflection.underscore(predicateValue).split('_')
 		if(len(predicateValues)==1):
 			wordSimilarityMeasure = 1
 		else:
 			wordSimilarityMeasure = 2
 
-		val = ''
+		# camel case with _ to a string seperated by spaces
+		actualPredicateValue = ''
 		for value in predicateValues:
-			val = val + ' ' + value
+			actualPredicateValue = actualPredicateValue + ' ' + value
 
-		val = val.strip()
+		actualPredicateValue = actualPredicateValue.strip()
 		
-		#print(val)
-
-		totalPredicates = 0
+		
+		# iterate over each uncovered keyword and check if the predicate is semantically similar to the keyword
 		for keyword in keywordList:
-			score = WordSimilarity.isPredicateSimilar(keyword,val,wordSimilarityMeasure)
-			if(score!=-1):
-				#print(score)		
+			# semantic similarity
+			score = WordSimilarity.isPredicateSimilar(keyword,actualPredicateValue,wordSimilarityMeasure)
+			if(score!=-1):	
 				predicateObject = Resource('<'+predicate+'>',predicateValue,0,keyword)
-				predicateObject.colors.append(ColorAssignment.colorDictionary[keyword])
+				
+				# bi-gram scenario
+				individualKeyword = keyword.split(' ')
+				for key in individualKeyword:
+					predicateObject.colors.append(ColorAssignment.colorDictionary[key])
+
 				predicateObject.score = score
 				predicateObject.isUri = True
 				predicateList.append(predicateObject)
 
 		return predicateList
-			
+	
+
+
 	# This method is used to get the list of keywords that is not covered by the current element	
-	def getUncoveredKeywords(colorList):
+	def getUncoveredKeywords(colorList,biGramList):
 		keywordList = []
-		pivotColors = ''.join(str(x) for x in colorList)			# Join the list to make it a single string
+		
+		# Join the list to make it a single string
+		pivotColors = ''.join(str(x) for x in colorList)			
+		
+		# Suppose we want to explore uncovered bi-grams, include them in the list
+		if(len(biGramList)>0):
+			keywordList.extend(biGramList)
+
+		# make use of the color dictionary to identify uncovered keywords
 		for keyword,color in ColorAssignment.colorDictionary.items():
 			if(str(color) not in pivotColors):
 				keywordList.append(keyword)
+
 		return keywordList
 
 
-	# Returns the triples for the pivot element
-	def getAllTripletsForPivotElement(resource):
 
+	# Returns the triples for the pivot element
+	def getAllTripletsForPivotElement(resource,biGramList):
+		print(' Exploring ... ')
 		tripletList = []
+		# Get the URI of the element
+		pivotElement = resource.uri									
+		print(pivotElement)
 		print('Current label : ' + resource.label)
+		
 		# Get a list of keywords that the current element does not cover
-		keywordList = SparqlClient.getUncoveredKeywords(resource.colors)
+		keywordList = SparqlClient.getUncoveredKeywords(resource.colors,biGramList)
 		print('Keywords yet to cover : ' + str(keywordList))
+
+		# If the resource covers all keywords, stop exploring this node
 		if(len(keywordList)==0):
 			return tripletList
 
 
-		pivotElement = resource.uri									# Get the URI of the element
-		print(pivotElement)
 		sparql = SPARQLWrapper("http://dbpedia.org/sparql")			# Assigns an endpoint
 		sparql.setReturnFormat(JSON)								# Sets the return format to be json
 		# Queries the endpoint to retrive all the triplets that have pivot element as subject
@@ -103,23 +130,38 @@ class SparqlClient :
 		
 		# Find predicates that are semantically similar to uncovered keywords 
 		for result in results["results"]["bindings"]:
+
+			# Considering only 'en' language
 			if(result["o"]["type"]!= 'uri' ):
 				if("xml:lang" in result['o'] and result["o"]["xml:lang"]!='en'):
 					continue
 
 			
+			# Get the sematically similar predicates
 			predicateList = SparqlClient.filterPredicates(result["p"]["value"],keywordList)
-		
+			
 			for predicate in predicateList:
 				
 				isUri = False
 				objectval = result["o"]["value"]
+				
+				# form the URI if object is of type URI
 				if(result["o"]["type"]=='uri'):
 					isUri = True
 					objectval = '<'+objectval+'>'
 
+				# remove duplicated keyword scenario
+				set = []
+				set.extend(resource.keyword.split(' '))
+				for x in predicate.keyword.split(' '):
+					if x not in set:
+						set.append(x)
+				
+				set = ' '.join(str(x) for x in set)
 
-				object = Resource(objectval,result["o"]["value"].split('/')[-1],0,'')
+				object = Resource(objectval,result["o"]["value"].split('/')[-1],0,set)
+
+				# set the properties and form the fact node
 				if(isUri):
 					object.isUri = True
 
