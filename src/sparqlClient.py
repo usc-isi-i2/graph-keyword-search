@@ -39,11 +39,7 @@ class SparqlClient :
 		# Handles the camel case properties
 		# camel cases will be returned seperated by _
 		predicateValues = inflection.underscore(predicateValue).split('_')
-		if(len(predicateValues)==1):
-			wordSimilarityMeasure = 1
-		else:
-			wordSimilarityMeasure = 2
-
+		
 		# camel case with _ to a string seperated by spaces
 		actualPredicateValue = ''
 		for value in predicateValues:
@@ -55,7 +51,11 @@ class SparqlClient :
 		# iterate over each uncovered keyword and check if the predicate is semantically similar to the keyword
 		for keyword in keywordList:
 			# semantic similarity
-			score = WordSimilarity.isPredicateSimilar(keyword,actualPredicateValue,wordSimilarityMeasure)
+			if(keyword.lower()==actualPredicateValue.lower()):
+				score = 1.0
+			else:
+				score = WordSimilarity.isPredicateSimilar(keyword,actualPredicateValue)
+				
 			if(score!=-1):	
 				predicateObject = Resource('<'+predicate+'>',predicateValue,0,keyword)
 				
