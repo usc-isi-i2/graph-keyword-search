@@ -19,6 +19,22 @@ class DBPediaTriplet:
 # This represents the sparql quering engine
 class SparqlClient :
 
+	def findAverageScorePhraseSentence(keyword,actualPredicateValue):
+		score = 0
+		count = 0 
+		for key1 in keyword.lower().split(' '):
+			for key2 in actualPredicateValue.lower().split(' '):
+				count+=1
+				if(key1 == key2):
+					score += 1.0
+				else:
+					score += WordSimilarity.isPredicateSimilar(key1,key2)
+
+		if(count!=0):			
+			return (score/count)
+		else:
+			return score
+
 	# This method is used to filter the predicates
 	def filterPredicates(predicate,keywordList):
 
@@ -35,11 +51,20 @@ class SparqlClient :
 		if(predicateValue in vocabDictionary):
 			return predicateList
 		
+		# Boolean value indicating phrase sentence
+		isPhraseSentence = False
 
 		# Handles the camel case properties
 		# camel cases will be returned seperated by _
-		predicateValues = inflection.underscore(predicateValue).split('_')
+		camelCaseValue = inflection.underscore(predicateValue)
+		if '_' in camelCaseValue:
+			isPhraseSentence = True
+		else:
+			isPhraseSentence = False
+
+		predicateValues = camelCaseValue.split('_')
 		
+
 		# camel case with _ to a string seperated by spaces
 		actualPredicateValue = ''
 		for value in predicateValues:
@@ -53,6 +78,8 @@ class SparqlClient :
 			# semantic similarity
 			if(keyword.lower()==actualPredicateValue.lower()):
 				score = 1.0
+			elif(isPhraseSentence):
+				score = SparqlClient.findAverageScorePhraseSentence(keyword,actualPredicateValue)
 			else:
 				score = WordSimilarity.isPredicateSimilar(keyword,actualPredicateValue)
 				
