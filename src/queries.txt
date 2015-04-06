@@ -1,30 +1,440 @@
+
+longest river
+	<http://dbpedia.org/resource/Club_Atl%C3%A9tico_River_Plate>
+
+cars that are produced in Germany
+	German cars --> picks <http://dbpedia.org/resource/Germany>
+
+
+
+Mother and father of Prince Harry and Prince William 
+	Prince Harry mother father  ---> <http://dbpedia.org/resource/Mother_Teresa>
+	Prince William parents --> <http://dbpedia.org/resource/Prince_William_County,_Virginia>
+								<http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge>
+								<http://dbpedia.org/resource/Prince_William,_Duke_of_Cumberland>
+
+
+								----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Diana,_Princess_of_Wales>
+----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Charles,_Prince_of_Wales>
+----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William,_Duke_of_Cumberland> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Caroline_of_Ansbach>
+----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William,_Duke_of_Cumberland> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/George_II_of_Great_Britain>
+----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William_Henry,_Duke_of_Gloucester_and_Edinburgh> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Frederick,_Prince_of_Wales>
+----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William_Henry,_Duke_of_Gloucester_and_Edinburgh> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Princess_Augusta_of_Saxe-Gotha>
+----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William_of_Gloucester> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Prince_Henry,_Duke_of_Gloucester>
+----
+1.0
+[0, 1, 2]
+prince william parents
+<http://dbpedia.org/resource/Prince_William_of_Gloucester> <http://dbpedia.org/ontology/parent> <http://dbpedia.org/resource/Princess_Alice,_Duchess_of_Gloucester>
+
+
+---------------
+
+	Prince Harry parents --> <http://dbpedia.org/resource/Prince_Harry_of_Wales> (could not match parents)
+	Prince Harry Mother --> <http://dbpedia.org/resource/Prince_Harry_of_Wales>
+							Current label : Prince Harry of Wales
+							Keywords yet to cover : ['Mother']
+
+
+latest U.S. state admitted
+
+number of languages spoken in Turkmenistan
+	Turkmenistan languages
+	----
+1.0
+[0, 1]
+Turkmenistan languages
+<http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/property/languages> <http://dbpedia.org/resource/Russian_language>
+----
+1.0
+[0, 1]
+Turkmenistan languages
+<http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/language> <http://dbpedia.org/resource/Russian_language>
+----
+1.0
+[0, 1]
+Turkmenistan languages
+<http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/language> <http://dbpedia.org/resource/Turkmen_language>
+----
+0.9172847553
+[0, 1]
+Turkmenistan languages
+<http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/property/officialLanguages> <http://dbpedia.org/resource/Turkmen_language>
+----
+0.9172847553
+[0, 1]
+Turkmenistan languages
+<http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/ontology/officialLanguage> <http://dbpedia.org/resource/Turkmen_language>
+----
+0.7649522742
+[0, 1]
+Turkmenistan languages
+<http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/property/languagesType> languages
+----
+0.7649522742
+[0, 1]
+Turkmenistan languages
+<http://dbpedia.org/resource/Turkmenistan> <http://dbpedia.org/property/languagesType> Inter-ethnic
+
+-------
+movies directed by Francis Ford Coppola
+		Francis Ford Coppola directed movies - <http://dbpedia.org/resource/Francis_Ford_Coppola> -> nothing
+		Francis Ford Coppola movies - nothing on his dbpedia page (is a subject of many other movies)
+
+maiden name of Angela Merkel
+		----
+1.0
+[0, 1, 3]
+Angela Merkel name
+<http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/property/name> Angela Merkel
+----
+1.0
+[0, 1, 3]
+Angela Merkel name
+<http://dbpedia.org/resource/Angela_Merkel> <http://dbpedia.org/property/name> Merkel, Angela
+----
+1.0
+[0, 1, 3]
+Angela Merkel name
+<http://dbpedia.org/resource/Angela_Merkel> <http://xmlns.com/foaf/0.1/name> Angela Merkel
+----
+1.0
+[0, 1, 3]
+Angela Merkel name
+<http://dbpedia.org/resource/Angela_Merkel> <http://xmlns.com/foaf/0.1/name> Merkel, Angela
+
+http://vmdeb20.deri.ie:8890/esaservice?task=esa&term1=maiden%20name&term2=birth%20name
+	returns "0.0120668066"
+
+
+
+Australian nonprofit organizations
+	could not detect pivot element
+
+Military conflicts in which Lawrence of Arabia participated
+	
+
+number of inhabitants in Maribor
+		inhabitants Maribor
+		http://vmdeb20.deri.ie:8890/esaservice?task=esa&term1=inhabitants&term2=population   "0.0345099577"
+
+
+games developed by GMT
+
+husband of Amanda Palmer
+	Amanda Palmer husband
+	<http://dbpedia.org/resource/Amanda_Palmer>
+	Current label : Amanda Palmer
+	Keywords yet to cover : ['husband']
+	http://vmdeb20.deri.ie:8890/esaservice?task=esa&term1=spouse&term2=husband
+	"0.0558511518"
+
+islands that belong to Japan
+	 Exploring ... 
+<http://dbpedia.org/resource/Japan>
+Current label : Japan
+Keywords yet to cover : ['islands']
+ Exploring ... 
+<http://dbpedia.org/resource/Japan_%28band%29>
+Current label : Japan (band)
+Keywords yet to cover : ['islands']
+ Exploring ... 
+<http://dbpedia.org/resource/Islands_%28band%29>
+Current label : Islands (band)
+Keywords yet to cover : ['japan']
+
+ruling party in Lisbon
+	----
+0.7246611098
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/leaderParty> <http://dbpedia.org/resource/Socialist_Party_(Portugal)>
+----
+0.5502401986
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/mayorParty> <http://dbpedia.org/resource/Socialist_Party_(Portugal)>
+----
+0.132051861
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/leader> Helena Roseta
+----
+0.132051861
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon,_Ohio> <http://dbpedia.org/property/leaderName> Michael B. Lewis
+----
+0.1086613063
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentState> <http://dbpedia.org/resource/Grande_Lisboa_Subregion>
+----
+0.1058211493
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon,_Ohio> <http://dbpedia.org/property/leaderTitle> <http://dbpedia.org/resource/Mayor>
+----
+0.1058211493
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon,_Ohio> <http://dbpedia.org/ontology/leaderTitle> Mayor
+----
+0.0982569384
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/government> <http://dbpedia.org/resource/C%C3%A2mara_Municipal>
+----
+0.0982569384
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/government> <http://dbpedia.org/resource/Concelho>
+----
+0.0982569384
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/government> <http://dbpedia.org/resource/C%C3%A2mara_Municipal>
+----
+0.0982569384
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/government> <http://dbpedia.org/resource/Concelho>
+----
+0.0913513348
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/leaderType> <http://dbpedia.org/resource/Assembleia_Municipal>
+----
+0.0887198372
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/governmentPosition> <http://dbpedia.org/resource/Lisbon__governmentPosition__1>
+----
+0.0799152153
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLocation> Praça do Município
+----
+0.0794172227
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongD> 9
+----
+0.0794172227
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongEw> W
+----
+0.0794172227
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongM> 8
+----
+0.0794172227
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongS> 18
+----
+0.0731704343
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatD> 38
+----
+0.0731704343
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatM> 42
+----
+0.0731704343
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatNs> N
+----
+0.0731704343
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatS> 29
+----
+0.0727422443
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentRegion> Lisbon
+----
+0.0727422443
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/governmentRegion> <http://dbpedia.org/resource/Lisbon_District>
+----
+0.0708160618
+[0, 1, 2]
+lisbon ruling party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentType> <http://dbpedia.org/resource/Local_administrative_unit>
+----
+0.8752961422
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/leaderParty> <http://dbpedia.org/resource/Socialist_Party_(Portugal)>
+----
+0.6660475643
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/mayorParty> <http://dbpedia.org/resource/Socialist_Party_(Portugal)>
+----
+0.1526511536
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/leader> Helena Roseta
+----
+0.1526511536
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon,_Ohio> <http://dbpedia.org/property/leaderName> Michael B. Lewis
+----
+0.1179090591
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon,_Ohio> <http://dbpedia.org/property/leaderTitle> <http://dbpedia.org/resource/Mayor>
+----
+0.1179090591
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon,_Ohio> <http://dbpedia.org/ontology/leaderTitle> Mayor
+----
+0.105693768
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentState> <http://dbpedia.org/resource/Grande_Lisboa_Subregion>
+----
+0.0989016354
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/leaderType> <http://dbpedia.org/resource/Assembleia_Municipal>
+----
+0.0974877736
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/government> <http://dbpedia.org/resource/C%C3%A2mara_Municipal>
+----
+0.0974877736
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/government> <http://dbpedia.org/resource/Concelho>
+----
+0.0974877736
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/government> <http://dbpedia.org/resource/C%C3%A2mara_Municipal>
+----
+0.0974877736
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/government> <http://dbpedia.org/resource/Concelho>
+----
+0.0859793517
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/governmentPosition> <http://dbpedia.org/resource/Lisbon__governmentPosition__1>
+----
+0.0791254163
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLocation> Praça do Município
+----
+0.0778143857
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongD> 9
+----
+0.0778143857
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongEw> W
+----
+0.0778143857
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongM> 8
+----
+0.0778143857
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLongS> 18
+----
+0.0729892814
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentRegion> Lisbon
+----
+0.0729892814
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/ontology/governmentRegion> <http://dbpedia.org/resource/Lisbon_District>
+----
+0.0722854064
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatD> 38
+----
+0.0722854064
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatM> 42
+----
+0.0722854064
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatNs> N
+----
+0.0722854064
+[0, 2]
+lisbon party
+<http://dbpedia.org/resource/Lisbon> <http://dbpedia.org/property/governmentLatS> 29
+
+
+Apollo 14 astronauts
+		does not exists in dbpedia
+
 cosmonauts
 German cities with more than 250000 inhabitants
-mayor of Berlin
 second highest mountain on Earth
 professional skateboarders from Sweden
 band leaders that play trumpet
 countries have more than ten caves
+mayor of Berlin ---> berlin mayor
+	<http://dbpedia.org/resource/Berlin>
 Formula 1 driver with the most races
 youngest player in the Premier League
-longest river
-cars that are produced in Germany
-People that were born in Vienna and died in Berlin
-Mother and father of Prince Harry and Prince William 
-latest U.S. state admitted
-number of languages spoken in Turkmenistan
-movies directed by Francis Ford Coppola
-maiden name of Angela Merkel
 Methodist politicians
+People that were born in Vienna and died in Berlin
 number of times that Jane Fonda married
-Australian nonprofit organizations
-Military conflicts in which Lawrence of Arabia participated
-number of inhabitants in Maribor
 companies in Munich
-games developed by GMT
-husband of Amanda Palmer
-countries connected by the Rhine
 professional surfers born in Australia
-islands that belong to Japan
-ruling party in Lisbon
-Apollo 14 astronauts
+countries connected by the Rhine
