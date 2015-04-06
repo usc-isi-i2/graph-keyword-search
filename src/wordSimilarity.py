@@ -36,7 +36,7 @@ class WordSimilarity:
 	# treshold values to consider  0.07, 0.052 and 0.04
 	def isPredicateSimilar(word1,word2):
 		score = WordSimilarity.getEasyESAScore(word1,word2)
-		if(score>0.07):
+		if(score>0.04):
 			return score
 		else:
 			return -1
