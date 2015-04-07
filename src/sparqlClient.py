@@ -118,6 +118,24 @@ class SparqlClient :
 		return keywordList
 
 
+	def findObjectKeywordMatch(object):
+		
+		# get the object value
+		objectVal = object.label
+
+		# Join the list to make it a single string
+		colors = ''.join(str(x) for x in object.colors)			
+
+		# make use of the color dictionary to identify uncovered keywords
+		for keyword,color in ColorAssignment.colorDictionary.items():
+			if(str(color) not in colors):
+				if(keyword == objectVal):
+					object.score = object.score + 1.0
+					object.colors.append(color)
+		
+		return object
+
+
 
 	# Returns the triples for the pivot element
 	def getAllTripletsForPivotElement(resource,biGramList):
@@ -200,6 +218,8 @@ class SparqlClient :
 				for color in predicate.colors:
 					if(color not in object.colors):
 						object.colors.append(color)
+
+				object = SparqlClient.findObjectKeywordMatch(object)
 
 				factNodeObj = FactNode(resource,predicate,object)
 				factNodeObj.score = object.score
