@@ -1,8 +1,9 @@
 import urllib.request
 import sys
 import json
+import math
 from urllib.parse import quote
-		
+
 
 class WordSimilarity:
 
@@ -29,30 +30,28 @@ class WordSimilarity:
 		score = float(jsonStr['result'][0]['score'])
 		return score
 	
-	
+	# 3 - UMBC Semantic Similarity service
+	#
+	#  Documentation availabel at http://swoogle.umbc.edu/SimService/api.html
+	def getEasyUMBCScore(word1,word2):	
+		url = "http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="+quote('birth name')+'&phrase2='+quote('last name')
+		request = urllib.request.Request(url)
+		response = urllib.request.urlopen(request)
+		score = str(response.read().decode('utf-8')).replace('\"','')
+		score = float(score)
+		return score
+
+
 	# As of now using only EasyESA.
 	# call the method 2 ws4j client if needed
 	# a score of 1 and -1 results in a perfect match
 	# treshold values to consider  0.07, 0.052 and 0.04
 	def isPredicateSimilar(word1,word2):
-		score = WordSimilarity.getEasyESAScore(word1,word2)
-		if(score>0.04):
+		#score = math.fabs(WordSimilarity.getEasyESAScore(word1,word2))
+		score = (WordSimilarity.getEasyESAScore(word1,word2))
+		if(score>0.07):
 			return score
 		else:
 			return -1
 	
-	'''	
-	def isPredicateSimilar(word1,word2,option):
-		score = -1
-		if(option!=1 or option!=2):
-			#score = WordSimilarity.getEasyESAScore(word1,word2)
-			score = 0
-			if((score!=0 or score!=-1) and score>0.1):
-				return score
-			else:
-				score = WordSimilarity.getWs4jScore(word1,word2)
-				if(score>0.8):
-					return score
-				else:
-					return -1
-	'''	
+	
