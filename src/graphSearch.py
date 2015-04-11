@@ -157,7 +157,7 @@ def main():
 	
 
 	#print PRE
-	#printpre(resourceList)
+	printpre(resourceList)
 	print('Got the pivot element')
 	print()
 
@@ -167,6 +167,7 @@ def main():
 
 	# get the initial fact nodes
 	listFactNodes = []
+
 	for resource in resourceList :
 		# Get the bi-gram list 
 		biGramList = getBiGramList(sentence,resource)
@@ -174,7 +175,6 @@ def main():
 	
 	
 	for factNode in listFactNodes:
-		print()
 		if(factNode.isExplored == False and factNode.object.isUri):
 			biGramList = getBiGramList(sentence,factNode.object)
 			listFactNodes.extend(SparqlClient.getAllTripletsForPivotElement(factNode.object,biGramList))

@@ -185,47 +185,87 @@ class SparqlClient :
 			# Get the sematically similar predicates
 			predicateList = SparqlClient.filterPredicates(result["p"]["value"],keywordList)
 			
-			for predicate in predicateList:
+			if len(predicateList)!=0:
+				for predicate in predicateList:
+					
+					isUri = False
+					objectval = result["o"]["value"]
+					
+					# form the URI if object is of type URI
+					if(result["o"]["type"]=='uri'):
+						isUri = True
+						objectval = '<'+objectval+'>'
+
+					# remove duplicated keyword scenario
+					set = []
+					set.extend(resource.keyword.split(' '))
+					for x in predicate.keyword.split(' '):
+						if x not in set:
+							set.append(x)
+					
+					set = ' '.join(str(x) for x in set)
+
+					object = Resource(objectval,result["o"]["value"].split('/')[-1],0,set)
+
+					# set the properties and form the fact node
+					if(isUri):
+						object.isUri = True
+
+					object.score = resource.score + predicate.score
+					for color in resource.colors:
+						if(color not in object.colors):
+							object.colors.append(color)
+
+					for color in predicate.colors:
+						if(color not in object.colors):
+							object.colors.append(color)
+
+					object = SparqlClient.findObjectKeywordMatch(object)
+
+					factNodeObj = FactNode(resource,predicate,object)
+					factNodeObj.score = object.score
+					factNodeObj.set_colors()
+					tripletList.append(factNodeObj)
+			'''
+			else:
 				
-				isUri = False
-				objectval = result["o"]["value"]
+				objectList = SparqlClient.filterPredicates(result["o"]["value"],keywordList)
 				
-				# form the URI if object is of type URI
-				if(result["o"]["type"]=='uri'):
-					isUri = True
-					objectval = '<'+objectval+'>'
+				for objectResource in objectList:
+					
+					isUri = False
+					predicateVal = '<'+result["p"]["value"]+'>'
+					
+					# remove duplicated keyword scenario
+					set = []
+					set.extend(resource.keyword.split(' '))
+					for x in objectResource.keyword.split(' '):
+						if x not in set:
+							set.append(x)
+					
+					set = ' '.join(str(x) for x in set)
 
-				# remove duplicated keyword scenario
-				set = []
-				set.extend(resource.keyword.split(' '))
-				for x in predicate.keyword.split(' '):
-					if x not in set:
-						set.append(x)
-				
-				set = ' '.join(str(x) for x in set)
+					predicate = Resource(predicateVal,result["p"]["value"].split('/')[-1],0,set)
 
-				object = Resource(objectval,result["o"]["value"].split('/')[-1],0,set)
+					# set the properties and form the fact node
+					predicate.isUri = True
 
-				# set the properties and form the fact node
-				if(isUri):
-					object.isUri = True
+					object.score = resource.score + object.score
+					for color in resource.colors:
+						if(color not in object.colors):
+							object.colors.append(color)
 
-				object.score = resource.score + predicate.score
-				for color in resource.colors:
-					if(color not in object.colors):
-						object.colors.append(color)
+					for color in predicate.colors:
+						if(color not in object.colors):
+							object.colors.append(color)
 
-				for color in predicate.colors:
-					if(color not in object.colors):
-						object.colors.append(color)
+					object = SparqlClient.findObjectKeywordMatch(object)
 
-				object = SparqlClient.findObjectKeywordMatch(object)
-
-				factNodeObj = FactNode(resource,predicate,object)
-				factNodeObj.score = object.score
-				factNodeObj.set_colors()
-				tripletList.append(factNodeObj)
-			
+					factNodeObj = FactNode(resource,predicate,object)
+					factNodeObj.score = object.score
+					factNodeObj.set_colors()
+					tripletList.append(factNodeObj)
+			'''
 		# Sort the list and return
 		return tripletList
 
