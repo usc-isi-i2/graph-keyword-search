@@ -3,19 +3,28 @@ import sys
 import json
 import math
 from urllib.parse import quote
-
+from threading import Thread
 
 class WordSimilarity:
+
+	scoreDictionary = {}
+	scoreDictionary['esa'] = 0
+	scoreDictionary['swoogle'] = 0
 
 	# 1 - EasyESA client
 	# a score of 1 and -1 results in a perfect match
 	# treshold values to consider  0.07, 0.052 and 0.04
 	def getEasyESAScore(word1,word2):
+		#print(word1)
+		#print(word2)
+		WordSimilarity.scoreDictionary['esa'] = 0
 		url = "http://vmdeb20.deri.ie:8890/esaservice?task=esa&term1="+quote(word1)+'&term2='+quote(word2)
+		#print(url)
 		request = urllib.request.Request(url)
 		response = urllib.request.urlopen(request)
 		score = str(response.read().decode('utf-8')).replace('\"','')
-		return float(score)
+		WordSimilarity.scoreDictionary['esa'] = float(score)
+		#return float(score)
 
 	# 2 - ws4j client
 	def getWs4jScore(word1,word2):
@@ -33,13 +42,16 @@ class WordSimilarity:
 	# 3 - UMBC Semantic Similarity service
 	#
 	#  Documentation availabel at http://swoogle.umbc.edu/SimService/api.html
-	def getEasyUMBCScore(word1,word2):	
-		url = "http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="+quote('birth name')+'&phrase2='+quote('last name')
+	def getSwoogleScore(word1,word2):
+		WordSimilarity.scoreDictionary['swoogle'] = 0	
+		url = "http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="+quote(word1)+'&phrase2='+quote(word2)
 		request = urllib.request.Request(url)
 		response = urllib.request.urlopen(request)
 		score = str(response.read().decode('utf-8')).replace('\"','')
 		score = float(score)
-		return score
+		WordSimilarity.scoreDictionary['swoogle'] = score
+		
+		#return score
 
 
 	# As of now using only EasyESA.
@@ -48,10 +60,47 @@ class WordSimilarity:
 	# treshold values to consider  0.07, 0.052 and 0.04
 	def isPredicateSimilar(word1,word2):
 		#score = math.fabs(WordSimilarity.getEasyESAScore(word1,word2))
-		score = (WordSimilarity.getEasyESAScore(word1,word2))
-		if(score>0.07):
-			return score
-		else:
-			return -1
-	
-	
+		        
+	    esaThread = Thread(target=WordSimilarity.getEasyESAScore, args=(word1,word2,))
+	    swoogleThread = Thread(target=WordSimilarity.getSwoogleScore, args=(word1,word2,))
+
+	    esaThread.start()
+	    swoogleThread.start()
+	    esaThread.join()
+	    swoogleThread.join()
+
+	    ESAscore = WordSimilarity.scoreDictionary['esa'] 
+	    #WordSimilarity.getEasyESAScore(word1,word2)
+	    ESAScaledScore = 0
+	    if(ESAscore>0 and ESAscore<=0.04):
+	    	ESAScaledScore = 1
+	    elif(ESAscore>0.04 and ESAscore<=0.06):
+	    	ESAScaledScore = 2
+	    elif(ESAscore>0.07):
+	    	ESAScaledScore = 3
+	    else:
+	    	ESAScaledScore = 0
+
+	    SwoogleScore = WordSimilarity.scoreDictionary['swoogle'] 
+	    # WordSimilarity.getSwoogleScore(word1,word2)
+	    SwoogleScaledScore = 0
+	    if(SwoogleScore>0 and SwoogleScore<0.5):
+	    	SwoogleScaledScore = 1
+	    elif(SwoogleScore>=0.5 and SwoogleScore<0.7):
+	    	SwoogleScaledScore = 2
+	    elif(SwoogleScore>=0.7):
+	    	SwoogleScaledScore = 3
+	    else:
+	    	SwoogleScaledScore = 0
+
+	    if(ESAScaledScore>SwoogleScaledScore):
+	    	score = ESAScaledScore
+	    else:
+	    	score = SwoogleScaledScore
+
+	    if(score>=2):
+	    	return score
+	    else:
+	    	return -1
+
+#print(WordSimilarity.isPredicateSimilar('birth name','maiden name'))	
