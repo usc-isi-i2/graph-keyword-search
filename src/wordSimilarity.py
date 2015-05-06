@@ -15,21 +15,20 @@ class WordSimilarity:
 	# a score of 1 and -1 results in a perfect match
 	# treshold values to consider  0.07, 0.052 and 0.04
 	def getEasyESAScore(word1,word2):
-		#print(word1)
-		#print(word2)
+
 		WordSimilarity.scoreDictionary['esa'] = 0
 		url = "http://vmdeb20.deri.ie:8890/esaservice?task=esa&term1="+quote(word1)+'&term2='+quote(word2)
-		#print(url)
-		request = urllib.request.Request(url)
-		response = urllib.request.urlopen(request)
-		score = str(response.read().decode('utf-8')).replace('\"','')
-		WordSimilarity.scoreDictionary['esa'] = float(score)
-		#return float(score)
+		try:
+			request = urllib.request.Request(url)
+			response = urllib.request.urlopen(request)
+			score = str(response.read().decode('utf-8')).replace('\"','')
+			WordSimilarity.scoreDictionary['esa'] = float(score)
+		except Exception as e:
+			WordSimilarity.scoreDictionary['esa'] = 0
 
 	# 2 - ws4j client
 	def getWs4jScore(word1,word2):
 		url = "http://ws4jdemo.appspot.com/ws4j?measure=wup&args="+quote(word1)+"%3A%3A"+quote(word2)
-		#print(url)
 		request = urllib.request.Request(url)
 		request.add_header('Accept', 'application/json')
 		response = urllib.request.urlopen(request)
@@ -45,13 +44,14 @@ class WordSimilarity:
 	def getSwoogleScore(word1,word2):
 		WordSimilarity.scoreDictionary['swoogle'] = 0	
 		url = "http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="+quote(word1)+'&phrase2='+quote(word2)
-		request = urllib.request.Request(url)
-		response = urllib.request.urlopen(request)
-		score = str(response.read().decode('utf-8')).replace('\"','')
-		score = float(score)
-		WordSimilarity.scoreDictionary['swoogle'] = score
-		
-		#return score
+		try:
+			request = urllib.request.Request(url)
+			response = urllib.request.urlopen(request)
+			score = str(response.read().decode('utf-8')).replace('\"','')
+			score = float(score)
+			WordSimilarity.scoreDictionary['swoogle'] = score
+		except Exception as e:
+			WordSimilarity.scoreDictionary['swoogle'] = 0
 
 
 	# As of now using only EasyESA.
@@ -84,9 +84,9 @@ class WordSimilarity:
 	    SwoogleScore = WordSimilarity.scoreDictionary['swoogle'] 
 	    # WordSimilarity.getSwoogleScore(word1,word2)
 	    SwoogleScaledScore = 0
-	    if(SwoogleScore>0 and SwoogleScore<0.5):
+	    if(SwoogleScore>0 and SwoogleScore<0.6):
 	    	SwoogleScaledScore = 1
-	    elif(SwoogleScore>=0.5 and SwoogleScore<0.7):
+	    elif(SwoogleScore>=0.6 and SwoogleScore<0.7):
 	    	SwoogleScaledScore = 2
 	    elif(SwoogleScore>=0.7):
 	    	SwoogleScaledScore = 3
@@ -102,5 +102,3 @@ class WordSimilarity:
 	    	return score
 	    else:
 	    	return -1
-
-#print(WordSimilarity.isPredicateSimilar('birth name','maiden name'))	
