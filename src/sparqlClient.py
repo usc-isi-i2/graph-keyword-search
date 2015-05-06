@@ -26,14 +26,20 @@ class SparqlClient :
 			for key2 in actualPredicateValue.lower().split(' '):
 				count+=1
 				if(key1 == key2):
-					score += 1.0
+					score += 3.0
 				else:
-					score += WordSimilarity.isPredicateSimilar(key1,key2)
+					similarityScore = WordSimilarity.isPredicateSimilar(key1,key2)
+					if(similarityScore==-1):
+						similarityScore = 0
+					score += similarityScore
 
-		if(count!=0):			
-			return (score/count)
+		if(count!=0):
+			if(score==0):
+				return -1
+			else:			
+				return (score/count)
 		else:
-			return score
+			return -1
 
 	# This method is used to filter the predicates
 	def filterPredicates(predicate,keywordList):
@@ -77,12 +83,16 @@ class SparqlClient :
 		for keyword in keywordList:
 			# semantic similarity
 			if(keyword.lower()==actualPredicateValue.lower()):
-				score = 1.0
-			elif(isPhraseSentence):
-				score = SparqlClient.findAverageScorePhraseSentence(keyword,actualPredicateValue)
+				score = 3.0
+			#elif(isPhraseSentence):
+				#score = SparqlClient.findAverageScorePhraseSentence(keyword,actualPredicateValue)
+				#print('phrase'+str(score))
 			else:
 				score = WordSimilarity.isPredicateSimilar(keyword,actualPredicateValue)
-				
+				#print(' no phrase'+str(score))
+			
+			
+
 			if(score!=-1):	
 				predicateObject = Resource('<'+predicate+'>',predicateValue,0,keyword)
 				
@@ -130,7 +140,7 @@ class SparqlClient :
 		for keyword,color in ColorAssignment.colorDictionary.items():
 			if(str(color) not in colors):
 				if(keyword == objectVal):
-					object.score = object.score + 1.0
+					object.score = object.score + 3.0
 					object.colors.append(color)
 		
 		return object
