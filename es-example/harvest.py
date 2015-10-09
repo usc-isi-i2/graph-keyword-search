@@ -106,8 +106,20 @@ def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.ad
     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_'), fieldName))
 
 
-SPECS=[{"docType": "webpage", "innerPath": "mainEntity.availableAtOrFrom.address", "fieldName": "addressCountry", "size": 20},
-       {"docType": "offer", "innerPath": "itemOffered", "fieldName": "name", "size": 20}]
+SPECS=[# {"docType": "webpage", "innerPath": "mainEntity.availableAtOrFrom.address", "fieldName": "addressCountry", "size": 200},
+#        {"docType": "webpage", "innerPath": "mainEntity.availableAtOrFrom.address", "fieldName": "addressRegion", "size": 200},
+#        {"docType": "webpage", "innerPath": "mainEntity.availableAtOrFrom.address", "fieldName": "addressLocality", "size": 200},
+#        {"docType": "offer", "innerPath": "itemOffered", "fieldName": "name", "size": 200},
+#        {"docType": "offer", "innerPath": "itemOffered", "fieldName": "personAge", "size": 20},
+#        {"docType": "offer", "innerPath": "itemOffered", "fieldName": "hairColor", "size": 20},
+#        {"docType": "offer", "innerPath": "itemOffered", "fieldName": "eyeColor", "size": 20},
+#        {"docType": "offer", "innerPath": "itemOffered", "fieldName": "name", "size": 20},
+    # Doesn't work
+       {"docType": "offer", "innerPath": "seller.telephone", "fieldName": "name", "size": 200},
+    # ???
+       {"docType": "offer", "innerPath": "seller", "fieldName": "a", "size": 200},
+       {"docType": "offer", "innerPath": "itemOffered", "fieldName": "a", "size": 200}
+       ]
 
 def harvestToFile(spec):
     outPath = None
