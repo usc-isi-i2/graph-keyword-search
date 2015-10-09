@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 from elasticsearch import Elasticsearch
-import pprint
+from pprint import pprint
+import json
+import os
 
 es = Elasticsearch(
     [
@@ -11,7 +13,7 @@ es = Elasticsearch(
     verify_certs=False
     )
 
-def makeBody(fieldName="name", innerObject="itemOffered", size=10):
+def makeBody(fieldName="name", innerPath="itemOffered", size=10):
     return {
         "query": {
             "match_all": {}
@@ -19,12 +21,12 @@ def makeBody(fieldName="name", innerObject="itemOffered", size=10):
         "aggs": {
             "itemOfferedAgg": {
                 "nested": {
-                    "path": innerObject
+                    "path": innerPath
                     },
                 "aggs": {
                     "termsSubAgg": {
                         "terms": {
-                            "field": "{}.{}".format(innerObject, fieldName),
+                            "field": "{}.{}".format(innerPath, fieldName),
                             "size" : size
                             }
                         }
@@ -34,9 +36,9 @@ def makeBody(fieldName="name", innerObject="itemOffered", size=10):
         }
 
 
-def test(fieldName="name", innerObject="itemOffered", size=10):
+def test(fieldName="name", innerPath="itemOffered", size=10):
     # res = es.search(index="test-index", body={"query": {"match_all": {}}})
-    body=makeBody(fieldName=fieldName, innerObject=innerObject, size=size)
+    body=makeBody(fieldName=fieldName, innerPath=innerPath, size=size)
     pprint.pprint(body)
     res = es.search(index="dig-ht-latest",
                     doc_type="offer",
@@ -78,9 +80,9 @@ def test(fieldName="name", innerObject="itemOffered", size=10):
  'took': 1422}
 """
 
-def test2(docType="webpage",fieldName="addressCountry", innerPath="mainEntity.availableAtOrFrom.address", size=10):
+def harvest(docType="webpage",fieldName="addressCountry", innerPath="mainEntity.availableAtOrFrom.address", size=10):
     # res = es.search(index="test-index", body={"query": {"match_all": {}}})
-    body=makeBody(fieldName=fieldName, innerObject=innerPath, size=size)
+    body=makeBody(fieldName=fieldName, innerPath=innerPath, size=size)
     # pprint.pprint(body)
     result = es.search(index="dig-ht-latest",
                        doc_type=docType,
@@ -97,12 +99,33 @@ def test2(docType="webpage",fieldName="addressCountry", innerPath="mainEntity.av
               "result": result,
               "histo": {}}
     for bucket in termsSubAgg['buckets']:
-        pprint.pprint(bucket)
         report["histo"][bucket["key"]] = bucket["doc_count"]
     return report
 
-r = test2()
-pprint.pprint(r)
+def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
+    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_'), fieldName))
+
+
+SPECS=[{"docType": "webpage", "innerPath": "mainEntity.availableAtOrFrom.address", "fieldName": "addressCountry", "size": 20},
+       {"docType": "offer", "innerPath": "itemOffered", "fieldName": "name", "size": 20}]
+
+def harvestToFile(spec):
+    outPath = None
+    try:
+        outPath = outputPathname(**spec)
+    except:
+        pass
+    try:
+        h = harvest(**spec)
+        with open(outPath, 'w') as f:
+            json.dump(h, f, indent=4, sort_keys=True)
+    except Exception as e:
+        print("Error [{}] during processing of {}".format(e, outPath))
+
+
+for spec in SPECS:
+    harvestToFile(spec)
+    
 
 """
 
