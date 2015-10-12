@@ -104,24 +104,22 @@ def makeBody(fieldName="name", innerPath="", size=10):
  'took': 1422}
 """
 
-def harvest(docType="webpage",fieldName="addressCountry", innerPath="", size=10):
-    # res = es.search(index="test-index", body={"query": {"match_all": {}}})
-    body=makeBody(fieldName=fieldName, innerPath=innerPath, size=size)
+def harvest(index="dig-ht-latest", docType="webpage",fieldName="addressCountry", innerPath="", size=10):
     nested = True if innerPath else False
-    print(json.dumps(body, indent=4))
-    result = es.search(index="dig-ht-latest",
+    body=makeBody(fieldName=fieldName, innerPath=innerPath, size=size)
+    result = es.search(index=index,
                        doc_type=docType,
                        body=body,
                        search_type="count")
-    # print("Got %d Hits:" % res['hits']['total'])
-    pprint(result)
     agg = result['aggregations']['itemOfferedAgg']['termsSubAgg'] if nested else result['aggregations']['termsSubAgg']
     report = {"docType": docType,
               "fieldName": fieldName,
               "innerPath": innerPath,
               "size": size,
-              # use this later to get hitsTotal, sum_other_doc_count if needed
+              # use 'result' later to get hitsTotal, sum_other_doc_count if needed
               "result": result,
+              # collections.OrderedDict is serialized to JSON in the order keys were added
+              # so preserves decreasing value order
               "histo": OrderedDict()
               }
     for bucket in agg['buckets']:
@@ -190,6 +188,34 @@ SPECS=[ # {"docType": "webpage", "innerPath": "mainEntity.availableAtOrFrom.addr
 
 SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10} ]
 
+SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
+        {"docType": "adultservice", "fieldName": "hairColor", "size": 10},
+        {"docType": "adultservice", "fieldName": "name", "size": 200},
+        {"docType": "adultservice", "fieldName": "personAge", "size": 20},
+
+        {"docType": "phone", "fieldName": "name", "size": 200},
+        
+        {"docType": "email", "fieldName": "name", "size": 200},
+
+        {"docType": "webpage", "innerPath": "publisher", "fieldName": "name", "size": 200},
+        # Ignore webpage.description, webpage.dateCreated
+
+        # Ignore offer.identifier
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "billingIncrement", "size": 10},
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "price", "size": 200},
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "name", "size": 200},
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "unitCode", "size": 10},
+        {"docType": "offer", "innerPath": "availableAtOrFrom.address", "fieldName": "addressLocality", "size": 200},
+        {"docType": "offer", "innerPath": "availableAtOrFrom.address", "fieldName": "addressRegion", "size": 200},
+        {"docType": "offer", "innerPath": "availableAtOrFrom.address", "fieldName": "addressCountry", "size": 200},
+        # Ignore offer.availableAtOrFrom.name
+        # Ignore offer.availableAtOrFrom.geo.lat, offer.availableAtOrFrom.geo.lon
+
+    ]
+        
+
+
+
 
 def harvestToFile(spec):
     outPath = None
@@ -218,7 +244,12 @@ for spec in SPECS:
         # pprint(h)
         l = -1
         try:
-            b = h["result"]["aggregations"]["itemOfferedAgg"]["termsSubAgg"]["buckets"]
+            try:
+                # nested
+                b = h["result"]["aggregations"]["itemOfferedAgg"]["termsSubAgg"]["buckets"]
+            except:
+                # direct
+                b = h["result"]["aggregations"]["termsSubAgg"]["buckets"]
             l = len(b)
             if l>0:
                 print("Success %d for %s" % (l, spec), file=sys.stderr)
