@@ -21,12 +21,12 @@ def makeBodyNested(fieldName="name", innerPath="itemOffered", size=10):
             "match_all": {}
             },
         "aggs": {
-            "itemOfferedAgg": {
+            "toplevelAgg": {
                 "nested": {
                     "path": innerPath
                     },
                 "aggs": {
-                    "termsSubAgg": {
+                    "termAgg": {
                         "terms": {
                             "field": "{}.{}".format(innerPath, fieldName),
                             "size" : size
@@ -43,7 +43,7 @@ def makeBodyDirect(fieldName="name", size=10):
             "match_all": {}
             },
         "aggs": {
-            "termsSubAgg": {
+            "termAgg": {
                 "terms": {
                     "field": fieldName,
                     "size": size
@@ -70,14 +70,14 @@ def makeBody(fieldName="name", innerPath="", size=10):
 #                     search_type="count")
 #     print("Got %d Hits:" % res['hits']['total'])
 #     pprint(res)
-#     for hit in res['aggregations']['itemOfferedAgg']['termsSubAgg']['buckets']:
+#     for hit in res['aggregations']['toplevelAgg']['termAgg']['buckets']:
 #         # print("%(timestamp)s %(author)s: %(text)s" % hit["_source"])
 #         print(hit)
 
 """
 {'_shards': {'failed': 0, 'successful': 20, 'total': 20},
- 'aggregations': {'itemOfferedAgg': {'doc_count': 19134836,
-                                     'termsSubAgg': {'buckets': [{'doc_count': 18104,
+ 'aggregations': {'toplevelAgg': {'doc_count': 19134836,
+                                     'termAgg': {'buckets': [{'doc_count': 18104,
                                                                   'key': 'jessica'},
                                                                  {'doc_count': 15956,
                                                                   'key': 'ashley'},
@@ -111,7 +111,7 @@ def harvest(index="dig-ht-latest", docType="webpage",fieldName="addressCountry",
                        doc_type=docType,
                        body=body,
                        search_type="count")
-    agg = result['aggregations']['itemOfferedAgg']['termsSubAgg'] if nested else result['aggregations']['termsSubAgg']
+    agg = result['aggregations']['toplevelAgg']['termAgg'] if nested else result['aggregations']['termAgg']
     report = {"docType": docType,
               "fieldName": fieldName,
               "innerPath": innerPath,
@@ -246,10 +246,10 @@ for spec in SPECS:
         try:
             try:
                 # nested
-                b = h["result"]["aggregations"]["itemOfferedAgg"]["termsSubAgg"]["buckets"]
+                b = h["result"]["aggregations"]["toplevelAgg"]["termAgg"]["buckets"]
             except:
                 # direct
-                b = h["result"]["aggregations"]["termsSubAgg"]["buckets"]
+                b = h["result"]["aggregations"]["termAgg"]["buckets"]
             l = len(b)
             if l>0:
                 print("Success %d for %s" % (l, spec), file=sys.stderr)
@@ -290,12 +290,12 @@ POST https://darpamemex:darpamemex@esc.memexproxy.com/dig-ht-latest/offer/_searc
    },
 
    "aggs": {
-      "itemOfferedAgg": {
+      "toplevelAgg": {
          "nested": {
             "path": "itemOffered"
          },
          "aggs": {
-            "termsSubAgg": {
+            "termAgg": {
                "terms": {
                   "field": "itemOffered.eyeColor",
                   "size" : 100
