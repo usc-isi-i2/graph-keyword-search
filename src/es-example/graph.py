@@ -2,9 +2,10 @@
 
 class Graph(object):
 
-    def __init__(self, graph_dict={}):
+    def __init__(self, graph_dict={}, graph_annots={"vertex": {}, "edge": {}}):
         """ initializes a graph object """
         self.__graph_dict = graph_dict
+        self.__graph_annots = graph_annots
 
     def vertices(self):
         """ returns the vertices of a graph """
@@ -46,6 +47,18 @@ class Graph(object):
                 if {neighbour, vertex} not in edges:
                     edges.append({vertex, neighbour})
         return edges
+
+    def annot_vertex(self, vertex, key, value):
+        self.graph_annots[vertex][key] = value
+
+    def annot_edge(self, edge, key, value):
+        edge = set(
+        self.graph_annots
+def addVertexData(vertex, key, value):
+    
+                 
+
+
 
     def __str__(self):
         res = "vertices: "
