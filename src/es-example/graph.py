@@ -1,112 +1,94 @@
 #!/usr/bin/env python
 
-class Graph(object):
+import sys, os
+import networkx as nx
+from pprint import pprint
+import json
 
-    def __init__(self, graph_dict={}, graph_annots={"vertex": {}, "edge": {}}):
-        """ initializes a graph object """
-        self.__graph_dict = graph_dict
-        self.__graph_annots = graph_annots
+OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
 
-    def vertices(self):
-        """ returns the vertices of a graph """
-        return list(self.__graph_dict.keys())
+def loadVocab(pathdesc, root=OUTPUT_ROOT):
+    pathname = os.path.join(root, pathdesc  + ".json")
+    # print("load from {}".format(pathname), file=sys.stderr)
+    with open(pathname, 'r') as f:
+        j = json.load(f)
+    # dict of (value, count)
+    byCount = sorted([(v,k) for (k,v) in j['histo'].items()], reverse=True)
+    return [t[1] for t in byCount]
 
-    def edges(self):
-        """ returns the edges of a graph """
-        return self.__generate_edges()
+z = loadVocab('seller_telephone_name')
+pprint(z)
 
-    def add_vertex(self, vertex):
-        """ If the vertex "vertex" is not in 
-            self.__graph_dict, a key "vertex" with an empty
-            list as a value is added to the dictionary. 
-            Otherwise nothing has to be done. 
-        """
-        if vertex not in self.__graph_dict:
-            self.__graph_dict[vertex] = []
+g = nx.DiGraph()
 
-    def add_edge(self, edge):
-        """ assumes that edge is of type set, tuple or list; 
-            between two vertices can be multiple edges! 
-        """
-        edge = set(edge)
-        (vertex1, vertex2) = tuple(edge)
-        if vertex1 in self.__graph_dict:
-            self.__graph_dict[vertex1].append(vertex2)
-        else:
-            self.__graph_dict[vertex1] = [vertex2]
+g.add_node('seller', nodeType='Class', className='PersonOrOrganization')
 
-    def __generate_edges(self):
-        """ A static method generating the edges of the 
-            graph "graph". Edges are represented as sets 
-            with one (a loop back to the vertex) or two 
-            vertices 
-        """
-        edges = []
-        for vertex in self.__graph_dict:
-            for neighbour in self.__graph_dict[vertex]:
-                if {neighbour, vertex} not in edges:
-                    edges.append({vertex, neighbour})
-        return edges
+g.add_node('phone', nodeType='Class', className='PhoneNumber')
+g.add_edge('seller', 'phone', edgeType='ObjectProperty', relationName='telephone')
 
-    def annot_vertex(self, vertex, key, value):
-        self.graph_annots[vertex][key] = value
+g.add_node('phone.name', nodeType='leaf', values=loadVocab('seller_telephone_name'))
+g.add_edge('phone', 'phone.name', edgeType='DataProperty', relationName='name')
 
-    def annot_edge(self, edge, key, value):
-        edge = set(
-        self.graph_annots
-def addVertexData(vertex, key, value):
-    
-                 
+g.add_node('email', nodeType='Class', className='EmailAddress')
+# for now this ES query doesn't work
+# g.add_node('email.name', nodeType='leaf', values=loadVocab('seller_email_name'))
+# so use flat data instead
+g.add_node('email.name', nodeType='leaf', values=loadVocab('email_name'))
 
+g.add_node('offer', nodeType='Class', className='Offer')
+g.add_edge('offer', 'seller', edgeType='ObjectProperty', relationName='seller')
+g.add_edge('seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer')
 
+g.add_node('priceSpecification', nodeType='Class', className='PriceSpecification')
+g.add_node('priceSpecification.billingIncrement', nodeType='Leaf', values=loadVocab('offer_priceSpecification_billingIncrement'))
+g.add_node('priceSpecification.price', nodeType='Leaf', values=loadVocab('offer_priceSpecification_price'))
+g.add_node('priceSpecification.name', nodeType='Leaf', values=loadVocab('offer_priceSpecification_name'))
+g.add_node('priceSpecification.unitCode', nodeType='Leaf', values=loadVocab('offer_priceSpecification_unitCode'))
 
-    def __str__(self):
-        res = "vertices: "
-        for k in self.__graph_dict:
-            res += str(k) + " "
-        res += "\nedges: "
-        for edge in self.__generate_edges():
-            res += str(edge) + " "
-        return res
+g.add_node('adultservice', nodeType='Class', className='AdultService')
+g.add_node('adultservice.eyeColor', nodeType='leaf', values=loadVocab('adultservice_eyeColor'))
+g.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
+g.add_node('adultservice.hairColor', nodeType='leaf', values=loadVocab('adultservice_hairColor'))
+g.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor')
+g.add_node('adultservice.name', nodeType='leaf', values=loadVocab('adultservice_name'))
+g.add_edge('adultservice', 'adultservice.name', edgeType='DataProperty', relationName='name')
+g.add_node('adultservice.personAge', nodeType='leaf', values=loadVocab('adultservice_personAge'))
+g.add_edge('adultservice', 'adultservice.personAge', edgeType='DataProperty', relationName='personAge')
 
+g.add_edge('offer', 'adultservice', edgeType='ObjectProperty', relationName='itemOffered')
+g.add_edge('adultservice', 'offer', edgeType='ObjectProperty', relationName='offers')
 
-if __name__ == "__main__":
+g.add_node('place', nodeType='Class', className='Place')
+g.add_node('postaladdress', nodeType='Class', className='PostalAddress')
 
-    g = { "a" : ["d"],
-          "b" : ["c"],
-          "c" : ["b", "c", "d", "e"],
-          "d" : ["a", "c"],
-          "e" : ["c"],
-          "f" : []
-        }
+g.add_edge('offer', 'place', edgeType='ObjectProperty', relationName='availableAtOrFrom')
+g.add_edge('place', 'postaladdress', edgeType='ObjectProperty', relationName='address')
+
+g.add_node('postaladdress.addressLocality', nodeType='leaf', values=loadVocab('offer_availableAtOrFrom_address_addressLocality'))
+g.add_node('postaladdress.addressRegion', nodeType='leaf', values=loadVocab('offer_availableAtOrFrom_address_addressRegion'))
+g.add_node('postaladdress.addressCountry', nodeType='leaf', values=loadVocab('offer_availableAtOrFrom_address_addressCountry'))
 
 
-    graph = Graph(g)
+"""SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
+        {"docType": "adultservice", "fieldName": "hairColor", "size": 10},
+        {"docType": "adultservice", "fieldName": "name", "size": 200},
+        {"docType": "adultservice", "fieldName": "personAge", "size": 20},
 
-    print("Vertices of graph:")
-    print(graph.vertices())
+        {"docType": "phone", "fieldName": "name", "size": 200},
+        
+        {"docType": "email", "fieldName": "name", "size": 200},
 
-    print("Edges of graph:")
-    print(graph.edges())
+        {"docType": "webpage", "innerPath": "publisher", "fieldName": "name", "size": 200},
+        # Ignore webpage.description, webpage.dateCreated
 
-    print("Add vertex:")
-    graph.add_vertex("z")
-
-    print("Vertices of graph:")
-    print(graph.vertices())
- 
-    print("Add an edge:")
-    graph.add_edge({"a","z"})
-    
-    print("Vertices of graph:")
-    print(graph.vertices())
-
-    print("Edges of graph:")
-    print(graph.edges())
-
-    print('Adding an edge {"x","y"} with new vertices:')
-    graph.add_edge({"x","y"})
-    print("Vertices of graph:")
-    print(graph.vertices())
-    print("Edges of graph:")
-    print(graph.edges())
+        # Ignore offer.identifier
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "billingIncrement", "size": 10},
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "price", "size": 200},
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "name", "size": 200},
+        {"docType": "offer", "innerPath": "priceSpecification", "fieldName": "unitCode", "size": 10},
+        {"docType": "offer", "innerPath": "availableAtOrFrom.address", "fieldName": "addressLocality", "size": 200},
+        {"docType": "offer", "innerPath": "availableAtOrFrom.address", "fieldName": "addressRegion", "size": 200},
+        {"docType": "offer", "innerPath": "availableAtOrFrom.address", "fieldName": "addressCountry", "size": 200},
+        # Ignore offer.availableAtOrFrom.name
+        # Ignore offer.availableAtOrFrom.geo.lat, offer.availableAtOrFrom.geo.lon
+    ]"""
