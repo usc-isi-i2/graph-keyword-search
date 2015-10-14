@@ -1,18 +1,27 @@
 #!/usr/bin/env python3
 
 import sys
+if sys.version_info < (3, 0):
+    raise "must use python 3.0 or greater"
+
+import sys
 from elasticsearch import Elasticsearch
 from pprint import pprint
 import json
 from collections import OrderedDict
 import os
 
+CA_CERTS_PATH='/Users/philpot/aws/credentials/certs.pem'
+
 es = Elasticsearch(
     [
         'https://darpamemex:darpamemex@esc.memexproxy.com/' # dig-ht-latest/offer
         # 'http://user:secret@localhost:9200/', 
         ],
-    verify_certs=False
+    # make sure we verify SSL certificates (off by default)
+    verify_certs=True,
+    # provide a path to CA certs on disk
+    ca_certs=CA_CERTS_PATH
     )
 
 def makeBodyNested(fieldName="name", innerPath="itemOffered", size=10):
@@ -60,19 +69,6 @@ def makeBody(fieldName="name", innerPath="", size=10):
     else:
         return makeBodyDirect(fieldName=fieldName,
                               size=size)
-
-# def test(fieldName="name", innerPath="itemOffered", size=10):
-#     # res = es.search(index="test-index", body={"query": {"match_all": {}}})
-#     body=makeBody(fieldName=fieldName, innerPath=innerPath, size=size)
-#     res = es.search(index="dig-ht-latest",
-#                     doc_type="offer",
-#                     body=body,
-#                     search_type="count")
-#     print("Got %d Hits:" % res['hits']['total'])
-#     pprint(res)
-#     for hit in res['aggregations']['toplevelAgg']['termAgg']['buckets']:
-#         # print("%(timestamp)s %(author)s: %(text)s" % hit["_source"])
-#         print(hit)
 
 """
 {'_shards': {'failed': 0, 'successful': 20, 'total': 20},
@@ -127,6 +123,11 @@ def harvest(index="dig-ht-latest", docType="webpage",fieldName="addressCountry",
     return report
 
 def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
+    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_'), fieldName))
+
+OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
+
+def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root=OUTPUT_ROOT, **kwargs):
     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_'), fieldName))
 
 WORKING=[    # works
@@ -212,10 +213,6 @@ SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
         # Ignore offer.availableAtOrFrom.geo.lat, offer.availableAtOrFrom.geo.lon
 
     ]
-        
-
-
-
 
 def harvestToFile(spec):
     outPath = None
@@ -234,38 +231,38 @@ def harvestToFile(spec):
     except Exception as e:
         print("Error [{}] during processing of {}".format(e, outPath))
 
-
-for spec in SPECS:
-    print()
-    print(spec)
-    # harvestToFile(spec)
-    try:
-        h = harvest(**spec)
-        # pprint(h)
-        l = -1
+def generateAll ():
+    for spec in SPECS:
+        print()
+        print(spec)
+        # harvestToFile(spec)
         try:
+            h = harvest(**spec)
+            # pprint(h)
+            l = -1
             try:
-                # nested
-                b = h["result"]["aggregations"]["toplevelAgg"]["termAgg"]["buckets"]
-            except:
-                # direct
-                b = h["result"]["aggregations"]["termAgg"]["buckets"]
-            l = len(b)
-            if l>0:
-                print("Success %d for %s" % (l, spec), file=sys.stderr)
-                k = 5
-                for i,v in zip(range(k+1), b[0:k]):
-                    print("value %d is %s" % (i, v))
-            elif l==0:
-                print("No data for %s" % (spec), file=sys.stderr)
-            else:
-                pass
+                try:
+                    # nested
+                    b = h["result"]["aggregations"]["toplevelAgg"]["termAgg"]["buckets"]
+                except:
+                    # direct
+                    b = h["result"]["aggregations"]["termAgg"]["buckets"]
+                l = len(b)
+                if l>0:
+                    print("Success %d for %s" % (l, spec), file=sys.stderr)
+                    k = 5
+                    for i,v in zip(range(k+1), b[0:k]):
+                        print("value %d is %s" % (i, v))
+                elif l==0:
+                    print("No data for %s" % (spec), file=sys.stderr)
+                else:
+                    pass
+            except Exception as e:
+                print("Nothing happened for %s" % (spec), file=sys.stderr)
+                print(e, file=sys.stderr)
         except Exception as e:
-            print("Nothing happened for %s" % (spec), file=sys.stderr)
+            print("Failed during %s" % (spec), file=sys.stderr)
             print(e, file=sys.stderr)
-    except Exception as e:
-        print("Failed during %s" % (spec), file=sys.stderr)
-        print(e, file=sys.stderr)
 
 """
 
