@@ -123,12 +123,12 @@ def harvest(index="dig-ht-latest", docType="webpage",fieldName="addressCountry",
     return report
 
 def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
-    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_'), fieldName))
+    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
 
 OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
 
-def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root=OUTPUT_ROOT, **kwargs):
-    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_'), fieldName))
+def outputPathname(docType="webpage", innerPath="", fieldName="addressCountry", root=OUTPUT_ROOT, **kwargs):
+    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
 
 WORKING=[    # works
     {"docType": "offer", "innerPath": "itemOffered", "fieldName": "name", "size": 200},
@@ -194,9 +194,12 @@ SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
         {"docType": "adultservice", "fieldName": "name", "size": 200},
         {"docType": "adultservice", "fieldName": "personAge", "size": 20},
 
-        {"docType": "phone", "fieldName": "name", "size": 200},
-        
-        {"docType": "email", "fieldName": "name", "size": 200},
+        # These are valid, but has flat distribution, so not useful for suggestion
+        # {"docType": "phone", "fieldName": "name", "size": 200},
+        # {"docType": "email", "fieldName": "name", "size": 200},
+        # Instead seller-centric distribution
+        {"docType": "seller", "innerPath": "telephone", "fieldName": "name", "size": 200},
+        {"docType": "seller", "innerPath": "email", "fieldName": "name", "size": 200},
 
         {"docType": "webpage", "innerPath": "publisher", "fieldName": "name", "size": 200},
         # Ignore webpage.description, webpage.dateCreated
@@ -222,11 +225,12 @@ def harvestToFile(spec):
         pass
     try:
         h = harvest(**spec)
+        print("Harvest to {}".format(outPath), file=sys.stderr)
         with open(outPath, 'w') as f:
             # Don't use sort_keys here
             # We are counting on the behavior where collections.OrderedDict is
             # serialized in the order keys were added.  If we add things in
-            # order of decreasing counts that will stick, unless we use sort_keys.
+            # order of decreasing counts, the order will stick, unless we use sort_keys.
             json.dump(h, f, indent=4)
     except Exception as e:
         print("Error [{}] during processing of {}".format(e, outPath))
