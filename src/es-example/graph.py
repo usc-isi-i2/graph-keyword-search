@@ -5,6 +5,9 @@ import networkx as nx
 from pprint import pprint
 import json
 import re
+import word2vec
+from collections import defaultdict
+from synonym import generateSynonyms
 
 LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
 
@@ -69,9 +72,6 @@ def htGraph():
     g.add_node('postaladdress.addressCountry', nodeType='leaf', values=loadLeafVocab('offer_availableAtOrFrom_address_addressCountry'), vocabDescriptor='offer_availableAtOrFrom_address_addressCountry')
 
     return g
-
-g = htGraph()
-
 
 """SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
         {"docType": "adultservice", "fieldName": "hairColor", "size": 10},
@@ -138,3 +138,25 @@ def populateAll(graph):
         populateValues(graph, node)
     for edge in graph.edges():
         populateValues(graph, edge)
+
+def queryGraph(graph, keywords):
+    # singletons only
+    cands = defaultdict(list)
+    for keyword in keywords:
+        for node in graph.nodes():
+            if keyword in graph.node[node]['values']:
+                cands[keyword].append((node, 'node', 'direct'))
+        for edge in graph.edges():
+            if keyword in graph.edge[edge[0]][edge[1]]['values']:
+                cands[keyword].append((edge, 'edge', 'direct'))
+        for (synonym, source) in generateSynonyms(keyword):
+            for node in graph.nodes():
+                if synonym in graph.node[node]['values']:
+                    cands[keyword].append((node, 'node', source))
+            for edge in graph.edges():
+                if synonym in graph.edge[edge[0]][edge[1]]['values']:
+                    cands[keyword].append((edge, 'edge', source))
+    return cands
+
+g = htGraph()
+populateAll(g)
