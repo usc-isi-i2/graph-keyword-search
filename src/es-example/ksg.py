@@ -28,7 +28,8 @@ def main(argv=None):
     print("Terms: {}".format(terms))
     s = SynonymGenerator()
     k = KQuery(terms, g, s)
-    return k
+    k.suggestCandidates()
+    return k.dump()
 
 # call main() if this is run as standalone
 if __name__ == "__main__":

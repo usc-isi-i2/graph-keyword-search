@@ -112,6 +112,15 @@ class KGraph(DiGraph):
             self.populateValues(node)
         for edge in self.edges():
             self.populateValues(edge)
+            
+    def nodeMatch(self, node, label):
+        """list generator"""
+        # print("Looking for {} as {}".format(label, label.lower().replace('_',' ')))
+        return label.lower().replace('_', ' ') in (value.lower() for value in self.node[node]['values'])
+    
+    def edgeMatch(self, edge, label):
+        """list generator"""
+        return label.lower() in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
 
 
 """SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
