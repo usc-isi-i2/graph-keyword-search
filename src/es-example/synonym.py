@@ -56,31 +56,40 @@ class SynonymGenerator(object):
                                     ('r', (True, 1), (False, 0), (True, 0.5)))
         
     def generateSynonyms(self, seed, source=True):
+        print([self, seed, source], file=sys.stderr)
         if source == True:
             sources = ['word2vec', 'wordnet']
         else:
             sources = [source]
         if 'word2vec' in sources:
             for g in self.generateSynonymsWord2Vec(seed):
+                print(['out', 'word2vec', g], file=sys.stderr)
                 yield(g)
         if 'wordnet' in sources:
             for g in self.generateSynonymsWordnet(seed):
+                print(['out', 'wordnet', g], file=sys.stderr)
                 yield(g)
             
     def generateSynonymsWord2Vec(self, seed):
         """collocation seed must be specified as word1_word2"""
+        if isinstance(seed, (list, tuple)):
+            seed = "_".join(seed)
         size = self.word2vecSize
         minimum = self.word2vecMinimum
-        model = self.word2vecModel
-        (indexes, metrics) = model.cosine(seed, size)
-        array = model.generate_response(indexes, metrics)
-        for (syn, similarityScore) in array:
-            if similarityScore >= minimum:
-                yield(Synonym(seed=seed, target=syn, similarity=similarityScore, source='word2vec'))
+        try:
+            model = self.word2vecModel
+            (indexes, metrics) = model.cosine(seed, size)
+            array = model.generate_response(indexes, metrics)
+            for (syn, similarityScore) in array:
+                if similarityScore >= minimum:
+                    yield(Synonym(seed=seed, target=syn, similarity=similarityScore, source='word2vec'))
+        except:
+            pass
                       
     def generateSynonymsWordnet(self, seed):
         """lemmas with count=0 are generally quite rare, so drop them
         may generate a lemma more than once, possible with different parameters"""
+        print(['gSW', self, seed], file=sys.stderr)
         neighborhood = self.wordnetNeighborhood
         pos = self.wordnetPartsOfSpeech
         wn = self.wn
