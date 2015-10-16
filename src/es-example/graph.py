@@ -7,6 +7,7 @@ import json
 import re
 import word2vec
 from collections import defaultdict
+from Levenshtein import distance
 
 LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
 
@@ -121,6 +122,24 @@ class KGraph(DiGraph):
     def edgeMatch(self, edge, label):
         """list generator"""
         return label.lower().replace('_', ' ') in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
+    
+    def nodeEditWithin(self, node, label, within=1, above=None):
+        """set above=0 to avoid matching node value exactly identical to label"""
+        l = label.lower().replace('_', ' ') 
+        for value in self.node[node]['values']:
+            actual = distance(l, value)
+            if (not above or actual>above) and actual <= within:
+                # if levenshtein is 0, return true value 0.0
+                return actual or 0.0
+            
+    def edgeEditWithin(self, edge, label, within=1, above=None):
+        """set above=0 to avoid matching edge value exactly identical to label"""
+        l = label.lower().replace('_', ' ') 
+        for value in self.edge[edge[0]][edge[1]]['values']:
+            actual = distance(l, value)
+            if (not above or actual>above) and actual <= within:
+                # if levenshtein is 0, return true value 0.0
+                return actual or 0.0
 
 
 """SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
