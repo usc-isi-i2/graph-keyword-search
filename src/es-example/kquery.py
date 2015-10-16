@@ -14,10 +14,13 @@ class Candidate(object):
     def __str__(self, *args, **kwargs):
         sig = "None"
         try:
-            sig = self.candidateType or ""
+            sig = (self.referentType or "")
             sig += " "
-            sig += (self.referentType or "")
-            sig += " " + (str(sig.referent) or "")
+            sig += (self.candidateType or "")
+            sig += " " 
+            sig += (str(self.referent) or "")
+            sig += " "
+            sig += (str(getattr(self,"synonym",None) or ""))
         except Exception as _:
             pass
         return "<" + str(type(self).__name__) + " " + sig + ">"
@@ -66,6 +69,7 @@ class KQuery(object):
         # singletons only
         graph = self.graph
         anchors = self.anchors
+        within = 1
         sg = self.synonymGenerator
         for k,d in anchors.items():
             keyword = k
@@ -78,16 +82,24 @@ class KQuery(object):
                 for edge in graph.edges():
                     if graph.edgeMatch(edge, keyword):
                         d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
-                continue
+                # singleton, levenshtein
+                for node in graph.nodes():
+                    away = graph.nodeEditWithin(node, keyword, within, above=0)
+                    if away:
+                        d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='levenshtein', distance=away))
+                for edge in graph.edges():
+                    away = graph.edgeEditWithin(edge, keyword, within, above=0)
+                    if away:
+                        d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='levenshtein', distance=away))                
                 # singleton, synonym
                 for s in sg.generateSynonyms(keyword):
-                    syn = s.target
+                    target = s.target
                     for node in graph.nodes():
-                        if graph.nodeMatch(node, syn):
-                            d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=syn))
+                        if graph.nodeMatch(node, target):
+                            d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=s))
                     for edge in graph.edges():
-                        if graph.edgeMatch(edge, syn):
-                            d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=syn))
+                        if graph.edgeMatch(edge, target):
+                            d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=s))
             elif d["cardinality"] >= 2:
                 # multiword, direct
                 for node in graph.nodes():
@@ -96,7 +108,7 @@ class KQuery(object):
                 for edge in graph.edges():
                     if graph.edgeMatch(edge, keyword):
                         d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
-                continue
+                # multiword, levenshtein or jaro_winkler
                 # multiword, synonym
                 for s in sg.generateSynonyms(keyword):
                     syn = s.target
