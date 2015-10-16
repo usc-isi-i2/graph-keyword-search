@@ -142,6 +142,9 @@ class KQuery(object):
             byIndex[d['index']] = d
         for d in byIndex:
             try:
-                print("{}. {}".format(d['index'], d))
+                idx = d['index']
+                k = d.get('term', '')
+                v = d.get('candidates', [])
+                print("{}{}. {}: {}".format("  " if idx%2 else "", idx, k, v))
             except:
                 print(d)
