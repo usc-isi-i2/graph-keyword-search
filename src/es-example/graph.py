@@ -84,7 +84,7 @@ class KGraph(DiGraph):
                 self.populateLeafNode(node)
             elif nodeType == 'Class':
                 self.populateClassNode(node)
-        except Exception as e:
+        except Exception as _:
             edge = nodeOrEdge
             (node1, node2) = edge
             edgeType = self.edge[node1][node2]['edgeType']
@@ -101,11 +101,11 @@ class KGraph(DiGraph):
     
     def populateRelationEdge(self, edge):
         (node1, node2) = edge
-        self.edge[node1][node2]['values'] = [self.edge[node1][node2]['relationName']]
+        self.edge[node1][node2]['values'] = [camelCaseWords(self.edge[node1][node2]['relationName'])]
     
     def populateAttributeEdge(self, edge):
         (node1, node2) = edge
-        self.edge[node1][node2]['values'] = [self.edge[node1][node2]['relationName']]    
+        self.edge[node1][node2]['values'] = [camelCaseWords(self.edge[node1][node2]['relationName'])]  
     
     def populateAll(self):
         for node in self.nodes():
@@ -120,7 +120,7 @@ class KGraph(DiGraph):
     
     def edgeMatch(self, edge, label):
         """list generator"""
-        return label.lower() in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
+        return label.lower().replace('_', ' ') in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
 
 
 """SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
