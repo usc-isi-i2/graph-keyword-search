@@ -13,7 +13,7 @@ LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es
 
 def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
     pathname = os.path.join(root, pathdesc  + ".json")
-    # print("load from {}".format(pathname), file=sys.stderr)
+    print("load from {}".format(pathname), file=sys.stderr)
     with open(pathname, 'r') as f:
         j = json.load(f)
     # dict of (value, count)
@@ -30,38 +30,38 @@ class KGraph(DiGraph):
         super(KGraph, self).__init__()
         if domainType == 'ht':
    
-            self.add_node('seller', nodeType='Class', className='PersonOrOrganization')
+            self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
         
-            self.add_node('phone', nodeType='Class', className='PhoneNumber')
+            self.add_node('phone', nodeType='Class', className='PhoneNumber', indexRoot='phone')
             self.add_edge('seller', 'phone', edgeType='ObjectProperty', relationName='telephone')
         
-            self.add_node('phone.name', nodeType='leaf', values=loadLeafVocab('seller_telephone_name'), vocabDescriptor='seller_telephone_name')
+            self.add_node('phone.name', nodeType='leaf', vocabDescriptor='seller_telephone_name')
             self.add_edge('phone', 'phone.name', edgeType='DataProperty', relationName='name')
         
-            self.add_node('email', nodeType='Class', className='EmailAddress')
+            self.add_node('email', nodeType='Class', className='EmailAddress', indexRoot='email')
             # for now this ES query doesn't work
             # self.add_node('email.name', nodeType='leaf', values=loadLeafVocab('seller_email_name'), vocabDescriptor='seller_email_name')
             # so use flat data instead
-            self.add_node('email.name', nodeType='leaf', values=loadLeafVocab('email_name'), vocabDescriptor='email_name')
+            self.add_node('email.name', nodeType='leaf', vocabDescriptor='email_name')
         
-            self.add_node('offer', nodeType='Class', className='Offer')
+            self.add_node('offer', nodeType='Class', className='Offer', indexRoot='offer')
             self.add_edge('offer', 'seller', edgeType='ObjectProperty', relationName='seller')
             self.add_edge('seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer')
         
             self.add_node('priceSpecification', nodeType='Class', className='PriceSpecification')
-            self.add_node('priceSpecification.billingIncrement', nodeType='Leaf', values=loadLeafVocab('offer_priceSpecification_billingIncrement'), vocabDescriptor='offer_priceSpecification_billingIncrement')
-            self.add_node('priceSpecification.price', nodeType='Leaf', values=loadLeafVocab('offer_priceSpecification_price'), vocabDescriptor='offer_priceSpecification_price')
-            self.add_node('priceSpecification.name', nodeType='Leaf', values=loadLeafVocab('offer_priceSpecification_name'), vocabDescriptor='offer_priceSpecification_name')
-            self.add_node('priceSpecification.unitCode', nodeType='Leaf', values=loadLeafVocab('offer_priceSpecification_unitCode'), vocabDescriptor='offer_priceSpecification_unitCode')
+            self.add_node('priceSpecification.billingIncrement', nodeType='leaf', vocabDescriptor='offer_priceSpecification_billingIncrement')
+            self.add_node('priceSpecification.price', nodeType='leaf', vocabDescriptor='offer_priceSpecification_price')
+            self.add_node('priceSpecification.name', nodeType='leaf', vocabDescriptor='offer_priceSpecification_name')
+            self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
         
-            self.add_node('adultservice', nodeType='Class', className='AdultService')
-            self.add_node('adultservice.eyeColor', nodeType='leaf', values=loadLeafVocab('adultservice_eyeColor'), vocabDescriptor='adultservice_eyeColor')
+            self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
+            self.add_node('adultservice.eyeColor', nodeType='leaf', vocabDescriptor='adultservice_eyeColor')
             self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
-            self.add_node('adultservice.hairColor', nodeType='leaf', values=loadLeafVocab('adultservice_hairColor'), vocabDescriptor='adultservice_hairColor')
+            self.add_node('adultservice.hairColor', nodeType='leaf', vocabDescriptor='adultservice_hairColor')
             self.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor')
-            self.add_node('adultservice.name', nodeType='leaf', values=loadLeafVocab('adultservice_name'), vocabDescriptor='adultservice_name')
+            self.add_node('adultservice.name', nodeType='leaf', vocabDescriptor='adultservice_name')
             self.add_edge('adultservice', 'adultservice.name', edgeType='DataProperty', relationName='name')
-            self.add_node('adultservice.personAge', nodeType='leaf', values=loadLeafVocab('adultservice_personAge'), vocabDescriptor='adultservice_personAge')
+            self.add_node('adultservice.personAge', nodeType='leaf', vocabDescriptor='adultservice_personAge')
             self.add_edge('adultservice', 'adultservice.personAge', edgeType='DataProperty', relationName='personAge')
         
             self.add_edge('offer', 'adultservice', edgeType='ObjectProperty', relationName='itemOffered')
@@ -73,10 +73,16 @@ class KGraph(DiGraph):
             self.add_edge('offer', 'place', edgeType='ObjectProperty', relationName='availableAtOrFrom')
             self.add_edge('place', 'postaladdress', edgeType='ObjectProperty', relationName='address')
         
-            self.add_node('postaladdress.addressLocality', nodeType='leaf', values=loadLeafVocab('offer_availableAtOrFrom_address_addressLocality'), vocabDescriptor='offer_availableAtOrFrom_address_addressLocality')
-            self.add_node('postaladdress.addressRegion', nodeType='leaf', values=loadLeafVocab('offer_availableAtOrFrom_address_addressRegion'), vocabDescriptor='offer_availableAtOrFrom_address_addressRegion')
-            self.add_node('postaladdress.addressCountry', nodeType='leaf', values=loadLeafVocab('offer_availableAtOrFrom_address_addressCountry'), vocabDescriptor='offer_availableAtOrFrom_address_addressCountry')
-
+            self.add_node('postaladdress.addressLocality', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressLocality')
+            self.add_node('postaladdress.addressRegion', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressRegion')
+            self.add_node('postaladdress.addressCountry', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressCountry')
+            
+            self.add_node('webpage', nodeType='Class', className='WebPage', indexRoot='webpage')
+            self.add_node('publisher', nodeType='Class', className='Organization')
+            self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
+            self.add_edge('webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher')
+            self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
+            
     def populateValues(self, nodeOrEdge):
         try:
             node = nodeOrEdge
@@ -116,7 +122,7 @@ class KGraph(DiGraph):
             
     def nodeMatch(self, node, label):
         """list generator"""
-        # print("Looking for {} as {}".format(label, label.lower().replace('_',' ')))
+        print("Looking in {} for {} as {}".format(str(node), label, label.lower().replace('_',' ')))
         return label.lower().replace('_', ' ') in (value.lower() for value in self.node[node]['values'])
     
     def edgeMatch(self, edge, label):
