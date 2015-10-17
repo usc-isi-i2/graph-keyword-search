@@ -21,7 +21,7 @@ def make_steiner_tree(G, voi, generator=None):
         mst = Graph()
         for v in voi:
                 if not v in G:
-                        raise ValueError, "make_steiner_tree(): Some vertice not in original graph"
+                        raise ValueError("make_steiner_tree(): Some vertice not in original graph")
         if len(voi) == 0:
                 return mst
         if len(voi) == 1:
@@ -44,7 +44,7 @@ def make_steiner_tree(G, voi, generator=None):
                 for v2  in voi[i+1:]:
                         result = bidirectional_dijkstra(G, v1, v2)
                         if result == False:
-                                raise RuntimeError, "The two vertices given (%s, %s) don't exist on the same connected graph" % (v1, v2)
+                                raise RuntimeError("The two vertices given (%s, %s) don't exist on the same connected graph" % (v1, v2))
                                 #print "The two vertices given (%s, %s) don't exist on the same connected graph" % (v1, v2)
                         distance, vertList = result
                         keys = [v1, v2]
@@ -65,7 +65,7 @@ def make_steiner_tree(G, voi, generator=None):
         sTree = set(mst.nodes())
         sSteiner = set(voi)
         if sTree ^ sSteiner:
-                raise RuntimeError, 'Failed to construct MST spanning tree'
+                raise RuntimeError('Failed to construct MST spanning tree')
        
         # reconstruct subgraph of origGraph using the paths
         if generator is None:
@@ -108,12 +108,12 @@ def _trimTree(graph, voi):
 
 
 def _trim(node, graph, trimKeepTrack, voi):
-        if len(graph.adj[node].keys()) > 1:
-                for nodeNeighbor in graph.adj[node].keys():
+        if len(list(graph.adj[node].keys())) > 1:
+                for nodeNeighbor in list(graph.adj[node].keys()):
                         if nodeNeighbor not in trimKeepTrack:
                                 trimKeepTrack.append(nodeNeighbor)
                                 graph = _trim(nodeNeighbor, graph, trimKeepTrack, voi)
-        if len(graph.adj[node].keys()) < 2:
+        if len(list(graph.adj[node].keys())) < 2:
                 if node not in voi:
                         graph.remove_node(node)
         return graph
@@ -140,13 +140,13 @@ def make_prim_mst(G, generator=None):
         mst.add_node(firstNode)
         for edge in G.edges_iter(firstNode, data=True):
                 if len(edge) != 3 or edge[2] is None:
-                        raise ValueError, "make_prim_mst accepts a weighted graph only (with numerical weights)"
+                        raise ValueError("make_prim_mst accepts a weighted graph only (with numerical weights)")
                 heappush(priorityQ, (edge[2], edge))
 
         while len(mst.edges()) < (G.order()-1):
                 w, minEdge = heappop(priorityQ)
                 if len(minEdge) != 3 or minEdge[2] is None:
-                        raise ValueError, "make_prim_mst accepts a weighted graph only (with numerical weights)"
+                        raise ValueError("make_prim_mst accepts a weighted graph only (with numerical weights)")
                 v1, v2, w = minEdge
                 if v1 not in mst:
                         for edge in G.edges_iter(v1, data=True):
