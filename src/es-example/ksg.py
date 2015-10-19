@@ -6,14 +6,17 @@ import argparse
 from graph import htGraph
 from kquery import KQuery
 from synonym import SynonymGenerator
+from graph import minimalSubgraph
 
 g = None
 k = None
 s = None
+m = None
+wg = None
 
 def main(argv=None):
     '''this is called if run from command line'''
-    global g,k,s
+    global g,k,s,m,wg
     parser = argparse.ArgumentParser()
     parser.add_argument('terms', nargs='*', default=[], action="append")
 #     parser.add_argument('-t','--type', 
@@ -29,6 +32,7 @@ def main(argv=None):
     s = SynonymGenerator()
     k = KQuery(terms, g, s)
     k.suggestCandidates()
+    (m, wg) = minimalSubgraph(g, 'offer', k)
     return k.dump()
 
 # call main() if this is run as standalone
