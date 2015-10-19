@@ -5,11 +5,12 @@ from itertools import count
 from synonym import SynonymGenerator
 
 class Candidate(object):
-    def __init__(self, referent=None, referentType=None, candidateType=None, synonym=None):
+    def __init__(self, referent=None, referentType=None, candidateType=None, synonym=None, distance=None):
         self.referent = referent
         self.referentType = referentType
         self.candidateType = candidateType
         self.synonym = synonym
+        self.distance = distance
         
     def __str__(self, *args, **kwargs):
         sig = "None"
