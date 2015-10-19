@@ -41,6 +41,7 @@ class KGraph(DiGraph):
             self.add_edge('phone', 'phone.name', edgeType='DataProperty', relationName='name')
         
             self.add_node('email', nodeType='Class', className='EmailAddress', indexRoot='email')
+            self.add_edge('seller', 'email', edgeType='ObjectProperty', relationName='email')
             # for now this ES query doesn't work
             # self.add_node('email.name', nodeType='leaf', values=loadLeafVocab('seller_email_name'), vocabDescriptor='seller_email_name')
             # so use flat data instead
@@ -53,10 +54,14 @@ class KGraph(DiGraph):
         
             self.add_node('priceSpecification', nodeType='Class', className='PriceSpecification')
             self.add_node('priceSpecification.billingIncrement', nodeType='leaf', vocabDescriptor='offer_priceSpecification_billingIncrement')
+            self.add_edge('priceSpecification', 'priceSpecification.billingIncrement', edgeType='DataProperty', relationName='billingIncrement')
             self.add_node('priceSpecification.price', nodeType='leaf', vocabDescriptor='offer_priceSpecification_price')
+            self.add_edge('priceSpecification', 'priceSpecification.price', edgeType='DataProperty', relationName='price')
             self.add_node('priceSpecification.name', nodeType='leaf', vocabDescriptor='offer_priceSpecification_name')
+            self.add_edge('priceSpecification', 'priceSpecification.name', edgeType='DataProperty', relationName='name')
             self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
-        
+            self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
+
             self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
             self.add_node('adultservice.eyeColor', nodeType='leaf', vocabDescriptor='adultservice_eyeColor')
             self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
@@ -77,16 +82,20 @@ class KGraph(DiGraph):
             self.add_edge('place', 'postaladdress', edgeType='ObjectProperty', relationName='address')
         
             self.add_node('postaladdress.addressLocality', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressLocality')
+            self.add_edge('postaladdress', 'postaladdress.addressLocality', edgeType='DataProperty', relationName='addressLocality')
             self.add_node('postaladdress.addressRegion', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressRegion')
+            self.add_edge('postaladdress', 'postaladdress.addressRegion', edgeType='DataProperty', relationName='addressRegion')
             self.add_node('postaladdress.addressCountry', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressCountry')
+            self.add_edge('postaladdress', 'postaladdress.addressCountry', edgeType='DataProperty', relationName='addressCountry')
             
             self.add_node('webpage', nodeType='Class', className='WebPage', indexRoot='webpage')
             self.add_node('publisher', nodeType='Class', className='Organization')
-            self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher')
+            self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
             
     def populateValues(self, nodeOrEdge):
+        print("Enter PV: {}".format(nodeOrEdge))
         try:
             node = nodeOrEdge
             nodeType = self.node[node]['nodeType']
@@ -194,13 +203,15 @@ class KGraph(DiGraph):
         # Ignore offer.availableAtOrFrom.geo.lat, offer.availableAtOrFrom.geo.lon
     ]"""
     
+wg = None
+    
 def minimalSubgraph(kgraph, root, kquery):
     # transform into weighted nondirected graph
     # all nodes become nodes
     # all edges also become nodes
     # induce edge with weight 1 for each node/edge and edge/node
     # except: traverse starting at root, dropping any backlinks
-
+    global wg
     wg = Graph()
 
     required = set()
@@ -213,28 +224,38 @@ def minimalSubgraph(kgraph, root, kquery):
     q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
     q.put(root)
 
-
     while not q.empty():
+        print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
         obj = q.get()
+        print("Dequeue {}".format(obj), file=sys.stderr)
         if not obj in seen:
-            length = len(obj)
-            if length==1:
+            if isinstance(obj, (str)):
                 # unseen kgraph node
+                seen.add(obj)
                 node = obj
                 wg.add_node(node, nodeType='truenode')
-                for edge in kgraph.edge[node]:
-                    q.put(edge)
-            elif length==2:
+                for node2 in kgraph.edge[node]:
+                    print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
+                    q.put((node,node2))
+            elif isinstance(obj, (list, tuple)) and len(obj)==2:
                 # unseen kgraph edge
-                edge = obj
+                seen.add(obj)
+                # edge = obj
                 # create a node representing original edge
-                edgenode = [["edgenode", obj[0], obj[1]]]
+                edgenode = ("edgenode", obj[0], obj[1])
                 wg.add_node(edgenode, nodeType='edgenode')
                 wg.add_edge(obj[0], edgenode, type='entry')
                 wg.add_edge(edgenode, obj[1], type='exit')
+                print("Enqueue node {}".format(obj[1]), file=sys.stderr)
+                q.put(obj[1])
+            else:
+                print("Unexpected {}".format(obj), file=sys.stderr)
+        else:
+            print("Obj {} already seen".format(obj), file=sys.stderr)
+    return (None, wg)
     # generate minimal steiner tree
     mst = make_steiner_tree(wg, required)
-    return mst
+    return (mst, wg)
     
 g = None
     
