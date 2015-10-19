@@ -214,11 +214,11 @@ def minimalSubgraph(kgraph, root, kquery):
     global wg
     wg = Graph()
 
-    required = set()
-    required.add(root)
+    required = []
+    required.append(root)
     for a in kquery.anchors.values():
         for cand in a["candidates"]:
-            required.add(cand.referent)
+            required.append(cand.referent)
             
     seen = set()
     q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
@@ -233,7 +233,7 @@ def minimalSubgraph(kgraph, root, kquery):
                 # unseen kgraph node
                 seen.add(obj)
                 node = obj
-                wg.add_node(node, nodeType='truenode')
+                wg.add_node((node,), nodeType='truenode')
                 for node2 in kgraph.edge[node]:
                     print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
                     q.put((node,node2))
@@ -244,15 +244,15 @@ def minimalSubgraph(kgraph, root, kquery):
                 # create a node representing original edge
                 edgenode = ("edgenode", obj[0], obj[1])
                 wg.add_node(edgenode, nodeType='edgenode')
-                wg.add_edge(obj[0], edgenode, type='entry')
-                wg.add_edge(edgenode, obj[1], type='exit')
+                wg.add_edge((obj[0],), edgenode, type='entry', weight=1)
+                wg.add_edge(edgenode, (obj[1],), type='exit', weight=1)
                 print("Enqueue node {}".format(obj[1]), file=sys.stderr)
                 q.put(obj[1])
             else:
                 print("Unexpected {}".format(obj), file=sys.stderr)
         else:
             print("Obj {} already seen".format(obj), file=sys.stderr)
-    return (None, wg)
+    # return (None, wg)
     # generate minimal steiner tree
     mst = make_steiner_tree(wg, required)
     return (mst, wg)
