@@ -28,7 +28,7 @@ def make_steiner_tree(G, voi, generator=None):
     mst = Graph()
     for v in voi:
         if not v in G:
-            raise ValueError("make_steiner_tree(): Some vertex not in original graph")
+            raise ValueError("make_steiner_tree(): Vertex {} not in original graph".format(v))
     if len(voi) == 0:
         return mst
     if len(voi) == 1:
