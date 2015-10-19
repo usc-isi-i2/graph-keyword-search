@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
 import sys, os
-from networkx import DiGraph
+from networkx import DiGraph, Graph
 from pprint import pprint
 import json
 import re
 import word2vec
 from collections import defaultdict
 from Levenshtein import distance
+from queue import Queue
+from SteinerTree import make_steiner_tree
 
 LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
 
@@ -43,6 +45,7 @@ class KGraph(DiGraph):
             # self.add_node('email.name', nodeType='leaf', values=loadLeafVocab('seller_email_name'), vocabDescriptor='seller_email_name')
             # so use flat data instead
             self.add_node('email.name', nodeType='leaf', vocabDescriptor='email_name')
+            self.add_edge('email', 'email.name', edgeType='DataProperty', relationName='name')
         
             self.add_node('offer', nodeType='Class', className='Offer', indexRoot='offer')
             self.add_edge('offer', 'seller', edgeType='ObjectProperty', relationName='seller')
@@ -147,7 +150,26 @@ class KGraph(DiGraph):
                 # if levenshtein is 0, return true value 0.0
                 return actual or 0.0
 
-
+    def generateSubgraph(self, node):
+        seen = set()
+        def visitNode(n1):
+            if n1 in seen:
+                pass
+            else:
+                yield(("node",n1))
+                seen.add(n1)
+                for n2 in self.edge[n1]:
+                    yield from visitEdge((n1,n2))
+        def visitEdge(e):
+            (_,n2) = e
+            if e in seen:
+                pass
+            else:
+                yield(("edge",e))
+                seen.add(e)
+                yield from visitNode(n2)
+        return visitNode(node)
+                
 """SPECS=[ {"docType": "adultservice", "fieldName": "eyeColor", "size": 10},
         {"docType": "adultservice", "fieldName": "hairColor", "size": 10},
         {"docType": "adultservice", "fieldName": "name", "size": 200},
@@ -171,6 +193,48 @@ class KGraph(DiGraph):
         # Ignore offer.availableAtOrFrom.name
         # Ignore offer.availableAtOrFrom.geo.lat, offer.availableAtOrFrom.geo.lon
     ]"""
+    
+def minimalSubgraph(kgraph, root, kquery):
+    # transform into weighted nondirected graph
+    # all nodes become nodes
+    # all edges also become nodes
+    # induce edge with weight 1 for each node/edge and edge/node
+    # except: traverse starting at root, dropping any backlinks
+
+    wg = Graph()
+
+    required = set()
+    required.add(root)
+    for a in kquery.anchors.values():
+        for cand in a["candidates"]:
+            required.add(cand.referent)
+            
+    seen = set()
+    q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
+    q.put(root)
+
+
+    while not q.empty():
+        obj = q.get()
+        if not obj in seen:
+            length = len(obj)
+            if length==1:
+                # unseen kgraph node
+                node = obj
+                wg.add_node(node, nodeType='truenode')
+                for edge in kgraph.edge[node]:
+                    q.put(edge)
+            elif length==2:
+                # unseen kgraph edge
+                edge = obj
+                # create a node representing original edge
+                edgenode = [["edgenode", obj[0], obj[1]]]
+                wg.add_node(edgenode, nodeType='edgenode')
+                wg.add_edge(obj[0], edgenode, type='entry')
+                wg.add_edge(edgenode, obj[1], type='exit')
+    # generate minimal steiner tree
+    mst = make_steiner_tree(wg, required)
+    return mst
     
 g = None
     
