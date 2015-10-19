@@ -4,6 +4,7 @@ import sys, os
 
 from nltk.corpus import wordnet as wn
 import word2vec
+from urllib.parse import quote
 from builtins import setattr
 
 class Synonym(object):
@@ -54,6 +55,9 @@ class SynonymGenerator(object):
                                     ('v', (True, 1), (True, 0.5), (True, 0.5)),
                                     ('a', (True, 1), (False, 0), (True, 0.5)),
                                     ('r', (True, 1), (False, 0), (True, 0.5)))
+        # swoogle config
+        self.swoogle = True
+        self.swoogleUriTemplate = '''http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="{}"&phrase2="{}"'''
         
     def generateSynonyms(self, seed, source=True):
         print([self, seed, source], file=sys.stderr)
@@ -119,6 +123,17 @@ class SynonymGenerator(object):
                     for child in synset.hyponyms():
                         for g in generateSynsetSynonyms(child, "hyponym", downFactor):
                             yield(g)
+                            
+    def generateSynonymsSwoogle(self, seed):
+        score = 0
+        url = self.swoogleUriTemplate.format(quote)
+        try:
+            request = urllib.request.Request(url)
+            response = urllib.request.urlopen(request)
+            score = str(response.read().decode('utf-8')).replace('\"','')
+            score = float(score)
+        except Exception as e:
+            pass
 
 
 # def findSynonyms_w2v(word, size=10, minimum=0.5):
