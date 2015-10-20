@@ -204,8 +204,19 @@ class KGraph(DiGraph):
     ]"""
     
 wg = None
+
+from collections import namedtuple
+nodeDesig = namedtuple('nodeDesig', 'nodeType, nodeRefs')
+
+def truenodeDesig(node):
+    """Render a kgraph node as a wgraph node"""
+    return nodeDesig(nodeType='truenode', nodeRefs=(node,))
+
+def edgenodeDesig(edge):
+    """Render a kgraph edge as a wgraph node"""
+    return nodeDesig(nodeType='edgenode', nodeRefs=edge)
     
-def minimalSubgraph(kgraph, root, kquery):
+def minimalSubgraph0(kgraph, root, kquery):
     # transform into weighted nondirected graph
     # all nodes become nodes
     # all edges also become nodes
@@ -248,6 +259,71 @@ def minimalSubgraph(kgraph, root, kquery):
                 wg.add_edge(edgenode, (obj[1],), type='exit', weight=1)
                 print("Enqueue node {}".format(obj[1]), file=sys.stderr)
                 q.put(obj[1])
+            else:
+                print("Unexpected {}".format(obj), file=sys.stderr)
+        else:
+            print("Obj {} already seen".format(obj), file=sys.stderr)
+    # return (None, wg)
+    # generate minimal steiner tree
+    mst = make_steiner_tree(wg, required)
+    return (mst, wg)
+
+def minimalSubgraph(kgraph, root, kquery):
+    # transform into weighted nondirected graph
+    # all nodes become nodes
+    # all edges also become nodes
+    # induce edge with weight 1 for each node/edge and edge/node
+    # except: traverse starting at root, dropping any backlinks
+
+    # required contains nodes/edges from original kgraph
+    required = []
+    required.append(truenodeDesig(root))
+    for a in kquery.anchors.values():
+        for cand in a["candidates"]:
+            if cand.referentType == 'node':
+                required.append(truenodeDesig(cand.referent))
+            elif cand.referentType == 'edge':
+                required.append(edgenodeDesig(cand.referent))
+            
+    # seen contains nodes/edges from original kgraph
+    seen = set()
+    
+    # q contains nodes/edges from original kgraph
+    q = Queue(maxsize=kgraph.number_of_nodes() + 3*kgraph.number_of_edges())
+    q.put(root)
+    
+    # wg contains wgnodes, wgedges
+    global wg
+    wg = Graph()
+
+    while not q.empty():
+        print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
+        obj = q.get()
+        print("Dequeue {}".format(obj), file=sys.stderr)
+        if not obj in seen:
+            if isinstance(obj, (str)):
+                # unseen kgraph node
+                seen.add(obj)
+                node = obj
+                wg.add_node(truenodeDesig(node))
+                for node2 in kgraph.edge[node]:
+                    print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
+                    q.put((node,node2))
+            elif isinstance(obj, (list, tuple)) and len(obj)==2:
+                # unseen kgraph edge
+                seen.add(obj)
+                # edge = obj
+                # create a node representing original edge
+                (node1, node2) = obj
+                truenode1 = truenodeDesig(node1)
+                truenode2 = truenodeDesig(node2)
+                edge = obj
+                edgenode = edgenodeDesig(edge)
+                wg.add_node(edgenode)
+                wg.add_edge(truenode1, edgenode, weight=1)
+                wg.add_edge(edgenode, truenode2, weight=1)
+                print("Enqueue node {}".format(node2), file=sys.stderr)
+                q.put(node2)
             else:
                 print("Unexpected {}".format(obj), file=sys.stderr)
         else:
