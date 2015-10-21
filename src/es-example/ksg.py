@@ -13,10 +13,11 @@ k = None
 s = None
 m = None
 wg = None
+sg = None
 
 def main(argv=None):
     '''this is called if run from command line'''
-    global g,k,s,m,wg
+    global g, k, s, m, wg, sg
     parser = argparse.ArgumentParser()
     parser.add_argument('terms', nargs='*', default=[], action="append")
 #     parser.add_argument('-t','--type', 
@@ -32,8 +33,8 @@ def main(argv=None):
     s = SynonymGenerator()
     k = KQuery(terms, g, s)
     k.suggestCandidates()
-    (m, wg) = minimalSubgraph(g, 'offer', k)
-    return k.dump()
+    (m, wg, sg) = minimalSubgraph(g, 'offer', k)
+    return (g,k,s,m,wg,sg)
 
 # call main() if this is run as standalone
 if __name__ == "__main__":

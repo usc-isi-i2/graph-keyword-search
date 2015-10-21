@@ -2,7 +2,6 @@
 
 import sys, os
 from networkx import DiGraph, Graph
-from pprint import pprint
 import json
 import re
 import word2vec
@@ -10,6 +9,7 @@ from collections import defaultdict
 from Levenshtein import distance
 from queue import Queue
 from SteinerTree import make_steiner_tree
+from collections import namedtuple
 
 LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
 
@@ -28,10 +28,13 @@ def camelCaseWords(label):
     return label
 
 class KGraph(DiGraph):
-    def __init__(self, domainType='ht'):
+    def __init__(self, domainType=None):
         super(KGraph, self).__init__()
+        self.domainType = domainType
+        self.installDomain(domainType)
+        
+    def installDomain(self, domainType=None):
         if domainType == 'ht':
-   
             self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
         
             self.add_node('phone', nodeType='Class', className='PhoneNumber', indexRoot='phone')
@@ -205,7 +208,6 @@ class KGraph(DiGraph):
     
 wg = None
 
-from collections import namedtuple
 nodeDesig = namedtuple('nodeDesig', 'nodeType, nodeRefs')
 
 def truenodeDesig(node):
@@ -330,8 +332,12 @@ def minimalSubgraph(kgraph, root, kquery):
             print("Obj {} already seen".format(obj), file=sys.stderr)
     # return (None, wg)
     # generate minimal steiner tree
-    mst = make_steiner_tree(wg, required)
-    return (mst, wg)
+    st = make_steiner_tree(wg, required)
+    
+    # convert back to directed graph
+    needed = [nd.nodeRefs[0]  for nd in st.nodes() if nd.nodeType=='truenode']
+    subg = kgraph.subgraph(needed)
+    return (st, wg, subg)
     
 g = None
     
