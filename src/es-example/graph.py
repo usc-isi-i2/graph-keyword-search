@@ -15,7 +15,6 @@ LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es
 
 def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
     pathname = os.path.join(root, pathdesc  + ".json")
-    print("load from {}".format(pathname), file=sys.stderr)
     with open(pathname, 'r') as f:
         j = json.load(f)
     # dict of (value, count)
@@ -98,7 +97,6 @@ class KGraph(DiGraph):
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
             
     def populateValues(self, nodeOrEdge):
-        print("Enter PV: {}".format(nodeOrEdge))
         try:
             node = nodeOrEdge
             nodeType = self.node[node]['nodeType']
@@ -137,7 +135,6 @@ class KGraph(DiGraph):
             
     def nodeMatch(self, node, label):
         """list generator"""
-        print("Looking in {} for {} as {}".format(str(node), label, label.lower().replace('_',' ')))
         return label.lower().replace('_', ' ') in (value.lower() for value in self.node[node]['values'])
     
     def edgeMatch(self, edge, label):
@@ -232,6 +229,7 @@ def minimalSubgraph0(kgraph, root, kquery):
     for a in kquery.anchors.values():
         for cand in a["candidates"]:
             required.append(cand.referent)
+    print("Required: {}".format(required))
             
     seen = set()
     q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
@@ -240,7 +238,7 @@ def minimalSubgraph0(kgraph, root, kquery):
     while not q.empty():
         print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
         obj = q.get()
-        print("Dequeue {}".format(obj), file=sys.stderr)
+        # print("Dequeue {}".format(obj), file=sys.stderr)
         if not obj in seen:
             if isinstance(obj, (str)):
                 # unseen kgraph node
@@ -248,7 +246,7 @@ def minimalSubgraph0(kgraph, root, kquery):
                 node = obj
                 wg.add_node((node,), nodeType='truenode')
                 for node2 in kgraph.edge[node]:
-                    print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
+                    # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
                     q.put((node,node2))
             elif isinstance(obj, (list, tuple)) and len(obj)==2:
                 # unseen kgraph edge
@@ -259,7 +257,7 @@ def minimalSubgraph0(kgraph, root, kquery):
                 wg.add_node(edgenode, nodeType='edgenode')
                 wg.add_edge((obj[0],), edgenode, type='entry', weight=1)
                 wg.add_edge(edgenode, (obj[1],), type='exit', weight=1)
-                print("Enqueue node {}".format(obj[1]), file=sys.stderr)
+                # print("Enqueue node {}".format(obj[1]), file=sys.stderr)
                 q.put(obj[1])
             else:
                 print("Unexpected {}".format(obj), file=sys.stderr)
