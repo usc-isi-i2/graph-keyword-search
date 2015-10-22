@@ -2,7 +2,7 @@
 
 import sys
 from itertools import count
-from synonym import SynonymGenerator
+from synonym import Thesaurus
 
 class Candidate(object):
     def __init__(self, referent=None, referentType=None, candidateType=None, synonym=None, distance=None):
@@ -30,10 +30,10 @@ class Candidate(object):
         return self.__str__(*args, **kwargs)
 
 class KQuery(object):
-    def __init__(self, terms, graph, synonymGenerator):
+    def __init__(self, terms, graph, thesaurus=None):
         self.terms = terms
         self.graph = graph
-        self.synonymGenerator = synonymGenerator or SynonymGenerator()
+        self.thesaurus = thesaurus or Thesaurus()
         self.initAnchors(terms)
         
     def __str__(self, *args, **kwargs):
@@ -70,34 +70,57 @@ class KQuery(object):
         # singletons only
         graph = self.graph
         anchors = self.anchors
-        within = 1
-        sg = self.synonymGenerator
+        thesaurus = self.thesaurus
+        # levenshtein config
+        levensteinWithin = 1
+        levenshteinAbove=0
+        # hybrid jaccard config
+        hybridJaccardAllowExact = False
+
         for k,d in anchors.items():
             keyword = k
             d["candidates"] = []
             if d["cardinality"] == 1:
-                # singleton, direct
+                # singleton, direct node
                 for node in graph.nodes():
                     if graph.nodeMatch(node, keyword):
                         d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='direct'))
+                # singleton, direct edge
                 for edge in graph.edges():
                     if graph.edgeMatch(edge, keyword):
                         d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
-                # singleton, levenshtein
+                
+                # singleton, levenshtein node
                 for node in graph.nodes():
-                    away = graph.nodeEditWithin(node, keyword, within, above=0)
+                    away = graph.nodeEditWithin(node, keyword, levensteinWithin, above=levenshteinAbove)
                     if away:
                         d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='levenshtein', distance=away))
+                # singleton, levenshtein edge
                 for edge in graph.edges():
-                    away = graph.edgeEditWithin(edge, keyword, within, above=0)
+                    away = graph.edgeEditWithin(edge, keyword, levensteinWithin, above=levenshteinAbove)
                     if away:
-                        d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='levenshtein', distance=away))                
+                        d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='levenshtein', distance=away))
+                
+                # singleton, hybrid jaccard node
+                for node in graph.nodes():
+                    best = graph.nodeNearMatch(node, keyword, allowExact=hybridJaccardAllowExact)
+                    if best:
+                        d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='hybridJaccard', synonym=best))
+                # singleton, hybrid jaccard edge
+                for edge in graph.edges():
+                    best = graph.edgeNearMatch(edge, keyword, allowExact=hybridJaccardAllowExact)
+                    if best:
+                        d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='hybridJaccard', synonym=best))                
+   
+                                         
                 # singleton, synonym
-                for s in sg.generateSynonyms(keyword):
+                for s in thesaurus.generateSynonyms(keyword):
                     target = s.target
+                    # singleton, synonym node
                     for node in graph.nodes():
                         if graph.nodeMatch(node, target):
                             d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=s))
+                    # singleton, synonym edge
                     for edge in graph.edges():
                         if graph.edgeMatch(edge, target):
                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=s))
@@ -111,7 +134,7 @@ class KQuery(object):
                         d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
                 # multiword, levenshtein or jaro_winkler
                 # multiword, synonym
-                for s in sg.generateSynonyms(keyword):
+                for s in thesaurus.generateSynonyms(keyword):
                     syn = s.target
                     for node in graph.nodes():
                         if graph.nodeMatch(node, syn):
@@ -120,37 +143,36 @@ class KQuery(object):
                         if graph.edgeMatch(edge, syn):
                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=syn))
     
-    def suggestCandidates3(self):
-        # singletons only
-        graph = self.graph
-        anchors = self.anchors
-        sg = self.synonymGenerator
-        for k,d in anchors.items():
-            keyword = k
-            d["candidates"] = []
-            if d["cardinality"] == 1:
-                # singleton, direct
-                for node in graph.nodes():
-                    if keyword in graph.node[node]['values']:
-                        d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='direct'))
-                for edge in graph.edges():
-                    if keyword in graph.edge[edge[0]][edge[1]]['values']:
-                        d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
-                # singleton, synonym
-                for s in sg.generateSynonyms(keyword):
-                    syn = s.target
-                    for node in graph.nodes():
-                        if syn in graph.node[node]['values']:
-                            d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=syn))
-                    for edge in graph.edges():
-                        if syn in graph.edge[edge[0]][edge[1]]['values']:
-                            d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=syn))
-            elif d["cardinality"] >= 2:
-                pass   
+#     def suggestCandidates3(self):
+#         # singletons only
+#         graph = self.graph
+#         anchors = self.anchors
+#         sg = self.thesaurus
+#         for k,d in anchors.items():
+#             keyword = k
+#             d["candidates"] = []
+#             if d["cardinality"] == 1:
+#                 # singleton, direct
+#                 for node in graph.nodes():
+#                     if keyword in graph.node[node]['values']:
+#                         d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='direct'))
+#                 for edge in graph.edges():
+#                     if keyword in graph.edge[edge[0]][edge[1]]['values']:
+#                         d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
+#                 # singleton, synonym
+#                 for s in sg.generateSynonyms(keyword):
+#                     syn = s.target
+#                     for node in graph.nodes():
+#                         if syn in graph.node[node]['values']:
+#                             d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=syn))
+#                     for edge in graph.edges():
+#                         if syn in graph.edge[edge[0]][edge[1]]['values']:
+#                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=syn))
+#             elif d["cardinality"] >= 2:
+#                 pass   
 
- 
     def dump(self):
-        byIndex = [None] * (2*len(self.terms))
+        byIndex = [None] * (2*len(self.terms) - 1)
         for d in self.anchors.values():
             byIndex[d['index']] = d
         for d in byIndex:
