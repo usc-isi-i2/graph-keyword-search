@@ -122,10 +122,10 @@ def harvest(index="dig-ht-latest", docType="webpage",fieldName="addressCountry",
         report["histo"][bucket["key"]] = bucket["doc_count"]
     return report
 
-def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
-    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
+# def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
+#     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
 
-OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
+OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/data/cache"
 
 def outputPathname(docType="webpage", innerPath="", fieldName="addressCountry", root=OUTPUT_ROOT, **kwargs):
     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
