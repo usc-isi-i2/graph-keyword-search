@@ -4,10 +4,12 @@ import sys, os
 
 from nltk.corpus import wordnet as wn
 import word2vec
+import urllib
 from urllib.parse import quote
 from builtins import setattr
 
 class Synonym(object):
+
     def __init__(self, *args, seed=None, target=None, score=1.0, **kwargs):
         self.seed = seed
         self.target = target
@@ -24,57 +26,36 @@ class Synonym(object):
     def __repr__(self, *args, **kwargs):
         return self.__str__(*args, **kwargs)
 
-WORD2VEC_DATA_DIR = '/opt/word2vec/data'
-WORD2VEC_DATA_FILE = "text8-phrases.bin"
-
 # the GoogleNews-vectors data I downloaded wasn't happy on the Mac, tended to misindex words
 # e.g., model['dog'] was missing but model['og'] was found
 # model = word2vec.load('/opt/word2vec/data/GoogleNews-vectors-negative300.bin')
 # model = word2vec.load(os.path.join(WORD2VEC_DATA_DIR, WORD2VEC_DATA_FILE)
 
 class SynonymGenerator(object):
+    pass
+
+WORD2VEC_DATA_DIR = '/opt/word2vec/data'
+WORD2VEC_DATA_FILE = "text8-phrases.bin"
+WORD2VEC_SIZE = 10
+WORD2VEC_MINIMUM = 0.5
+
+def Word2VecSynonymGenerator(SynonymGenerator):
+
     def __init__(self,
-                word2vecDataDir=WORD2VEC_DATA_DIR,
-                word2vecDataFile=WORD2VEC_DATA_FILE,
-                wordnet=None):
+                 word2vecDataDir=WORD2VEC_DATA_DIR,
+                 word2vecDataFile=WORD2VEC_DATA_FILE,
+                 word2vecSize=WORD2VEC_SIZE,
+                 word2vecMinimum=WORD2VEC_MINIMUM):
+        super(Word2VecSynonymGenerator, self).__init__()
         # word2vec config
         self.word2vecDataDir = word2vecDataDir
         self.word2vecDataFile = word2vecDataFile
-        self.word2vecSize = 10
-        self.word2vecMinimum = 0.5
+        self.word2vecSize = word2vecSize
+        self.word2vecMinimum = word2vecMinimum
         if self.word2vecDataDir and word2vecDataFile:
             self.word2vecModel = word2vec.load(os.path.join(self.word2vecDataDir, self.word2vecDataFile))
-        # wordnet config    
-        self.wn = wn
-        self.wordnetPartsOfSpeech = True
-        if self.wordnetPartsOfSpeech == True:
-            self.wordnetPartsOfSpeech = ['n', 'v', 'a', 'r']
-        self.wordnetlemmaMinCount = 1
-        #                            POS  self/factor  up/factor    down/factor
-        self.wordnetNeighborhood = (('n', (True, 1), (True, 0.5), (True, 0.5)),
-                                    ('v', (True, 1), (True, 0.5), (True, 0.5)),
-                                    ('a', (True, 1), (False, 0), (True, 0.5)),
-                                    ('r', (True, 1), (False, 0), (True, 0.5)))
-        # swoogle config
-        self.swoogle = True
-        self.swoogleUriTemplate = '''http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="{}"&phrase2="{}"'''
-        
-    def generateSynonyms(self, seed, source=True):
-        print([self, seed, source], file=sys.stderr)
-        if source == True:
-            sources = ['word2vec', 'wordnet']
-        else:
-            sources = [source]
-        if 'word2vec' in sources:
-            for g in self.generateSynonymsWord2Vec(seed):
-                print(['out', 'word2vec', g], file=sys.stderr)
-                yield(g)
-        if 'wordnet' in sources:
-            for g in self.generateSynonymsWordnet(seed):
-                print(['out', 'wordnet', g], file=sys.stderr)
-                yield(g)
-            
-    def generateSynonymsWord2Vec(self, seed):
+
+    def generateSynonyms(self, seed):
         """collocation seed must be specified as word1_word2"""
         if isinstance(seed, (list, tuple)):
             seed = "_".join(seed)
@@ -89,8 +70,31 @@ class SynonymGenerator(object):
                     yield(Synonym(seed=seed, target=syn, similarity=similarityScore, source='word2vec'))
         except:
             pass
-                      
-    def generateSynonymsWordnet(self, seed):
+    pass
+
+WORDNET_PARTS_OF_SPEECH = ['n', 'v', 'a', 'r']
+WORDNET_LEMMA_MIN_COUNT = 1
+#                       POS  self/factor  up/factor   down/factor
+WORDNET_NEIGHBORHOOD = (('n', (True, 1), (True, 0.5), (True, 0.5)),
+                        ('v', (True, 1), (True, 0.5), (True, 0.5)),
+                        ('a', (True, 1), (False, 0),  (True, 0.5)),
+                        ('r', (True, 1), (False, 0),  (True, 0.5)))
+
+
+def WordnetSynonymGenerator(SynonymGenerator):
+
+    def __init__(self,
+                 wordnetPartsOfSpeech=WORDNET_PARTS_OF_SPEECH,
+                 wordnetLemmaMinCount=WORDNET_LEMMA_MIN_COUNT,
+                 wordnetNeighborhood=WORDNET_NEIGHBORHOOD):
+        super(WordnetSynonymGenerator, self).__init__()
+        # wordnet config    
+        self.wn = wn
+        self.wordnetPartsOfSpeech = WORDNET_PARTS_OF_SPEECH
+        self.wordnetLemmaMinCount = WORDNET_LEMMA_MIN_COUNT
+        self.wordnetNeighborhood = WORDNET_NEIGHBORHOOD
+
+    def generateSynonyms(self, seed):
         """lemmas with count=0 are generally quite rare, so drop them
         may generate a lemma more than once, possible with different parameters"""
         print(['gSW', self, seed], file=sys.stderr)
@@ -123,8 +127,18 @@ class SynonymGenerator(object):
                     for child in synset.hyponyms():
                         for g in generateSynsetSynonyms(child, "hyponym", downFactor):
                             yield(g)
-                            
-    def generateSynonymsSwoogle(self, seed):
+
+
+def SwoogleSynonymGenerator(SynonymGenerator):
+
+    def __init(self):
+        super(SwoogleSynonymGenerator, self).__init__()
+        # swoogle config
+        self.swoogle = True
+        self.swoogleUriTemplate = '''http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="{}"&phrase2="{}"'''
+
+    def generateSynonyms(self, seed):
+        """Incomplete"""
         score = 0
         url = self.swoogleUriTemplate.format(quote)
         try:
@@ -132,72 +146,46 @@ class SynonymGenerator(object):
             response = urllib.request.urlopen(request)
             score = str(response.read().decode('utf-8')).replace('\"','')
             score = float(score)
-        except Exception as e:
+        except Exception as _:
             pass
+        pass
 
+def EasyESASynonymGenerator(SynonymGenerator):
+    def __init(self):
+        super(EasyESASynonymGenerator, self).__init__()
 
-# def findSynonyms_w2v(word, size=10, minimum=0.5):
-#     (indexes, metrics) = model.cosine(word, size)
-#     ar = model.generate_response(indexes, metrics)
-#     return [(k, v) for (k, v) in ar if v > minimum]
-# 
-# def findAllSynonyms_w2v(l, size=10, minimum=0.5):
-#     pairs = ["{}_{}".format(w1, w2) for (w1, w2) in zip(l, l[1:])]
-#     singletons = l
-#     r = {}
-#     for w in pairs:
-#         try:
-#             s = findSynonyms_w2v(w, size=size, minimum=minimum)
-#             if s:
-#                 r[w] = s
-#         except:
-#             pass
-#     for w in singletons:
-#         try:
-#             s = findSynonyms_w2v(w, size=size, minimum=minimum)
-#             if s:
-#                 r[w] = s
-#         except:
-#             pass
-#     return r
-# 
-# def findSynonyms_wn(word, pos=None, minCount=1):
-#     "lemmas with count=0 are generally quite rare, so drop them"
-#     results = {}
-#     def addOne(synset, proximity):
-#         for lemma in synset.lemmas():
-#             count = lemma.count()
-#             if count > minCount:
-#                 name = lemma.name()
-#                 if name == word:
-#                     continue
-#                 found = results.get(name)
-#                 if not found or found["count"] < count:
-#                     # add/update
-#                     results[name] = {"name": name,
-#                                      "pos": pos,
-#                                      "proximity": proximity,
-#                                      "count": count,
-#                                      "score": count * proximity}
-# 
-#     for pos, (here, hereProx), (up, upProx), (down, downProx) in (('n', (True, 1), (True, 0.5), (True, 0.5)),
-#                                                              ('v', (True, 1), (True, 0.5), (True, 0.5)),
-#                                                              ('a', (True, 1), (False, 0), (True, 0.5)),
-#                                                              ('r', (True, 1), (False, 0), (True, 0.5))):
-#         for synset in wn.synsets(word, pos=pos):
-#             if here:
-#                 addOne(synset, hereProx)
-#             if up:
-#                 for parent in synset.hypernyms():
-#                     addOne(parent, upProx)
-#             if down:
-#                 for child in synset.hyponyms():
-#                     addOne(child, downProx)
-#     return results
-# 
-# def generateSynonyms(word):
-#     for (s, _) in findSynonyms_w2v([word]):
-#         yield (s, "word2vec")
-#     for s in findSynonyms_wn(word).keys():
-#         yield (s, "wordnet")
-#     
+    def generateSynonyms(self, seed):
+        pass
+
+class Thesaurus(object):
+    def __init__(self,
+                 word2vec=True,
+                 word2vecDataDir=WORD2VEC_DATA_DIR,
+                 word2vecDataFile=WORD2VEC_DATA_FILE,
+                 word2vecSize=10,
+                 word2vecMinimum=0.5,
+                 wordnet=True,
+                 wordnetPartsOfSpeech=WORDNET_PARTS_OF_SPEECH,
+                 wordnetLemmaMinCount=WORDNET_LEMMA_MIN_COUNT,
+                 wordnetNeighborhood=WORDNET_NEIGHBORHOOD,
+                 swoogle=False,
+                 easyESA=False):
+        SynonymGenerators = {}
+        if word2vec:
+            SynonymGenerators['word2vec'] = Word2VecSynonymGenerator(word2vecDataDir=word2vecDataDir,
+                                                                     word2vecDataFile=word2vecDataFile,
+                                                                     word2vecSize=word2vecSize,
+                                                                     word2vecMinimum=word2vecMinimum)
+        if wordnet:
+            SynonymGenerators['wordnet'] = WordnetSynonymGenerator(wordnetPartsOfSpeech=wordnetPartsOfSpeech,
+                                                                   wordnetLemmaMinCount=wordnetLemmaMinCount,
+                                                                   wordnetNeighborhood=wordnetNeighborhood)
+        if swoogle:
+            SynonymGenerators['swoogle'] = SwoogleSynonymGenerator()
+        if easyESA:
+            SynonymGenerators['easyESA'] = EasyESASynonymGenerator()
+        
+    def generateSynonyms(self, seed):
+        for (name, syngen) in self.SynonymGenerators.items():
+            for g in syngen.generateSynonyms(seed):
+                yield(g)
