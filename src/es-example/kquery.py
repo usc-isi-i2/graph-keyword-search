@@ -143,34 +143,6 @@ class KQuery(object):
                         if graph.edgeMatch(edge, syn):
                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=syn))
     
-#     def suggestCandidates3(self):
-#         # singletons only
-#         graph = self.graph
-#         anchors = self.anchors
-#         sg = self.thesaurus
-#         for k,d in anchors.items():
-#             keyword = k
-#             d["candidates"] = []
-#             if d["cardinality"] == 1:
-#                 # singleton, direct
-#                 for node in graph.nodes():
-#                     if keyword in graph.node[node]['values']:
-#                         d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='direct'))
-#                 for edge in graph.edges():
-#                     if keyword in graph.edge[edge[0]][edge[1]]['values']:
-#                         d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
-#                 # singleton, synonym
-#                 for s in sg.generateSynonyms(keyword):
-#                     syn = s.target
-#                     for node in graph.nodes():
-#                         if syn in graph.node[node]['values']:
-#                             d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=syn))
-#                     for edge in graph.edges():
-#                         if syn in graph.edge[edge[0]][edge[1]]['values']:
-#                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=syn))
-#             elif d["cardinality"] >= 2:
-#                 pass   
-
     def dump(self):
         byIndex = [None] * (2*len(self.terms) - 1)
         for d in self.anchors.values():
