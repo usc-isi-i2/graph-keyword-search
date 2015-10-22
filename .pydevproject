@@ -7,4 +7,8 @@
 </pydev_pathproperty>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 3.0</pydev_property>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">gks python 3</pydev_property>
+<pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
+<path>/opt/dig/venv/gks/lib/python3.5/site-packages/Levenshtein</path>
+<path>/opt/dig/venv/gks/lib/python3.5/site-packages/word2vec</path>
+</pydev_pathproperty>
 </pydev_project>
