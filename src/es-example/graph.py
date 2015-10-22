@@ -1,17 +1,20 @@
 #!/usr/bin/env python
 
-import sys, os
-from networkx import DiGraph, Graph
-import json
-import re
-import word2vec
 from collections import defaultdict
-from Levenshtein import distance
-from queue import Queue
-from SteinerTree import make_steiner_tree
 from collections import namedtuple
+import json
+from queue import Queue
+import re
+import sys, os
 
-LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
+from Levenshtein import distance
+from networkx import Graph, DiGraph
+
+from SteinerTree import make_steiner_tree
+from hybridJaccard import HybridJaccard
+
+
+LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/data/cache"
 
 def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
     pathname = os.path.join(root, pathdesc  + ".json")
@@ -20,6 +23,9 @@ def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
     # dict of (value, count)
     byCount = sorted([(v,k) for (k,v) in j['histo'].items()], reverse=True)
     return [t[1] for t in byCount]
+
+def localPath(suffix):
+    return os.path.join(os.path.dirname(__file__), suffix)
 
 # http://stackoverflow.com/a/9283563/2077242
 def camelCaseWords(label):
@@ -31,7 +37,7 @@ class KGraph(DiGraph):
         super(KGraph, self).__init__()
         self.domainType = domainType
         self.installDomain(domainType)
-        
+
     def installDomain(self, domainType=None):
         if domainType == 'ht':
             self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
@@ -65,7 +71,10 @@ class KGraph(DiGraph):
             self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
 
             self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
-            self.add_node('adultservice.eyeColor', nodeType='leaf', vocabDescriptor='adultservice_eyeColor')
+            self.add_node('adultservice.eyeColor', nodeType='leaf', 
+                           vocabDescriptor='adultservice_eyeColor', 
+                           matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/eyeColor_reference_wiki.txt"), 
+                                                           config_path=localPath("data/config/hybridJaccard/eyeColor_config.txt")))
             self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
             self.add_node('adultservice.hairColor', nodeType='leaf', vocabDescriptor='adultservice_hairColor')
             self.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor')
@@ -145,19 +154,56 @@ class KGraph(DiGraph):
         """set above=0 to avoid matching node value exactly identical to label"""
         l = label.lower().replace('_', ' ') 
         for value in self.node[node]['values']:
+            value = value.lower().replace('_', ' ')
+            actual = distance(l, value)
+            if (not above or actual>above) and actual <= within:
+                # if levenshtein is 0, return true value 0.0
+                return actual or 0.0
+              
+    def edgeEditWithin(self, edge, label, within=1, above=None):
+        """set above=0 to avoid matching edge value exactly identical to label"""
+        l = label.lower().replace('_', ' ') 
+        for value in self.edge[edge[0]][edge[1]]['values']:
+            value = value.lower().replace('_', ' ')
             actual = distance(l, value)
             if (not above or actual>above) and actual <= within:
                 # if levenshtein is 0, return true value 0.0
                 return actual or 0.0
             
-    def edgeEditWithin(self, edge, label, within=1, above=None):
-        """set above=0 to avoid matching edge value exactly identical to label"""
-        l = label.lower().replace('_', ' ') 
-        for value in self.edge[edge[0]][edge[1]]['values']:
-            actual = distance(l, value)
-            if (not above or actual>above) and actual <= within:
-                # if levenshtein is 0, return true value 0.0
-                return actual or 0.0
+    def nodeNearMatch(self, node, label, allowExact=False):
+        """set allowExact to True to look up values directly here"""
+        label = label.lower().replace('_', ' ') 
+        print(self.node[node])
+        try:
+            hjMatcher = self.node[node]['matcherDescriptor']
+            best = hjMatcher.findBestMatch(label)
+            if best != "NONE":
+                for value in self.node[node]['values']:
+                    value = value.lower().replace('_', ' ')
+                    if ((label != value) or allowExact) and (best==value):
+                        # HJ(label)== a value from node and 
+                        # either we allow exact or see that label is not exactly the retrieved value
+                        print(best)
+                        return best
+        except Exception as e:
+            print(e)
+            pass
+                
+    def edgeNearMatch(self, edge, label, allowExact=False):
+        """set allowExact to True to look up values directly here"""
+        label = label.lower().replace('_', ' ')
+        try:
+            hjMatcher = self.edge[edge[0]][edge[1]]['matcherDescriptor']
+            best = hjMatcher.findBestMatch(label)
+            if best != "NONE":
+                for value in self.edge[edge[0]][edge[1]]['values']:
+                    value = value.lower().replace('_', ' ')
+                    if ((label != value) or allowExact) and (best==value):
+                        # HJ(label)== a value from edge and 
+                        # either we allow exact or see that label is not exactly the retrieved value
+                        return best
+        except:
+            pass
 
     def generateSubgraph(self, node):
         seen = set()
