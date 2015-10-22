@@ -5,7 +5,7 @@ import argparse
 
 from graph import htGraph
 from kquery import KQuery
-from synonym import SynonymGenerator
+from synonym import Thesaurus
 from graph import minimalSubgraph
 
 g = None
@@ -30,7 +30,7 @@ def main(argv=None):
     terms = args.terms[0]
     g = htGraph()
     print("Terms: {}".format(terms))
-    s = SynonymGenerator()
+    s = Thesaurus()
     k = KQuery(terms, g, s)
     k.suggestCandidates()
     (m, wg, sg) = minimalSubgraph(g, 'offer', k)
