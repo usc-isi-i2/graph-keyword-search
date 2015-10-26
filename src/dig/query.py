@@ -77,9 +77,11 @@ class Query(object):
         # hybrid jaccard config
         hybridJaccardAllowExact = False
 
-        for k,d in ngrams.items():
-            keyword = k
+        for q,d in ngrams.items():
+            keyword = q
             d["candidates"] = []
+
+            # NODE
             if d["cardinality"] == 1:
                 # singleton, direct node
                 for node in graph.nodes():
@@ -111,7 +113,7 @@ class Query(object):
                     best = graph.edgeNearMatch(edge, keyword, allowExact=hybridJaccardAllowExact)
                     if best:
                         d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='hybridJaccard', synonym=best))
-                                         
+
                 # singleton, synonym
                 for s in thesaurus.generateSynonyms(keyword):
                     target = s.target
@@ -123,6 +125,8 @@ class Query(object):
                     for edge in graph.edges():
                         if graph.edgeMatch(edge, target):
                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=s))
+
+            # EDGE
             elif d["cardinality"] >= 2:
                 # multiword, direct
                 for node in graph.nodes():
@@ -149,8 +153,8 @@ class Query(object):
         for d in byIndex:
             try:
                 idx = d['index']
-                k = d.get('term', '')
+                q = d.get('term', '')
                 v = d.get('candidates', [])
-                print("{}{}. {}: {}".format("  " if idx%2 else "", idx, k, v))
+                print("{}{}. {}: {}".format("  " if idx%2 else "", idx, q, v))
             except:
                 print(d)
