@@ -10,5 +10,6 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
 <path>/opt/dig/venv/gks/lib/python3.5/site-packages/Levenshtein</path>
 <path>/opt/dig/venv/gks/lib/python3.5/site-packages/word2vec</path>
+<path>/opt/dig/venv/gks/lib/python3.5/site-packages/word2vec-0.8-py3.5.egg-info</path>
 </pydev_pathproperty>
 </pydev_project>
