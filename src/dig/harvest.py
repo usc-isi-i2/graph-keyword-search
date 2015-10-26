@@ -254,8 +254,8 @@ def generateAll ():
                 l = len(b)
                 if l>0:
                     print("Success %d for %s" % (l, spec), file=sys.stderr)
-                    k = 5
-                    for i,v in zip(range(k+1), b[0:k]):
+                    q = 5
+                    for i,v in zip(range(q+1), b[0:q]):
                         print("value %d is %s" % (i, v))
                 elif l==0:
                     print("No data for %s" % (spec), file=sys.stderr)
