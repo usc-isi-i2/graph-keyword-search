@@ -144,7 +144,6 @@ def make_prim_mst(G, generator=None):
     firstNode = G.nodes()[0]
     mst.add_node(firstNode)
     for edge in G.edges_iter(firstNode, data=True):
-        print("An edge is {}".format(edge))
         if len(edge) != 3 or edge[2] is None:
             raise ValueError("make_prim_mst accepts a weighted graph only (with numerical weights)")
         heappush(priorityQ, (edge[2]['weight'], edge))
