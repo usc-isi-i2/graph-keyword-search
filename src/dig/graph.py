@@ -22,7 +22,7 @@ def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
     with open(pathname, 'r') as f:
         j = json.load(f)
     # dict of (value, count)
-    byCount = sorted([(v,k) for (k,v) in j['histo'].items()], reverse=True)
+    byCount = sorted([(v,q) for (q,v) in j['histo'].items()], reverse=True)
     return [t[1] for t in byCount]
 
 def localPath(suffix):
@@ -186,7 +186,7 @@ class KGraph(DiGraph):
                         # either we allow exact or see that label is not exactly the retrieved value
                         # print(best)
                         return best
-        except KeyError as ke:
+        except KeyError:
             pass
                 
     def edgeNearMatch(self, edge, label, allowExact=False):
