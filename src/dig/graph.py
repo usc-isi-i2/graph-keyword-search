@@ -266,7 +266,7 @@ class ImpossibleGraph(Exception):
         # Call the base class constructor with the parameters it needs
         super(ImpossibleGraph, self).__init__(message)
 
-def minimalSubgraph(kgraph, root, kquery):
+def minimalSubgraph(kgraph, root, query):
     # transform into weighted nondirected graph
     # all nodes become nodes ("truenode")
     # all edges also become nodes ("edgenode")
@@ -276,7 +276,7 @@ def minimalSubgraph(kgraph, root, kquery):
     # required contains nodes/edges from original kgraph
     required = set()
     required.add(truenodeDesig(root))
-    for a in kquery.anchors.values():
+    for a in query.ngrams.values():
         for cand in a["candidates"]:
             if cand.referentType == 'node':
                 required.add(truenodeDesig(cand.referent))
