@@ -3,7 +3,7 @@
 import sys
 import argparse
 
-from graph import htGraph
+from graph import htGraph, ImpossibleGraph
 from kquery import KQuery
 from synonym import Thesaurus
 from graph import minimalSubgraph
@@ -29,12 +29,18 @@ def main(argv=None):
     s = Thesaurus()
     k = KQuery(terms, g, s)
     k.suggestCandidates()
+    # succeeds with roots = ['offer']
+    roots = ['offer']
+    # fails with roots = ['phone']
+    roots = ['phone']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
     for root in roots:
-        print("Root {}".format(root))
-        (m, wg, sg) = minimalSubgraph(g, root, k)
-        print (root,g,k,s,m,wg,sg)
-
+        print("\nRoot {}".format(root))
+        try:
+            (m, wg, sg) = minimalSubgraph(g, root, k)
+            print (root,g,k,s,m,wg,sg)
+        except ImpossibleGraph as ig:
+            print(ig, file=sys.stderr)
 
 # call main() if this is run as standalone
 if __name__ == "__main__":
