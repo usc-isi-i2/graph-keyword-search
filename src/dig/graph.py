@@ -6,6 +6,7 @@ import json
 from queue import Queue
 import re
 import sys, os
+from pprint import pprint
 
 from Levenshtein import distance
 from networkx import Graph, DiGraph
@@ -185,8 +186,7 @@ class KGraph(DiGraph):
                         # either we allow exact or see that label is not exactly the retrieved value
                         # print(best)
                         return best
-        except Exception as e:
-            print(e)
+        except KeyError as ke:
             pass
                 
     def edgeNearMatch(self, edge, label, allowExact=False):
@@ -202,7 +202,7 @@ class KGraph(DiGraph):
                         # HJ(label)== a value from edge and 
                         # either we allow exact or see that label is not exactly the retrieved value
                         return best
-        except:
+        except KeyError:
             pass
 
     def generateSubgraph(self, node):
@@ -261,65 +261,17 @@ def edgenodeDesig(edge):
     """Render a kgraph edge as a wgraph node"""
     return nodeDesig(nodeType='edgenode', nodeRefs=edge)
     
-# def minimalSubgraph0(kgraph, root, kquery):
-#     # transform into weighted nondirected graph
-#     # all nodes become nodes
-#     # all edges also become nodes
-#     # induce edge with weight 1 for each node/edge and edge/node
-#     # except: traverse starting at root, dropping any backlinks
-#     global wg
-#     wg = Graph()
-
-#     required = []
-#     required.append(root)
-#     for a in kquery.anchors.values():
-#         for cand in a["candidates"]:
-#             required.append(cand.referent)
-#     print("Required: {}".format(required))
-            
-#     seen = set()
-#     q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
-#     q.put(root)
-
-#     while not q.empty():
-#         # print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
-#         obj = q.get()
-#         # print("Dequeue {}".format(obj), file=sys.stderr)
-#         if not obj in seen:
-#             if isinstance(obj, (str)):
-#                 # unseen kgraph node
-#                 seen.add(obj)
-#                 node = obj
-#                 wg.add_node((node,), nodeType='truenode')
-#                 for node2 in kgraph.edge[node]:
-#                     # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
-#                     q.put((node,node2))
-#             elif isinstance(obj, (list, tuple)) and len(obj)==2:
-#                 # unseen kgraph edge
-#                 seen.add(obj)
-#                 # edge = obj
-#                 # create a node representing original edge
-#                 edgenode = ("edgenode", obj[0], obj[1])
-#                 wg.add_node(edgenode, nodeType='edgenode')
-#                 wg.add_edge((obj[0],), edgenode, type='entry', weight=1)
-#                 wg.add_edge(edgenode, (obj[1],), type='exit', weight=1)
-#                 # print("Enqueue node {}".format(obj[1]), file=sys.stderr)
-#                 q.put(obj[1])
-#             else:
-#                 print("Unexpected {}".format(obj), file=sys.stderr)
-#         else:
-#             print("Obj {} already seen".format(obj), file=sys.stderr)
-#     # return (None, wg)
-#     # generate minimal steiner tree
-#     mst = make_steiner_tree(wg, required)
-#     return (mst, wg)
+class ImpossibleGraph(Exception):
+    def __init__(self, message):
+        # Call the base class constructor with the parameters it needs
+        super(ImpossibleGraph, self).__init__(message)
 
 def minimalSubgraph(kgraph, root, kquery):
     # transform into weighted nondirected graph
-    # all nodes become nodes
-    # all edges also become nodes
+    # all nodes become nodes ("truenode")
+    # all edges also become nodes ("edgenode")
     # induce edge with weight 1 for each node/edge and edge/node
-    # except: traverse starting at root, dropping any backlinks
+    # except: traverse starting at root, dropping any backlinks [?]
 
     # required contains nodes/edges from original kgraph
     required = set()
@@ -331,7 +283,9 @@ def minimalSubgraph(kgraph, root, kquery):
             elif cand.referentType == 'edge':
                 required.add(edgenodeDesig(cand.referent))
     required = list(required)
-    print("Steiner tree must contain all of {}".format(required))
+    print("Steiner tree must contain all of:")
+    for n in required:
+        print("  ", n.nodeRefs[0])
             
     # seen contains nodes/edges from original kgraph
     seen = set()
@@ -353,6 +307,7 @@ def minimalSubgraph(kgraph, root, kquery):
                 # unseen kgraph node
                 seen.add(obj)
                 node = obj
+                # print("wg: add true node {}".format(node), file=sys.stderr)
                 wg.add_node(truenodeDesig(node))
                 for node2 in kgraph.edge[node]:
                     # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
@@ -366,6 +321,7 @@ def minimalSubgraph(kgraph, root, kquery):
                 truenode1 = truenodeDesig(node1)
                 truenode2 = truenodeDesig(node2)
                 edge = obj
+                # print("wg: add edge node {}".format(edge), file=sys.stderr)
                 edgenode = edgenodeDesig(edge)
                 wg.add_node(edgenode)
                 wg.add_edge(truenode1, edgenode, weight=1)
@@ -375,15 +331,24 @@ def minimalSubgraph(kgraph, root, kquery):
             else:
                 print("Unexpected {}".format(obj), file=sys.stderr)
         else:
-            print("Obj {} already seen".format(obj), file=sys.stderr)
+            # print("Obj {} already seen".format(obj), file=sys.stderr)
+            pass
+
+    # print("Weighted non-directed graph")
+    # pprint(wg.nodes())
     # return (None, wg)
     # generate minimal steiner tree
-    st = make_steiner_tree(wg, required)
-    
-    # convert back to directed graph
-    needed = [nd.nodeRefs[0]  for nd in st.nodes() if nd.nodeType=='truenode']
-    subg = kgraph.subgraph(needed)
-    return (st, wg, subg)
+    try:
+        st = make_steiner_tree(wg, required)
+        # convert back to directed graph
+        needed = [nd.nodeRefs[0]  for nd in st.nodes() if nd.nodeType=='truenode']
+        subg = kgraph.subgraph(needed)
+        return (st, wg, subg)
+    except ValueError as ve:
+        if "not in original graph" in str(ve):
+            raise ImpossibleGraph("Cannot generate subgraph of {} containing {}".format("weightedGraph", required))
+        else:
+            raise(ve)
     
 g = None
     
