@@ -14,7 +14,7 @@ from SteinerTree import make_steiner_tree
 from hybridJaccard import HybridJaccard
 
 
-LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/data/cache"
+LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/dig/data/cache"
 
 def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
     pathname = os.path.join(root, pathdesc  + ".json")
@@ -173,7 +173,7 @@ class KGraph(DiGraph):
     def nodeNearMatch(self, node, label, allowExact=False):
         """set allowExact to True to look up values directly here"""
         label = label.lower().replace('_', ' ') 
-        print(self.node[node])
+        # print(self.node[node])
         try:
             hjMatcher = self.node[node]['matcherDescriptor']
             best = hjMatcher.findBestMatch(label)
@@ -183,7 +183,7 @@ class KGraph(DiGraph):
                     if ((label != value) or allowExact) and (best==value):
                         # HJ(label)== a value from node and 
                         # either we allow exact or see that label is not exactly the retrieved value
-                        print(best)
+                        # print(best)
                         return best
         except Exception as e:
             print(e)
@@ -261,58 +261,58 @@ def edgenodeDesig(edge):
     """Render a kgraph edge as a wgraph node"""
     return nodeDesig(nodeType='edgenode', nodeRefs=edge)
     
-def minimalSubgraph0(kgraph, root, kquery):
-    # transform into weighted nondirected graph
-    # all nodes become nodes
-    # all edges also become nodes
-    # induce edge with weight 1 for each node/edge and edge/node
-    # except: traverse starting at root, dropping any backlinks
-    global wg
-    wg = Graph()
+# def minimalSubgraph0(kgraph, root, kquery):
+#     # transform into weighted nondirected graph
+#     # all nodes become nodes
+#     # all edges also become nodes
+#     # induce edge with weight 1 for each node/edge and edge/node
+#     # except: traverse starting at root, dropping any backlinks
+#     global wg
+#     wg = Graph()
 
-    required = []
-    required.append(root)
-    for a in kquery.anchors.values():
-        for cand in a["candidates"]:
-            required.append(cand.referent)
-    print("Required: {}".format(required))
+#     required = []
+#     required.append(root)
+#     for a in kquery.anchors.values():
+#         for cand in a["candidates"]:
+#             required.append(cand.referent)
+#     print("Required: {}".format(required))
             
-    seen = set()
-    q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
-    q.put(root)
+#     seen = set()
+#     q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
+#     q.put(root)
 
-    while not q.empty():
-        print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
-        obj = q.get()
-        # print("Dequeue {}".format(obj), file=sys.stderr)
-        if not obj in seen:
-            if isinstance(obj, (str)):
-                # unseen kgraph node
-                seen.add(obj)
-                node = obj
-                wg.add_node((node,), nodeType='truenode')
-                for node2 in kgraph.edge[node]:
-                    # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
-                    q.put((node,node2))
-            elif isinstance(obj, (list, tuple)) and len(obj)==2:
-                # unseen kgraph edge
-                seen.add(obj)
-                # edge = obj
-                # create a node representing original edge
-                edgenode = ("edgenode", obj[0], obj[1])
-                wg.add_node(edgenode, nodeType='edgenode')
-                wg.add_edge((obj[0],), edgenode, type='entry', weight=1)
-                wg.add_edge(edgenode, (obj[1],), type='exit', weight=1)
-                # print("Enqueue node {}".format(obj[1]), file=sys.stderr)
-                q.put(obj[1])
-            else:
-                print("Unexpected {}".format(obj), file=sys.stderr)
-        else:
-            print("Obj {} already seen".format(obj), file=sys.stderr)
-    # return (None, wg)
-    # generate minimal steiner tree
-    mst = make_steiner_tree(wg, required)
-    return (mst, wg)
+#     while not q.empty():
+#         # print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
+#         obj = q.get()
+#         # print("Dequeue {}".format(obj), file=sys.stderr)
+#         if not obj in seen:
+#             if isinstance(obj, (str)):
+#                 # unseen kgraph node
+#                 seen.add(obj)
+#                 node = obj
+#                 wg.add_node((node,), nodeType='truenode')
+#                 for node2 in kgraph.edge[node]:
+#                     # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
+#                     q.put((node,node2))
+#             elif isinstance(obj, (list, tuple)) and len(obj)==2:
+#                 # unseen kgraph edge
+#                 seen.add(obj)
+#                 # edge = obj
+#                 # create a node representing original edge
+#                 edgenode = ("edgenode", obj[0], obj[1])
+#                 wg.add_node(edgenode, nodeType='edgenode')
+#                 wg.add_edge((obj[0],), edgenode, type='entry', weight=1)
+#                 wg.add_edge(edgenode, (obj[1],), type='exit', weight=1)
+#                 # print("Enqueue node {}".format(obj[1]), file=sys.stderr)
+#                 q.put(obj[1])
+#             else:
+#                 print("Unexpected {}".format(obj), file=sys.stderr)
+#         else:
+#             print("Obj {} already seen".format(obj), file=sys.stderr)
+#     # return (None, wg)
+#     # generate minimal steiner tree
+#     mst = make_steiner_tree(wg, required)
+#     return (mst, wg)
 
 def minimalSubgraph(kgraph, root, kquery):
     # transform into weighted nondirected graph
@@ -322,14 +322,16 @@ def minimalSubgraph(kgraph, root, kquery):
     # except: traverse starting at root, dropping any backlinks
 
     # required contains nodes/edges from original kgraph
-    required = []
-    required.append(truenodeDesig(root))
+    required = set()
+    required.add(truenodeDesig(root))
     for a in kquery.anchors.values():
         for cand in a["candidates"]:
             if cand.referentType == 'node':
-                required.append(truenodeDesig(cand.referent))
+                required.add(truenodeDesig(cand.referent))
             elif cand.referentType == 'edge':
-                required.append(edgenodeDesig(cand.referent))
+                required.add(edgenodeDesig(cand.referent))
+    required = list(required)
+    print("Steiner tree must contain all of {}".format(required))
             
     # seen contains nodes/edges from original kgraph
     seen = set()
@@ -343,9 +345,9 @@ def minimalSubgraph(kgraph, root, kquery):
     wg = Graph()
 
     while not q.empty():
-        print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
+        # print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
         obj = q.get()
-        print("Dequeue {}".format(obj), file=sys.stderr)
+        # print("Dequeue {}".format(obj), file=sys.stderr)
         if not obj in seen:
             if isinstance(obj, (str)):
                 # unseen kgraph node
@@ -353,7 +355,7 @@ def minimalSubgraph(kgraph, root, kquery):
                 node = obj
                 wg.add_node(truenodeDesig(node))
                 for node2 in kgraph.edge[node]:
-                    print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
+                    # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
                     q.put((node,node2))
             elif isinstance(obj, (list, tuple)) and len(obj)==2:
                 # unseen kgraph edge
@@ -368,7 +370,7 @@ def minimalSubgraph(kgraph, root, kquery):
                 wg.add_node(edgenode)
                 wg.add_edge(truenode1, edgenode, weight=1)
                 wg.add_edge(edgenode, truenode2, weight=1)
-                print("Enqueue node {}".format(node2), file=sys.stderr)
+                # print("Enqueue node {}".format(node2), file=sys.stderr)
                 q.put(node2)
             else:
                 print("Unexpected {}".format(obj), file=sys.stderr)

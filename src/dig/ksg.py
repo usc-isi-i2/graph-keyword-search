@@ -20,10 +20,6 @@ def main(argv=None):
     global g, k, s, m, wg, sg
     parser = argparse.ArgumentParser()
     parser.add_argument('terms', nargs='*', default=[], action="append")
-#     parser.add_argument('-t','--type', 
-#                         required=False, 
-#                         help='domain type',
-#                         default='ht')    
     parser.add_argument('-v','--verbose', required=False, help='verbose', action='store_true')
     args = parser.parse_args()
     # nargs generates a list of lists, research this
@@ -33,8 +29,12 @@ def main(argv=None):
     s = Thesaurus()
     k = KQuery(terms, g, s)
     k.suggestCandidates()
-    (m, wg, sg) = minimalSubgraph(g, 'offer', k)
-    return (g,k,s,m,wg,sg)
+    roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
+    for root in roots:
+        print("Root {}".format(root))
+        (m, wg, sg) = minimalSubgraph(g, root, k)
+        print (root,g,k,s,m,wg,sg)
+
 
 # call main() if this is run as standalone
 if __name__ == "__main__":

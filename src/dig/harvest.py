@@ -125,7 +125,7 @@ def harvest(index="dig-ht-latest", docType="webpage",fieldName="addressCountry",
 # def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
 #     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
 
-OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/data/cache"
+OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/dig/data/cache"
 
 def outputPathname(docType="webpage", innerPath="", fieldName="addressCountry", root=OUTPUT_ROOT, **kwargs):
     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))

@@ -51,8 +51,8 @@ class KQuery(object):
     def initAnchors(self, terms):
         self.anchors = {}
         for term,idx in zip(terms, count(0,2)):
-            print("Term 1 {}".format(term))
-            print("Assign spot {} to unigram {}".format(idx,term))
+            # print("Term 1 {}".format(term))
+            # print("Assign spot {} to unigram {}".format(idx,term))
             self.anchors[term] = None
             self.anchors[term] = {"term": term,
                                   "words": [term],
@@ -60,7 +60,7 @@ class KQuery(object):
                                   "cardinality": 1}
         for t1,t2,idx in zip(terms, terms[1:], count(1,2)):
             term = t1 + "_" + t2
-            print("Assign spot {} to bigram {}".format(idx, term))            
+            # print("Assign spot {} to bigram {}".format(idx, term))            
             self.anchors[term] = {"term": term,
                                   "words": [t1, t2],
                                   "index": idx,
