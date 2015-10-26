@@ -12,12 +12,12 @@ Created on Sat Sep  7 12:57:57 2013
 from heapq import heappush, heappop
 from networkx import Graph, bidirectional_dijkstra, has_path
 
-import json
-def hashableDict(d):
-    return json.dumps(d, sort_keys=True)
-
-def unhashableDict(hashableDict):
-    return json.loads(hashableDict)
+# import json
+# def hashableDict(d):
+#     return json.dumps(d, sort_keys=True)
+# 
+# def unhashableDict(hashableDict):
+#     return json.loads(hashableDict)
 
 ## Extract a Steiner tree from a weighted graph, given a list of vertices of interest
 # @param G  A Graph with weighted edges
