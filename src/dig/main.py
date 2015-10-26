@@ -4,7 +4,7 @@ import sys
 import argparse
 
 from graph import htGraph, ImpossibleGraph
-from kquery import KQuery
+from kquery import Query
 from synonym import Thesaurus
 from graph import minimalSubgraph
 
@@ -27,7 +27,7 @@ def main(argv=None):
     g = htGraph()
     print("Terms: {}".format(terms))
     s = Thesaurus()
-    k = KQuery(terms, g, s)
+    k = Query(terms, g, s)
     k.suggestCandidates()
     # succeeds with roots = ['offer']
     roots = ['offer']
