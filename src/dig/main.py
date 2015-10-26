@@ -4,12 +4,12 @@ import sys
 import argparse
 
 from graph import htGraph, ImpossibleGraph
-from kquery import Query
+from query import Query
 from synonym import Thesaurus
 from graph import minimalSubgraph
 
 g = None
-k = None
+q = None
 s = None
 m = None
 wg = None
@@ -17,28 +17,27 @@ sg = None
 
 def main(argv=None):
     '''this is called if run from command line'''
-    global g, k, s, m, wg, sg
+    global g, q, s, m, wg, sg
     parser = argparse.ArgumentParser()
     parser.add_argument('terms', nargs='*', default=[], action="append")
     parser.add_argument('-v','--verbose', required=False, help='verbose', action='store_true')
+    parser.add_argument('-o', '--options')
     args = parser.parse_args()
-    # nargs generates a list of lists, research this
+    # TODO nargs generates a list of lists
     terms = args.terms[0]
     g = htGraph()
     print("Terms: {}".format(terms))
-    s = Thesaurus()
-    k = Query(terms, g, s)
-    k.suggestCandidates()
+    s = Thesaurus(word2vec=True, wordnet=True)
+    q = Query(terms, g, s)
+    q.suggestCandidates()
     # succeeds with roots = ['offer']
-    roots = ['offer']
     # fails with roots = ['phone']
-    roots = ['phone']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
     for root in roots:
         print("\nRoot {}".format(root))
         try:
-            (m, wg, sg) = minimalSubgraph(g, root, k)
-            print (root,g,k,s,m,wg,sg)
+            (m, wg, sg) = minimalSubgraph(g, root, q)
+            print (root,g,q,s,m,wg,sg)
         except ImpossibleGraph as ig:
             print(ig, file=sys.stderr)
 
