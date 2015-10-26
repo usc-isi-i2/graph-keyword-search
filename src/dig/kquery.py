@@ -73,7 +73,7 @@ class KQuery(object):
         thesaurus = self.thesaurus
         # levenshtein config
         levensteinWithin = 1
-        levenshteinAbove=0
+        levenshteinAbove = 0
         # hybrid jaccard config
         hybridJaccardAllowExact = False
 
@@ -110,8 +110,7 @@ class KQuery(object):
                 for edge in graph.edges():
                     best = graph.edgeNearMatch(edge, keyword, allowExact=hybridJaccardAllowExact)
                     if best:
-                        d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='hybridJaccard', synonym=best))                
-   
+                        d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='hybridJaccard', synonym=best))
                                          
                 # singleton, synonym
                 for s in thesaurus.generateSynonyms(keyword):
