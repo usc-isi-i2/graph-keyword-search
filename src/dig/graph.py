@@ -14,7 +14,6 @@ from networkx import Graph, DiGraph
 from SteinerTree import make_steiner_tree
 from hybridJaccard import HybridJaccard
 
-
 LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/dig/data/cache"
 
 def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
@@ -152,14 +151,16 @@ class KGraph(DiGraph):
         return label.lower().replace('_', ' ') in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
     
     def nodeEditWithin(self, node, label, within=1, above=None):
-        """set above=0 to avoid matching node value exactly identical to label"""
+        """set above=0 to avoid matching node value exactly identical to label
+        Does not find closest node values, just any values within interval"""
         l = label.lower().replace('_', ' ') 
         for value in self.node[node]['values']:
             value = value.lower().replace('_', ' ')
             actual = distance(l, value)
-            if (not above or actual>above) and actual <= within:
+            if (above==None or actual>above) and actual <= within:
                 # if levenshtein is 0, return true value 0.0
-                return actual or 0.0
+                # return actual or 0.0
+                return(value, actual)
               
     def edgeEditWithin(self, edge, label, within=1, above=None):
         """set above=0 to avoid matching edge value exactly identical to label"""
@@ -265,6 +266,19 @@ class ImpossibleGraph(Exception):
     def __init__(self, message):
         # Call the base class constructor with the parameters it needs
         super(ImpossibleGraph, self).__init__(message)
+        
+        # PythonDecorators/entry_exit_class.py
+
+class entry_exit(object):
+
+    def __init__(self, f):
+        self.f = f
+
+    def __call__(self, *args):
+        print("Entering", self.f.__name__)
+        r = self.f(*args)
+        print("Exited", self.f.__name__)
+        return(r)
 
 def minimalSubgraph(kgraph, root, query):
     # transform into weighted nondirected graph
