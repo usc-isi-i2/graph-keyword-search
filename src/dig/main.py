@@ -7,6 +7,7 @@ from graph import htGraph, ImpossibleGraph
 from query import Query
 from synonym import Thesaurus
 from graph import minimalSubgraph
+import pprint
 
 g = None
 q = None
@@ -30,6 +31,7 @@ def main(argv=None):
     s = Thesaurus(word2vec=True, wordnet=True)
     q = Query(terms, g, s)
     q.suggestCandidates()
+    q.dump()
     # succeeds with roots = ['offer']
     # fails with roots = ['phone']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
@@ -37,7 +39,9 @@ def main(argv=None):
         print("\nRoot {}".format(root))
         try:
             (m, wg, sg) = minimalSubgraph(g, root, q)
-            print (root,g,q,s,m,wg,sg)
+            # print (root,g,q,s,m,wg,sg)
+            print("Subgraph")
+            pprint.pprint(sg.nodes())
         except ImpossibleGraph as ig:
             print(ig, file=sys.stderr)
 
