@@ -147,7 +147,6 @@ def make_prim_mst(G, generator=None):
         if len(edge) != 3 or edge[2] is None:
             raise ValueError("make_prim_mst accepts a weighted graph only (with numerical weights)")
         heappush(priorityQ, (edge[2]['weight'], edge))
-    print(priorityQ)
     while len(mst.edges()) < (G.order()-1):
         _, minEdge = heappop(priorityQ)
         if len(minEdge) != 3 or minEdge[2] is None:
