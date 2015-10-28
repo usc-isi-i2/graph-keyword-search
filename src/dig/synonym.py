@@ -45,7 +45,7 @@ class SynonymGenerator(object):
 WORD2VEC_DATA_DIR = '/opt/word2vec/data'
 WORD2VEC_DATA_FILE = "text8-phrases.bin"
 WORD2VEC_SIZE = 10
-WORD2VEC_MINIMUM = 0.5
+WORD2VEC_MINIMUM_SCORE = 0.5
 
 class Word2VecSynonymGenerator(SynonymGenerator):
 
@@ -53,7 +53,7 @@ class Word2VecSynonymGenerator(SynonymGenerator):
                  word2vecDataDir=WORD2VEC_DATA_DIR,
                  word2vecDataFile=WORD2VEC_DATA_FILE,
                  word2vecSize=WORD2VEC_SIZE,
-                 word2vecMinimum=WORD2VEC_MINIMUM):
+                 word2vecMinimum=WORD2VEC_MINIMUM_SCORE):
         super(Word2VecSynonymGenerator, self).__init__()
         # word2vec config
         self.word2vecDataDir = word2vecDataDir
@@ -92,9 +92,9 @@ WORDNET_NEIGHBORHOOD = (('n', (True, 1), (True, 0.5), (True, 0.5)),
 class WordnetSynonymGenerator(SynonymGenerator):
 
     def __init__(self,
-                 wordnetPartsOfSpeech=WORDNET_PARTS_OF_SPEECH,
-                 wordnetLemmaMinCount=WORDNET_LEMMA_MIN_COUNT,
-                 wordnetNeighborhood=WORDNET_NEIGHBORHOOD):
+                 partsOfSpeech=WORDNET_PARTS_OF_SPEECH,
+                 lemmaMinCount=WORDNET_LEMMA_MIN_COUNT,
+                 neighborhood=WORDNET_NEIGHBORHOOD):
         super(WordnetSynonymGenerator, self).__init__()
         # wordnet config    
         self.wn = wn
@@ -167,29 +167,72 @@ class EasyESASynonymGenerator(SynonymGenerator):
 class Thesaurus(object):
     def __init__(self,
                  word2vec_enable=True,
-                 word2vecDataDir=WORD2VEC_DATA_DIR,
-                 word2vecDataFile=WORD2VEC_DATA_FILE,
-                 word2vecSize=WORD2VEC_SIZE,
-                 word2vecMinimum=WORD2VEC_MINIMUM,
+                 word2vec_data_dir=WORD2VEC_DATA_DIR,
+                 word2vec_data_file=WORD2VEC_DATA_FILE,
+                 word2vec_size=WORD2VEC_SIZE,
+                 word2vec_minimum_score=WORD2VEC_MINIMUM_SCORE,
                  wordnet_enable=True,
-                 wordnetPartsOfSpeech=WORDNET_PARTS_OF_SPEECH,
-                 wordnetLemmaMinCount=WORDNET_LEMMA_MIN_COUNT,
-                 wordnetNeighborhood=WORDNET_NEIGHBORHOOD,
+                 # wordnetPartsOfSpeech=WORDNET_PARTS_OF_SPEECH,
+                 wordnet_lemma_min_count=WORDNET_LEMMA_MIN_COUNT,
+                 # wordnet_neighborhood=WORDNET_NEIGHBORHOOD,
+                 wordnet_n_enable = True,
+                 wordnet_n_self_factor = 1.0,
+                 wordnet_n_hypernym_factor = 0.5,
+                 wordnet_n_hyponym_factor = 0.5,
+                 wordnet_v_enable = True,
+                 wordnet_v_self_factor = 1.0,
+                 wordnet_v_hypernym_factor = 0.5,
+                 wordnet_v_hyponym_factor = 0.5,
+                 wordnet_a_enable = True,
+                 wordnet_a_self_factor = 1.0,
+                 wordnet_a_hypernym_factor = 0,
+                 wordnet_a_hyponym_factor = 0.5,
+                 wordnet_r_enable = True,
+                 wordnet_r_self_factor = 1.0,
+                 wordnet_r_hypernym_factor = 0,
+                 wordnet_r_hyponym_factor = 0.5,
                  swoogle_enable=False,
+                 swoogle_uri_template=None,
                  easyesa_enable=False,
                  **kwargs):
         synonymGenerators = {}
         if word2vec_enable:
-            synonymGenerators['word2vec'] = Word2VecSynonymGenerator(word2vecDataDir=word2vecDataDir,
-                                                                     word2vecDataFile=word2vecDataFile,
-                                                                     word2vecSize=word2vecSize,
-                                                                     word2vecMinimum=word2vecMinimum)
+            synonymGenerators['word2vec'] = Word2VecSynonymGenerator(dataDir=word2vec_data_dir,
+                                                                     dataFile=word2vec_data_file,
+                                                                     size=word2vec_size,
+                                                                     MinimumScore=word2vec_minimum_score)
         if wordnet_enable:
-            synonymGenerators['wordnet'] = WordnetSynonymGenerator(wordnetPartsOfSpeech=wordnetPartsOfSpeech,
-                                                                   wordnetLemmaMinCount=wordnetLemmaMinCount,
-                                                                   wordnetNeighborhood=wordnetNeighborhood)
+            partsOfSpeech = []
+            neighborhood = []
+            if wordnet_n_enable:
+                partsOfSpeech.append('n')
+                neighborhood.append( ('n', 
+                                      (wordnet_n_self_factor>0, wordnet_n_self_factor), 
+                                      (wordnet_n_hypernym_factor>0, wordnet_n_hypernym_factor), 
+                                      (wordnet_n_hyponym_factor>0, wordnet_n_hyponym_factor)) )
+            if wordnet_v_enable:
+                partsOfSpeech.append('v')
+                neighborhood.append( ('v', 
+                                      (wordnet_v_self_factor>0, wordnet_v_self_factor), 
+                                      (wordnet_v_hypernym_factor>0, wordnet_v_hypernym_factor), 
+                                      (wordnet_v_hyponym_factor>0, wordnet_v_hyponym_factor)) )
+            if wordnet_a_enable:
+                partsOfSpeech.append('a')
+                neighborhood.append( ('a', 
+                                      (wordnet_a_self_factor>0, wordnet_a_self_factor), 
+                                      (wordnet_a_hypernym_factor>0, wordnet_a_hypernym_factor), 
+                                      (wordnet_a_hyponym_factor>0, wordnet_a_hyponym_factor)) )
+            if wordnet_r_enable:
+                partsOfSpeech.append('r')
+                neighborhood.append( ('r', 
+                                      (wordnet_r_self_factor>0, wordnet_r_self_factor), 
+                                      (wordnet_r_hypernym_factor>0, wordnet_r_hypernym_factor), 
+                                      (wordnet_r_hyponym_factor>0, wordnet_r_hyponym_factor)) )
+            synonymGenerators['wordnet'] = WordnetSynonymGenerator(partsOfSpeech=partsOfSpeech,
+                                                                   lemmaMinCount=wordnet_lemma_min_count,
+                                                                   neighborhood=neighborhood)
         if swoogle_enable:
-            synonymGenerators['swoogle'] = SwoogleSynonymGenerator()
+            synonymGenerators['swoogle'] = SwoogleSynonymGenerator(uriTemplate=swoogle_uri_template)
         if easyesa_enable:
             synonymGenerators['easyESA'] = EasyESASynonymGenerator()
         self.synonymGenerators = synonymGenerators
