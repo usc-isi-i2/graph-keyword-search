@@ -38,6 +38,11 @@ class KGraph(DiGraph):
         self.domainType = domainType
         self.installDomain(domainType)
 
+    def __str__(self):
+        return "<{} {} nodes {} edges>".format(type(self).__name__,
+                                               self.number_of_nodes(),
+                                               self.number_of_edges())
+
     def installDomain(self, domainType=None):
         if domainType == 'ht':
             self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
@@ -288,19 +293,28 @@ def minimalSubgraph(kgraph, root, query):
     # except: traverse starting at root, dropping any backlinks [?]
 
     # required contains nodes/edges from original kgraph
-    required = set()
-    required.add(truenodeDesig(root))
+    #required = set()
+    #required.add(truenodeDesig(root))
+    required2 = defaultdict(list)
+    # To start with, we don't know if root has any cands
+    required2[truenodeDesig(root)]=[]
     for a in query.ngrams.values():
         for cand in a["candidates"]:
             if cand.referentType == 'node':
-                required.add(truenodeDesig(cand.referent))
+                #required.add(truenodeDesig(cand.referent))
+                required2[truenodeDesig(cand.referent)].append(cand)
             elif cand.referentType == 'edge':
-                required.add(edgenodeDesig(cand.referent))
-    required = list(required)
-    print("Steiner tree must contain all of:")
-    for n in required:
-        print("  ", n.nodeRefs[0])
-            
+                #required.add(edgenodeDesig(cand.referent))
+                required2[truenodeDesig(cand.referent)].append(cand)
+#     required = list(required)
+#     print("Steiner tree must contain all of:")
+#     for n in required:
+#         print("  ", n.nodeRefs[0])
+
+    print("Steiner tree equivalently:")
+    for n, c in required2.items():
+        print("  ", n.nodeRefs[0], c)
+
     # seen contains nodes/edges from original kgraph
     seen = set()
     
@@ -353,14 +367,15 @@ def minimalSubgraph(kgraph, root, query):
     # return (None, wg)
     # generate minimal steiner tree
     try:
-        st = make_steiner_tree(wg, required)
+        requiredNodes = list(required2.keys())
+        st = make_steiner_tree(wg, requiredNodes)
         # convert back to directed graph
         needed = [nd.nodeRefs[0]  for nd in st.nodes() if nd.nodeType=='truenode']
         subg = kgraph.subgraph(needed)
         return (st, wg, subg)
     except ValueError as ve:
         if "not in original graph" in str(ve):
-            raise ImpossibleGraph("Cannot generate subgraph of {} containing {}".format("weightedGraph", required))
+            raise ImpossibleGraph("Cannot generate subgraph of {} containing {}".format("weightedGraph", requiredNodes))
         else:
             raise(ve)
     
