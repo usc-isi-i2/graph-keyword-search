@@ -4,6 +4,10 @@ import sys
 from itertools import count
 from synonym import Thesaurus
 from collections import Counter
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 class Candidate(object):
     def __init__(self, referent=None, referentType=None, candidateType=None, synonym=None, distance=None):
@@ -12,6 +16,17 @@ class Candidate(object):
         self.candidateType = candidateType
         self.synonym = synonym
         self.distance = distance
+
+    @property
+    def indicator(self):
+        return self.referent
+
+    @property
+    def content(self):
+        try:
+            return self.synonym and self.synonym.content
+        except:
+            return self.synonym
         
     def __str__(self, *args, **kwargs):
         sig = "None"
@@ -52,8 +67,12 @@ class Candidate(object):
             pass
         return str(self)
 
+    def binding(self):
+        # return "Binding of indicator {} is content {}".format(self.indicator, self.content)
+        return (self.indicator, self.content)
+
 class Query(object):
-    def __init__(self, terms, graph, thesaurus=None):
+    def __init__(self, terms, graph, thesaurus=None, **kwargs):
         self.terms = terms
         self.graph = graph
         # self.thesaurus = thesaurus or Thesaurus()
@@ -224,7 +243,7 @@ class Query(object):
             except:
                 print(d)
                 
-    def dump(self):
+    def dump(self, file=sys.stdout):
         byIndex = [None] * (2*len(self.terms) - 1)
         for d in self.ngrams.values():
             byIndex[d['index']] = d
@@ -239,14 +258,24 @@ class Query(object):
                 # print("{}{}. {}: {}".format("  " if idx%2 else "", idx, q, "{} candidates".format(len(v))))
                 # summaries = Counter([c.summary() for c in v])
                 # print("{}{}. {}: {} ({})".format("  " if idx%2 else "", idx, q, "{} candidates".format(len(v))," unknown"))  
-                print("({}) {}. {}:".format(ngramType, idx, q))
+                print("({}) {}. {}:".format(ngramType, idx, q), file=file)
                 # print("Candidates:")
                 if v:
                     for c in v:
                         # print(c.summary())
                         # print(c)
-                        print("  " + c.explain())
+                        print("  " + c.explain(), file=file)
                 else:
-                    print("  None")
+                    print("  None", file=file)
             except:
-                print(d)
+                print(d, file=file)
+        
+    def dumpToString(self, indent=0):
+        buffer = StringIO()
+        self.dump(file=buffer)
+        s = buffer.getvalue()
+        buffer.close()
+        prefix = " " * indent
+        return (prefix + s.replace("\n", "\n" + prefix)
+                if prefix
+                else s)

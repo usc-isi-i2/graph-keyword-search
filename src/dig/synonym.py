@@ -26,6 +26,14 @@ class Synonym(object):
     def __repr__(self, *args, **kwargs):
         return self.__str__(*args, **kwargs)
 
+    @property
+    def indicator(self):
+        return ["indicator", self.seed]
+
+    @property
+    def content(self):
+        return self.target
+
 # the GoogleNews-vectors data I downloaded wasn't happy on the Mac, tended to misindex words
 # e.g., model['dog'] was missing but model['og'] was found
 # model = word2vec.load('/opt/word2vec/data/GoogleNews-vectors-negative300.bin')
@@ -168,7 +176,8 @@ class Thesaurus(object):
                  wordnetLemmaMinCount=WORDNET_LEMMA_MIN_COUNT,
                  wordnetNeighborhood=WORDNET_NEIGHBORHOOD,
                  swoogle=False,
-                 easyESA=False):
+                 easyESA=False,
+                 **kwargs):
         synonymGenerators = {}
         if word2vec:
             synonymGenerators['word2vec'] = Word2VecSynonymGenerator(word2vecDataDir=word2vecDataDir,

@@ -285,7 +285,7 @@ class entry_exit(object):
         print("Exited", self.f.__name__)
         return(r)
 
-def minimalSubgraph(kgraph, root, query):
+def minimalSubgraph(kgraph, root, query, verbose=False):
     # transform into weighted nondirected graph
     # all nodes become nodes ("truenode")
     # all edges also become nodes ("edgenode")
@@ -293,27 +293,21 @@ def minimalSubgraph(kgraph, root, query):
     # except: traverse starting at root, dropping any backlinks [?]
 
     # required contains nodes/edges from original kgraph
-    #required = set()
-    #required.add(truenodeDesig(root))
-    required2 = defaultdict(list)
+    required = defaultdict(list)
     # To start with, we don't know if root has any cands
-    required2[truenodeDesig(root)]=[]
+    required[truenodeDesig(root)]=[]
     for a in query.ngrams.values():
         for cand in a["candidates"]:
             if cand.referentType == 'node':
                 #required.add(truenodeDesig(cand.referent))
-                required2[truenodeDesig(cand.referent)].append(cand)
+                required[truenodeDesig(cand.referent)].append(cand)
             elif cand.referentType == 'edge':
                 #required.add(edgenodeDesig(cand.referent))
-                required2[truenodeDesig(cand.referent)].append(cand)
-#     required = list(required)
-#     print("Steiner tree must contain all of:")
-#     for n in required:
-#         print("  ", n.nodeRefs[0])
-
-    print("Steiner tree equivalently:")
-    for n, c in required2.items():
-        print("  ", n.nodeRefs[0], c)
+                required[edgenodeDesig(cand.referent)].append(cand)
+    if verbose:
+        print("Steiner tree must contain:")
+        for n, c in required.items():
+            print("  ", n.nodeRefs[0], c)
 
     # seen contains nodes/edges from original kgraph
     seen = set()
@@ -367,11 +361,11 @@ def minimalSubgraph(kgraph, root, query):
     # return (None, wg)
     # generate minimal steiner tree
     try:
-        requiredNodes = list(required2.keys())
+        requiredNodes = list(required.keys())
         st = make_steiner_tree(wg, requiredNodes)
         # convert back to directed graph
-        needed = [nd.nodeRefs[0]  for nd in st.nodes() if nd.nodeType=='truenode']
-        subg = kgraph.subgraph(needed)
+        neededTruenodes = [nd.nodeRefs[0] for nd in st.nodes() if nd.nodeType=='truenode']
+        subg = kgraph.subgraph(neededTruenodes)
         return (st, wg, subg)
     except ValueError as ve:
         if "not in original graph" in str(ve):
