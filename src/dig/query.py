@@ -72,14 +72,16 @@ class Candidate(object):
         return (self.indicator, self.content)
 
 class Query(object):
-    def __init__(self, terms, graph, thesaurus=None, **kwargs):
+    def __init__(self, terms, graph, thesaurus=None, 
+                 direct_enable=True, levenshtein_enable=True, hybridjaccard_enable=True, 
+                 **kwargs):
         self.terms = terms
         self.graph = graph
         # self.thesaurus = thesaurus or Thesaurus()
         self.thesaurus = thesaurus
-        self.direct = True
-        self.levenshtein = True
-        self.hybridJaccard = True
+        self.direct_enable = direct_enable
+        self.levenshtein_enable = levenshtein_enable
+        self.hybridjaccard_enable = hybridjaccard_enable
         self.initNgrams(terms)
         
     def __str__(self, *args, **kwargs):
@@ -140,7 +142,7 @@ class Query(object):
                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
                 
                 # singleton, levenshtein node
-                if self.levenshtein:
+                if self.levenshtein_enable:
                     for node in graph.nodes():
                         try:
                             (synonym, away) = graph.nodeEditWithin(node, keyword, levensteinWithin, above=levenshteinAbove)
@@ -156,7 +158,7 @@ class Query(object):
                         except TypeError:
                             pass                
                 # singleton, hybrid jaccard node
-                if self.hybridJaccard:
+                if self.hybridjaccard_enable:
                     for node in graph.nodes():
                         best = graph.nodeNearMatch(node, keyword, allowExact=hybridJaccardAllowExact)
                         if best:

@@ -375,7 +375,7 @@ def minimalSubgraph(kgraph, root, query, verbose=False):
     
 g = None
     
-def htGraph():
+def htGraph(**kwargs):
     global g
     g = KGraph(domainType='ht')
     g.populateAll()

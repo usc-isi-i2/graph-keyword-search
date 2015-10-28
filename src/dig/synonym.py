@@ -166,31 +166,31 @@ class EasyESASynonymGenerator(SynonymGenerator):
 
 class Thesaurus(object):
     def __init__(self,
-                 word2vec=True,
+                 word2vec_enable=True,
                  word2vecDataDir=WORD2VEC_DATA_DIR,
                  word2vecDataFile=WORD2VEC_DATA_FILE,
                  word2vecSize=WORD2VEC_SIZE,
                  word2vecMinimum=WORD2VEC_MINIMUM,
-                 wordnet=True,
+                 wordnet_enable=True,
                  wordnetPartsOfSpeech=WORDNET_PARTS_OF_SPEECH,
                  wordnetLemmaMinCount=WORDNET_LEMMA_MIN_COUNT,
                  wordnetNeighborhood=WORDNET_NEIGHBORHOOD,
-                 swoogle=False,
-                 easyESA=False,
+                 swoogle_enable=False,
+                 easyesa_enable=False,
                  **kwargs):
         synonymGenerators = {}
-        if word2vec:
+        if word2vec_enable:
             synonymGenerators['word2vec'] = Word2VecSynonymGenerator(word2vecDataDir=word2vecDataDir,
                                                                      word2vecDataFile=word2vecDataFile,
                                                                      word2vecSize=word2vecSize,
                                                                      word2vecMinimum=word2vecMinimum)
-        if wordnet:
+        if wordnet_enable:
             synonymGenerators['wordnet'] = WordnetSynonymGenerator(wordnetPartsOfSpeech=wordnetPartsOfSpeech,
                                                                    wordnetLemmaMinCount=wordnetLemmaMinCount,
                                                                    wordnetNeighborhood=wordnetNeighborhood)
-        if swoogle:
+        if swoogle_enable:
             synonymGenerators['swoogle'] = SwoogleSynonymGenerator()
-        if easyESA:
+        if easyesa_enable:
             synonymGenerators['easyESA'] = EasyESASynonymGenerator()
         self.synonymGenerators = synonymGenerators
         

@@ -11,7 +11,7 @@ from collections import defaultdict
 iii = None
 
 class Outline(object):
-    def __init__(self, graph, subgraph, query, root):
+    def __init__(self, graph, subgraph, query, root, **kwargs):
         self.graph = graph
         self.subgraph = subgraph
         self.query = query
