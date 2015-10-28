@@ -73,7 +73,12 @@ class Candidate(object):
 
 class Query(object):
     def __init__(self, terms, graph, thesaurus=None, 
-                 direct_enable=True, levenshtein_enable=True, hybridjaccard_enable=True, 
+                 direct_enable=True, 
+                 levenshtein_enable=True, 
+                 levenshtein_above_score=0.0,
+                 levenshtein_within_score=1.0,
+                 hybridjaccard_enable=True, 
+                 hybridjaccard_allowexact_enable=False,
                  **kwargs):
         self.terms = terms
         self.graph = graph
@@ -81,7 +86,10 @@ class Query(object):
         self.thesaurus = thesaurus
         self.direct_enable = direct_enable
         self.levenshtein_enable = levenshtein_enable
+        self.levenshtein_above_score = levenshtein_above_score
+        self.levenshtein_within_score = levenshtein_within_score
         self.hybridjaccard_enable = hybridjaccard_enable
+        self.hybridjaccard_allowexact_enable = hybridjaccard_allowexact_enable
         self.initNgrams(terms)
         
     def __str__(self, *args, **kwargs):
@@ -120,10 +128,10 @@ class Query(object):
         ngrams = self.ngrams
         thesaurus = self.thesaurus
         # levenshtein config
-        levensteinWithin = 1
-        levenshteinAbove = 0
+        levenshteinWithin = self.levenshtein_within_score
+        levenshteinAbove = self.levenshtein_above_score
         # hybrid jaccard config
-        hybridJaccardAllowExact = False
+        hybridJaccardAllowExact = self.hybridjaccard_allowexact_enable
 
         for q,d in ngrams.items():
             keyword = q
@@ -132,7 +140,7 @@ class Query(object):
             # SINGLETON
             if d["cardinality"] == 1:
                 # singleton, direct node
-                if self.direct:
+                if self.direct_enable:
                     for node in graph.nodes():
                         if graph.nodeMatch(node, keyword):
                             d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='direct'))
@@ -145,15 +153,14 @@ class Query(object):
                 if self.levenshtein_enable:
                     for node in graph.nodes():
                         try:
-                            (synonym, away) = graph.nodeEditWithin(node, keyword, levensteinWithin, above=levenshteinAbove)
-                            print(levenshteinAbove,synonym,away)
+                            (synonym, away) = graph.nodeEditWithin(node, keyword, levenshteinWithin, above=levenshteinAbove)
                             d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='levenshtein', distance=away, synonym=synonym))
                         except TypeError:
                             pass
                     # singleton, levenshtein edge
                     for edge in graph.edges():
                         try:
-                            (synonym,away) = graph.edgeEditWithin(edge, keyword, levensteinWithin, above=levenshteinAbove)
+                            (synonym,away) = graph.edgeEditWithin(edge, keyword, levenshteinWithin, above=levenshteinAbove)
                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='levenshtein', distance=away, synonym=synonym))
                         except TypeError:
                             pass                
@@ -184,7 +191,7 @@ class Query(object):
 
             # MULTIWORD
             elif d["cardinality"] >= 2:
-                if self.direct:
+                if self.direct_enable:
                     # multiword, direct
                     for node in graph.nodes():
                         if graph.nodeMatch(node, keyword):
