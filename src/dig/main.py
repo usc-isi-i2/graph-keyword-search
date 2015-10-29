@@ -68,6 +68,7 @@ def main(argv=None):
     # fails with roots = ['phone']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
     roots = ['adultservice']
+    roots = ['seller']
     for root in roots:
         print("\nRoot {}".format(root))
         try:
@@ -76,10 +77,12 @@ def main(argv=None):
             # sg is output directed subgraph
             (m, wg, sg) = minimalSubgraph(g, root, q)
             o = Outline(g, sg, q, root, **cmdline, **config)
-            o.detail()
         except ImpossibleGraph as ig:
             if args.verbose:
                 print(ig, file=sys.stderr)
+                print("Not possible")
+            continue
+        o.detail()
 
 # call main() if this is run as standalone
 if __name__ == "__main__":
