@@ -77,6 +77,8 @@ class KGraph(DiGraph):
             self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
             self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
 
+            self.add_edge('offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification')
+
             self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
             self.add_node('adultservice.eyeColor', nodeType='leaf', 
                            vocabDescriptor='adultservice_eyeColor', 
@@ -107,10 +109,22 @@ class KGraph(DiGraph):
             self.add_edge('postaladdress', 'postaladdress.addressCountry', edgeType='DataProperty', relationName='addressCountry')
             
             self.add_node('webpage', nodeType='Class', className='WebPage', indexRoot='webpage')
+            self.add_edge('offer', 'webpage', edgeType='ObjectProperty', relationName='mainEntityOfPage')
+            self.add_edge('webpage', 'offer', edgeType='ObjectProperty', relationName='mainEntity')
             self.add_node('publisher', nodeType='Class', className='Organization')
             self.add_edge('webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher')
             self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
+            
+    def labelInGraph(self, nodeOrEdge):
+        print("Looking for label of {}".format(nodeOrEdge))
+        try:
+            return self.node[nodeOrEdge]['className']
+        except:
+            try:
+                return self.edge[nodeOrEdge[0]][nodeOrEdge[1]]['relationName']
+            except:
+                return None
             
     def populateValues(self, nodeOrEdge):
         try:
@@ -129,26 +143,41 @@ class KGraph(DiGraph):
             elif edgeType == 'DataProperty':
                 self.populateAttributeEdge(edge)
     
+    # The problem is that "values" is too general.  We can associate values with nodes and edges via a variety of semantics:
+    # (1) instances from ES, presumably only for leaf nodes
+    # (2) ontology labels, ontology descriptions, presumably only for edges and interior nodes
+
     def populateLeafNode(self, node):
         self.node[node]['values'] = loadLeafVocab(self.node[node]['vocabDescriptor'])
-    
+        self.node[node]['valueOrigin'] = 'leafVocab'
+
+    # The next three probably should use the same methodology/same code
     def populateClassNode(self, node):
         self.node[node]['values'] = list(set([node, self.node[node]['className']]))
-    
+        self.node[node]['valueOrigin'] = 'ontology'
+
     def populateRelationEdge(self, edge):
         (node1, node2) = edge
         self.edge[node1][node2]['values'] = [camelCaseWords(self.edge[node1][node2]['relationName'])]
-    
+        self.edge[node1][node2]['valueOrigin'] = 'ontology'
+
     def populateAttributeEdge(self, edge):
         (node1, node2) = edge
         self.edge[node1][node2]['values'] = [camelCaseWords(self.edge[node1][node2]['relationName'])]  
-    
+        self.edge[node1][node2]['valueOrigin'] = 'ontology'
+
+    def isLeaf(self, nodeOrEdge):
+        try:
+            return self.node[nodeOrEdge]['valueOrigin'] == 'leafVocab'
+        except:
+            return False
+
     def populateAll(self):
         for node in self.nodes():
             self.populateValues(node)
         for edge in self.edges():
             self.populateValues(edge)
-            
+
     def nodeMatch(self, node, label):
         """list generator"""
         return label.lower().replace('_', ' ') in (value.lower() for value in self.node[node]['values'])
