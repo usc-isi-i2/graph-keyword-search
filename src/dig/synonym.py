@@ -10,11 +10,12 @@ from builtins import setattr
 
 class Synonym(object):
 
-    """Synonym records a link between a known word or collocation
-\(the seed or indicator)
-e.g., 'blue', 'eye_color' and a word or collocation believed to be equivalent
-\(the target or content)
-or related e.g., 'sky'."""
+    """Synonym records a link between two surface forms:
+a known word or collocation (the seed or indicator)
+e.g., 'blue', 'eye_color' 
+and 
+a word or collocation believed to be equivalent/or related (the target or content)
+e.g., 'sky'."""
 
     def __init__(self, *args, indicator=None, content=None, score=1.0, source=None, **kwargs):
         self.indicator = indicator
