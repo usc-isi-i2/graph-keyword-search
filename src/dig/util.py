@@ -928,6 +928,8 @@ def master(dispatch_arg, arg1, arg2, **kwdargs):
 def canonList(thing):
     if isinstance(thing, list):
         return thing
+    elif isinstance(thing, (tuple, set, dict)):
+        return list(thing)
     else:
         return [thing]
     
