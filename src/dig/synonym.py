@@ -26,14 +26,24 @@ e.g., 'sky'."""
             setattr(self, k, v)
             
     def __str__(self, *args, **kwargs):
-        sig = "{}({})=>{}{}".format(getattr(self, "source", "*SOURCE*"),
+        sig = "{}({})=>{}{}".format(self.detailSource(),
                                     getattr(self, "indicator", "*INDICATOR*"),
                                     getattr(self, "content", "*CONTENT*"),
-                                    "" if getattr(self, "score", 1.0)==1.0 else getattr(self, "score", "unknown"))
+                                    # "" if getattr(self, "score", 1.0)==1.0 else " " + getattr(self, "score", "unknown")
+                                    "")
         return "<" + str(type(self).__name__) + " " + sig + ">"
     
     def __repr__(self, *args, **kwargs):
         return self.__str__(*args, **kwargs)
+    
+    def detailSource(self):
+        try:
+            return self.source + "." + self.rel
+        except AttributeError:
+            try:
+                return self.source
+            except:
+                return "*SOURCE*"
 
     def explain(self):
         return str(self)
@@ -78,7 +88,7 @@ class Word2VecSynonymGenerator(SynonymGenerator):
             (indexes, metrics) = model.cosine(indicator, size)
             array = model.generate_response(indexes, metrics)
             for (syn, similarityScore) in array:
-                if similarityScore >= minimum:
+                if similarityScore >= minimumScore:
                     yield(Synonym(indicator=indicator, content=syn, score=similarityScore, source='word2vec'))
         except:
             pass
