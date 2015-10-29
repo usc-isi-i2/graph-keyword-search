@@ -8,6 +8,7 @@ try:
     from StringIO import StringIO
 except ImportError:
     from io import StringIO
+from util import canonList
 
 class Candidate(object):
     def __init__(self, referent=None, referentType=None, candidateType=None, synonym=None, distance=None):
@@ -35,15 +36,18 @@ class Candidate(object):
             sig += " "
             sig += (self.candidateType or "")
             sig += " " 
-            sig += (str(self.referent) or "")
+            sig += (self.referentsLabel() or "")
             sig += " "
             sig += (str(getattr(self,"synonym",None) or ""))
         except Exception as _:
             pass
         return "<" + str(type(self).__name__) + " " + sig + ">"
-    
+
     def __repr__(self, *args, **kwargs):
         return self.__str__()
+
+    def referentsLabel(self):
+        return "/".join(canonList(self.referent))
     
     def summary(self):
         try:
@@ -143,11 +147,11 @@ class Query(object):
                 if self.direct_enable:
                     for node in graph.nodes():
                         if graph.nodeMatch(node, keyword):
-                            d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='direct'))
+                            d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='direct', synonym=keyword))
                     # singleton, direct edge
                     for edge in graph.edges():
                         if graph.edgeMatch(edge, keyword):
-                            d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct'))
+                            d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct', synonym=keyword))
                 
                 # singleton, levenshtein node
                 if self.levenshtein_enable:
