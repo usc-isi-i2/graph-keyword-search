@@ -7,6 +7,7 @@ except ImportError:
     from io import StringIO
 from pprint import pprint
 from collections import defaultdict
+from util import info
 
 iii = None
 
@@ -19,27 +20,40 @@ class Outline(object):
 
     def intermediate(self):
         global iii
+        edgesMentioned = []
+        nodesMentioned = []
+        must = []
+        should = []
         i = defaultdict(list)
         i["root"] = self.root
         # to begin with, no terms are covered
-        covered = dict([(term, set()) for term in self.query.terms])
+        touches = dict([(term, set()) for term in self.query.terms])
         for a in self.query.ngrams.values():
             for cand in a["candidates"]:
                 if cand.referentType == 'node':
-                    i["must"].append(cand.binding())
+                    print("node:")
+                    pprint(cand)
+                    info(cand)
+                    info(cand.referent)
+                    must.append(cand.binding())
+                    nodesMentioned.append(cand.binding())
                     # required[truenodeDesig(cand.referent)].append(cand)
                     for w in a["words"]:
-                        covered[w].add(cand)
+                        touches[w].add(cand)
                 elif cand.referentType == 'edge':
-                    i["must"].append(cand.binding())
+                    edgesMentioned.append(cand.binding())
                     # required[truenodeDesig(cand.referent)].append(cand)
                     for w in a["words"]:
-                        covered[w].add(cand)
+                        touches[w].add(cand)
         # now we have all known candidates
         for term in self.query.terms:
-            if not covered[term]:
-                i["should"].append(("match", term))
-        i["covered"] = covered
+            if not touches[term]:
+                should.append(("match", term))
+        i["touches"] = touches
+        i["edgesMentioned"] = edgesMentioned
+        i["nodesMentioned"] = nodesMentioned
+        i["must"] = must
+        i["should"] = should
         iii = i
         return i
 
