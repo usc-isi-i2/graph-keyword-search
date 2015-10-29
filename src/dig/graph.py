@@ -1,25 +1,31 @@
 #!/usr/bin/env python
 
-import sys, os
-from networkx import DiGraph, Graph
-import json
-import re
-import word2vec
 from collections import defaultdict
-from Levenshtein import distance
-from queue import Queue
-from SteinerTree import make_steiner_tree
 from collections import namedtuple
+import json
+from queue import Queue
+import re
+import sys, os
+from pprint import pprint
 
-LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
+from Levenshtein import distance
+from networkx import Graph, DiGraph
+
+from SteinerTree import make_steiner_tree
+from hybridJaccard import HybridJaccard
+
+LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/dig/data/cache"
 
 def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
     pathname = os.path.join(root, pathdesc  + ".json")
     with open(pathname, 'r') as f:
         j = json.load(f)
     # dict of (value, count)
-    byCount = sorted([(v,k) for (k,v) in j['histo'].items()], reverse=True)
+    byCount = sorted([(v,q) for (q,v) in j['histo'].items()], reverse=True)
     return [t[1] for t in byCount]
+
+def localPath(suffix):
+    return os.path.join(os.path.dirname(__file__), suffix)
 
 # http://stackoverflow.com/a/9283563/2077242
 def camelCaseWords(label):
@@ -31,7 +37,12 @@ class KGraph(DiGraph):
         super(KGraph, self).__init__()
         self.domainType = domainType
         self.installDomain(domainType)
-        
+
+    def __str__(self):
+        return "<{} {} nodes {} edges>".format(type(self).__name__,
+                                               self.number_of_nodes(),
+                                               self.number_of_edges())
+
     def installDomain(self, domainType=None):
         if domainType == 'ht':
             self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
@@ -65,7 +76,10 @@ class KGraph(DiGraph):
             self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
 
             self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
-            self.add_node('adultservice.eyeColor', nodeType='leaf', vocabDescriptor='adultservice_eyeColor')
+            self.add_node('adultservice.eyeColor', nodeType='leaf', 
+                           vocabDescriptor='adultservice_eyeColor', 
+                           matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/eyeColor_reference_wiki.txt"), 
+                                                           config_path=localPath("data/config/hybridJaccard/eyeColor_config.txt")))
             self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
             self.add_node('adultservice.hairColor', nodeType='leaf', vocabDescriptor='adultservice_hairColor')
             self.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor')
@@ -142,22 +156,60 @@ class KGraph(DiGraph):
         return label.lower().replace('_', ' ') in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
     
     def nodeEditWithin(self, node, label, within=1, above=None):
-        """set above=0 to avoid matching node value exactly identical to label"""
+        """set above=0 to avoid matching node value exactly identical to label
+        Does not find closest node values, just any values within interval"""
         l = label.lower().replace('_', ' ') 
         for value in self.node[node]['values']:
+            value = value.lower().replace('_', ' ')
+            actual = distance(l, value)
+            if (above==None or actual>above) and actual <= within:
+                # if levenshtein is 0, return true value 0.0
+                # return actual or 0.0
+                return(value, actual)
+              
+    def edgeEditWithin(self, edge, label, within=1, above=None):
+        """set above=0 to avoid matching edge value exactly identical to label"""
+        l = label.lower().replace('_', ' ') 
+        for value in self.edge[edge[0]][edge[1]]['values']:
+            value = value.lower().replace('_', ' ')
             actual = distance(l, value)
             if (not above or actual>above) and actual <= within:
                 # if levenshtein is 0, return true value 0.0
                 return actual or 0.0
             
-    def edgeEditWithin(self, edge, label, within=1, above=None):
-        """set above=0 to avoid matching edge value exactly identical to label"""
-        l = label.lower().replace('_', ' ') 
-        for value in self.edge[edge[0]][edge[1]]['values']:
-            actual = distance(l, value)
-            if (not above or actual>above) and actual <= within:
-                # if levenshtein is 0, return true value 0.0
-                return actual or 0.0
+    def nodeNearMatch(self, node, label, allowExact=False):
+        """set allowExact to True to look up values directly here"""
+        label = label.lower().replace('_', ' ') 
+        # print(self.node[node])
+        try:
+            hjMatcher = self.node[node]['matcherDescriptor']
+            best = hjMatcher.findBestMatch(label)
+            if best != "NONE":
+                for value in self.node[node]['values']:
+                    value = value.lower().replace('_', ' ')
+                    if ((label != value) or allowExact) and (best==value):
+                        # HJ(label)== a value from node and 
+                        # either we allow exact or see that label is not exactly the retrieved value
+                        # print(best)
+                        return best
+        except KeyError:
+            pass
+                
+    def edgeNearMatch(self, edge, label, allowExact=False):
+        """set allowExact to True to look up values directly here"""
+        label = label.lower().replace('_', ' ')
+        try:
+            hjMatcher = self.edge[edge[0]][edge[1]]['matcherDescriptor']
+            best = hjMatcher.findBestMatch(label)
+            if best != "NONE":
+                for value in self.edge[edge[0]][edge[1]]['values']:
+                    value = value.lower().replace('_', ' ')
+                    if ((label != value) or allowExact) and (best==value):
+                        # HJ(label)== a value from edge and 
+                        # either we allow exact or see that label is not exactly the retrieved value
+                        return best
+        except KeyError:
+            pass
 
     def generateSubgraph(self, node):
         seen = set()
@@ -215,76 +267,48 @@ def edgenodeDesig(edge):
     """Render a kgraph edge as a wgraph node"""
     return nodeDesig(nodeType='edgenode', nodeRefs=edge)
     
-def minimalSubgraph0(kgraph, root, kquery):
+class ImpossibleGraph(Exception):
+    def __init__(self, message):
+        # Call the base class constructor with the parameters it needs
+        super(ImpossibleGraph, self).__init__(message)
+        
+        # PythonDecorators/entry_exit_class.py
+
+class entry_exit(object):
+
+    def __init__(self, f):
+        self.f = f
+
+    def __call__(self, *args):
+        print("Entering", self.f.__name__)
+        r = self.f(*args)
+        print("Exited", self.f.__name__)
+        return(r)
+
+def minimalSubgraph(kgraph, root, query, verbose=False):
     # transform into weighted nondirected graph
-    # all nodes become nodes
-    # all edges also become nodes
+    # all nodes become nodes ("truenode")
+    # all edges also become nodes ("edgenode")
     # induce edge with weight 1 for each node/edge and edge/node
-    # except: traverse starting at root, dropping any backlinks
-    global wg
-    wg = Graph()
-
-    required = []
-    required.append(root)
-    for a in kquery.anchors.values():
-        for cand in a["candidates"]:
-            required.append(cand.referent)
-    print("Required: {}".format(required))
-            
-    seen = set()
-    q = Queue(maxsize=kgraph.number_of_nodes()+3*kgraph.number_of_edges())
-    q.put(root)
-
-    while not q.empty():
-        print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
-        obj = q.get()
-        # print("Dequeue {}".format(obj), file=sys.stderr)
-        if not obj in seen:
-            if isinstance(obj, (str)):
-                # unseen kgraph node
-                seen.add(obj)
-                node = obj
-                wg.add_node((node,), nodeType='truenode')
-                for node2 in kgraph.edge[node]:
-                    # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
-                    q.put((node,node2))
-            elif isinstance(obj, (list, tuple)) and len(obj)==2:
-                # unseen kgraph edge
-                seen.add(obj)
-                # edge = obj
-                # create a node representing original edge
-                edgenode = ("edgenode", obj[0], obj[1])
-                wg.add_node(edgenode, nodeType='edgenode')
-                wg.add_edge((obj[0],), edgenode, type='entry', weight=1)
-                wg.add_edge(edgenode, (obj[1],), type='exit', weight=1)
-                # print("Enqueue node {}".format(obj[1]), file=sys.stderr)
-                q.put(obj[1])
-            else:
-                print("Unexpected {}".format(obj), file=sys.stderr)
-        else:
-            print("Obj {} already seen".format(obj), file=sys.stderr)
-    # return (None, wg)
-    # generate minimal steiner tree
-    mst = make_steiner_tree(wg, required)
-    return (mst, wg)
-
-def minimalSubgraph(kgraph, root, kquery):
-    # transform into weighted nondirected graph
-    # all nodes become nodes
-    # all edges also become nodes
-    # induce edge with weight 1 for each node/edge and edge/node
-    # except: traverse starting at root, dropping any backlinks
+    # except: traverse starting at root, dropping any backlinks [?]
 
     # required contains nodes/edges from original kgraph
-    required = []
-    required.append(truenodeDesig(root))
-    for a in kquery.anchors.values():
+    required = defaultdict(list)
+    # To start with, we don't know if root has any cands
+    required[truenodeDesig(root)]=[]
+    for a in query.ngrams.values():
         for cand in a["candidates"]:
             if cand.referentType == 'node':
-                required.append(truenodeDesig(cand.referent))
+                #required.add(truenodeDesig(cand.referent))
+                required[truenodeDesig(cand.referent)].append(cand)
             elif cand.referentType == 'edge':
-                required.append(edgenodeDesig(cand.referent))
-            
+                #required.add(edgenodeDesig(cand.referent))
+                required[edgenodeDesig(cand.referent)].append(cand)
+    if verbose:
+        print("Steiner tree must contain:")
+        for n, c in required.items():
+            print("  ", n.nodeRefs[0], c)
+
     # seen contains nodes/edges from original kgraph
     seen = set()
     
@@ -297,17 +321,18 @@ def minimalSubgraph(kgraph, root, kquery):
     wg = Graph()
 
     while not q.empty():
-        print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
+        # print("Queue size: {}; wg size {}".format(q.qsize(), len(wg)), file=sys.stderr)
         obj = q.get()
-        print("Dequeue {}".format(obj), file=sys.stderr)
+        # print("Dequeue {}".format(obj), file=sys.stderr)
         if not obj in seen:
             if isinstance(obj, (str)):
                 # unseen kgraph node
                 seen.add(obj)
                 node = obj
+                # print("wg: add true node {}".format(node), file=sys.stderr)
                 wg.add_node(truenodeDesig(node))
                 for node2 in kgraph.edge[node]:
-                    print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
+                    # print("Enqueue edge {} {}".format(node, node2), file=sys.stderr)
                     q.put((node,node2))
             elif isinstance(obj, (list, tuple)) and len(obj)==2:
                 # unseen kgraph edge
@@ -318,28 +343,39 @@ def minimalSubgraph(kgraph, root, kquery):
                 truenode1 = truenodeDesig(node1)
                 truenode2 = truenodeDesig(node2)
                 edge = obj
+                # print("wg: add edge node {}".format(edge), file=sys.stderr)
                 edgenode = edgenodeDesig(edge)
                 wg.add_node(edgenode)
                 wg.add_edge(truenode1, edgenode, weight=1)
                 wg.add_edge(edgenode, truenode2, weight=1)
-                print("Enqueue node {}".format(node2), file=sys.stderr)
+                # print("Enqueue node {}".format(node2), file=sys.stderr)
                 q.put(node2)
             else:
                 print("Unexpected {}".format(obj), file=sys.stderr)
         else:
-            print("Obj {} already seen".format(obj), file=sys.stderr)
+            # print("Obj {} already seen".format(obj), file=sys.stderr)
+            pass
+
+    # print("Weighted non-directed graph")
+    # pprint(wg.nodes())
     # return (None, wg)
     # generate minimal steiner tree
-    st = make_steiner_tree(wg, required)
-    
-    # convert back to directed graph
-    needed = [nd.nodeRefs[0]  for nd in st.nodes() if nd.nodeType=='truenode']
-    subg = kgraph.subgraph(needed)
-    return (st, wg, subg)
+    try:
+        requiredNodes = list(required.keys())
+        st = make_steiner_tree(wg, requiredNodes)
+        # convert back to directed graph
+        neededTruenodes = [nd.nodeRefs[0] for nd in st.nodes() if nd.nodeType=='truenode']
+        subg = kgraph.subgraph(neededTruenodes)
+        return (st, wg, subg)
+    except ValueError as ve:
+        if "not in original graph" in str(ve):
+            raise ImpossibleGraph("Cannot generate subgraph of {} containing {}".format("weightedGraph", requiredNodes))
+        else:
+            raise(ve)
     
 g = None
     
-def htGraph():
+def htGraph(**kwargs):
     global g
     g = KGraph(domainType='ht')
     g.populateAll()

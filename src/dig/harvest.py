@@ -122,10 +122,10 @@ def harvest(index="dig-ht-latest", docType="webpage",fieldName="addressCountry",
         report["histo"][bucket["key"]] = bucket["doc_count"]
     return report
 
-def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
-    return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
+# def outputPathname(docType="webpage", innerPath="mainEntity.availableAtOrFrom.address", fieldName="addressCountry", root="/tmp", **kwargs):
+#     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
 
-OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/es-example/cache"
+OUTPUT_ROOT = "/Users/philpot/Documents/project/graph-keyword-search/src/dig/data/cache"
 
 def outputPathname(docType="webpage", innerPath="", fieldName="addressCountry", root=OUTPUT_ROOT, **kwargs):
     return os.path.join(root, "{}_{}_{}.json".format(docType, innerPath.replace('.', '_').replace('__','_'), fieldName))
@@ -254,8 +254,8 @@ def generateAll ():
                 l = len(b)
                 if l>0:
                     print("Success %d for %s" % (l, spec), file=sys.stderr)
-                    k = 5
-                    for i,v in zip(range(k+1), b[0:k]):
+                    q = 5
+                    for i,v in zip(range(q+1), b[0:q]):
                         print("value %d is %s" % (i, v))
                 elif l==0:
                     print("No data for %s" % (spec), file=sys.stderr)

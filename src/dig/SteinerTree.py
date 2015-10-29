@@ -12,12 +12,12 @@ Created on Sat Sep  7 12:57:57 2013
 from heapq import heappush, heappop
 from networkx import Graph, bidirectional_dijkstra, has_path
 
-import json
-def hashableDict(d):
-    return json.dumps(d, sort_keys=True)
-
-def unhashableDict(hashableDict):
-    return json.loads(hashableDict)
+# import json
+# def hashableDict(d):
+#     return json.dumps(d, sort_keys=True)
+# 
+# def unhashableDict(hashableDict):
+#     return json.loads(hashableDict)
 
 ## Extract a Steiner tree from a weighted graph, given a list of vertices of interest
 # @param G  A Graph with weighted edges
@@ -144,11 +144,9 @@ def make_prim_mst(G, generator=None):
     firstNode = G.nodes()[0]
     mst.add_node(firstNode)
     for edge in G.edges_iter(firstNode, data=True):
-        print("An edge is {}".format(edge))
         if len(edge) != 3 or edge[2] is None:
             raise ValueError("make_prim_mst accepts a weighted graph only (with numerical weights)")
         heappush(priorityQ, (edge[2]['weight'], edge))
-    print(priorityQ)
     while len(mst.edges()) < (G.order()-1):
         _, minEdge = heappop(priorityQ)
         if len(minEdge) != 3 or minEdge[2] is None:
