@@ -152,11 +152,25 @@ class KGraph(DiGraph):
     def nodeMatch(self, node, label):
         """list generator"""
         return label.lower().replace('_', ' ') in (value.lower() for value in self.node[node]['values'])
-    
+
     def edgeMatch(self, edge, label):
         """list generator"""
         return label.lower().replace('_', ' ') in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
     
+#     def nodeMatchWork(self, node, label):
+#         """list generator"""
+#         l = label.lower().replace('_', ' ')
+#         for value in self.node[node]['values']:
+#             if l == value.lower():
+#                 return(value, 0)
+    
+#     def edgeMatchWork(self, node, label):
+#         """list generator"""
+#         l = label.lower().replace('_', ' ')
+#         for value in self.edge[edge[0]][edge[1]]['values']):
+#             if l == value.lower():
+#                 return(value, 0)
+
     def nodeEditWithin(self, node, label, within=1, above=None):
         """set above=0 to avoid matching node value exactly identical to label
         Does not find closest node values, just any values within interval"""
