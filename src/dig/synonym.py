@@ -89,6 +89,9 @@ WORDNET_NEIGHBORHOOD = (('n', (True, 1), (True, 0.5), (True, 0.5)),
                         ('r', (True, 1), (False, 0),  (True, 0.5)))
 
 
+# TODO: interrogate pertanyms and derivationally_related_forms, which are stored only on the resultant lemmas
+# TODO: holonyms (synechdoche), metonymy in general
+
 class WordnetSynonymGenerator(SynonymGenerator):
 
     def __init__(self,
