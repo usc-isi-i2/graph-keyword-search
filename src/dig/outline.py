@@ -32,9 +32,9 @@ class Outline(object):
             for cand in a["candidates"]:
                 if cand.referentType == 'node':
                     print("node:")
-                    pprint(cand)
-                    info(cand)
-                    info(cand.referent)
+                    # print(node.explain())
+                    print(cand.explain())
+                    print(cand.synonym.explain())
                     must.append(cand.binding())
                     nodesMentioned.append(cand.binding())
                     # required[truenodeDesig(cand.referent)].append(cand)

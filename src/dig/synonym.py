@@ -35,6 +35,9 @@ e.g., 'sky'."""
     def __repr__(self, *args, **kwargs):
         return self.__str__(*args, **kwargs)
 
+    def explain(self):
+        return str(self)
+
 # the GoogleNews-vectors data I downloaded wasn't happy on the Mac, tended to misindex words
 # e.g., model['dog'] was missing but model['og'] was found
 # model = word2vec.load('/opt/word2vec/data/GoogleNews-vectors-negative300.bin')

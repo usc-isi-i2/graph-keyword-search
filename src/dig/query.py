@@ -2,7 +2,7 @@
 
 import sys
 from itertools import count
-from synonym import Thesaurus
+from synonym import Thesaurus, Synonym
 from collections import Counter
 try:
     from StringIO import StringIO
