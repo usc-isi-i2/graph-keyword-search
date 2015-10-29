@@ -25,9 +25,10 @@ or related e.g., 'sky'."""
             setattr(self, k, v)
             
     def __str__(self, *args, **kwargs):
-        sig = "{}({})={}".format(getattr(self, "source", "*SOURCE*"),
-                                 getattr(self, "indicator", "*INDICATOR*"),
-                                 getattr(self, "content", "*CONTENT*"))
+        sig = "{}({})=>{}{}".format(getattr(self, "source", "*SOURCE*"),
+                                    getattr(self, "indicator", "*INDICATOR*"),
+                                    getattr(self, "content", "*CONTENT*"),
+                                    "" if getattr(self, "score", 1.0)==1.0 else getattr(self, "score", "unknown"))
         return "<" + str(type(self).__name__) + " " + sig + ">"
     
     def __repr__(self, *args, **kwargs):
@@ -49,25 +50,25 @@ WORD2VEC_MINIMUM_SCORE = 0.5
 class Word2VecSynonymGenerator(SynonymGenerator):
 
     def __init__(self,
-                 word2vecDataDir=WORD2VEC_DATA_DIR,
-                 word2vecDataFile=WORD2VEC_DATA_FILE,
-                 word2vecSize=WORD2VEC_SIZE,
-                 word2vecMinimum=WORD2VEC_MINIMUM_SCORE):
+                 dataDir=WORD2VEC_DATA_DIR,
+                 dataFile=WORD2VEC_DATA_FILE,
+                 size=WORD2VEC_SIZE,
+                 minimumScore=WORD2VEC_MINIMUM_SCORE):
         super(Word2VecSynonymGenerator, self).__init__()
         # word2vec config
-        self.word2vecDataDir = word2vecDataDir
-        self.word2vecDataFile = word2vecDataFile
-        self.word2vecSize = word2vecSize
-        self.word2vecMinimum = word2vecMinimum
-        if self.word2vecDataDir and self.word2vecDataFile:
-            self.word2vecModel = word2vec.load(os.path.join(self.word2vecDataDir, self.word2vecDataFile))
+        self.dataDir = dataDir
+        self.dataFile = dataFile
+        self.size = size
+        self.minimumScore = minimumScore
+        if self.dataDir and self.dataFile:
+            self.word2vecModel = word2vec.load(os.path.join(self.dataDir, self.dataFile))
 
     def generateSynonyms(self, indicator):
         """collocation indicator must be specified as word1_word2"""
         if isinstance(indicator, (list, tuple)):
             indicator = "_".join(indicator)
-        size = self.word2vecSize
-        minimum = self.word2vecMinimum
+        size = self.size
+        minimumScore = self.minimumScore
         try:
             model = self.word2vecModel
             (indexes, metrics) = model.cosine(indicator, size)
@@ -199,7 +200,7 @@ class Thesaurus(object):
             synonymGenerators['word2vec'] = Word2VecSynonymGenerator(dataDir=word2vec_data_dir,
                                                                      dataFile=word2vec_data_file,
                                                                      size=word2vec_size,
-                                                                     MinimumScore=word2vec_minimum_score)
+                                                                     minimumScore=word2vec_minimum_score)
         if wordnet_enable:
             partsOfSpeech = []
             neighborhood = []
