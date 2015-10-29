@@ -10,25 +10,28 @@ from builtins import setattr
 
 class Synonym(object):
 
-    def __init__(self, *args, seed=None, target=None, score=1.0, **kwargs):
-        self.seed = seed
+    """Synonym records a link between a known word or collocation
+\(the seed or indicator)
+e.g., 'blue', 'eye_color' and a target or word believed to be equivalent
+\(the target or content)
+or related e.g., 'sky'."""
+
+    def __init__(self, *args, indicator=None, target=None, score=1.0, source=None, **kwargs):
+        self.indicator = indicator
         self.target = target
         self.score = score
+        self.source = source
         for (k, v) in kwargs.items():
             setattr(self, k, v)
             
     def __str__(self, *args, **kwargs):
         sig = "{}({})={}".format(getattr(self, "source", "*SOURCE*"),
-                                 getattr(self, "seed", "*SEED*"),
+                                 getattr(self, "indicator", "*INDICATOR*"),
                                  getattr(self, "target", "*TARGET*"))
         return "<" + str(type(self).__name__) + " " + sig + ">"
     
     def __repr__(self, *args, **kwargs):
         return self.__str__(*args, **kwargs)
-
-    @property
-    def indicator(self):
-        return ["indicator", self.seed]
 
     @property
     def content(self):
@@ -63,19 +66,19 @@ class Word2VecSynonymGenerator(SynonymGenerator):
         if self.word2vecDataDir and self.word2vecDataFile:
             self.word2vecModel = word2vec.load(os.path.join(self.word2vecDataDir, self.word2vecDataFile))
 
-    def generateSynonyms(self, seed):
-        """collocation seed must be specified as word1_word2"""
-        if isinstance(seed, (list, tuple)):
-            seed = "_".join(seed)
+    def generateSynonyms(self, indicator):
+        """collocation indicator must be specified as word1_word2"""
+        if isinstance(indicator, (list, tuple)):
+            indicator = "_".join(indicator)
         size = self.word2vecSize
         minimum = self.word2vecMinimum
         try:
             model = self.word2vecModel
-            (indexes, metrics) = model.cosine(seed, size)
+            (indexes, metrics) = model.cosine(indicator, size)
             array = model.generate_response(indexes, metrics)
             for (syn, similarityScore) in array:
                 if similarityScore >= minimum:
-                    yield(Synonym(seed=seed, target=syn, similarity=similarityScore, source='word2vec'))
+                    yield(Synonym(indicator=indicator, target=syn, score=similarityScore, source='word2vec'))
         except:
             pass
     pass
@@ -102,7 +105,7 @@ class WordnetSynonymGenerator(SynonymGenerator):
         self.wordnetLemmaMinCount = WORDNET_LEMMA_MIN_COUNT
         self.wordnetNeighborhood = WORDNET_NEIGHBORHOOD
 
-    def generateSynonyms(self, seed):
+    def generateSynonyms(self, indicator):
         """lemmas with count=0 are generally quite rare, so drop them
         may generate a lemma more than once, possible with different parameters"""
         neighborhood = self.wordnetNeighborhood
@@ -116,13 +119,13 @@ class WordnetSynonymGenerator(SynonymGenerator):
                 count = lemma.count()
                 if count > minCount:
                     name = lemma.name()
-                    if name == seed:
+                    if name == indicator:
                         continue
-                    yield(Synonym(seed=seed, target=name, lemma=lemma, synset=synset, pos=pos, factor=factor,
+                    yield(Synonym(indicator=indicator, target=name, lemma=lemma, synset=synset, pos=pos, factor=factor,
                                   rel=rel, count=count, score=count*factor, source='wordnet'))
     
         for pos, (here, hereFactor), (up, upFactor), (down, downFactor) in neighborhood:
-            for synset in wn.synsets(seed, pos=pos):
+            for synset in wn.synsets(indicator, pos=pos):
                 if here:
                     for g in generateSynsetSynonyms(synset, "self", hereFactor):
                         yield(g)
@@ -144,7 +147,7 @@ class SwoogleSynonymGenerator(SynonymGenerator):
         self.swoogle = True
         self.swoogleUriTemplate = '''http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&phrase1="{}"&phrase2="{}"'''
 
-    def generateSynonyms(self, seed):
+    def generateSynonyms(self, indicator):
         """Incomplete"""
         score = 0
         url = self.swoogleUriTemplate.format(quote)
@@ -161,7 +164,7 @@ class EasyESASynonymGenerator(SynonymGenerator):
     def __init(self):
         super(EasyESASynonymGenerator, self).__init__()
 
-    def generateSynonyms(self, seed):
+    def generateSynonyms(self, indicator):
         pass
 
 class Thesaurus(object):
@@ -237,7 +240,7 @@ class Thesaurus(object):
             synonymGenerators['easyESA'] = EasyESASynonymGenerator()
         self.synonymGenerators = synonymGenerators
         
-    def generateSynonyms(self, seed):
+    def generateSynonyms(self, indicator):
         for (_, syngen) in self.synonymGenerators.items():
-            for g in syngen.generateSynonyms(seed):
+            for g in syngen.generateSynonyms(indicator):
                 yield(g)

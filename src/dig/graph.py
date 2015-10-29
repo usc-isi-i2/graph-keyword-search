@@ -8,8 +8,8 @@ import re
 import sys, os
 from pprint import pprint
 
-# from Levenshtein import distance
-from StringMatcher import distance
+from Levenshtein import distance
+# from StringMatcher import distance
 # from Levenshtein.StringMatcher import distance
 from networkx import Graph, DiGraph
 
