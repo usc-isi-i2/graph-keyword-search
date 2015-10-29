@@ -12,7 +12,7 @@ from util import canonList
 
 class Candidate(object):
     def __init__(self, referent=None, referentType=None, candidateType=None, synonym=None, distance=0):
-        # referent is something in the graph: a node or edge
+        # referent is something in the graph: a node or edge, which for us is a string or tuple of strings
         self.referent = referent
         # referentType is 'node' or 'edge'
         self.referentType = referentType
@@ -81,7 +81,10 @@ class Candidate(object):
 
     def binding(self):
         # return "Binding of indicator {} is content {}".format(self.indicator, self.content)
-        return (self.indicator, self.content)
+        return (self.candidateType, self.indicator, self.content)
+                
+
+
 
 class Query(object):
     def __init__(self, terms, graph, thesaurus=None, 
