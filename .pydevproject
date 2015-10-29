@@ -3,7 +3,7 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/${PROJECT_DIR_NAME}</path>
 <path>/${PROJECT_DIR_NAME}/src</path>
-<path>/${PROJECT_DIR_NAME}/src/es-example</path>
+<path>/${PROJECT_DIR_NAME}/src/dig</path>
 </pydev_pathproperty>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 3.0</pydev_property>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">gks python 3</pydev_property>
@@ -11,5 +11,14 @@
 <path>/opt/dig/venv/gks/lib/python3.5/site-packages/Levenshtein</path>
 <path>/opt/dig/venv/gks/lib/python3.5/site-packages/word2vec</path>
 <path>/opt/dig/venv/gks/lib/python3.5/site-packages/word2vec-0.8-py3.5.egg-info</path>
+<path>${PROJ}/hybrid-jaccard</path>
+<path>/opt/dig/venv/gks/lib/python3.5/site-packages/python_Levenshtein-0.12.0-py3.5.egg-info/PKG-INFO</path>
+<path>/opt/dig/venv/gks/lib/python3.5/site-packages/python_Levenshtein-0.12.0-py3.5.egg-info</path>
+<path>/opt/dig/venv/gks/lib/python3.5/site-packages/python_Levenshtein-0.12.0-py3.5-macosx-10.10-x86_64.egg</path>
+<path>/opt/dig/venv/gks/lib/python3.5/site-packages/python_Levenshtein-0.12.0-py3.5-macosx-10.10-x86_64.egg/Levenshtein</path>
 </pydev_pathproperty>
+<pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
+<key>PROJ</key>
+<value>/Users/philpot/Documents/project</value>
+</pydev_variables_property>
 </pydev_project>
