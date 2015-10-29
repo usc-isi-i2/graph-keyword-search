@@ -12,13 +12,13 @@ class Synonym(object):
 
     """Synonym records a link between a known word or collocation
 \(the seed or indicator)
-e.g., 'blue', 'eye_color' and a target or word believed to be equivalent
+e.g., 'blue', 'eye_color' and a word or collocation believed to be equivalent
 \(the target or content)
 or related e.g., 'sky'."""
 
-    def __init__(self, *args, indicator=None, target=None, score=1.0, source=None, **kwargs):
+    def __init__(self, *args, indicator=None, content=None, score=1.0, source=None, **kwargs):
         self.indicator = indicator
-        self.target = target
+        self.content = content
         self.score = score
         self.source = source
         for (k, v) in kwargs.items():
@@ -27,15 +27,11 @@ or related e.g., 'sky'."""
     def __str__(self, *args, **kwargs):
         sig = "{}({})={}".format(getattr(self, "source", "*SOURCE*"),
                                  getattr(self, "indicator", "*INDICATOR*"),
-                                 getattr(self, "target", "*TARGET*"))
+                                 getattr(self, "content", "*CONTENT*"))
         return "<" + str(type(self).__name__) + " " + sig + ">"
     
     def __repr__(self, *args, **kwargs):
         return self.__str__(*args, **kwargs)
-
-    @property
-    def content(self):
-        return self.target
 
 # the GoogleNews-vectors data I downloaded wasn't happy on the Mac, tended to misindex words
 # e.g., model['dog'] was missing but model['og'] was found
@@ -78,7 +74,7 @@ class Word2VecSynonymGenerator(SynonymGenerator):
             array = model.generate_response(indexes, metrics)
             for (syn, similarityScore) in array:
                 if similarityScore >= minimum:
-                    yield(Synonym(indicator=indicator, target=syn, score=similarityScore, source='word2vec'))
+                    yield(Synonym(indicator=indicator, content=syn, score=similarityScore, source='word2vec'))
         except:
             pass
     pass
@@ -121,7 +117,7 @@ class WordnetSynonymGenerator(SynonymGenerator):
                     name = lemma.name()
                     if name == indicator:
                         continue
-                    yield(Synonym(indicator=indicator, target=name, lemma=lemma, synset=synset, pos=pos, factor=factor,
+                    yield(Synonym(indicator=indicator, content=name, lemma=lemma, synset=synset, pos=pos, factor=factor,
                                   rel=rel, count=count, score=count*factor, source='wordnet'))
     
         for pos, (here, hereFactor), (up, upFactor), (down, downFactor) in neighborhood:

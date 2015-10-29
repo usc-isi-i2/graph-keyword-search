@@ -70,7 +70,7 @@ class Candidate(object):
                 return "{} {}: HybridJaccard({})".format(self.referentType, self.referent, self.synonym)
             elif self.candidateType=='synonym':
                 s = self.synonym
-                return "{} {}: Synonym({},{})=>{}".format(self.referentType, self.referent, s.source, s.indicator, s.target)
+                return "{} {}: Synonym({},{})=>{}".format(self.referentType, self.referent, s.source, s.indicator, s.content)
         except:
             pass
         return str(self)
@@ -187,14 +187,14 @@ class Query(object):
                 # singleton, synonym
                 if self.thesaurus:
                     for s in thesaurus.generateSynonyms(keyword):
-                        target = s.target
+                        content = s.content
                         # singleton, synonym node
                         for node in graph.nodes():
-                            if graph.nodeMatch(node, target):
+                            if graph.nodeMatch(node, content):
                                 d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', indicator=s))
                         # singleton, synonym edge
                         for edge in graph.edges():
-                            if graph.edgeMatch(edge, target):
+                            if graph.edgeMatch(edge, content):
                                 d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', indicator=s))
 
             # MULTIWORD
@@ -216,7 +216,7 @@ class Query(object):
                 
                 # multiword, synonym
                 for s in thesaurus.generateSynonyms(keyword):
-                    syn = s.target
+                    syn = s.content
                     for node in graph.nodes():
                         if graph.nodeMatch(node, syn):
                             d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', indicator=syn))
