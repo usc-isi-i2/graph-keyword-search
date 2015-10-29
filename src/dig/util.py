@@ -36,8 +36,6 @@ import cgi
 from contextlib import contextmanager
 import multiprocessing as mp
 import subprocess
-import colorama
-from colorama import Fore, Back, Style
 import traceback
 import requests
 import collections
@@ -513,39 +511,39 @@ def safeDecodeEntities(text):
     # simply delete any control characters
     return re.sub(r"""[\x00-\x1F\x7F-\xFF]""", "", text)
 
-def safeAsciiString(text):
-    # try mightily to represent the contents of string
-    # using &#nnnn; if necessary
+# def safeAsciiString(text):
+#     # try mightily to represent the contents of string
+#     # using &#nnnn; if necessary
 
-    # 'unicodeescape' codec can't decode bytes in position 311-313: truncated \UXXXXXXXX escape
-    # e.g., in /nfs/studio-data/wat/data/escort/20130101/sandiego.backpage.com/FemaleEscorts/60-forget-the-rest-beautiful-from-top-to-bottom-im-the-best-60-23/8229874
-    # But this didn't fix it(!)
-    # # http://stackoverflow.com/questions/7602171/unicode-error-unicodeescape-codec-cant-decode-bytes-string-with-u
-    # # escape \U
-    # print "before, len is %s" % len(text)
-    # text = re.sub(r'\U',r'\\U',text)
-    # print "after, len is %s" % len(text)
+#     # 'unicodeescape' codec can't decode bytes in position 311-313: truncated \UXXXXXXXX escape
+#     # e.g., in /nfs/studio-data/wat/data/escort/20130101/sandiego.backpage.com/FemaleEscorts/60-forget-the-rest-beautiful-from-top-to-bottom-im-the-best-60-23/8229874
+#     # But this didn't fix it(!)
+#     # # http://stackoverflow.com/questions/7602171/unicode-error-unicodeescape-codec-cant-decode-bytes-string-with-u
+#     # # escape \U
+#     # print "before, len is %s" % len(text)
+#     # text = re.sub(r'\U',r'\\U',text)
+#     # print "after, len is %s" % len(text)
 
-    # UnicodeDecodeError: 'unicodeescape' codec can't decode byte 0x5c in position 1035: \ at end of string
-    text = text.strip("""\\""")
-    if isinstance(text,str):
-        u = str(text,'unicode_escape')
-    elif isinstance(text,str):
-        u = text
-    else:
-        raise ValueError
-    # print ">> unicode %s" % u
-    a = u.encode('ascii','xmlcharrefreplace')
-    # print ">> xcrp %s" % a
+#     # UnicodeDecodeError: 'unicodeescape' codec can't decode byte 0x5c in position 1035: \ at end of string
+#     text = text.strip("""\\""")
+#     if isinstance(text,str):
+#         u = str(text,'unicode_escape')
+#     elif isinstance(text,str):
+#         u = text
+#     else:
+#         raise ValueError
+#     # print ">> unicode %s" % u
+#     a = u.encode('ascii','xmlcharrefreplace')
+#     # print ">> xcrp %s" % a
     
-    # 1251 stuff 29 June 2012
-    t = dumb1251decode(a)
+#     # 1251 stuff 29 June 2012
+#     t = dumb1251decode(a)
     
-    # finally, delete any remaining control characters
-    # should not be necessary(?)
-    raw = "[\x00-\x1F\x7F-\xFF]"
-    # print raw,len(raw)
-    return re.sub(raw, "", t)
+#     # finally, delete any remaining control characters
+#     # should not be necessary(?)
+#     raw = "[\x00-\x1F\x7F-\xFF]"
+#     # print raw,len(raw)
+#     return re.sub(raw, "", t)
 
 def dumbDecodeEntities(text):
     """Encode as numeric entities any control chars in 0x00-0x1F, 0x7F-0xFF"""
@@ -1545,21 +1543,6 @@ def makeDeathWish(clockTime, allInGroup=True, verbose=False, silent=True):
     child.communicate(input='%s %s' % (proc, groupPid))
     return child
 
-# see also http://stackoverflow.com/questions/287871/print-in-terminal-with-colors-using-python
-# see also https://en.wikipedia.org/wiki/ANSI_escape_code
-
-@contextmanager
-def coloramaEnabled():
-    try:
-        colorama.init()
-        yield None
-    finally:
-        # As I read the spec, this line should not be necessary, sigh
-        # note use of sys.stdout.write to avoid newline
-        # with this work if we are coloring stderr?
-        sys.stdout.write(Fore.RESET + Back.RESET + Style.RESET_ALL)
-        colorama.deinit()
-
 # from http://stackoverflow.com/a/14707227/2077242
 
 import sys
@@ -1645,7 +1628,7 @@ def main(argv=None):
     s = args[0] if args else 'abc\x00\x1F\x7E\x7F\xFFdef'
     print("input: %s" % s)
     # print len(s)
-    print("safe ascii: %s" % safeAsciiString(s))
+    # print("safe ascii: %s" % safeAsciiString(s))
     #d = dumbDecodeEntities(s)
     # print len(d)
     #print "dumbDecode: %s" % d
