@@ -45,80 +45,111 @@ class KGraph(DiGraph):
                                                self.number_of_nodes(),
                                                self.number_of_edges())
 
-    def installDomain(self, domainType=None):
+    def installDomain(self, root, domainType=None):
         if domainType == 'ht':
+            allRoots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
             self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
         
             self.add_node('phone', nodeType='Class', className='PhoneNumber', indexRoot='phone')
-            self.add_edge('seller', 'phone', edgeType='ObjectProperty', relationName='telephone')
+            self.add_edge('seller', 'phone', edgeType='ObjectProperty', relationName='telephone', 
+                          rootScope=['seller', 'offer', 'adultservice', 'webpage']
+            self.add_edge('phone', 'seller', edgeType='ObjectProperty', relationName='owner', 
+                          rootScope=['phone'])
         
             self.add_node('phone.name', nodeType='leaf', vocabDescriptor='seller_telephone_name')
-            self.add_edge('phone', 'phone.name', edgeType='DataProperty', relationName='name')
+            self.add_edge('phone', 'phone.name', edgeType='DataProperty', relationName='name', 
+                          rootScope=allRoots)
         
             self.add_node('email', nodeType='Class', className='EmailAddress', indexRoot='email')
-            self.add_edge('seller', 'email', edgeType='ObjectProperty', relationName='email')
+            self.add_edge('seller', 'email', edgeType='ObjectProperty', relationName='email', 
+                          rootScope=['seller', 'email', 'offer', 'adultservice', 'webpage']
+            self.add_edge('email', 'seller', edgeType='ObjectProperty', relationName='owner', 
+                          rootScope=['email'])
             # for now this ES query doesn't work
             # self.add_node('email.name', nodeType='leaf', values=loadLeafVocab('seller_email_name'), vocabDescriptor='seller_email_name')
             # so use flat data instead
             self.add_node('email.name', nodeType='leaf', vocabDescriptor='email_name')
-            self.add_edge('email', 'email.name', edgeType='DataProperty', relationName='name')
+            self.add_edge('email', 'email.name', edgeType='DataProperty', relationName='name', 
+                          rootScope=allRoots)
         
             self.add_node('offer', nodeType='Class', className='Offer', indexRoot='offer')
-            self.add_edge('offer', 'seller', edgeType='ObjectProperty', relationName='seller')
-            self.add_edge('seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer')
+            self.add_edge('offer', 'seller', edgeType='ObjectProperty', relationName='seller', 
+                          rootScope=allRoots)
+            self.add_edge('seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer', 
+                          rootScope=allRoots)
         
             self.add_node('priceSpecification', nodeType='Class', className='PriceSpecification')
             self.add_node('priceSpecification.billingIncrement', nodeType='leaf', vocabDescriptor='offer_priceSpecification_billingIncrement')
-            self.add_edge('priceSpecification', 'priceSpecification.billingIncrement', edgeType='DataProperty', relationName='billingIncrement')
+            self.add_edge('priceSpecification', 'priceSpecification.billingIncrement', edgeType='DataProperty', relationName='billingIncrement', 
+                          rootScope=allRoots)
             self.add_node('priceSpecification.price', nodeType='leaf', vocabDescriptor='offer_priceSpecification_price')
-            self.add_edge('priceSpecification', 'priceSpecification.price', edgeType='DataProperty', relationName='price')
+            self.add_edge('priceSpecification', 'priceSpecification.price', edgeType='DataProperty', relationName='price', 
+                          rootScope=allRoots)
             self.add_node('priceSpecification.name', nodeType='leaf', vocabDescriptor='offer_priceSpecification_name')
-            self.add_edge('priceSpecification', 'priceSpecification.name', edgeType='DataProperty', relationName='name')
+            self.add_edge('priceSpecification', 'priceSpecification.name', edgeType='DataProperty', relationName='name', 
+                          rootScope=allRoots)
             self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
-            self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
+            self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode', 
+                          rootScope=allRoots)
 
-            self.add_edge('offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification')
+            self.add_edge('offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification', 
+                          rootScope=allRoots)
 
             self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
             self.add_node('adultservice.eyeColor', nodeType='leaf', 
                            vocabDescriptor='adultservice_eyeColor', 
                            matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/eyeColor_reference_wiki.txt"), 
                                                            config_path=localPath("data/config/hybridJaccard/eyeColor_config.txt")))
-            self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
+            self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor', 
+                          rootScope=allRoots)
             
             self.add_node('adultservice.hairColor', nodeType='leaf', 
                            vocabDescriptor='adultservice_hairColor', 
                            matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/hairColor_reference_wiki.txt"), 
                                                            config_path=localPath("data/config/hybridJaccard/hairColor_config.txt")))
-            self.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor')
+            self.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor', 
+                          rootScope=allRoots)
             self.add_node('adultservice.name', nodeType='leaf', vocabDescriptor='adultservice_name')
-            self.add_edge('adultservice', 'adultservice.name', edgeType='DataProperty', relationName='name')
+            self.add_edge('adultservice', 'adultservice.name', edgeType='DataProperty', relationName='name', 
+                          rootScope=allRoots)
             self.add_node('adultservice.personAge', nodeType='leaf', vocabDescriptor='adultservice_personAge')
-            self.add_edge('adultservice', 'adultservice.personAge', edgeType='DataProperty', relationName='personAge')
+            self.add_edge('adultservice', 'adultservice.personAge', edgeType='DataProperty', relationName='personAge', 
+                          rootScope=allRoots)
         
-            self.add_edge('offer', 'adultservice', edgeType='ObjectProperty', relationName='itemOffered')
-            self.add_edge('adultservice', 'offer', edgeType='ObjectProperty', relationName='offers')
+            self.add_edge('offer', 'adultservice', edgeType='ObjectProperty', relationName='itemOffered', 
+                          rootScope=allRoots)
+            self.add_edge('adultservice', 'offer', edgeType='ObjectProperty', relationName='offers', 
+                          rootScope=allRoots)
         
             self.add_node('place', nodeType='Class', className='Place')
             self.add_node('postaladdress', nodeType='Class', className='PostalAddress')
         
-            self.add_edge('offer', 'place', edgeType='ObjectProperty', relationName='availableAtOrFrom')
-            self.add_edge('place', 'postaladdress', edgeType='ObjectProperty', relationName='address')
+            self.add_edge('offer', 'place', edgeType='ObjectProperty', relationName='availableAtOrFrom', 
+                          rootScope=allRoots)
+            self.add_edge('place', 'postaladdress', edgeType='ObjectProperty', relationName='address', 
+                          rootScope=allRoots)
         
             self.add_node('postaladdress.addressLocality', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressLocality')
-            self.add_edge('postaladdress', 'postaladdress.addressLocality', edgeType='DataProperty', relationName='addressLocality')
+            self.add_edge('postaladdress', 'postaladdress.addressLocality', edgeType='DataProperty', relationName='addressLocality', 
+                          rootScope=allRoots)
             self.add_node('postaladdress.addressRegion', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressRegion')
-            self.add_edge('postaladdress', 'postaladdress.addressRegion', edgeType='DataProperty', relationName='addressRegion')
+            self.add_edge('postaladdress', 'postaladdress.addressRegion', edgeType='DataProperty', relationName='addressRegion', 
+                          rootScope=allRoots)
             self.add_node('postaladdress.addressCountry', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressCountry')
-            self.add_edge('postaladdress', 'postaladdress.addressCountry', edgeType='DataProperty', relationName='addressCountry')
+            self.add_edge('postaladdress', 'postaladdress.addressCountry', edgeType='DataProperty', relationName='addressCountry', 
+                          rootScope=allRoots)
             
             self.add_node('webpage', nodeType='Class', className='WebPage', indexRoot='webpage')
-            self.add_edge('offer', 'webpage', edgeType='ObjectProperty', relationName='mainEntityOfPage')
-            self.add_edge('webpage', 'offer', edgeType='ObjectProperty', relationName='mainEntity')
+            self.add_edge('offer', 'webpage', edgeType='ObjectProperty', relationName='mainEntityOfPage', 
+                          rootScope=allRoots)
+            self.add_edge('webpage', 'offer', edgeType='ObjectProperty', relationName='mainEntity', 
+                          rootScope=allRoots)
             self.add_node('publisher', nodeType='Class', className='Organization')
-            self.add_edge('webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher')
+            self.add_edge('webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher', 
+                          rootScope=allRoots)
             self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
-            self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
+            self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name', 
+                          rootScope=allRoots)
             
     def labelInGraph(self, nodeOrEdge):
         try:
