@@ -85,7 +85,11 @@ class KGraph(DiGraph):
                            matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/eyeColor_reference_wiki.txt"), 
                                                            config_path=localPath("data/config/hybridJaccard/eyeColor_config.txt")))
             self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
-            self.add_node('adultservice.hairColor', nodeType='leaf', vocabDescriptor='adultservice_hairColor')
+            
+            self.add_node('adultservice.hairColor', nodeType='leaf', 
+                           vocabDescriptor='adultservice_hairColor', 
+                           matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/hairColor_reference_wiki.txt"), 
+                                                           config_path=localPath("data/config/hybridJaccard/hairColor_config.txt")))
             self.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor')
             self.add_node('adultservice.name', nodeType='leaf', vocabDescriptor='adultservice_name')
             self.add_edge('adultservice', 'adultservice.name', edgeType='DataProperty', relationName='name')
@@ -117,7 +121,6 @@ class KGraph(DiGraph):
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
             
     def labelInGraph(self, nodeOrEdge):
-        print("Looking for label of {}".format(nodeOrEdge))
         try:
             return self.node[nodeOrEdge]['className']
         except:
@@ -185,20 +188,6 @@ class KGraph(DiGraph):
     def edgeMatch(self, edge, label):
         """list generator"""
         return label.lower().replace('_', ' ') in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
-    
-#     def nodeMatchWork(self, node, label):
-#         """list generator"""
-#         l = label.lower().replace('_', ' ')
-#         for value in self.node[node]['values']:
-#             if l == value.lower():
-#                 return(value, 0)
-    
-#     def edgeMatchWork(self, node, label):
-#         """list generator"""
-#         l = label.lower().replace('_', ' ')
-#         for value in self.edge[edge[0]][edge[1]]['values']):
-#             if l == value.lower():
-#                 return(value, 0)
 
     def nodeEditWithin(self, node, label, within=1, above=None):
         """set above=0 to avoid matching node value exactly identical to label
