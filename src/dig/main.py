@@ -18,6 +18,7 @@ s = None
 m = None
 wg = None
 sg = None
+o = None
 
 def interpretConfig(configFile, verbose=False):
     try:
@@ -47,16 +48,18 @@ def interpretConfig(configFile, verbose=False):
 
 def main(argv=None):
     '''this is called if run from command line'''
-    global g, q, s, m, wg, sg
+    global g, q, s, m, wg, sg, o
     parser = argparse.ArgumentParser()
     parser.add_argument('terms', nargs='*', default=[], action="append")
-    parser.add_argument('-v','--verbose', required=False, help='verbose', action='store_true')
-    parser.add_argument('-o', '--options')
+    parser.add_argument('-v', '--verbose', required=False, help='verbose', action='store_true')
+    parser.add_argument('-e', '--explain', required=False, help='include explanations in intermediate repn', action='store_true')
+    # parser.add_argument('-o', '--options')
     parser.add_argument('-j', '--config', required=False, help='config', default=os.path.join(os.path.dirname(__file__), "config.ini"))
     args = parser.parse_args()
     # TODO nargs generates a list of lists
     terms = args.terms[0]
-    cmdline = {"verbose": args.verbose}
+    cmdline = {"verbose": args.verbose,
+               "explain": args.explain}
     config = interpretConfig(args.config)
     g = htGraph(**cmdline, **config)
     s = Thesaurus(**cmdline, **config)
