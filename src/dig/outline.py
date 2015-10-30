@@ -35,48 +35,56 @@ class Outline(object):
 
     def intermediate(self):
         global iii
-        edgesMentioned = []
-        nodesMentioned = []
+        relationsMentioned = []
+        classesMentioned = []
         must = []
         should = []
         i = defaultdict(list)
         i["root"] = self.root
         # to begin with, no terms are covered
-        touches = dict([(term, set()) for term in self.query.terms])
+        # touches = dict([(term, set()) for term in self.query.terms])
+        touches = defaultdict(list)
         for a in self.query.ngrams.values():
             for cand in a["candidates"]:
                 if cand.referentType == 'node':
                     node = cand.referent
                     if self.graph.isLeaf(node):
+                        # Leaf node corresponds to an equality/fuzzy relation constraint 
                         must.append( {"path": pathFromRoot(self.graph, cand, node, self.root),
                                       "matchType": "direct" if cand.candidateType == "direct" else "fuzzy",
                                       "operands": [cand.referent, cand.content],
                                       "_explanation": cand.explain() } )
                     else:
-                        nodesMentioned.append( {"className": self.graph.labelInGraph(node),
-                                                "_explanation": cand.explain() })
+                        # Other node corresponds to mention of a class (e.g., the word 'seller' is mentioned)
+                        classesMentioned.append( {"className": self.graph.labelInGraph(node),
+                                                  "_explanation": cand.explain() })
+                    # Record (possibly partial) coverage of query terms
                     for w in a["words"]:
-                        touches[w].add(cand.explain())
+                        touches[w].append(cand.explain())
                 elif cand.referentType == 'edge':
                     edge = cand.referent
-                    # print("edge: {}".format("leaf" if self.graph.isLeaf(edge) else "nonleaf"))
-                    edgesMentioned.append( {"className": self.graph.labelInGraph(edge[0]),
-                                            "relationName": self.graph.labelInGraph(edge),
-                                            "_explanation": cand.explain() } )
-                                          
-                    # required[truenodeDesig(cand.referent)].append(cand)
+                    # Edge match corresponds to mention of an edge
+                    # May or may not correspond to relation constraint on that edge
+                    # In future, this might mean we want result to include its class
+                    relationsMentioned.append( {"className": self.graph.labelInGraph(edge[0]),
+                                                "relationName": self.graph.labelInGraph(edge),
+                                                "_explanation": cand.explain() } )
+                    # Record (possibly partial) coverage of query terms
                     for w in a["words"]:
-                        touches[w].add(cand.explain())
-        # now we have all known candidates
+                        touches[w].append(cand.explain())
+        # Any terms never covered are now free-text matches
         for term in self.query.terms:
             if not touches[term]:
-                should.append(("match", term))
+                should.append( {"matchType": "free",
+                                "operands": [term],
+                                "_explanation": "{} uninterpretable".format(term) })
         # Set values converted to list in case we want to serialize to JSON
-        pprint(touches)
-        i["touches"] = {k:list(s) for (k,s) in touches.items()}
-        print(type(i["touches"]))
-        i["edgesMentioned"] = edgesMentioned
-        i["nodesMentioned"] = nodesMentioned
+#         pprint(touches)
+#         i["touches"] = {k:list(s) for (k,s) in touches.items()}
+#         print(type(i["touches"]))
+        i["touches"] = touches
+        i["relationsMentioned"] = relationsMentioned
+        i["classesMentioned"] = classesMentioned
         i["must"] = must
         i["should"] = should
         iii = i
