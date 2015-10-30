@@ -9,6 +9,7 @@ try:
 except ImportError:
     from io import StringIO
 from util import canonList
+from copy import copy
 
 class Candidate(object):
     def __init__(self, referent=None, referentType=None, candidateType=None, synonym=None, distance=0):
@@ -64,7 +65,17 @@ class Candidate(object):
         except:
             return None
         
-    def explain(self):
+    def explain(self, style):
+        if style == 'text':
+            return self.textExplain()
+        elif style == 'structured':
+            return self.structuredExplain()
+        elif not style:
+            return None
+        else:
+            raise ValueError("Unknown explanation style {}".format(style))
+
+    def textExplain(self):
         prefix = "Cand"
         try:
             if self.candidateType=='direct':
@@ -82,6 +93,13 @@ class Candidate(object):
         except:
             pass
         return str(self)
+
+    def structuredExplain(self):
+        d = copy(self.__dict__)
+        synonym = d.get('synonym')
+        if synonym:
+            d['synonym'] = synonym.__dict__
+        return d
 
     def binding(self):
         # return "Binding of indicator {} is content {}".format(self.indicator, self.content)

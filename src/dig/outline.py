@@ -52,20 +52,20 @@ class Outline(object):
                              "relationName": cand.referent.split('.')[1],
                              "value": cand.content}
                         if self.explain:
-                            m["_explanation"] = cand.explain()
+                            m["_explanation"] = cand.explain(self.explain)
                         must.append(m)
                     else:
                         # Other node corresponds to mention of a class (e.g., the word 'seller' is mentioned)
                         m = {"className": self.graph.labelInGraph(node)}
                         if self.explain:
-                            m["_explanation"] = cand.explain()
+                            m["_explanation"] = cand.explain(self.explain)
                         classesMentioned.append(m)
                     # Record (possibly partial) coverage of query terms
                     for w in a["words"]:
                         t = {"term": w,
                              "foundIn": "node"}
                         if self.explain:
-                            t["_explanation"] = cand.explain()
+                            t["_explanation"] = cand.explain(self.explain)
                         touches[w].append(t)
                 elif cand.referentType == 'edge':
                     edge = cand.referent
@@ -75,14 +75,14 @@ class Outline(object):
                     m = {"className": self.graph.labelInGraph(edge[0]),
                          "relationName": self.graph.labelInGraph(edge)}
                     if self.explain:
-                        m["_explanation"] = cand.explain()
+                        m["_explanation"] = cand.explain(self.explain)
                     relationsMentioned.append(m)
                     # Record (possibly partial) coverage of query terms
                     for w in a["words"]:
                         t = {"term": w,
                              "foundIn": "edge"}
                         if self.explain:
-                            t["_explanation"] = cand.explain()
+                            t["_explanation"] = cand.explain(self.explain)
                         touches[w].append(t)
         # Any terms never covered are now free-text matches
         for term in self.query.terms:
