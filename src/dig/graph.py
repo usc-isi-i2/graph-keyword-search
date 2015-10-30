@@ -9,6 +9,8 @@ import sys, os
 from pprint import pprint
 
 from Levenshtein import distance
+# from StringMatcher import distance
+# from Levenshtein.StringMatcher import distance
 from networkx import Graph, DiGraph
 
 from SteinerTree import make_steiner_tree
@@ -75,13 +77,19 @@ class KGraph(DiGraph):
             self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
             self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
 
+            self.add_edge('offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification')
+
             self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
             self.add_node('adultservice.eyeColor', nodeType='leaf', 
                            vocabDescriptor='adultservice_eyeColor', 
                            matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/eyeColor_reference_wiki.txt"), 
                                                            config_path=localPath("data/config/hybridJaccard/eyeColor_config.txt")))
             self.add_edge('adultservice', 'adultservice.eyeColor', edgeType='DataProperty', relationName='eyeColor')
-            self.add_node('adultservice.hairColor', nodeType='leaf', vocabDescriptor='adultservice_hairColor')
+            
+            self.add_node('adultservice.hairColor', nodeType='leaf', 
+                           vocabDescriptor='adultservice_hairColor', 
+                           matcherDescriptor=HybridJaccard(ref_path=localPath("data/config/hybridJaccard/hairColor_reference_wiki.txt"), 
+                                                           config_path=localPath("data/config/hybridJaccard/hairColor_config.txt")))
             self.add_edge('adultservice', 'adultservice.hairColor', edgeType='DataProperty', relationName='hairColor')
             self.add_node('adultservice.name', nodeType='leaf', vocabDescriptor='adultservice_name')
             self.add_edge('adultservice', 'adultservice.name', edgeType='DataProperty', relationName='name')
@@ -105,10 +113,21 @@ class KGraph(DiGraph):
             self.add_edge('postaladdress', 'postaladdress.addressCountry', edgeType='DataProperty', relationName='addressCountry')
             
             self.add_node('webpage', nodeType='Class', className='WebPage', indexRoot='webpage')
+            self.add_edge('offer', 'webpage', edgeType='ObjectProperty', relationName='mainEntityOfPage')
+            self.add_edge('webpage', 'offer', edgeType='ObjectProperty', relationName='mainEntity')
             self.add_node('publisher', nodeType='Class', className='Organization')
             self.add_edge('webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher')
             self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
+            
+    def labelInGraph(self, nodeOrEdge):
+        try:
+            return self.node[nodeOrEdge]['className']
+        except:
+            try:
+                return self.edge[nodeOrEdge[0]][nodeOrEdge[1]]['relationName']
+            except:
+                return None
             
     def populateValues(self, nodeOrEdge):
         try:
@@ -127,34 +146,49 @@ class KGraph(DiGraph):
             elif edgeType == 'DataProperty':
                 self.populateAttributeEdge(edge)
     
+    # The problem is that "values" is too general.  We can associate values with nodes and edges via a variety of semantics:
+    # (1) instances from ES, presumably only for leaf nodes
+    # (2) ontology labels, ontology descriptions, presumably only for edges and interior nodes
+
     def populateLeafNode(self, node):
         self.node[node]['values'] = loadLeafVocab(self.node[node]['vocabDescriptor'])
-    
+        self.node[node]['valueOrigin'] = 'leafVocab'
+
+    # The next three probably should use the same methodology/same code
     def populateClassNode(self, node):
         self.node[node]['values'] = list(set([node, self.node[node]['className']]))
-    
+        self.node[node]['valueOrigin'] = 'ontology'
+
     def populateRelationEdge(self, edge):
         (node1, node2) = edge
         self.edge[node1][node2]['values'] = [camelCaseWords(self.edge[node1][node2]['relationName'])]
-    
+        self.edge[node1][node2]['valueOrigin'] = 'ontology'
+
     def populateAttributeEdge(self, edge):
         (node1, node2) = edge
         self.edge[node1][node2]['values'] = [camelCaseWords(self.edge[node1][node2]['relationName'])]  
-    
+        self.edge[node1][node2]['valueOrigin'] = 'ontology'
+
+    def isLeaf(self, nodeOrEdge):
+        try:
+            return self.node[nodeOrEdge]['valueOrigin'] == 'leafVocab'
+        except:
+            return False
+
     def populateAll(self):
         for node in self.nodes():
             self.populateValues(node)
         for edge in self.edges():
             self.populateValues(edge)
-            
+
     def nodeMatch(self, node, label):
         """list generator"""
         return label.lower().replace('_', ' ') in (value.lower() for value in self.node[node]['values'])
-    
+
     def edgeMatch(self, edge, label):
         """list generator"""
         return label.lower().replace('_', ' ') in (value.lower() for value in self.edge[edge[0]][edge[1]]['values'])
-    
+
     def nodeEditWithin(self, node, label, within=1, above=None):
         """set above=0 to avoid matching node value exactly identical to label
         Does not find closest node values, just any values within interval"""

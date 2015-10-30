@@ -18,6 +18,7 @@ s = None
 m = None
 wg = None
 sg = None
+o = None
 
 def interpretConfig(configFile, verbose=False):
     try:
@@ -47,19 +48,21 @@ def interpretConfig(configFile, verbose=False):
 
 def main(argv=None):
     '''this is called if run from command line'''
-    global g, q, s, m, wg, sg
+    global g, q, s, m, wg, sg, o
     parser = argparse.ArgumentParser()
     parser.add_argument('terms', nargs='*', default=[], action="append")
-    parser.add_argument('-v','--verbose', required=False, help='verbose', action='store_true')
-    parser.add_argument('-o', '--options')
+    parser.add_argument('-v', '--verbose', required=False, help='verbose', action='store_true')
+    parser.add_argument('-e', '--explain', required=False, help='include explanations in intermediate repn',
+                        choices=['text','structured','None'])
+    # parser.add_argument('-o', '--options')
     parser.add_argument('-j', '--config', required=False, help='config', default=os.path.join(os.path.dirname(__file__), "config.ini"))
     args = parser.parse_args()
     # TODO nargs generates a list of lists
     terms = args.terms[0]
-    cmdline = {"verbose": args.verbose}
+    cmdline = {"verbose": args.verbose,
+               "explain": None if args.explain=='None' else args.explain}
     config = interpretConfig(args.config)
     g = htGraph(**cmdline, **config)
-    print("Terms: {}".format(terms))
     s = Thesaurus(**cmdline, **config)
     q = Query(terms, g, s, **cmdline, **config)
     q.suggestCandidates()
@@ -67,19 +70,19 @@ def main(argv=None):
     # succeeds with roots = ['offer']
     # fails with roots = ['phone']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
-    roots = ['adultservice']
     for root in roots:
-        print("\nRoot {}".format(root))
         try:
             # m is steiner tree
             # wg is input nondirected graph
             # sg is output directed subgraph
             (m, wg, sg) = minimalSubgraph(g, root, q)
             o = Outline(g, sg, q, root, **cmdline, **config)
-            o.detail()
         except ImpossibleGraph as ig:
             if args.verbose:
-                print(ig, file=sys.stderr)
+                # print(ig, file=sys.stderr)
+                print("It is not possible to generate a subgraph with root {}".format(root), file=sys.stderr)
+            continue
+        o.detail()
 
 # call main() if this is run as standalone
 if __name__ == "__main__":
