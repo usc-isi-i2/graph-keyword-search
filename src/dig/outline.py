@@ -27,11 +27,12 @@ def pathFromRoot(graph, cand, node, root):
     return path
 
 class Outline(object):
-    def __init__(self, graph, subgraph, query, root, **kwargs):
+    def __init__(self, graph, subgraph, query, root, verbose=False, **kwargs):
         self.graph = graph
         self.subgraph = subgraph
         self.query = query
         self.root = root
+        self.verbose = verbose
 
     def intermediate(self):
         global iii
@@ -42,7 +43,6 @@ class Outline(object):
         i = defaultdict(list)
         i["root"] = self.root
         # to begin with, no terms are covered
-        # touches = dict([(term, set()) for term in self.query.terms])
         touches = defaultdict(list)
         for a in self.query.ngrams.values():
             for cand in a["candidates"]:
@@ -51,8 +51,11 @@ class Outline(object):
                     if self.graph.isLeaf(node):
                         # Leaf node corresponds to an equality/fuzzy relation constraint 
                         must.append( {"path": pathFromRoot(self.graph, cand, node, self.root),
-                                      "matchType": "direct" if cand.candidateType == "direct" else "fuzzy",
-                                      "operands": [cand.referent, cand.content],
+                                      "matchType": "direct" if cand.candidateType == "direct" else "inferred",
+                                      # "operands": [cand.referent, cand.content],
+                                      "className": cand.referent.split('.')[0],
+                                      "relationName": cand.referent.split('.')[1],
+                                      "value": cand.content,
                                       "_explanation": cand.explain() } )
                     else:
                         # Other node corresponds to mention of a class (e.g., the word 'seller' is mentioned)
@@ -78,10 +81,6 @@ class Outline(object):
                 should.append( {"matchType": "free",
                                 "operands": [term],
                                 "_explanation": "{} uninterpretable".format(term) })
-        # Set values converted to list in case we want to serialize to JSON
-#         pprint(touches)
-#         i["touches"] = {k:list(s) for (k,s) in touches.items()}
-#         print(type(i["touches"]))
         i["touches"] = touches
         i["relationsMentioned"] = relationsMentioned
         i["classesMentioned"] = classesMentioned
@@ -92,10 +91,13 @@ class Outline(object):
 
     def detail(self, file=sys.stdout):
         # print (root,g,q,s,m,wg,sg)
-        print("\nDetail of outline {}".format(self), file=file)
-        print("Input Graph: {}".format(self.graph), file=file)
-        print("Input Keywords: {}".format(self.query.terms), file=file)
-        print("Input Keyword Coloring: \n{}".format(self.query.dumpToString(indent=2)), file=file)
-        print("Relevant Subgraph: {}".format(self.subgraph), file=file)
-        print("Intermediate Repn:", file=file)
+        print("", file=file)
+        if self.verbose:
+            print("\nRoot {}".format(self.root), file=file)
+            print("\nDetail of outline {}".format(self), file=file)
+            print("Input Graph: {}".format(self.graph), file=file)
+            print("Input Keywords: {}".format(self.query.terms), file=file)
+            print("Input Keyword Coloring: \n{}".format(self.query.dumpToString(indent=2)), file=file)
+            print("Relevant Subgraph: {}".format(self.subgraph), file=file)
+            print("Intermediate Repn:", file=file)
         print(json.dumps(self.intermediate(), sort_keys=True, indent=4), file=file)
