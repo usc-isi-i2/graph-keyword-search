@@ -70,7 +70,6 @@ class Candidate(object):
             if self.candidateType=='direct':
                 return "{}: {} {}: Direct({})".format(prefix, self.referentType, self.referentsLabel(), self.indicator)
             elif self.candidateType=='levenshtein':
-                # return "{}: Levenshtein".format(self.referent)
                 return "{}: {} {}: Levenshtein({})={}".format(prefix, self.referentType, self.referent, self.synonym, self.distance)
             elif self.candidateType=='hybridJaccard':
                 return "{}: {} {}: HybridJaccard({})".format(prefix, self.referentType, self.referent, self.synonym)
