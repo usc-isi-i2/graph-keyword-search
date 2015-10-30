@@ -59,7 +59,6 @@ def main(argv=None):
     cmdline = {"verbose": args.verbose}
     config = interpretConfig(args.config)
     g = htGraph(**cmdline, **config)
-    print("Terms: {}".format(terms))
     s = Thesaurus(**cmdline, **config)
     q = Query(terms, g, s, **cmdline, **config)
     q.suggestCandidates()
@@ -67,10 +66,7 @@ def main(argv=None):
     # succeeds with roots = ['offer']
     # fails with roots = ['phone']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
-    roots = ['adultservice']
-    roots = ['seller']
     for root in roots:
-        print("\nRoot {}".format(root))
         try:
             # m is steiner tree
             # wg is input nondirected graph
@@ -79,8 +75,8 @@ def main(argv=None):
             o = Outline(g, sg, q, root, **cmdline, **config)
         except ImpossibleGraph as ig:
             if args.verbose:
-                print(ig, file=sys.stderr)
-                print("Not possible")
+                # print(ig, file=sys.stderr)
+                print("It is not possible to generate a subgraph with root {}".format(root), file=sys.stderr)
             continue
         o.detail()
 
