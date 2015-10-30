@@ -65,20 +65,21 @@ class Candidate(object):
             return None
         
     def explain(self):
+        prefix = "Cand"
         try:
             if self.candidateType=='direct':
-                return "{} {}: Direct".format(self.referentType, self.referentsLabel())
+                return "{}: {} {}: Direct({})".format(prefix, self.referentType, self.referentsLabel(), self.indicator)
             elif self.candidateType=='levenshtein':
                 # return "{}: Levenshtein".format(self.referent)
-                return "{} {}: Levenshtein({})={}".format(self.referentType, self.referent, self.synonym, self.distance)
+                return "{}: {} {}: Levenshtein({})={}".format(prefix, self.referentType, self.referent, self.synonym, self.distance)
             elif self.candidateType=='hybridJaccard':
-                return "{} {}: HybridJaccard({})".format(self.referentType, self.referent, self.synonym)
+                return "{}: {} {}: HybridJaccard({})".format(prefix, self.referentType, self.referent, self.synonym)
             elif self.candidateType=='wordnet':
                 s = self.synonym
-                return "{} {}: Wordnet({},{})=>{}".format(self.referentType, self.referent, s.source, s.indicator, s.content)
+                return "{}: {} {}: Wordnet({},{})=>{}".format(prefix, self.referentType, self.referent, s.source, s.indicator, s.content)
             elif self.candidateType=='word2vec':
                 s = self.synonym
-                return "{} {}: Word2vec({},{})=>{}".format(self.referentType, self.referent, s.source, s.indicator, s.content)
+                return "{}: {} {}: Word2vec({},{})=>{}".format(prefix, self.referentType, self.referent, s.source, s.indicator, s.content)
         except:
             pass
         return str(self)
