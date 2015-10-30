@@ -17,6 +17,7 @@ class Candidate(object):
         # referentType is 'node' or 'edge'
         self.referentType = referentType
         # candidateType is 'direct', 'levenshtein', 'hybridJaccard', 'synonym'
+        # candidateType is 'direct', 'levenshtein', 'hybridJaccard', 'word2vec', 'wordnet'
         self.candidateType = candidateType
         self.synonym = synonym
         # distance = 0 for direct
@@ -72,9 +73,12 @@ class Candidate(object):
                 return "{} {}: Levenshtein({})={}".format(self.referentType, self.referent, self.synonym, self.distance)
             elif self.candidateType=='hybridJaccard':
                 return "{} {}: HybridJaccard({})".format(self.referentType, self.referent, self.synonym)
-            elif self.candidateType=='synonym':
+            elif self.candidateType=='wordnet':
                 s = self.synonym
-                return "{} {}: Synonym({},{})=>{}".format(self.referentType, self.referent, s.source, s.indicator, s.content)
+                return "{} {}: Wordnet({},{})=>{}".format(self.referentType, self.referent, s.source, s.indicator, s.content)
+            elif self.candidateType=='word2vec':
+                s = self.synonym
+                return "{} {}: Word2vec({},{})=>{}".format(self.referentType, self.referent, s.source, s.indicator, s.content)
         except:
             pass
         return str(self)
@@ -82,9 +86,6 @@ class Candidate(object):
     def binding(self):
         # return "Binding of indicator {} is content {}".format(self.indicator, self.content)
         return (self.candidateType, self.indicator, self.content)
-                
-
-
 
 class Query(object):
     def __init__(self, terms, graph, thesaurus=None, 
@@ -204,11 +205,11 @@ class Query(object):
                         # singleton, synonym node
                         for node in graph.nodes():
                             if graph.nodeMatch(node, content):
-                                d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=synonym))
+                                d["candidates"].append(Candidate(referent=node, referentType='node', candidateType=synonym.source, synonym=synonym))
                         # singleton, synonym edge
                         for edge in graph.edges():
                             if graph.edgeMatch(edge, content):
-                                d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=synonym))
+                                d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType=synonym.source, synonym=synonym))
 
             # MULTIWORD
             elif d["cardinality"] >= 2:
@@ -222,58 +223,53 @@ class Query(object):
                         if graph.edgeMatch(edge, keyword):
                             synonym = Synonym(source='direct', indicator=keyword, content=keyword, score=1.0)
                             d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='direct', synonym=synonym))
-                # multiword, levenshtein or jaro_winkler
- 
- 
- 
-                
-                
-                
+                # TODO: multiword, levenshtein (or jaro_winkler, hj)
+                # NIY               
                 # multiword, synonym
                 for synonym in thesaurus.generateSynonyms(keyword):
                     content = synonym.content
                     for node in graph.nodes():
-                        if graph.nodeMatch(node, syn):
-                            d["candidates"].append(Candidate(referent=node, referentType='node', candidateType='synonym', synonym=synonym))
+                        if graph.nodeMatch(node, synonym):
+                            d["candidates"].append(Candidate(referent=node, referentType='node', candidateType=synonym.source, synonym=synonym))
                     for edge in graph.edges():
-                        if graph.edgeMatch(edge, syn):
-                            d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType='synonym', synonym=synonym))
+                        if graph.edgeMatch(edge, synonym):
+                            d["candidates"].append(Candidate(referent=edge, referentType='edge', candidateType=synonym.source, synonym=synonym))
 
-    def initNgrams0(self, terms):
-        self.ngrams = {}
-        for term,idx in zip(terms, count(0,2)):
-            # print("Term 1 {}".format(term))
-            # print("Assign spot {} to unigram {}".format(idx,term))
-            self.ngrams[term] = None
-            self.ngrams[term] = {"term": term,
-                                  "words": [term],
-                                  "index": idx,
-                                  "cardinality": 1}
-        for t1,t2,idx in zip(terms, terms[1:], count(1,2)):
-            term = t1 + "_" + t2
-            # print("Assign spot {} to bigram {}".format(idx, term))            
-            self.ngrams[term] = {"term": term,
-                                  "words": [t1, t2],
-                                  "index": idx,
-                                  "cardinality": 2}
+#     def initNgrams0(self, terms):
+#         self.ngrams = {}
+#         for term,idx in zip(terms, count(0,2)):
+#             # print("Term 1 {}".format(term))
+#             # print("Assign spot {} to unigram {}".format(idx,term))
+#             self.ngrams[term] = None
+#             self.ngrams[term] = {"term": term,
+#                                   "words": [term],
+#                                   "index": idx,
+#                                   "cardinality": 1}
+#         for t1,t2,idx in zip(terms, terms[1:], count(1,2)):
+#             term = t1 + "_" + t2
+#             # print("Assign spot {} to bigram {}".format(idx, term))            
+#             self.ngrams[term] = {"term": term,
+#                                   "words": [t1, t2],
+#                                   "index": idx,
+#                                   "cardinality": 2}
             
-    def dump0(self):
-        byIndex = [None] * (2*len(self.terms) - 1)
-        for d in self.ngrams.values():
-            byIndex[d['index']] = d
-        for d in byIndex:
-            try:
-                idx = d['index']
-                ngramType = "unigram" if idx%2 else "bigram"
-                q = d.get('term', '')
-                v = d.get('candidates', [])
-                # print("{}{}. {}: {}".format("  " if idx%2 else "", idx, q, "\n".join(v)))
-                # print("{}{}. {}: {}".format("  " if idx%2 else "", idx, q, "{} candidates".format(len(v))))
-                summaries = Counter([c.summary() for c in v])
-                # print("{}{}. {}: {} ({})".format("  " if idx%2 else "", idx, q, "{} candidates".format(len(v))," unknown"))  
-                print("{}{}. {}: {} ({})".format(ngramType, idx, q, "{} candidates".format(len(v)), summaries))
-            except:
-                print(d)
+#     def dump0(self):
+#         byIndex = [None] * (2*len(self.terms) - 1)
+#         for d in self.ngrams.values():
+#             byIndex[d['index']] = d
+#         for d in byIndex:
+#             try:
+#                 idx = d['index']
+#                 ngramType = "unigram" if idx%2 else "bigram"
+#                 q = d.get('term', '')
+#                 v = d.get('candidates', [])
+#                 # print("{}{}. {}: {}".format("  " if idx%2 else "", idx, q, "\n".join(v)))
+#                 # print("{}{}. {}: {}".format("  " if idx%2 else "", idx, q, "{} candidates".format(len(v))))
+#                 summaries = Counter([c.summary() for c in v])
+#                 # print("{}{}. {}: {} ({})".format("  " if idx%2 else "", idx, q, "{} candidates".format(len(v))," unknown"))  
+#                 print("{}{}. {}: {} ({})".format(ngramType, idx, q, "{} candidates".format(len(v)), summaries))
+#             except:
+#                 print(d)
                 
     def dump(self, file=sys.stdout):
         byIndex = [None] * (2*len(self.terms) - 1)
