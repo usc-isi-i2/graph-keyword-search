@@ -43,10 +43,12 @@ class KGraph(DiGraph):
                                                self.number_of_nodes(),
                                                self.number_of_edges())
 
-    def maybe_add_edge(root, node1, node2, rootScope=None, **kwargs):
+    def maybe_add_edge(self, root, node1, node2, rootScope=None, **kwargs):
         if rootScope == None:
             rootScope = []
+        print("root {}, root scope {}".format(root, rootScope))
         if root in rootScope:
+            print(">> for {}, add link between {} and {}".format(root, node1, node2))
             self.add_edge(node1, node2, **kwargs)
 
     def installDomain(self, root, domainType=None):
@@ -55,18 +57,18 @@ class KGraph(DiGraph):
             self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
         
             self.add_node('phone', nodeType='Class', className='PhoneNumber', indexRoot='phone')
-            self.maybe_add_edge('seller', 'phone', edgeType='ObjectProperty', relationName='telephone', 
+            self.maybe_add_edge(root, 'seller', 'phone', edgeType='ObjectProperty', relationName='telephone', 
                                 rootScope=['seller', 'offer', 'adultservice', 'webpage'])
-            self.maybe_add_edge('phone', 'seller', edgeType='ObjectProperty', relationName='owner', 
+            self.maybe_add_edge(root, 'phone', 'seller', edgeType='ObjectProperty', relationName='owner', 
                                 rootScope=['phone'])
         
             self.add_node('phone.name', nodeType='leaf', vocabDescriptor='seller_telephone_name')
             self.add_edge('phone', 'phone.name', edgeType='DataProperty', relationName='name')
         
             self.add_node('email', nodeType='Class', className='EmailAddress', indexRoot='email')
-            self.maybe_add_edge('seller', 'email', edgeType='ObjectProperty', relationName='email', 
+            self.maybe_add_edge(root, 'seller', 'email', edgeType='ObjectProperty', relationName='email', 
                                 rootScope=['seller', 'email', 'offer', 'adultservice', 'webpage'])
-            self.maybe_add_edge('email', 'seller', edgeType='ObjectProperty', relationName='owner', 
+            self.maybe_add_edge(root, 'email', 'seller', edgeType='ObjectProperty', relationName='owner', 
                                 rootScope=['email'])
             # for now this ES query doesn't work
             # self.add_node('email.name', nodeType='leaf', values=loadLeafVocab('seller_email_name'), vocabDescriptor='seller_email_name')
@@ -75,9 +77,9 @@ class KGraph(DiGraph):
             self.add_edge('email', 'email.name', edgeType='DataProperty', relationName='name')
         
             self.add_node('offer', nodeType='Class', className='Offer', indexRoot='offer')
-            self.maybe_add_edge('offer', 'seller', edgeType='ObjectProperty', relationName='seller', 
+            self.maybe_add_edge(root, 'offer', 'seller', edgeType='ObjectProperty', relationName='seller', 
                                 rootScope=allRoots)
-            self.maybe_add_edge('seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer', 
+            self.maybe_add_edge(root, 'seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer', 
                                 rootScope=allRoots)
         
             self.add_node('priceSpecification', nodeType='Class', className='PriceSpecification')
@@ -90,7 +92,7 @@ class KGraph(DiGraph):
             self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
             self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
 
-            self.maybe_add_edge('offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification', 
+            self.maybe_add_edge(root, 'offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification', 
                                 rootScope=allRoots)
 
             self.add_node('adultservice', nodeType='Class', className='AdultService', indexRoot='adultservice')
@@ -110,17 +112,17 @@ class KGraph(DiGraph):
             self.add_node('adultservice.personAge', nodeType='leaf', vocabDescriptor='adultservice_personAge')
             self.add_edge('adultservice', 'adultservice.personAge', edgeType='DataProperty', relationName='personAge')
         
-            self.maybe_add_edge('offer', 'adultservice', edgeType='ObjectProperty', relationName='itemOffered', 
+            self.maybe_add_edge(root, 'offer', 'adultservice', edgeType='ObjectProperty', relationName='itemOffered', 
                                 rootScope=allRoots)
-            self.maybe_add_edge('adultservice', 'offer', edgeType='ObjectProperty', relationName='offers', 
+            self.maybe_add_edge(root, 'adultservice', 'offer', edgeType='ObjectProperty', relationName='offers', 
                                 rootScope=allRoots)
         
             self.add_node('place', nodeType='Class', className='Place')
             self.add_node('postaladdress', nodeType='Class', className='PostalAddress')
         
-            self.maybe_add_edge('offer', 'place', edgeType='ObjectProperty', relationName='availableAtOrFrom', 
+            self.maybe_add_edge(root, 'offer', 'place', edgeType='ObjectProperty', relationName='availableAtOrFrom', 
                                 rootScope=allRoots)
-            self.maybe_add_edge('place', 'postaladdress', edgeType='ObjectProperty', relationName='address', 
+            self.maybe_add_edge(root, 'place', 'postaladdress', edgeType='ObjectProperty', relationName='address', 
                                 rootScope=allRoots)
         
             self.add_node('postaladdress.addressLocality', nodeType='leaf', vocabDescriptor='offer_availableAtOrFrom_address_addressLocality')
@@ -131,12 +133,12 @@ class KGraph(DiGraph):
             self.add_edge('postaladdress', 'postaladdress.addressCountry', edgeType='DataProperty', relationName='addressCountry')
             
             self.add_node('webpage', nodeType='Class', className='WebPage', indexRoot='webpage')
-            self.maybe_add_edge('offer', 'webpage', edgeType='ObjectProperty', relationName='mainEntityOfPage', 
+            self.maybe_add_edge(root, 'offer', 'webpage', edgeType='ObjectProperty', relationName='mainEntityOfPage', 
                                 rootScope=allRoots)
-            self.maybe_add_edge('webpage', 'offer', edgeType='ObjectProperty', relationName='mainEntity', 
+            self.maybe_add_edge(root, 'webpage', 'offer', edgeType='ObjectProperty', relationName='mainEntity', 
                                 rootScope=allRoots)
             self.add_node('publisher', nodeType='Class', className='Organization')
-            self.maybe_add_edge('webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher', 
+            self.maybe_add_edge(root, 'webpage', 'publisher', edgeType='ObjectProperty', relationName='publisher', 
                                 rootScope=allRoots)
             self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
