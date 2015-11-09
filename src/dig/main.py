@@ -62,15 +62,18 @@ def main(argv=None):
     cmdline = {"verbose": args.verbose,
                "explain": None if args.explain=='None' else args.explain}
     config = interpretConfig(args.config)
-    g = htGraph(**cmdline, **config)
     s = Thesaurus(**cmdline, **config)
-    q = Query(terms, g, s, **cmdline, **config)
-    q.suggestCandidates()
-    q.dump()
     # succeeds with roots = ['offer']
     # fails with roots = ['phone']
+    roots = ['seller']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
     for root in roots:
+        g = htGraph(root, **cmdline, **config)
+        print(g)
+        exit(0)
+        q = Query(terms, g, s, **cmdline, **config)
+        q.suggestCandidates()
+        q.dump()
         try:
             # m is steiner tree
             # wg is input nondirected graph
