@@ -104,6 +104,7 @@ class Outline(object):
     def detail(self, file=sys.stdout):
         # print (root,g,q,s,m,wg,sg)
         print("", file=file)
+        print("Intermediate representation:", file=file)
         if self.verbose:
             print("\nRoot {}".format(self.root), file=file)
             print("\nDetail of outline {}".format(self), file=file)
