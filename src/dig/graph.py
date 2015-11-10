@@ -46,9 +46,7 @@ class KGraph(DiGraph):
     def maybe_add_edge(self, root, node1, node2, rootScope=None, **kwargs):
         if rootScope == None:
             rootScope = []
-        print("root {}, root scope {}".format(root, rootScope))
         if root in rootScope:
-            print(">> for {}, add link between {} and {}".format(root, node1, node2))
             self.add_edge(node1, node2, **kwargs)
 
     def installDomain(self, root, domainType=None):
@@ -67,7 +65,7 @@ class KGraph(DiGraph):
         
             self.add_node('email', nodeType='Class', className='EmailAddress', indexRoot='email')
             self.maybe_add_edge(root, 'seller', 'email', edgeType='ObjectProperty', relationName='email', 
-                                rootScope=['seller', 'email', 'offer', 'adultservice', 'webpage'])
+                                rootScope=['seller', 'offer', 'adultservice', 'webpage'])
             self.maybe_add_edge(root, 'email', 'seller', edgeType='ObjectProperty', relationName='owner', 
                                 rootScope=['email'])
             # for now this ES query doesn't work
