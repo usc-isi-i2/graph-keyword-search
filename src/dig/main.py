@@ -68,12 +68,12 @@ def main(argv=None):
     roots = ['seller']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
     for root in roots:
+        print("#" * 66)
         g = htGraph(root, **cmdline, **config)
-        print(g)
-        exit(0)
+        print("Root: {} yields net graph {}".format(root, g))
         q = Query(terms, g, s, **cmdline, **config)
         q.suggestCandidates()
-        q.dump()
+        # q.dump()
         try:
             # m is steiner tree
             # wg is input nondirected graph
