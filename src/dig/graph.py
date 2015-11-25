@@ -31,6 +31,7 @@ def localPath(suffix):
 
 # http://stackoverflow.com/a/9283563/2077242
 def camelCaseWords(label):
+    """Consider using inflection library instead"""
     label = re.sub(r'((?<=[a-z])[A-Z]|(?<!\A)[A-Z](?=[a-z]))', r' \1', label)
     return label
 
@@ -140,6 +141,41 @@ class KGraph(DiGraph):
                                 rootScope=allRoots)
             self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
+
+    def installDomain2(self, root, allRoots=None, domainType=None, mappingFile="esMapping-dig-ht-DT.json"):
+        """I think indexRoot is no longer doing anything useful"""
+        allRoots = allRoots or []
+        if domainType and mappingFile:
+            with open(mappingFile, 'r') as f:
+                m = json.load(f)
+
+            # add Class nodes
+            for n in m['mappings'].keys():
+                print(n)
+            print("exiting")
+            exit()
+
+            """
+            self.add_node('offer', nodeType='Class', className='Offer', indexRoot='offer')
+            self.maybe_add_edge(root, 'offer', 'seller', edgeType='ObjectProperty', relationName='seller', 
+                                rootScope=allRoots)
+            self.maybe_add_edge(root, 'seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer', 
+                                rootScope=allRoots)
+        
+            self.add_node('priceSpecification', nodeType='Class', className='PriceSpecification')
+            self.add_node('priceSpecification.billingIncrement', nodeType='leaf', vocabDescriptor='offer_priceSpecification_billingIncrement')
+            self.add_edge('priceSpecification', 'priceSpecification.billingIncrement', edgeType='DataProperty', relationName='billingIncrement')
+            self.add_node('priceSpecification.price', nodeType='leaf', vocabDescriptor='offer_priceSpecification_price')
+            self.add_edge('priceSpecification', 'priceSpecification.price', edgeType='DataProperty', relationName='price')
+            self.add_node('priceSpecification.name', nodeType='leaf', vocabDescriptor='offer_priceSpecification_name')
+            self.add_edge('priceSpecification', 'priceSpecification.name', edgeType='DataProperty', relationName='name')
+            self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
+            self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
+
+            self.maybe_add_edge(root, 'offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification', 
+                                rootScope=allRoots)
+
+"""        
             
     def labelInGraph(self, nodeOrEdge):
         try:
@@ -431,8 +467,13 @@ def minimalSubgraph(kgraph, root, query, verbose=False):
 g = None
     
 def htGraph(root, **kwargs):
+    print("enter htGraph")
     global g
     g = KGraph()
+    print("call installDomain")
     g.installDomain(root, domainType='ht')
+    print("call installDomain2")
+    g.installDomain2(root, domainType='ht')
+    exit(0)
     g.populateAll()
     return g
