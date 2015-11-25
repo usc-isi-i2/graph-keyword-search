@@ -28,13 +28,13 @@ def loadModel(*pathnames):
 # 
 # s = g.serialize(format='n3', destination="/tmp/g.n3")
 
-qres = g.query(
-    """SELECT DISTINCT ?aname ?bname
+"""qres = g.query(
+    "SELECT DISTINCT ?aname ?bname
        WHERE {
           ?a schema:telephone ?b .
           ?a foaf:name ?aname .
           ?b foaf:name ?bname .
-       }""")
+       }")
 
 SELECT ?p ?o
 { 
@@ -43,3 +43,4 @@ SELECT ?p ?o
 
 for row in qres:
     print("%s knows %s" % row)
+"""
