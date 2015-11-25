@@ -142,9 +142,19 @@ class KGraph(DiGraph):
             self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
 
-    def installDomain2(self, root, allRoots=None, domainType=None, mappingFile="esMapping-dig-ht-DT.json"):
+    # possibly these should be fully qualified, memex:PersonOrOrganization
+    # This would be an input
+    rootClasses = {"seller": "PersonOrOrganization",
+                   "phone": "PhoneNumber",
+                   "email": "EmailAddress",
+                   "offer": "Offer",
+                   "adultservice": "AdultService",
+                   "webpage": "WebPage"}
+                   
+
+    def installDomain2(self, root, rootClasses, domainType=None, mappingFile="esMapping-dig-ht-DT.json"):
         """I think indexRoot is no longer doing anything useful"""
-        allRoots = allRoots or []
+        allRoots = list(rootClasses.keys())
         if domainType and mappingFile:
             with open(mappingFile, 'r') as f:
                 m = json.load(f)
