@@ -1,0 +1,78 @@
+{
+  "@context": {
+      "dc": "http://purl.org/dc/elements/1.1/",
+      "ex": "http://example.org/vocab#",
+      "memex": "http://memexproxy.com/ontology/",
+      "schema": "http://schema.org/",
+      "skos": "http://www.w3.org/2004/02/skos/core"
+  },
+    "@type": "schema:WebPage",
+    "schema:mainEntityOfPage": {
+	"@type": "schema:Offer",
+	"schema:priceSpecification": {
+	    "@type": "schema:PriceSpecification",
+	    "schema:name": {
+		"@leaftype": "schema:Text"},
+	    "schema:price": {
+		"@leaftype": "schema:Number"},
+	    "schema:billingIncrement": {
+		"@leaftype": "schema:Number"},
+	    "schema:unitCode": {
+		"@leaftype": "schema:Text"}
+	},
+	"schema:availableAtOrFrom": {
+	    "@type": "schema:Place",
+	    "schema:geo": {				
+		"@type": "schema:GeoCoordinates",
+		"schema:longitude": {
+		    "@leaftype": "schema:Number"},
+		"schema:latitude": {
+		    "@leaftype": "schema:Number"}
+	    },
+	    "schema:address": {
+		"@type": "schema:PostalAddress",
+		"schema:addressLocality": {
+		    "@leaftype": "schema:Text"},
+		"schema:addressRegion": {
+		    "@leaftype": "schema:Text"},
+		"schema:addressCountry": {
+		    "@leaftype": "schema:Text"}
+		},
+	    "schema:name": {
+		"@leaftype": "schema:Text"}
+	},
+	"schema:seller": {
+	    "@type": "memex:PersonOrOrganization",
+	    "schema:telephone": {
+		"@type": "memex:PhoneNumber",
+		"schema:name": {
+		    "@leaftype": "schema:Text"}
+		},
+	    "schema:email": {
+		"@type": "memex:EmailAddress",
+		"schema:name": {
+		    "@leaftype": "schema:Text"}
+		}
+	    },
+	"schema:itemOffered": {
+	    "@type": "memex:AdultService",
+	    "memex:personAge": {
+		"@leaftype": "schema:Text"},
+            "memex:eyeColor": {
+                "@leaftype": "schema:Text"},
+            "memex:hairColor": {
+                "@leaftype": "schema:Text"},
+            "schema:name": {
+                "@leaftype": "schema:Text"},
+        }
+    },
+    "schema:publisher": {
+	"@type": "schema:Organization",
+	"schema:name": {
+	    "@leaftype": "schema:Text"
+	    },
+	"schema:dateCreated": {
+	    "@leaftype": "dateOptionalTime"
+	}
+    }
+
