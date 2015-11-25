@@ -27,3 +27,19 @@ def loadModel(*pathnames):
 #         raise Exception("It better be!")
 # 
 # s = g.serialize(format='n3', destination="/tmp/g.n3")
+
+qres = g.query(
+    """SELECT DISTINCT ?aname ?bname
+       WHERE {
+          ?a schema:telephone ?b .
+          ?a foaf:name ?aname .
+          ?b foaf:name ?bname .
+       }""")
+
+SELECT ?p ?o
+{ 
+  <http://nasa.dataincubator.org/spacecraft/1968-089A> ?p ?o
+}
+
+for row in qres:
+    print("%s knows %s" % row)
