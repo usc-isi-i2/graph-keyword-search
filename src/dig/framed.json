@@ -63,7 +63,7 @@
             "memex:hairColor": {
                 "@leaftype": "schema:Text"},
             "schema:name": {
-                "@leaftype": "schema:Text"},
+                "@leaftype": "schema:Text"}
         }
     },
     "schema:publisher": {
