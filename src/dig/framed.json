@@ -15,13 +15,13 @@
 	    "@explicit": true,
 	    "@type": "schema:PriceSpecification",
 	    "schema:name": {
-		"@leaftype": "schema:Text"},
+		"@embed": false},
 	    "schema:price": {
-		"@leaftype": "schema:Number"},
+		"@embed": false},
 	    "schema:billingIncrement": {
-		"@leaftype": "schema:Number"},
+		"@embed": false},
 	    "schema:unitCode": {
-		"@leaftype": "schema:Text"}
+		"@embed": false}
 	},
 	"schema:availableAtOrFrom": {
 	    "@explicit": true,
@@ -30,22 +30,22 @@
 		"@explicit": true,
 		"@type": "schema:GeoCoordinates",
 		"schema:longitude": {
-		    "@leaftype": "schema:Number"},
+		    "@embed": false},
 		"schema:latitude": {
-		    "@leaftype": "schema:Number"}
+		    "@embed": false}
 	    },
 	    "schema:address": {
 		"@explicit": true,
 		"@type": "schema:PostalAddress",
 		"schema:addressLocality": {
-		    "@leaftype": "schema:Text"},
+		    "@embed": false},
 		"schema:addressRegion": {
-		    "@leaftype": "schema:Text"},
+		    "@embed": false},
 		"schema:addressCountry": {
-		    "@leaftype": "schema:Text"}
+		    "@embed": false}
 		},
 	    "schema:name": {
-		"@leaftype": "schema:Text"}
+		"@embed": false}
 	},
 	"schema:seller": {
 	    "@explicit": true,
@@ -54,36 +54,36 @@
 		"@explicit": true,
 		"@type": "memex:PhoneNumber",
 		"schema:name": {
-		    "@leaftype": "schema:Text"}
+		    "@embed": false}
 		},
 	    "schema:email": {
 		"@explicit": true,
 		"@type": "memex:EmailAddress",
 		"schema:name": {
-		    "@leaftype": "schema:Text"}
+		    "@embed": false}
 		}
 	    },
 	"schema:itemOffered": {
 	    "@explicit": true,
 	    "@type": "memex:AdultService",
 	    "memex:personAge": {
-		"@leaftype": "schema:Text"},
+		"@embed": false},
             "memex:eyeColor": {
-                "@leaftype": "schema:Text"},
+                "@embed": false},
             "memex:hairColor": {
-                "@leaftype": "schema:Text"},
+                "@embed": false},
             "schema:name": {
-                "@leaftype": "schema:Text"}
+                "@embed": false}
         }
     },
     "schema:publisher": {
 	"@explicit": true,
 	"@type": "schema:Organization",
 	"schema:name": {
-	    "@leaftype": "schema:Text"
+	    "@embed": false
 	    },
 	"schema:dateCreated": {
-	    "@leaftype": "dateOptionalTime"
+	    "@embed": false
 	}
     }
 
