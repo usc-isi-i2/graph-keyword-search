@@ -8,7 +8,7 @@
   },
     "@explicit": true,
     "@type": "schema:WebPage",
-    "schema:mainEntityOfPage": {
+    "schema:mainEntity": {
 	"@explicit": true,
 	"@type": "schema:Offer",
 	"schema:priceSpecification": {
