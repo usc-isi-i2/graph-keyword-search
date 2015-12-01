@@ -29,6 +29,11 @@ def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
 def localPath(suffix):
     return os.path.join(os.path.dirname(__file__), suffix)
 
+GEN = None
+
+def unprefix(w):
+    return w.split(':',1)[-1]
+
 # http://stackoverflow.com/a/9283563/2077242
 def camelCaseWords(label):
     """Consider using inflection library instead"""
@@ -151,19 +156,143 @@ class KGraph(DiGraph):
                    "adultservice": "AdultService",
                    "webpage": "WebPage"}
                    
-
-    def installDomain2(self, root, rootClasses, domainType=None, mappingFile="esMapping-dig-ht-DT.json"):
+    def installDomain2(self, root, rootClasses=None, domainType=None, frameFile="frame-WebPage.json"):
         """I think indexRoot is no longer doing anything useful"""
-        allRoots = list(rootClasses.keys())
-        if domainType and mappingFile:
-            with open(mappingFile, 'r') as f:
-                m = json.load(f)
+        # allRoots = list(rootClasses.keys())
+        if domainType and frameFile:
+            with open(frameFile, 'r') as f:
+                fr = json.load(f)
+
+            del fr['@context']
+
+            def rec1(nd):
+                t = None
+                try:
+                    t = nd.get("@type", None)
+                except:
+                    pass
+                if t:
+                    print("Node {}".format(nd))
+                    for k in nd.keys():
+                        rec1(nd[k])
+            # rec1(fr)
+
+            def rec2(nd, incomingRelation, incomingNode):
+                print("Process node {}".format(nd))
+                thisGraphNode = None
+                # classes
+                t = None
+                try:
+                    t = unprefix(nd.get("@type", None))
+                except:
+                    pass
+                if t:
+                    # interior node
+                    self.add_node(t, nodeType='Class', className=t,indexRoot=None)
+                    thisGraphNode = self.node[t]
+                    print("return gnode was {}".format(thisGraphNode))
+                    print("Node {}".format(nd))
+                    for k in nd.keys():
+                        adjGraphNode = rec2(nd[k], k, t)
+                        if adjGraphNode:
+                            self.add_edge(t, adjGraphNode['className'], edgeType='ObjectProperty', relationName=k)
+                leaf = False
+                try:
+                    leaf = nd.get("@embed") == False
+                except:
+                    pass
+                if leaf:
+                    # leaf node
+                    print("Leaf node {} via {}".format(nd, incomingRelation))
+                    leafName = unprefix(incomingNode) + "." + unprefix(incomingRelation) + ".leaf"
+                    vocabDescriptor = leafName # seller_telephone_name
+                    self.add_node(leafName, nodeType='leaf', vocabDescriptor=vocabDescriptor)
+                if thisGraphNode:
+                    return thisGraphNode
+
+            # rec2(fr, None, None)
+
+            ##################################################################
+
+            def rec3(obj, incomingRelation, incomingNode):
+                """We expect obj to correspond to either an inner node or a leaf node"""
+
+                nodeType = None
+                isLeaf = False
+                try:
+                    isLeaf = obj.get("@embed") == False
+                    # object has leaf indicator
+                    if isLeaf and not (incomingNode and incomingRelation):
+                        raise ValueError("leaf node at top level")
+                    nodeType = "leaf"
+                    leafName = unprefix(incomingNode) + "." + unprefix(incomingRelation) + ".leaf"
+                except ValueError:
+                    raise
+                except:
+                    pass
+
+                isInterior = False
+                interiorType = None
+                try:
+                    interiorName = unprefix(obj.get("@type", None))
+                    isInterior = True
+                    nodeType = "interior"
+                except:
+                    pass
+
+                print("Enter with {} {}".format(nodeType, obj))
+
+                node = None
+                if isInterior:
+                    # interior node
+                    self.add_node(interiorName, nodeName=interiorName, nodeType='Class', className=interiorName, indexRoot=None)
+                    node = self.node[interiorName]
+                    for rel in obj.keys():
+                        adjNode = rec3(obj[rel], rel, interiorName)
+                        if adjNode:
+                            if adjNode['nodeType'] == 'Class':
+                                # rel between Class node and Class node: ObjectProperty
+                                self.add_edge(interiorName, adjNode['nodeName'], edgeType='ObjectProperty', relationName=rel)
+                            elif adjNode['nodeType'] == 'leaf':
+                                # rel between Class node and leaf node: DataProperty
+                                self.add_edge(interiorName, adjNode['nodeName'], edgeType='DataProperty', relationName=rel)
+                            else:
+                                print("Unrecognized adjNode {}".format(adjNode))
+                elif isLeaf:
+                    # leaf node
+                    vocabDescriptor = leafName # seller_telephone_name
+                    self.add_node(leafName, nodeName=leafName, nodeType='leaf', vocabDescriptor=vocabDescriptor)
+                    node = self.node[leafName]
+                else:
+                    # raise ValueError("{} is neither an interior nor a leaf".format(obj))
+                    # actually OK
+                    pass
+                return node
+
+            rec3(fr, None, None)
+
+
+            def generateNodes(nd):
+                print(type(nd))
+                t = None
+                try:
+                    t = nd.get("@type", None)
+                except:
+                    pass
+                if t:
+                    yield nd
+                    for k in nd.keys():
+                        generateNodes(nd[k])
+
+            print("Enter Generate")
+            global GEN
+            GEN = generateNodes(fr)
+            print(GEN)
+            for n in generateNodes(fr):
+                print("Inside Loop")
+                print(n)
 
             # add Class nodes
-            for n in m['mappings'].keys():
-                print(n)
-            print("exiting")
-            exit()
 
             """
             self.add_node('offer', nodeType='Class', className='Offer', indexRoot='offer')
@@ -484,6 +613,6 @@ def htGraph(root, **kwargs):
     g.installDomain(root, domainType='ht')
     print("call installDomain2")
     g.installDomain2(root, domainType='ht')
-    exit(0)
+    return g
     g.populateAll()
     return g
