@@ -1,0 +1,66 @@
+Comparison: rooted at WebPage
+
+OLD HAND-EDITED GRAPH						  AUTOMATICALLY DERIVED GRAPH
+
+NODES                                                            
+['adultservice',                                                  'AdultService',               
+ 'adultservice.eyeColor',                                         'AdultService.eyeColor.leaf', 
+ 'adultservice.hairColor',                                        'AdultService.hairColor.leaf',
+ 'adultservice.name',                                             'AdultService.name.leaf',     
+ 'adultservice.personAge',                                        'AdultService.personAge.leaf',
+ 'email',                                                         'EmailAddress',               
+ 'email.name',                                                    'EmailAddress.name.leaf',     
+ 'offer',                                                         'Offer',
+ 'phone',                                                         'PhoneNumber',          
+ 'phone.name',                                                    'PhoneNumber.name.leaf',
+ 'place',                                                         'Place',          
+								  'Place.name.leaf',
+ 'postaladdress',                                                 'PostalAddress',                     
+ 'postaladdress.addressCountry',                                  'PostalAddress.addressCountry.leaf', 
+ 'postaladdress.addressLocality',                                 'PostalAddress.addressLocality.leaf',
+ 'postaladdress.addressRegion',                                   'PostalAddress.addressRegion.leaf',  
+ 'priceSpecification',                                            'PriceSpecification',                       
+ 'priceSpecification.billingIncrement',                           'PriceSpecification.billingIncrement.leaf', 
+ 'priceSpecification.name',                                       'PriceSpecification.name.leaf',             
+ 'priceSpecification.price',                                      'PriceSpecification.price.leaf',            
+ 'priceSpecification.unitCode',                                   'PriceSpecification.unitCode.leaf',         
+ 'publisher',                                                     'Organization',                 
+								  'Organization.dateCreated.leaf',
+ 'publisher.name',                                                'Organization.name.leaf',       
+ 'seller',                                                        'PersonOrOrganization',
+ 'webpage']                                                       'WebPage']
+                                                                  'GeoCoordinates',               
+								  'GeoCoordinates.latitude.leaf', 
+								  'GeoCoordinates.longitude.leaf',
+
+EDGES                                                            
+[('adultservice', 'adultservice.eyeColor'),			  [('AdultService', 'AdultService.eyeColor.leaf'), 
+ ('adultservice', 'adultservice.hairColor'),                       ('AdultService', 'AdultService.hairColor.leaf'),
+ ('adultservice', 'adultservice.name'),                            ('AdultService', 'AdultService.name.leaf'),     
+ ('adultservice', 'adultservice.personAge'),                       ('AdultService', 'AdultService.personAge.leaf'),
+ ('adultservice', 'offer'),                                       ## SHOULD NOT BE THERE
+ ('email', 'email.name'),                                         ('EmailAddress', 'EmailAddress.name.leaf'),
+                                                                  ('GeoCoordinates', 'GeoCoordinates.latitude.leaf'),
+                                                                  ('GeoCoordinates', 'GeoCoordinates.longitude.leaf'),
+ ('offer', 'adultservice'),                                       ('Offer', 'AdultService'),
+ ('offer', 'place'),                                              ('Offer', 'Place'),
+ ('offer', 'priceSpecification'),                                 ('Offer', 'PriceSpecification'),
+ ('offer', 'seller'),                                             ('Offer', 'PersonOrOrganization'),
+ ('offer', 'webpage'),                                            ## SHOULD NOT BE THERE
+ ('phone', 'phone.name'),                                         ('PhoneNumber', 'PhoneNumber.name.leaf'),
+                                                                  ('Place', 'GeoCoordinates'),
+ ('place', 'postaladdress'),                                      ('Place', 'PostalAddress'),
+ ('postaladdress', 'postaladdress.addressCountry'),               ('PostalAddress', 'PostalAddress.addressCountry.leaf'), 
+ ('postaladdress', 'postaladdress.addressLocality'),              ('PostalAddress', 'PostalAddress.addressLocality.leaf'),
+ ('postaladdress', 'postaladdress.addressRegion'),                ('PostalAddress', 'PostalAddress.addressRegion.leaf'),  
+ ('priceSpecification', 'priceSpecification.billingIncrement'),   ('PriceSpecification', 'PriceSpecification.billingIncrement.leaf'),
+ ('priceSpecification', 'priceSpecification.name'),               ('PriceSpecification', 'PriceSpecification.name.leaf'),            
+ ('priceSpecification', 'priceSpecification.price'),              ('PriceSpecification', 'PriceSpecification.price.leaf'),           
+ ('priceSpecification', 'priceSpecification.unitCode'),           ('PriceSpecification', 'PriceSpecification.unitCode.leaf'),        
+                                                                  ('Organization', 'Organization.dateCreated.leaf'),
+ ('publisher', 'publisher.name'),				  ('Organization', 'Organization.name.leaf'),       
+ ('seller', 'email'),                                             ('PersonOrOrganization', 'EmailAddress'),
+ ('seller', 'offer'),                                             ## SHOULD NOT BE THERE
+ ('seller', 'phone'),                                             ('PersonOrOrganization', 'PhoneNumber'),
+ ('webpage', 'offer'),                                            ('WebPage', 'Offer'),
+ ('webpage', 'publisher')]                                        ('WebPage', 'Organization')]
