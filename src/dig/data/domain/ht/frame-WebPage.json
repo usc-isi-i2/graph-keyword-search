@@ -81,9 +81,9 @@
 	"@type": "schema:Organization",
 	"schema:name": {
 	    "@embed": false
-	    },
-	"schema:dateCreated": {
-	    "@embed": false
-	}
+	    }
+    },
+    "schema:dateCreated": {
+	"@embed": false
     }
 }
