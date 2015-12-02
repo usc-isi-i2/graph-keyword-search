@@ -237,9 +237,9 @@ class KGraph(DiGraph):
     USE_FRAME = True
     def installDomain(self, root, **kwargs):
         if self.USE_FRAME:
-            self.installDomainFromFrame(root, **kwargs)
+            return self.installDomainFromFrame(root, **kwargs)
         else:
-            self.installDomainFromMappingFile(root, **kwargs)
+            return self.installDomainFromMappingFile(root, **kwargs)
 
     def labelInGraph(self, nodeOrEdge):
         try:
