@@ -63,13 +63,10 @@ def main(argv=None):
                "explain": None if args.explain=='None' else args.explain}
     config = interpretConfig(args.config)
     s = Thesaurus(**cmdline, **config)
-    # succeeds with roots = ['offer']
-    # fails with roots = ['phone']
-    roots = ['seller']
-    roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
-    roots = ['WebPage', 'Offer']
+    roots = ['WebPage', 'Offer', 'AdultService', 'EmailAddress', 'PhoneNumber', 'PersonOrOrganization']
     for root in roots:
         print("#" * 66)
+        print("Rooted at {}".format(root))
         g = htGraph(root, **cmdline, **config)
         if not g:
             continue
