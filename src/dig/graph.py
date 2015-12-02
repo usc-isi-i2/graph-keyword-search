@@ -27,7 +27,7 @@ def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
         byCount = sorted([(v,q) for (q,v) in j['histo'].items()], reverse=True)
         return [t[1] for t in byCount]
     except FileNotFoundError as e:
-        print("Unable to load leaf vocab {}: {}".format(pathdesc, e), file=sys.stderr)
+        print("No such leaf vocab {}".format(pathdesc), file=sys.stderr)
 
 def localPath(suffix):
     return os.path.join(os.path.dirname(__file__), suffix)
@@ -150,7 +150,7 @@ class KGraph(DiGraph):
             self.add_node('publisher.name', nodeType='leaf', vocabDescriptor='webpage_publisher_name')
             self.add_edge('publisher', 'publisher.name', edgeType='DataProperty', relationName='name')
 
-    # possibly these should be fully qualified, memex:PersonOrOrganization
+    # possibly these should be fully qualified, e.g., memex:PersonOrOrganization
     # This would be an input
     rootClasses = {"seller": "PersonOrOrganization",
                    "phone": "PhoneNumber",
@@ -193,8 +193,6 @@ class KGraph(DiGraph):
                     nodeType = "interior"
                 except:
                     pass
-
-                print("Enter with {} {}".format(nodeType, obj))
 
                 node = None
                 if isInterior:
@@ -269,7 +267,6 @@ class KGraph(DiGraph):
                 self.populateClassNode(node)
         except Exception as _:
             edge = nodeOrEdge
-            print("An edge is {}".format(edge))
             (node1, node2) = edge
             edgeType = self.edge[node1][node2]['edgeType']
             if edgeType == 'ObjectProperty':
