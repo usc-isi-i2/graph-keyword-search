@@ -28,6 +28,7 @@ def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
         return [t[1] for t in byCount]
     except FileNotFoundError as e:
         print("No such leaf vocab {}".format(pathdesc), file=sys.stderr)
+        return []
 
 def localPath(suffix):
     return os.path.join(os.path.dirname(__file__), suffix)
@@ -227,9 +228,11 @@ class KGraph(DiGraph):
                     return node
                 # perform traversal to build graph in self from frame fr
                 traverse(fr, None, None)
+                return self
 
         except FileNotFoundError as e:
             print("No frame available: {}, {}".format(domainType, root), file=sys.stderr)
+            return None
     
     USE_FRAME = True
     def installDomain(self, root, **kwargs):
@@ -528,12 +531,11 @@ def minimalSubgraph(kgraph, root, query, verbose=False):
 g = None
     
 def htGraph(root, **kwargs):
-    print("enter htGraph")
     global g
     g = KGraph()
-    print("call installDomain")
-    g.installDomain(root, domainType='ht')
-    #print("call installDomain2")
-    #g.installDomain2(root, domainType='ht')
-    g.populateAll()
-    return g
+    installed = g.installDomain(root, domainType='ht')
+    if installed:
+        g.populateAll()
+        return g
+    else:
+        return None
