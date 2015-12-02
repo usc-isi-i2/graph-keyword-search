@@ -1,0 +1,11 @@
+{
+    "method_type":
+        {
+            "type": "hybrid_jaccard",
+			"partial_method": "jaro",
+			"parameters":
+				{
+					"threshold": "0.90"
+				}
+        }
+}

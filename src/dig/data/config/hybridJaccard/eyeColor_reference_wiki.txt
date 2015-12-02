@@ -1,0 +1,8 @@
+amber
+blue: azure, sapphire
+brown
+gray: grey
+green
+hazel
+red
+violet: purple

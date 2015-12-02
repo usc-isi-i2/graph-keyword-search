@@ -1,0 +1,6 @@
+bald
+short
+chin-length
+shoulder-length
+mid-back
+waist-length
