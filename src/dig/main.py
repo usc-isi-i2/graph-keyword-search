@@ -67,9 +67,12 @@ def main(argv=None):
     # fails with roots = ['phone']
     roots = ['seller']
     roots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
+    roots = ['WebPage', 'Offer']
     for root in roots:
         print("#" * 66)
         g = htGraph(root, **cmdline, **config)
+        if not g:
+            continue
         print("Root: {} yields net graph {}".format(root, g))
         q = Query(terms, g, s, **cmdline, **config)
         q.suggestCandidates()
