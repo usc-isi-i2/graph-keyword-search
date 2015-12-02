@@ -1,0 +1,88 @@
+{
+  "@context": {
+      "dc": "http://purl.org/dc/elements/1.1/",
+      "ex": "http://example.org/vocab#",
+      "memex": "http://memexproxy.com/ontology/",
+      "schema": "http://schema.org/",
+      "skos": "http://www.w3.org/2004/02/skos/core"
+  },
+    "@explicit": true,
+    "@type": "memex:PhoneNumber",
+    "schema:name": {
+	"@embed": false},
+    "memex:owner": {
+	"@explicit": true,
+	"@type": "memex:PersonOrOrganization",
+	"schema:email": {
+	    "@explicit": true,
+	    "@type": "memex:EmailAddress",
+	    "schema:name": {
+		"@embed": false}
+	},
+	"schema:makesOffer": {
+	    "@explicit": true,
+	    "@type": "schema:Offer",
+	    "schema:priceSpecification": {
+		"@explicit": true,
+		"@type": "schema:PriceSpecification",
+		"schema:name": {
+		    "@embed": false},
+		"schema:price": {
+		    "@embed": false},
+		"schema:billingIncrement": {
+		    "@embed": false},
+		"schema:unitCode": {
+		    "@embed": false}
+	    },
+	    "schema:availableAtOrFrom": {
+		"@explicit": true,
+		"@type": "schema:Place",
+		"schema:geo": {				
+		    "@explicit": true,
+		    "@type": "schema:GeoCoordinates",
+		    "schema:longitude": {
+			"@embed": false},
+		    "schema:latitude": {
+			"@embed": false}
+		},
+		"schema:address": {
+		    "@explicit": true,
+		    "@type": "schema:PostalAddress",
+		    "schema:addressLocality": {
+			"@embed": false},
+		    "schema:addressRegion": {
+			"@embed": false},
+		    "schema:addressCountry": {
+			"@embed": false}
+		    },
+		"schema:name": {
+		    "@embed": false}
+	    },
+	    "schema:itemOffered": {
+		"@explicit": true,
+		"@type": "memex:AdultService",
+		"memex:personAge": {
+		    "@embed": false},
+		"memex:eyeColor": {
+		    "@embed": false},
+		"memex:hairColor": {
+		    "@embed": false},
+		"schema:name": {
+		    "@embed": false}
+	    },
+	    "schema:mainEntityOfPage": {
+		"@explicit": true,
+		"@type": "schema:WebPage",
+		"schema:dateCreated": {
+		    "@embed": false},
+		"schema:publisher": {
+		    "@explicit": true,
+		    "@type": "schema:Organization",
+		    "schema:name": {
+			"@embed": false
+		    }
+		}
+	    }
+	}
+    }
+}
