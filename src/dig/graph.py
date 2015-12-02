@@ -19,12 +19,15 @@ from hybridJaccard import HybridJaccard
 LEAF_VOCAB_CACHE = "/Users/philpot/Documents/project/graph-keyword-search/src/dig/data/cache"
 
 def loadLeafVocab(pathdesc, root=LEAF_VOCAB_CACHE):
-    pathname = os.path.join(root, pathdesc  + ".json")
-    with open(pathname, 'r') as f:
-        j = json.load(f)
-    # dict of (value, count)
-    byCount = sorted([(v,q) for (q,v) in j['histo'].items()], reverse=True)
-    return [t[1] for t in byCount]
+    try:
+        pathname = os.path.join(root, pathdesc  + ".json")
+        with open(pathname, 'r') as f:
+            j = json.load(f)
+        # dict of (value, count)
+        byCount = sorted([(v,q) for (q,v) in j['histo'].items()], reverse=True)
+        return [t[1] for t in byCount]
+    except FileNotFoundError as e:
+        print("Unable to load leaf vocab {}: {}".format(pathdesc, e), file=sys.stderr)
 
 def localPath(suffix):
     return os.path.join(os.path.dirname(__file__), suffix)
@@ -165,57 +168,8 @@ class KGraph(DiGraph):
 
             del fr['@context']
 
-            def rec1(nd):
-                t = None
-                try:
-                    t = nd.get("@type", None)
-                except:
-                    pass
-                if t:
-                    print("Node {}".format(nd))
-                    for k in nd.keys():
-                        rec1(nd[k])
-            # rec1(fr)
-
-            def rec2(nd, incomingRelation, incomingNode):
-                print("Process node {}".format(nd))
-                thisGraphNode = None
-                # classes
-                t = None
-                try:
-                    t = unprefix(nd.get("@type", None))
-                except:
-                    pass
-                if t:
-                    # interior node
-                    self.add_node(t, nodeType='Class', className=t,indexRoot=None)
-                    thisGraphNode = self.node[t]
-                    print("return gnode was {}".format(thisGraphNode))
-                    print("Node {}".format(nd))
-                    for k in nd.keys():
-                        adjGraphNode = rec2(nd[k], k, t)
-                        if adjGraphNode:
-                            self.add_edge(t, adjGraphNode['className'], edgeType='ObjectProperty', relationName=k)
-                leaf = False
-                try:
-                    leaf = nd.get("@embed") == False
-                except:
-                    pass
-                if leaf:
-                    # leaf node
-                    print("Leaf node {} via {}".format(nd, incomingRelation))
-                    leafName = unprefix(incomingNode) + "." + unprefix(incomingRelation) + ".leaf"
-                    vocabDescriptor = leafName # seller_telephone_name
-                    self.add_node(leafName, nodeType='leaf', vocabDescriptor=vocabDescriptor)
-                if thisGraphNode:
-                    return thisGraphNode
-
-            # rec2(fr, None, None)
-
-            ##################################################################
-
-            def rec3(obj, incomingRelation, incomingNode):
-                """We expect obj to correspond to either an inner node or a leaf node"""
+            def traverse(obj, incomingRelation, incomingNode):
+                """In typical case we expect obj to correspond to either an inner node or a leaf node"""
 
                 nodeType = None
                 isLeaf = False
@@ -225,7 +179,7 @@ class KGraph(DiGraph):
                     if isLeaf and not (incomingNode and incomingRelation):
                         raise ValueError("leaf node at top level")
                     nodeType = "leaf"
-                    leafName = unprefix(incomingNode) + "." + unprefix(incomingRelation) + ".leaf"
+                    leafName = unprefix(incomingNode) + "." + unprefix(incomingRelation)
                 except ValueError:
                     raise
                 except:
@@ -248,7 +202,7 @@ class KGraph(DiGraph):
                     self.add_node(interiorName, nodeName=interiorName, nodeType='Class', className=interiorName, indexRoot=None)
                     node = self.node[interiorName]
                     for rel in obj.keys():
-                        adjNode = rec3(obj[rel], rel, interiorName)
+                        adjNode = traverse(obj[rel], rel, interiorName)
                         if adjNode:
                             if adjNode['nodeType'] == 'Class':
                                 # rel between Class node and Class node: ObjectProperty
@@ -260,7 +214,7 @@ class KGraph(DiGraph):
                                 print("Unrecognized adjNode {}".format(adjNode))
                 elif isLeaf:
                     # leaf node
-                    vocabDescriptor = leafName # seller_telephone_name
+                    vocabDescriptor = "vocab_" + unprefix(incomingNode) + "_" + unprefix(incomingRelation)
                     self.add_node(leafName, nodeName=leafName, nodeType='leaf', vocabDescriptor=vocabDescriptor)
                     node = self.node[leafName]
                 else:
@@ -269,28 +223,8 @@ class KGraph(DiGraph):
                     pass
                 return node
 
-            rec3(fr, None, None)
+            traverse(fr, None, None)
 
-
-            def generateNodes(nd):
-                print(type(nd))
-                t = None
-                try:
-                    t = nd.get("@type", None)
-                except:
-                    pass
-                if t:
-                    yield nd
-                    for k in nd.keys():
-                        generateNodes(nd[k])
-
-            print("Enter Generate")
-            global GEN
-            GEN = generateNodes(fr)
-            print(GEN)
-            for n in generateNodes(fr):
-                print("Inside Loop")
-                print(n)
 
             # add Class nodes
 
@@ -335,6 +269,7 @@ class KGraph(DiGraph):
                 self.populateClassNode(node)
         except Exception as _:
             edge = nodeOrEdge
+            print("An edge is {}".format(edge))
             (node1, node2) = edge
             edgeType = self.edge[node1][node2]['edgeType']
             if edgeType == 'ObjectProperty':
@@ -610,9 +545,8 @@ def htGraph(root, **kwargs):
     global g
     g = KGraph()
     print("call installDomain")
-    g.installDomain(root, domainType='ht')
-    print("call installDomain2")
+    #g.installDomain(root, domainType='ht')
+    #print("call installDomain2")
     g.installDomain2(root, domainType='ht')
-    return g
     g.populateAll()
     return g
