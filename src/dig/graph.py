@@ -58,7 +58,7 @@ class KGraph(DiGraph):
         if root in rootScope:
             self.add_edge(node1, node2, **kwargs)
 
-    def installDomain(self, root, domainType=None):
+    def installDomainFromMappingFile(self, root, domainType=None):
         if domainType == 'ht':
             allRoots = ['seller', 'phone', 'email', 'offer', 'adultservice', 'webpage']
             self.add_node('seller', nodeType='Class', className='PersonOrOrganization', indexRoot='seller')
@@ -159,95 +159,85 @@ class KGraph(DiGraph):
                    "adultservice": "AdultService",
                    "webpage": "WebPage"}
                    
-    def installDomain2(self, root, rootClasses=None, domainType=None, frameFile="frame-WebPage.json"):
+    @staticmethod
+    def makeFrameFile(domain, root):
+        return os.path.join(os.path.dirname(__file__), "data", "domain", domain, "frame-{}.json".format(root))
+
+    def installDomainFromFrame(self, root, rootClasses=None, domainType=None):
         """I think indexRoot is no longer doing anything useful"""
         # allRoots = list(rootClasses.keys())
-        if domainType and frameFile:
+        frameFile = self.makeFrameFile(domainType, root)
+        try:
             with open(frameFile, 'r') as f:
                 fr = json.load(f)
 
-            del fr['@context']
+                del fr['@context']
 
-            def traverse(obj, incomingRelation, incomingNode):
-                """In typical case we expect obj to correspond to either an inner node or a leaf node"""
+                def traverse(obj, incomingRelation, incomingNode):
+                    """In typical case we expect obj to correspond to either an inner node or a leaf node"""
 
-                nodeType = None
-                isLeaf = False
-                try:
-                    isLeaf = obj.get("@embed") == False
-                    # object has leaf indicator
-                    if isLeaf and not (incomingNode and incomingRelation):
-                        raise ValueError("leaf node at top level")
-                    nodeType = "leaf"
-                    leafName = unprefix(incomingNode) + "." + unprefix(incomingRelation)
-                except ValueError:
-                    raise
-                except:
-                    pass
+                    nodeType = None
+                    isLeaf = False
+                    try:
+                        isLeaf = obj.get("@embed") == False
+                        # object has leaf indicator
+                        if isLeaf and not (incomingNode and incomingRelation):
+                            raise ValueError("leaf node at top level")
+                        nodeType = "leaf"
+                        leafName = unprefix(incomingNode) + "." + unprefix(incomingRelation)
+                    except ValueError:
+                        raise
+                    except:
+                        pass
 
-                isInterior = False
-                interiorType = None
-                try:
-                    interiorName = unprefix(obj.get("@type", None))
-                    isInterior = True
-                    nodeType = "interior"
-                except:
-                    pass
+                    isInterior = False
+                    interiorType = None
+                    try:
+                        interiorName = unprefix(obj.get("@type", None))
+                        isInterior = True
+                        nodeType = "interior"
+                    except:
+                        pass
 
-                node = None
-                if isInterior:
-                    # interior node
-                    self.add_node(interiorName, nodeName=interiorName, nodeType='Class', className=interiorName, indexRoot=None)
-                    node = self.node[interiorName]
-                    for rel in obj.keys():
-                        adjNode = traverse(obj[rel], rel, interiorName)
-                        if adjNode:
-                            if adjNode['nodeType'] == 'Class':
-                                # rel between Class node and Class node: ObjectProperty
-                                self.add_edge(interiorName, adjNode['nodeName'], edgeType='ObjectProperty', relationName=rel)
-                            elif adjNode['nodeType'] == 'leaf':
-                                # rel between Class node and leaf node: DataProperty
-                                self.add_edge(interiorName, adjNode['nodeName'], edgeType='DataProperty', relationName=rel)
-                            else:
-                                print("Unrecognized adjNode {}".format(adjNode))
-                elif isLeaf:
-                    # leaf node
-                    vocabDescriptor = "vocab_" + unprefix(incomingNode) + "_" + unprefix(incomingRelation)
-                    self.add_node(leafName, nodeName=leafName, nodeType='leaf', vocabDescriptor=vocabDescriptor)
-                    node = self.node[leafName]
-                else:
-                    # raise ValueError("{} is neither an interior nor a leaf".format(obj))
-                    # actually OK
-                    pass
-                return node
+                    node = None
+                    if isInterior:
+                        # interior node
+                        self.add_node(interiorName, nodeName=interiorName, nodeType='Class', className=interiorName, indexRoot=None)
+                        node = self.node[interiorName]
+                        for rel in obj.keys():
+                            adjNode = traverse(obj[rel], rel, interiorName)
+                            if adjNode:
+                                if adjNode['nodeType'] == 'Class':
+                                    # rel between Class node and Class node: ObjectProperty
+                                    self.add_edge(interiorName, adjNode['nodeName'], edgeType='ObjectProperty', relationName=rel)
+                                elif adjNode['nodeType'] == 'leaf':
+                                    # rel between Class node and leaf node: DataProperty
+                                    self.add_edge(interiorName, adjNode['nodeName'], edgeType='DataProperty', relationName=rel)
+                                else:
+                                    print("Unrecognized adjNode {}".format(adjNode))
+                    elif isLeaf:
+                        # leaf node
+                        vocabDescriptor = "vocab_" + unprefix(incomingNode) + "_" + unprefix(incomingRelation)
+                        self.add_node(leafName, nodeName=leafName, nodeType='leaf', vocabDescriptor=vocabDescriptor)
+                        node = self.node[leafName]
+                    else:
+                        # raise ValueError("{} is neither an interior nor a leaf".format(obj))
+                        # actually OK
+                        pass
+                    return node
+                # perform traversal to build graph in self from frame fr
+                traverse(fr, None, None)
 
-            traverse(fr, None, None)
+        except FileNotFoundError as e:
+            print("No frame available: {}, {}".format(domainType, root), file=sys.stderr)
+    
+    USE_FRAME = True
+    def installDomain(self, root, **kwargs):
+        if self.USE_FRAME:
+            self.installDomainFromFrame(root, **kwargs)
+        else:
+            self.installDomainFromMappingFile(root, **kwargs)
 
-
-            # add Class nodes
-
-            """
-            self.add_node('offer', nodeType='Class', className='Offer', indexRoot='offer')
-            self.maybe_add_edge(root, 'offer', 'seller', edgeType='ObjectProperty', relationName='seller', 
-                                rootScope=allRoots)
-            self.maybe_add_edge(root, 'seller', 'offer', edgeType='ObjectProperty', relationName='makesOffer', 
-                                rootScope=allRoots)
-        
-            self.add_node('priceSpecification', nodeType='Class', className='PriceSpecification')
-            self.add_node('priceSpecification.billingIncrement', nodeType='leaf', vocabDescriptor='offer_priceSpecification_billingIncrement')
-            self.add_edge('priceSpecification', 'priceSpecification.billingIncrement', edgeType='DataProperty', relationName='billingIncrement')
-            self.add_node('priceSpecification.price', nodeType='leaf', vocabDescriptor='offer_priceSpecification_price')
-            self.add_edge('priceSpecification', 'priceSpecification.price', edgeType='DataProperty', relationName='price')
-            self.add_node('priceSpecification.name', nodeType='leaf', vocabDescriptor='offer_priceSpecification_name')
-            self.add_edge('priceSpecification', 'priceSpecification.name', edgeType='DataProperty', relationName='name')
-            self.add_node('priceSpecification.unitCode', nodeType='leaf', vocabDescriptor='offer_priceSpecification_unitCode')
-            self.add_edge('priceSpecification', 'priceSpecification.unitCode', edgeType='DataProperty', relationName='unitCode')
-
-            self.maybe_add_edge(root, 'offer', 'priceSpecification', edgeType='ObjectProperty', relationName='priceSpecification', 
-                                rootScope=allRoots)
-
-"""        
-            
     def labelInGraph(self, nodeOrEdge):
         try:
             return self.node[nodeOrEdge]['className']
@@ -542,8 +532,8 @@ def htGraph(root, **kwargs):
     global g
     g = KGraph()
     print("call installDomain")
-    #g.installDomain(root, domainType='ht')
+    g.installDomain(root, domainType='ht')
     #print("call installDomain2")
-    g.installDomain2(root, domainType='ht')
+    #g.installDomain2(root, domainType='ht')
     g.populateAll()
     return g
