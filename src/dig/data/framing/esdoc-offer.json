@@ -1,0 +1,63 @@
+{
+  "a": "Offer",
+  "validFrom": "2014-09-22T00:00:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/place"
+  },
+  "title": "817-230-4924 - Fort Worth Escorts - 6144771 - My Provider Guide",
+  "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/personororganization"
+        ],
+        "name": [
+          "8172304924"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-8172304924"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "personAge": [
+      "21"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/adultservice",
+    "eyeColor": [
+      "brown"
+    ],
+    "offers": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer",
+    "hairColor": [
+      "brown"
+    ]
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "myproviderguide.com"
+      ]
+    },
+    "description": [
+      "Hello guys, I am Lily 21 yrs, Asian girl, 36D-25-36, 5'4\", 108 lbs!!<br />\nI have shoulder length, silky brown hair and enchanting dark brown eyes.<br />\nI have a petite body with some dangerous curves.<br />\nI'm your perfect example of the world, sexy girl next door you've been dying to meet. <br />\n817-230-4924 Call me today<br />\nOutcall Only\n"
+    ],
+    "url": "http://myproviderguide.com/fort-worth/6144771",
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/webpage",
+    "dateCreated": "2014-09-22T00:00:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "33810757"
+  ]
+}

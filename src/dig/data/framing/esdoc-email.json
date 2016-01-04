@@ -1,0 +1,1146 @@
+{
+  "a": "EmailAddress",
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "name": "loveeva8989@gmail.com",
+  "owner": [
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "validFrom": "2014-02-18T00:00:00",
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress"
+              }
+            ],
+            "uri": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/1392681600/place",
+            "name": [
+              "San Diego"
+            ]
+          },
+          "title": "916-538-2286 - LoveEva8989@gmail.com - missevaa - San Diego Escorts - 85 Ur Naughty ExOtic Playmate OUTCALLS 85 - 5750023 - My Provider Guide",
+          "priceSpecification": [
+            {
+              "a": "PriceSpecification",
+              "name": [
+                "85-per-30min"
+              ],
+              "price": "85",
+              "uri": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/1392681600/pricespecification30",
+              "billingIncrement": "30",
+              "unitCode": "MIN"
+            }
+          ],
+          "uri": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/1392681600/offer",
+          "seller": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "name": [
+              "Eva"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/adultservice",
+            "eyeColor": [
+              "brown"
+            ],
+            "offers": [
+              "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/1392681600/offer"
+            ],
+            "hairColor": [
+              "black"
+            ]
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "myproviderguide.com"
+              ]
+            },
+            "description": [
+              "$85$ HLF HR CFS OUTCALLS ALL NIGHT !! DONT MISS THIS SWEET DEAL !! \r\nHello Gentlemen; \r\nMy name is Eva &amp;I offer 1OO% Independent, Elite &amp;Discreet,Non Rushed-Five Star companionship .. absolutely everything u have been looking for: a unique Ebony.Spanish.East Indian mixed beauty with a petite yet toned frame (5'6 128lbs) that's curvy in all the right places +all my assets are natural and soft guaranteed to leave u breathless .. truly the sweetest imported chocolate u will ever experience ready &amp;willing to satisfy ur naughtiest desires .. I am THE REAL DEAL leave these fakes &amp;wannabes where they belong &amp;come experience TRUE satisfaction!! NOW Available 4 OUTCALLS ONLY!! So lets make some plans .. I have a bubbly personality &amp;I always enjoy meeting new friends! \r\n-- xOXo Eva\n"
+            ],
+            "url": "http://www.myproviderguide.com/escorts/san-diego/free-posts/w4m/5750023_ur-naughty-exotic-playmate-out.html",
+            "uri": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/1392681600/webpage",
+            "dateCreated": "2014-02-18T00:00:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/1392681600/offer"
+          },
+          "identifier": [
+            "496982"
+          ]
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/0D2C6EC4815122D208DE80F8E4717A79C69152FB/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "1576231"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego County",
+                "a": "PostalAddress"
+              },
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/1385067240/place",
+            "name": [
+              "San Diego",
+              "San Diego County"
+            ]
+          },
+          "title": "ðŸ’• S W Îµ Îµ T ðŸ’‹ Îµ R O T i C ðŸ’‹ D R Îµ Î± M ðŸ’• â„“ÎµT MÎµ ÎµXCÎµÎµD Aâ„“â„“ UR ÎµXPÎµCTÎ±TiONS!! ðŸ’• - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/1385067240/offer",
+          "seller": "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/1385067240/offer"
+            ],
+            "personAge": [
+              "19"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "HÎµâ„“â„“o GÎµntâ„“ÎµmÎµn; \nMy name is ÎµvÎ±. I offer <b>âœ”Elite &DiSCREETâ—âœ”NoN-Rushedâ—âœ”Fiveâ˜… companionship</b> Everything u have been looking for: a sexy fit petite âœ¿Ebony/Spanishâœ¿ mixed ÃŸÎµÎ±uty ready to satisfy ur sweetest desires. So lets make plans.. I always enjoy meeting new friends!\n-- ðŸ’‹<b>ÎµvÎ±</b>â¤;\n<b>â•šÂ»NO BLOCKED CALLS OR TXTS!!\nâ•šÂ»1OO% REAL RECENT PICS\nâ•šÂ»PLEASE NO VULGAR LANGUAGE</b> \nâ—âœ–â—Available for <b>INCALLS &OUTCALLS!!</b> all over SD areaâ—âœ–â—\nâœ‰â—E-Mailâ—âœ‰: <a target=\"_blank\" href=\"mailto:LOveEva8989@Gmail.com\">LOveEva8989@Gmail.com</a>\nâ˜Žâ—Phoneâ—â˜Ž: 9 I 6.5 3 8.2 2 8 6\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/s-w-t-r-o-t-i-c-d-r-m-t-m-xcd-a-ur-xpcttions-19/14853816",
+            "uri": "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/1385067240/webpage",
+            "dateCreated": "2013-11-21T20:54:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/1385067240/offer"
+          },
+          "validFrom": "2013-11-21T20:54:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/298E46110B5CB94DA2688CB15D2573992C43B47E/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "1569400"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego County",
+                "a": "PostalAddress"
+              },
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/1385067240/place",
+            "name": [
+              "San Diego",
+              "San Diego County"
+            ]
+          },
+          "title": "ðŸ’• SWÎµÎµT & PÎµTiTÎµ ðŸ’‹ EROTiC TRÎµAT ðŸ’•  iNCAâ„“â„“ &OUTCAâ„“â„“ âœ­âœ¬âœ®$PÎµCiAâ„“$âœ­âœ¬âœ® - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/1385067240/offer",
+          "seller": "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/1385067240/offer"
+            ],
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "HÎµâ„“â„“o GÎµntâ„“ÎµmÎµn; \nMy name is ÎµvÎ±. I offer <b>âœ”Elite &DiSCREETâ—âœ”NoN-Rushedâ—âœ”Fiveâ˜…companionship</b>?? Everything u have been looking for: a sexy fit petite âœ¿Ebony/Spanishâœ¿ mixed ÃŸÎµÎ±uty ready to satisfy ur sweetest desires. So lets make plans.. I always enjoy meeting new friends!\n-- ðŸ’‹<b>ÎµvÎ±</b>â¤;\n<b>â•šÂ»NO BLOCKED CALLS OR TXTS!!\nâ•šÂ»1OO% REAL RECENT PICS\nâ•šÂ»PLEASE NO VULGAR LANGUAGE</b> \nâ—âœ–â—Available for <b>INCALLS &OUTCALLS!!</b>â—âœ–â—\nâœ‰â—E-Mailâ—âœ‰: <a target=\"_blank\" href=\"mailto:LOveEva8989@Gmail.com\">LOveEva8989@Gmail.com</a>\nâ˜Žâ—Phoneâ—â˜Ž: 9 I 6.5 3 8.2 2 8 6\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/swt-and-ptit-erotic-trat-inca-andoutca-pcia-21/14853816",
+            "uri": "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/1385067240/webpage",
+            "dateCreated": "2013-11-21T20:54:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/1385067240/offer"
+          },
+          "validFrom": "2013-11-21T20:54:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/40017529DF3D6496F7981EDDA85786A5DC8CBBA6/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "1909923"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego County",
+                "a": "PostalAddress"
+              },
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/1387153080/place",
+            "name": [
+              "San Diego",
+              "San Diego County"
+            ]
+          },
+          "title": "â€¢â¤â€¢  ðŸ’‹ SÎµXY ðŸ’‹ Câ„“Î±SSY ðŸ’‹ & Î± â„“iTTLE BiT NÎ±STY ðŸ’‹ â€¢â¤â€¢  OUTCALLS ONLY!! - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/1387153080/offer",
+          "seller": "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/1387153080/offer"
+            ],
+            "personAge": [
+              "19"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "HÎµâ„“â„“o GÎµntâ„“ÎµmÎµn; \nMy name is ÎµvÎ±. I offer <b>âœ”Elite &DiSCREETâ—âœ”NoN-Rushedâ—âœ”Fiveâ˜… companionship</b> Everything u have been looking for: a sexy fit petite âœ¿Ebony/Spanishâœ¿ mixed ÃŸÎµÎ±uty ready to satisfy ur sweetest desires. So lets make plans.. I always enjoy meeting new friends!\n-- ðŸ’‹<b>ÎµvÎ±</b>â¤;\n<b>â•šÂ»NO BLOCKED CALLS OR TXTS!!\nâ•šÂ»1OO% REAL RECENT PICS\nâ•šÂ»PLEASE NO VULGAR LANGUAGE</b> \nâ—âœ–â—Available for <b> OUTCALLS ONLY!!</b>â—âœ–â—\nâœ‰â—E-Mailâ—âœ‰: <a target=\"_blank\" href=\"mailto:LOveEva8989@Gmail.com\">LOveEva8989@Gmail.com</a>\nâ˜Žâ—Phoneâ—â˜Ž: 9 I 6.5 3 8.2 2 8 6\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/sxy-cssy-and-ittle-bit-nsty-outcalls-only-19/14853816",
+            "uri": "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/1387153080/webpage",
+            "dateCreated": "2013-12-16T00:18:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/1387153080/offer"
+          },
+          "validFrom": "2013-12-16T00:18:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/594DDD8FD91BB5CB29CBBBE50023B323DEAF2549/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "1931620"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego County",
+                "a": "PostalAddress"
+              },
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/1387309560/place",
+            "name": [
+              "San Diego",
+              "San Diego County"
+            ]
+          },
+          "title": "ðŸ’‹NÎ±ughtiÎµst ðŸ’‹ PÎµtitÎµ Pâ„“Î±ymÎ±tÎµ ðŸ’‹ PÎµrfÎµct ( HOURGâ„“ASS ) ShÎ±pÎµðŸ’‹ âžœNOw OffÎµring OutCÎ±â„“â„“ $85 $pÎµciaâ„“$ 85$ - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/1387309560/offer",
+          "seller": "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/1387309560/offer"
+            ],
+            "personAge": [
+              "20"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "HÎµâ„“â„“o GÎµntâ„“ÎµmÎµn;<b></b>\nMy name is ÎµvÎ±. I offer <b>âœ”Elite &DiSCREETâ—âœ”NoN-Rushedâ—âœ”Fiveâ˜… companionship</b> Everything u have been looking for: a sexy fit petite âœ¿Ebony/Spanishâœ¿ mixed ÃŸÎµÎ±uty ready to satisfy ur sweetest desires. So lets make plans.. I always enjoy meeting new friends!\n-- ðŸ’‹<b>ÎµvÎ±</b>â¤;\n<b>â•šÂ»NO BLOCKED CALLS OR TXTS!\nâ•šÂ»1OO% REAL &RECENT PICS\nâ•šÂ»PLEASE NO VULGAR LANGUAGE</b> \nâ—âœ–â—Available for <b> OUTCALLS ONLY! 4 ALL SD areas</b>â—âœ–â—\nâœ‰â—E-Mailâ—âœ‰: <a target=\"_blank\" href=\"mailto:LOveEva8989@Gmail.com\">LOveEva8989@Gmail.com</a>\nâ˜Žâ—Phoneâ—â˜Ž: 9 I 6.5 3 8.2 2 8 6<b></b><b></b><b></b><b></b><b></b>\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/nughtist-ptit-pymt-prfct-hourgass-shp-now-offring-outc-85-pcia-85-20/14853816",
+            "uri": "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/1387309560/webpage",
+            "dateCreated": "2013-12-17T19:46:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/1387309560/offer"
+          },
+          "validFrom": "2013-12-17T19:46:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/6B7C8D9CC1EAD8DD1178927B40D0CE3273A5F5E5/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "43810367"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "Sandiegocounty",
+                "addressRegion": "California",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/1417783140/place",
+            "name": [
+              "Sandiegocounty, California"
+            ]
+          },
+          "title": "?❤??SW€€T &P€TiT€ ?S€X¥ FR€Ak Øf TH€ W€€K? ➜ ?8O R ? S € iNcαℓℓs ALL DA¥??❤? - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/1417783140/offer",
+          "seller": "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/1417783140/offer"
+            ],
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "<i>It's εvα?<br>\nur ATF ?Mixεd Cutiε?. I have dark exotic features &a slim shape w. curves in ALL the right places. I provide some of the most satisfying ✔Discreet✔NON Rushed✔DRAMA FREE \nFBSM sessions &adult companionship. I L?VE what I do &I know u will too. I am NOW available for <b>privαtε INcαℓℓs <u>ALL DAY</u></b> in the Mission Valley Hotel Circle area\n<br>?xOXo?<br />\n*8O**1OO**2OO*\n<br>\n❎NO BLOCKED CALLS<br>\n❎DONATIONS R NON NEGOTIABLE <br>\n❎?% REAL &RECENT PICS</i><br>\n<br>\n<b>✉<a target=\"_blank\" href=\"mailto:LoveEva8989@Gmail.com\">LoveEva8989@Gmail.com</a>✉</b><br>\n<b>?9 1 6.5 3 8.2 2 8 6?</b>\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/swt-andptit-sx-frak-f-th-wk-8o-r-s-incs-all-da/14853816",
+            "uri": "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/1417783140/webpage",
+            "dateCreated": "2014-12-05T12:39:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/1417783140/offer"
+          },
+          "validFrom": "2014-12-05T12:39:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/77D95C0A954AF64313E1755DAF134B128DBD49C6/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "43255643"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "uri": "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/1417478400/place"
+          },
+          "title": "916-538-2286 - LoveEva8989@gmail.com - missevaa - San Diego Escorts - 5750023 - My Provider Guide",
+          "uri": "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/1417478400/offer",
+          "seller": "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/personororganization",
+          "itemOffered": {
+            "eyeColor": [
+              "brown"
+            ],
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/1417478400/offer"
+            ],
+            "hairColor": [
+              "black"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "myproviderguide.com"
+              ]
+            },
+            "description": [
+              "HEY FELLAS;<br />\r\nEva here! Ur local southern CA provider specializing in unforgettable discreet & absolutely non-rushed adult companionship & sensual massage. I have sexy dark exotic features & a body to die for. My Pics are 1OO% REAL & RECENT(as of 2.1.14) & I welcome ALL reviews. I have a very easy going friendly personality. So please dont hesitate to reach out .. Im pretty sure our time together wont leave u disappointed but will definitely have u wanting more.. <br />\r\n~xOXo Eva<br />\r\n<br />\r\nNOW AVAILABLE 4 INCALLS IN HOTEL CIRCLE !! <br />\r\n<br />\r\n{ R O S e_M E N U }<br />\r\n65 ROses ~ H/hr FBSM<br />\r\n85 ROses ~ QQ (2O Mins or less)<br />\r\n12O ROses ~ H/hr<br />\r\n21O ROses ~ Full hr<br />\r\n+4O ROses ~ M/S/O/G ((Full/hr appts Only))<br />\r\n<br />\r\n--SOME FRiENDLY REMiNDERS--<br />\r\n~ NO BLOCKED CALLS (Txts OK)<br />\r\n~ Please have donation ready in sight<br />\r\n~ Donations are NON NEGOTIABLE<br />\r\n~ Hygiene is a +PLUS & ALWAYS a MUST (YMMV)<br />\r\n<br />\r\nB/B SERVICES ARE NEVER OFFERED! PLEASE DO NOT EVEN ASK!<br />\r\n<br />\r\nDISCLAIMER:<br />\r\nMoney exchanged in legal adult personal services is for modeling and in person appearances is simply for the time expended in the delivery of lawful entertainment with reference to CA Penal Code section 647(b)and CAL JIC No. 16.420, the services discussed herein do not in any way include or relate to either: (1) engagement in any lewd act for money or other consideration, or (2) Solicitation, offer, or agreement to engage in any lewd act for money or consideration. This is not an offer of prostitution. Fees charged are for time spent only. I do reserve the right to decline appointments, as I deem necessary. By contacting me (either through phone or by mail) you agree to these terms and hereby agree that you are not part of any law enforcement agency using this advertisement for entrapment or for my arrest, this is a contract between you and I that you enter into contacting me.\n"
+            ],
+            "url": "http://myproviderguide.com/san-diego/escorts/5750023",
+            "uri": "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/1417478400/webpage",
+            "dateCreated": "2014-12-02T00:00:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/1417478400/offer"
+          },
+          "validFrom": "2014-12-02T00:00:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/790826E5FC7A257DFEA4A8FE3A155496A3AE2D9F/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "1203987"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego County",
+                "a": "PostalAddress"
+              },
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/1383399360/place",
+            "name": [
+              "San Diego",
+              "San Diego County"
+            ]
+          },
+          "title": "â—†â—† â—âœªâ— CUTÎµ âœª KiNkY âœª &Câ„“Î±SSY â—âœªâ— â—†â—† - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/1383399360/offer",
+          "seller": "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/1383399360/offer"
+            ],
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "HellO Gentlemen;<br>\n<br>\nâ™¥â™¥I'm Evaâ™¥â™¥<br>\nAre u looking for top of the line non-rushed companionship ?? Look no further!! I'm a petite <b>â€âœ¿Ebony/Spanishâ€âœ¿ mixed ÃŸÎµÎ±uty </b> available for outcalls this weekend. So let's make some plans .. I <b>L â¤ V E</b> meeting new friends!!<br>\nâ¤ xOXo â¤;<br>\n   Eva<br>\n<br>\n<b>â˜‘ SERIOUS CALLERS ONLY PLEASE!!<br>\nâ˜‘ I DO NOT RESPOND TO ANY TEXTS!!<br>\nâ˜‘ AVAILABLE FOR 2 GIRL :)</b><br>\n<br>\n<b>â˜†â˜…â˜† EMAIL â˜†â˜…â˜†: <a rel=\"nofollow\" target=\"_blank\" href=\"mailto:LOVEEVA8989@GMAIL.COM\">LOVEEVA8989@GMAIL.COM</a><br>\nâ˜Žâ—â˜Ž PHONE# â˜Žâ—â˜Ž: (9I6) 538.2286</b>\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/cut-kinky-andcssy-21/14853816",
+            "uri": "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/1383399360/webpage",
+            "dateCreated": "2013-11-02T13:36:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/1383399360/offer"
+          },
+          "validFrom": "2013-11-02T13:36:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/84E43C44FFB963C31658B397775AF5FFCEE0D81A/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "36814310"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego County",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/1383724560/place",
+            "name": [
+              "San Diego County"
+            ]
+          },
+          "title": "ðŸ’• SWÎµÎµT & PÎµTiTÎµ ðŸ’‹ EROTiC TRÎµAT ðŸ’•  iNCAâ„“â„“ & OUTCAâ„“â„“ âœ­âœ¬âœ®$PÎµCiAâ„“$âœ­âœ¬âœ® - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/1383724560/offer",
+          "seller": "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/1383724560/offer"
+            ],
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "HÎµâ„“â„“o GÎµntâ„“ÎµmÎµn; \nAre u looking for <b>âœ”Top of the Lineâ—âœ”NoN-Rushedâ—âœ”Fiveâ˜…companionship</b>?? Look no further!! Im a sexy petite âœ¿Ebony/Spanishâœ¿ mixed ÃŸÎµÎ±uty ready to satisfy ur sweetest desire. So lets make plans.. I always enjoy meeting new friends <b>NO BLOCKED CALLS OR TXTS!!</b> â—âœ–â—Available for INCALLS &OUTCALLS  in <b>UTC.LA JOLLA.MIRA MESA.CLAIREMONT.KEARNY MESA.MISSION VALLEY.POINT LOMA.&MIRAMAR</b>â—âœ–â—\n- ðŸ’‹<b>ÎµvÎ±</b>â¤;\nâœ‰â—E-Mailâ—âœ‰: <a rel=\"nofollow\" target=\"_blank\" href=\"mailto:LOveEva8989@Gmail.com\">LOveEva8989@Gmail.com</a>\nâ˜Žâ—Phoneâ—â˜Ž: 9 I 6.5 3 8.2 2 8 6\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/swt-and-ptit-erotic-trat-inca-and-outca-pcia-21/14853816",
+            "uri": "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/1383724560/webpage",
+            "dateCreated": "2013-11-06T07:56:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/1383724560/offer"
+          },
+          "validFrom": "2013-11-06T07:56:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/8C14792FCC71B37028526FA6CE72E23995878DD0/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "45839065"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "Sandiegocounty",
+                "addressRegion": "California",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/1419199680/place",
+            "name": [
+              "Sandiegocounty, California"
+            ]
+          },
+          "title": "?❤??SW€€T &P€TiT€ ?S€X¥ FR€Ak Øf TH€ W€€K? ➜ ?1OO R ? S € OUTcαℓℓs ALL NIGHT??❤? - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/1419199680/offer",
+          "seller": "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/1419199680/offer"
+            ],
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "<i>Im εvα?<br>\nI have dark exotic features, long legs, &curves in ALL the right places. Somewhat skilled in the art of sensual &NURU style body rubs as well as adult QT.. I L?VE to touch &be touched &My time always includes ?% ✔Discreet✔NON Rushed✔DRAMA FREE pure satisfaction.. I can drop by or we can meet up for naughty car fun? Im always ready to play so dont keep me waiting?\n<br>\n°•85?•1OO•?2OO•°\n<br>\n❎ NO BLOCKED CALLS<br>\n❎ DONATIONS R NON NEGOTIABLE <i /><br>\n<br>\n<b>✉<a target=\"_blank\" href=\"mailto:LoveEva8989@Gmail.com\">LoveEva8989@Gmail.com</a>✉</b><br>\n<b>?9 1 6.5 3 8.2 2 8 6?</b>\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/swt-andptit-sx-frak-f-th-wk-1oo-r-s-outcs-all-night/14853816",
+            "uri": "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/1419199680/webpage",
+            "dateCreated": "2014-12-21T22:08:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/1419199680/offer"
+          },
+          "validFrom": "2014-12-21T22:08:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/A6693FA9066FB097C7226D3703813C211761351E/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "validFrom": "2014-02-25T00:00:00",
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress",
+                "addressCountry": "Canada"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "0.000000",
+              "lon": "0.000000"
+            },
+            "uri": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/1393286400/place",
+            "name": [
+              "San Diego, Canada"
+            ]
+          },
+          "title": "Eva Rose Reviews â€“ 916-538-2286 Female Escort in San Diego, CA - NaughtyReviews",
+          "priceSpecification": [
+            {
+              "a": "PriceSpecification",
+              "name": [
+                "210-per-60min"
+              ],
+              "price": "210",
+              "uri": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/1393286400/pricespecification",
+              "billingIncrement": "60",
+              "unitCode": "MIN"
+            },
+            {
+              "a": "PriceSpecification",
+              "name": [
+                "100-per-30min"
+              ],
+              "price": "100",
+              "uri": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/1393286400/pricespecification30",
+              "billingIncrement": "30",
+              "unitCode": "MIN"
+            }
+          ],
+          "uri": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/1393286400/offer",
+          "seller": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "personAge": [
+              "24"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/adultservice",
+            "eyeColor": [
+              "brown"
+            ],
+            "offers": [
+              "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/1393286400/offer"
+            ],
+            "hairColor": [
+              "black"
+            ]
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "naughtyreviews.com"
+              ]
+            },
+            "description": [
+              "<strong>Eva Rose</strong> is a 24 year old <strong>Escort in San Diego</strong>. She has other black hair and brown eyes. Eva Rose's donation is $210 per hour and she is available during the day and at night. <br> Don't forget to mention you saw her on NaughtyReviews!\n"
+            ],
+            "url": "http://www.naughtyreviews.com/escorts/eva-rose-san-diego-black-female",
+            "uri": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/1393286400/webpage",
+            "dateCreated": "2014-02-25T00:00:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/1393286400/offer"
+          },
+          "identifier": [
+            "221155"
+          ]
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/BA33A3D3E67181A0BD985A2A1F73AEB3DEDAE5E3/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "validFrom": "2014-03-06T00:00:00",
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego",
+                "a": "PostalAddress",
+                "addressCountry": "Canada"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "0.000000",
+              "lon": "0.000000"
+            },
+            "uri": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/1394064000/place",
+            "name": [
+              "San Diego, Canada"
+            ]
+          },
+          "title": "Eva ROse Reviews â€“ 916-538-2286 Female Escort in San Diego, CA - NaughtyReviews",
+          "priceSpecification": [
+            {
+              "a": "PriceSpecification",
+              "name": [
+                "210-per-60min"
+              ],
+              "price": "210",
+              "uri": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/1394064000/pricespecification",
+              "billingIncrement": "60",
+              "unitCode": "MIN"
+            },
+            {
+              "a": "PriceSpecification",
+              "name": [
+                "100-per-30min"
+              ],
+              "price": "100",
+              "uri": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/1394064000/pricespecification30",
+              "billingIncrement": "30",
+              "unitCode": "MIN"
+            }
+          ],
+          "uri": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/1394064000/offer",
+          "seller": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/adultservice",
+            "eyeColor": [
+              "brown"
+            ],
+            "offers": [
+              "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/1394064000/offer"
+            ],
+            "hairColor": [
+              "black"
+            ]
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "naughtyreviews.com"
+              ]
+            },
+            "description": [
+              "Eva here! Ur local southern CA provider specializing in unforgettable discreet &amp; absolutely non-rushed adult companionship &amp; sensual massage. I have sexy dark exotic features &amp; a body to die for. My Pics are 1OO% REAL &amp; RECENT(as of 2.1.14) &amp; I welcome ALL reviews. I have a very easy going friendly personality. So please dont hesitate to reach out .. Im pretty sure our time together wont leave u disappointed but will definitely have u wanting more ;)\n"
+            ],
+            "url": "http://www.naughtyreviews.com/escorts/eva-rose-san-diego-white-female",
+            "uri": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/1394064000/webpage",
+            "dateCreated": "2014-03-06T00:00:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/1394064000/offer"
+          },
+          "identifier": [
+            "228351"
+          ]
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/BCB352F26ACF8A9235132068CE0A97811DFF902D/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "33043915"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "San Diego County",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/1410303840/place",
+            "name": [
+              "San Diego County"
+            ]
+          },
+          "title": "☆★ UR ★ NAUGHT¥ ★ S€X¥ ★ FR€AK ★ ØF ★ TH€ ★ W€€K ★ SØ JUIC¥ &SW€€T ★☆ ➜ ☆★ 15O RØS€ ★ OUTC@ℓℓS ★☆ - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/1410303840/offer",
+          "seller": "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/1410303840/offer"
+            ],
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "<i>εvα HERE !!<br>\nur local ✿ εxOtic.Islαnd.Mixεd.Cutiε ✿ with a body to \ndie 4 & an easy going personality .. Cute Sweet &Petite .. \nI provide: ✔Discreet ✔NON Rushed ✔DRAMA FREE \nFBSM sessions &adult companionship NOW available for\n<b>privαtε Outcαℓℓs <u>ALL NIGHT!!</u></b> In the SD\narea .. I l&hearts;ve what I do &u will too .. cant wait 2 meet;)<br> \n-xOXo <b>εvα</b><br>\n<br>\n╚»NO BLOCKED CALLS/TXTS OK<br>\n╚»DONATIONS R NON NEGOTIABLE <br>\n╚»1OO% REAL&RECENT PICS</i><br>\n<br>\n<b>✉<a target=\"_blank\" href=\"mailto:LoveEva8989@Gmail.com\">LoveEva8989@Gmail.com</a>✉</b><br>\nOR<br>\n<b>☎9 1 6.5 3 8.2 2 8 6☎</b>\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/ur-naught-sx-frak-f-th-wk-s-juic-andswt-15o-rs-outcs-21/14853816",
+            "uri": "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/1410303840/webpage",
+            "dateCreated": "2014-09-09T23:04:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/1410303840/offer"
+          },
+          "validFrom": "2014-09-09T23:04:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/D234A999C3CDB3CC32EBE985A3C34B4DFBE9775D/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    },
+    {
+      "a": "PersonOrOrganization",
+      "email": [
+        "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+      ],
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "43692755"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "Sandiegocounty",
+                "addressRegion": "California",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "32.7153",
+              "lon": "-117.157"
+            },
+            "uri": "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/1417716240/place",
+            "name": [
+              "Sandiegocounty, California"
+            ]
+          },
+          "title": "?❤?SW€€T &P€TiT€ S€X¥ FR€Ak Øf TH€ W€€K ➜ 8O R?S€ iNcαℓℓs ALL DA¥ !!?❤? - san diego escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/1417716240/offer",
+          "seller": "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/1417716240/offer"
+            ],
+            "personAge": [
+              "21"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "<i>εvα HERE!<br>\nur ATF ?Mixεd Cutiε?. I have dark exotic features &a slim frame w. curves in ALL the right parts. I provide some of the most satisfying ✔Discreet✔NON Rushed✔DRAMA FREE \nFBSM sessions &adult companionship &Im NOW available for\n<b>privαtε INcαℓℓs <u>ALL DAY</u></b> in the Mission Valley Hotel Circle area. I L?VE what I do &I know u will too\n<br>?xOXo?<br />\n<b>εvα</b><br />\n*8O**1OO**2OO*\n<br>\n❎NO BLOCKED CALLS<br>\n❎DONATIONS R NON NEGOTIABLE <br>\n❎?REAL &RECENT PICS</i><br>\n<br>\n<b>✉<a target=\"_blank\" href=\"mailto:LoveEva8989@Gmail.com\">LoveEva8989@Gmail.com</a>✉</b><br>\nOR<br>\n<b>☎9 1 6.5 3 8.2 2 8 6☎</b>\n"
+            ],
+            "url": "http://sandiego.backpage.com/FemaleEscorts/swt-andptit-sx-frak-f-th-wk-8o-rs-incs-all-da/14853816",
+            "uri": "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/1417716240/webpage",
+            "dateCreated": "2014-12-04T18:04:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/1417716240/offer"
+          },
+          "validFrom": "2014-12-04T18:04:00"
+        }
+      ],
+      "uri": "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/personororganization",
+      "telephone": [
+        {
+          "a": "PhoneNumber",
+          "owner": [
+            "http://dig.isi.edu/ht/data/F44BD5C409B4E47AD90A0EE51456B9BA18788ED1/personororganization"
+          ],
+          "name": [
+            "9165382286"
+          ],
+          "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9165382286"
+        }
+      ]
+    }
+  ],
+  "uri": "http://dig.isi.edu/ht/data/emailaddress/loveeva8989%40gmail.com"
+}

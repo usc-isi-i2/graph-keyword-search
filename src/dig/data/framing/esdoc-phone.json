@@ -1,0 +1,74 @@
+{
+  "a": "PhoneNumber",
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "name": [
+    "2053901189"
+  ],
+  "owner": [
+    {
+      "a": "PersonOrOrganization",
+      "makesOffer": [
+        {
+          "a": "Offer",
+          "identifier": [
+            "50245169"
+          ],
+          "availableAtOrFrom": {
+            "a": "Place",
+            "address": [
+              {
+                "addressLocality": "Stockton",
+                "addressRegion": "California",
+                "a": "PostalAddress"
+              }
+            ],
+            "geo": {
+              "a": "GeoCoordinates",
+              "lat": "37.9577",
+              "lon": "-121.291"
+            },
+            "uri": "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/1422920820/place",
+            "name": [
+              "Stockton, California"
+            ]
+          },
+          "title": "SEXY ? Petite ? Upscale SnowBunny ? Sexy Lexi - stockton escorts - backpage.com",
+          "uri": "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/1422920820/offer",
+          "seller": "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/personororganization",
+          "itemOffered": {
+            "a": "AdultService",
+            "offers": [
+              "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/1422920820/offer"
+            ],
+            "personAge": [
+              "19"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/adultservice"
+          },
+          "mainEntityOfPage": {
+            "a": "WebPage",
+            "publisher": {
+              "a": "Organization",
+              "name": [
+                "backpage.com"
+              ]
+            },
+            "description": [
+              "FANTASY??%ReAL PicS?<br>\nINDEPENDENT 100%.<br>\nI LOVE WHAT I DO, And you will to<br>\nMY PLEASURE COMES FROM PLEASING YOU.<br>\nI WILL NEVER RUSH <a target=\"_blank\" href=\"http://you.im/\">YOU.IM</a> ALWAYS CLEAN AND DISCREET.<br>\nAVAILABLE ALWAYS, MY PERSONALITY IS FUN-LOVING, SWEET, AND SINCERE.<br>\nI'M a Hot AMAZING ENERGETIC good time .<br>\nIM THE ORIGINAL GROWN & SEXY!!!<br>\nCALL NOW? (205)390-1189??<br>\n!! Lexi ?? No African American\n"
+            ],
+            "url": "http://stockton.backpage.com/FemaleEscorts/sexy-petite-upscale-snowbunny-sexy-lexi/8638324",
+            "uri": "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/1422920820/webpage",
+            "dateCreated": "2015-02-02T23:47:00",
+            "mainEntity": "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/1422920820/offer"
+          },
+          "validFrom": "2015-02-02T23:47:00"
+        }
+      ],
+      "telephone": [
+        "http://dig.isi.edu/ht/data/phonenumber/x-2053901189"
+      ],
+      "uri": "http://dig.isi.edu/ht/data/52E81DA8B3579118F6885E33163B60023B3035E7/personororganization"
+    }
+  ],
+  "uri": "http://dig.isi.edu/ht/data/phonenumber/x-2053901189"
+}

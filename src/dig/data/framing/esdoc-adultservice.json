@@ -1,0 +1,73 @@
+{
+  "a": "AdultService",
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "offers": [
+    {
+      "a": "Offer",
+      "validFrom": "2014-10-15T15:13:00",
+      "availableAtOrFrom": {
+        "a": "Place",
+        "address": [
+          {
+            "addressLocality": "Wichita",
+            "a": "PostalAddress"
+          }
+        ],
+        "geo": {
+          "a": "GeoCoordinates",
+          "lat": "37.6889",
+          "lon": "-97.3361"
+        },
+        "uri": "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/1413385980/place",
+        "name": [
+          "Wichita"
+        ]
+      },
+      "title": "10/21 ~ 10/?  ~eXperience TANTRA ~ WaVeS building, crashing over n over ~ PROSTATE massage - wichita body rubs - backpage.com",
+      "uri": "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/1413385980/offer",
+      "seller": {
+        "a": "PersonOrOrganization",
+        "makesOffer": [
+          "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/1413385980/offer"
+        ],
+        "telephone": [
+          {
+            "a": "PhoneNumber",
+            "owner": [
+              "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/personororganization"
+            ],
+            "name": [
+              "3163023623"
+            ],
+            "uri": "http://dig.isi.edu/ht/data/phonenumber/x-3163023623"
+          }
+        ],
+        "uri": "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/personororganization"
+      },
+      "itemOffered": "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/adultservice",
+      "mainEntityOfPage": {
+        "a": "WebPage",
+        "publisher": {
+          "a": "Organization",
+          "name": [
+            "backpage.com"
+          ]
+        },
+        "description": [
+          "Ride on waves of BLISS.<br><i> <b> Increase Strength, Control, Staying Power and Stamina<br><br></i>Here are some comments from clients about my work:<br><br></b>* \"You have a gift.\" K, Wichita, ks <br>* \"WOW! You wouldn't think this would feel soooo good .\" N, Saint Louis,<br> * \"I never felt anything like this before.\" C, Omaha <br>* \"I could have kicked ahole in the wall\" OKC<br>* \"It's been a long time since my toes tingled\" STL<br><br><b>Indo/PROSTATE/Mutual<br><br><i>NO TEXT<br>316-302-3623<br>OCTOBER 21 - ?/? <br></i><br><br>MUST BE <u>OVER 35</u></b>\n"
+        ],
+        "url": "http://wichita.backpage.com/BodyRubs/1021-10-experience-tantra-waves-building-crashing-over-n-over-prostate-massage-49/6703125",
+        "uri": "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/1413385980/webpage",
+        "dateCreated": "2014-10-15T15:13:00",
+        "mainEntity": "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/1413385980/offer"
+      },
+      "identifier": [
+        "35449653"
+      ]
+    }
+  ],
+  "personAge": [
+    "49"
+  ],
+  "uri": "http://dig.isi.edu/ht/data/47C69A88104681EF5BF5DFD448D08D020BCBA1D3/adultservice"
+}

@@ -1,0 +1,51 @@
+{
+  "a": "WebPage",
+  "publisher": {
+    "a": "Organization",
+    "name": "eroticmugshots.com"
+  },
+  "description": "THE WAY TO AZZ BLISS IS TO EXPERIENCE THE ULTIMATE ONE OF A KIND PHAT AZZ ON THIS EARTH!<br/>DON'T MISS THE ROUGH AND RUGGED AZZ MAXIMUS SPECIAL!<br/>ALL THIS PHAT -26-62 BOOTY WOBBLING IN YOUR FACE FOR THE BOOTY MAX SPECIAL OF JUST $100!<br/>Downtown Barbara Brown Baby! 626-390-7882<br/>.&nbsp;Call <u>626-390-7882</u>.\n",
+  "url": "http://eroticmugshots.com/sanfernandovalley-escorts/626-390-7882/?pid=7061400",
+  "uri": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/1321022640/webpage",
+  "dateCreated": "2011-11-11T14:44:00",
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "mainEntity": {
+    "a": "Offer",
+    "validFrom": "2011-11-11T14:44:00",
+    "availableAtOrFrom": {
+      "a": "Place",
+      "address": {
+        "addressLocality": "Raleigh",
+        "addressRegion": "North Carolina",
+        "addressCountry": "United States",
+        "a": "PostalAddress"
+      },
+      "uri": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/1321022640/place",
+      "name": "Raleigh, North Carolina, United States"
+    },
+    "title": "626-390-7882 - Escort Ad -",
+    "uri": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/1321022640/offer",
+    "seller": {
+      "a": "PersonOrOrganization",
+      "makesOffer": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/1321022640/offer",
+      "telephone": {
+        "a": "PhoneNumber",
+        "owner": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/personororganization",
+        "name": "6263907882",
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-6263907882"
+      },
+      "uri": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/personororganization"
+    },
+    "itemOffered": {
+      "a": "AdultService",
+      "offers": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/1321022640/offer",
+      "personAge": "25",
+      "uri": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/adultservice"
+    },
+    "mainEntityOfPage": "http://dig.isi.edu/ht/data/0956D30224CEE311DDBE7359737B17CCA346F189/1321022640/webpage",
+    "identifier": [
+      "15514245",
+      "15514246"
+    ]
+  }
+}

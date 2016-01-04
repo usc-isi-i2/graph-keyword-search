@@ -1,0 +1,69 @@
+{
+  "a": "PersonOrOrganization",
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "makesOffer": [
+    {
+      "a": "Offer",
+      "identifier": [
+        "46158835"
+      ],
+      "availableAtOrFrom": {
+        "a": "Place",
+        "address": [
+          {
+            "addressLocality": "Phoenix",
+            "addressRegion": "Arizona",
+            "a": "PostalAddress"
+          }
+        ],
+        "uri": "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/1417889940/place",
+        "name": [
+          "Phoenix, Arizona"
+        ]
+      },
+      "title": "520-363-3774",
+      "uri": "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/1417889940/offer",
+      "seller": "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/personororganization",
+      "itemOffered": {
+        "a": "AdultService",
+        "offers": [
+          "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/1417889940/offer"
+        ],
+        "personAge": [
+          "20"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/adultservice"
+      },
+      "mainEntityOfPage": {
+        "a": "WebPage",
+        "publisher": {
+          "a": "Organization",
+          "name": [
+            "eroticmugshots.com"
+          ]
+        },
+        "description": [
+          "Hey Fellas Im Your Secret Seductress here to fulfill all your Fantasies & Deepest Desires<br/>AVAILABLE ALL NIGHT & DAY PRIVATE outcaLLS ~NO RUSH ~100% Real Mature Serious Callers Only Playful & Open Minded FETISH friendly ;) Toys & Outfits <br/>Well Groomed Feet always Pedicured;)<br/>Independent<br/>~New Pics ~100 % Real Pics~No blocked calls ~ No Free Pics ~ No Explicit Language<br/>Amanda <br/>(520)363-3774.&nbsp;Call <u>520-363-3774</u>. I offer video/photo also, ask me on my profile before calling...\n"
+        ],
+        "url": "http://eroticmugshots.com/logan-escorts/520-363-3774/?pid=30704901",
+        "uri": "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/1417889940/webpage",
+        "dateCreated": "2014-12-06T18:19:00",
+        "mainEntity": "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/1417889940/offer"
+      },
+      "validFrom": "2014-12-06T18:19:00"
+    }
+  ],
+  "telephone": [
+    {
+      "a": "PhoneNumber",
+      "owner": [
+        "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/personororganization"
+      ],
+      "name": [
+        "5203633774"
+      ],
+      "uri": "http://dig.isi.edu/ht/data/phonenumber/x-5203633774"
+    }
+  ],
+  "uri": "http://dig.isi.edu/ht/data/B3E642058AC7574448C35B170DEE2EEF65CD051F/personororganization"
+}

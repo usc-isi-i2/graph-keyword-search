@@ -1,0 +1,1429 @@
+{
+  "a": "Offer",
+  "validFrom": "2014-09-22T00:00:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/place"
+  },
+  "title": "817-230-4924 - Fort Worth Escorts - 6144771 - My Provider Guide",
+  "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/personororganization"
+        ],
+        "name": [
+          "8172304924"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-8172304924"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "personAge": [
+      "21"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/adultservice",
+    "eyeColor": [
+      "brown"
+    ],
+    "offers": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer",
+    "hairColor": [
+      "brown"
+    ]
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "myproviderguide.com"
+      ]
+    },
+    "description": [
+      "Hello guys, I am Lily 21 yrs, Asian girl, 36D-25-36, 5'4\", 108 lbs!!<br />\nI have shoulder length, silky brown hair and enchanting dark brown eyes.<br />\nI have a petite body with some dangerous curves.<br />\nI'm your perfect example of the world, sexy girl next door you've been dying to meet. <br />\n817-230-4924 Call me today<br />\nOutcall Only\n"
+    ],
+    "url": "http://myproviderguide.com/fort-worth/6144771",
+    "uri": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/webpage",
+    "dateCreated": "2014-09-22T00:00:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/83CB384219AAF30AB5DFB83DE02853A8AA003553/1411344000/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "33810757"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-03-27T18:19:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Pittsburgh",
+        "addressRegion": "Pennsylvania",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/1395944340/place",
+    "name": [
+      "Pittsburgh, Pennsylvania"
+    ]
+  },
+  "title": "Live Escort Reviews - 707-720-4149 - Exotic Mixed Beauty* ***Visiting - 26",
+  "uri": "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/1395944340/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/1395944340/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/personororganization"
+        ],
+        "name": [
+          "7077204149"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-7077204149"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/1395944340/offer"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "liveescortreviews.com"
+      ]
+    },
+    "description": [
+      "Exotic Mixed Beauty* ***Visiting - 26\n"
+    ],
+    "url": "http://liveescortreviews.com/ad/pittsburgh/707-720-4149/40/2373",
+    "uri": "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/1395944340/webpage",
+    "dateCreated": "2014-03-27T18:19:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7A6CB90DE06AD5B4D8BD920CC182256ADBFA1707/1395944340/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "23915582"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-09-08T06:48:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Long Island",
+        "addressRegion": "New York",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/1410158880/place",
+    "name": [
+      "Long Island, New York"
+    ]
+  },
+  "title": "Live Escort Reviews - 929-286-0521 - ❥SeXy—☰—✨—B€ÅUTIFUL ❥bLoNdE —☰—AbSΘLUtELy❥ AMAZi₦G ✨—☰— PLAyMAtE❥ - 21",
+  "uri": "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/1410158880/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/1410158880/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/personororganization"
+        ],
+        "name": [
+          "9292860521"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9292860521"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "hairColor": [
+      "blond"
+    ],
+    "offers": "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/1410158880/offer",
+    "uri": "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "liveescortreviews.com"
+      ]
+    },
+    "description": [
+      "❥SeXy—☰—✨—B€ÅUTIFUL ❥bLoNdE —☰—AbSΘLUtELy❥ AMAZi₦G ✨—☰— PLAyMAtE❥ - 21\n"
+    ],
+    "url": "http://liveescortreviews.com/ad/longisland/929-286-0521/1/158165",
+    "uri": "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/1410158880/webpage",
+    "dateCreated": "2014-09-08T06:48:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7DD7050FBDF23A74E5FDCC214DAB72FA75231BCD/1410158880/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "32909975"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2015-05-09T16:18:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Colorado Springs",
+        "addressRegion": "Colorado",
+        "a": "PostalAddress"
+      }
+    ],
+    "geo": {
+      "a": "GeoCoordinates",
+      "lat": "38.8339",
+      "lon": "-104.821"
+    },
+    "uri": "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/1431188280/place",
+    "name": [
+      "Colorado Springs, Colorado"
+    ]
+  },
+  "title": "Live Escort Reviews - 719-422-6283 - ❁ ❁ ❁ Sensual Saturday's With Daisy ❁ ❁ ❁ - 25",
+  "uri": "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/1431188280/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/1431188280/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/personororganization"
+        ],
+        "name": [
+          "7194226283"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-7194226283"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/1431188280/offer"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "liveescortreviews.com"
+      ]
+    },
+    "description": [
+      "❁ ❁ ❁ Sensual Saturday's With Daisy ❁ ❁ ❁ - 25\n"
+    ],
+    "url": "http://liveescortreviews.com/ad/coloradosprings/719-422-6283/1/35675",
+    "uri": "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/1431188280/webpage",
+    "dateCreated": "2015-05-09T16:18:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/77A9A46F444A2BC5B8E6C8EDD1AAB74A9582B39C/1431188280/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "60972266"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-05-20T01:57:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Minneapolis St Paul",
+        "addressRegion": "Minnesota",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/1400551020/place",
+    "name": [
+      "Minneapolis St Paul, Minnesota"
+    ]
+  },
+  "title": "Live Escort Reviews - 651-410-7603 - ~~DOWN & DIRTY~~ LATE NITE SPECIAL!! REAL PIC its me or its free ←WOW - 22",
+  "uri": "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/1400551020/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/1400551020/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/personororganization"
+        ],
+        "name": [
+          "6514107603"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-6514107603"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/1400551020/offer"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "liveescortreviews.com"
+      ]
+    },
+    "description": [
+      "~~DOWN & DIRTY~~ LATE NITE SPECIAL!! REAL PIC its me or its free ←WOW - 22\n"
+    ],
+    "url": "http://liveescortreviews.com/ad/minneapolis/651-410-7603/28/50658",
+    "uri": "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/1400551020/webpage",
+    "dateCreated": "2014-05-20T01:57:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7F31CD3C3A0AFFE1FDF6865D0A6C04FEA1A17BC0/1400551020/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "25242844"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2013-11-02T11:58:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Wisconsin",
+        "a": "PostalAddress"
+      }
+    ],
+    "geo": {
+      "a": "GeoCoordinates",
+      "lat": "43.7844",
+      "lon": "-88.7879"
+    },
+    "uri": "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/1383393480/place",
+    "name": [
+      "Wisconsin"
+    ]
+  },
+  "title": "M Ã¸ Å Å Ãà®*â€¢ ðŸ”¥ðŸ”¥T ï¿½? - wisconsin escorts - backpage.com",
+  "uri": "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/1383393480/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "uri": "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/personororganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/1383393480/offer"
+    ]
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/1383393480/offer"
+    ],
+    "personAge": [
+      "19"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "backpage.com"
+      ]
+    },
+    "description": [
+      "Hey Guys!!<br>\nâ™¥ I'll be your SECRET DIRTY SEXY DREAM BABE with SKILLS to THRILL â— &lt; YOUR FANTASY ~ I DELIVER â— FULL LIPS {TOP & BOTTOM}..~<br>\nNever â— oh & thats really me in the pictures : )<br>\n<br>\nâ˜…414â˜…639â™¥4980 <br>\nâ™¡â™¥MoÅÅÃ½\n"
+    ],
+    "url": "http://wisconsin.backpage.com/FemaleEscorts/m-t-19/9329386",
+    "uri": "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/1383393480/webpage",
+    "dateCreated": "2013-11-02T11:58:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7F3647C04D4532F9ED9E4C32A03FBB0460E982BE/1383393480/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "1209292"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2015-08-12T00:20:27",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "South Jersey",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/1439338827/place",
+    "name": [
+      "South Jersey"
+    ]
+  },
+  "title": "609-513-7976 - Sexy Ana come enjoy every inch of my body 6095137976 24 | 609-513-7976 on EscortsInThe.US",
+  "priceSpecification": [
+    {
+      "a": "PriceSpecification",
+      "name": [
+        "150-per-30min"
+      ],
+      "price": "150",
+      "uri": "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/1439338827/pricespecification30",
+      "billingIncrement": "30",
+      "unitCode": "MIN"
+    }
+  ],
+  "uri": "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/1439338827/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/1439338827/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/personororganization"
+        ],
+        "name": [
+          "6095137976"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-6095137976"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/1439338827/offer"
+    ],
+    "personAge": [
+      "24"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "escortsinthe.us"
+      ]
+    },
+    "description": [
+      "My names Anastasia im brand new to the Galloway area im very sensual and ready to please you I can host im very talented I have all the right curves in all the right places and I know how to use my body.its 100 roses for a half hour 150 roses for an hour<br/>Call or text 609-513-7976<br/>Same day appts onlyOnly serious GENTlemen Call 609-513-7976\n"
+    ],
+    "url": "http://escortsinthe.us/609-513-7976/?pid=23260094",
+    "uri": "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/1439338827/webpage",
+    "dateCreated": "2015-08-12T00:20:27",
+    "mainEntity": "http://dig.isi.edu/ht/data/7F1F60690E5F724E41A2928A2A95E3FFD6DC9605/1439338827/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "72845048"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-02-25T00:00:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Houston",
+        "addressRegion": "Texas",
+        "addressCountry": "United States",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/1393286400/place",
+    "name": [
+      "Houston, Texas, United States"
+    ]
+  },
+  "title": "936-648-2342 - Escort ad in Houston, Texas | Come Lay In The Lap Of Luxury",
+  "uri": "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/1393286400/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/1393286400/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/personororganization"
+        ],
+        "name": [
+          "09366482342"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-09366482342"
+      },
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/personororganization"
+        ],
+        "name": [
+          "9366482342"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9366482342"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/1393286400/offer"
+    ],
+    "personAge": [
+      "25"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "escortphonelist.com"
+      ]
+    },
+    "description": [
+      "Hello guys.....its your favorite 100% real chick Armani and im ready to spend time with an upscale gentleman....is it you???Safe private ckean diwn to earth and just plain sexy is what comes with mycompany. IDont be fooled by uglygirls using fake pics....I AM THE DON DODDA. Lol...come fly with me...ill be waiting:0* 9366482342. See my other ads <a href='/more.php?article=142'>here</a><br /><br />\n"
+    ],
+    "url": "http://936-648-2342.escortphonelist.com/come-lay-in-the-lap-of-luxury-1649666.html",
+    "uri": "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/1393286400/webpage",
+    "dateCreated": "2014-02-25T00:00:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7C4CD6E3480BCDB96D800400368F4FCC1A62E1CF/1393286400/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "11225771"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2013-12-08T00:00:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Baltimore",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/1386460800/place",
+    "name": [
+      "Baltimore"
+    ]
+  },
+  "title": "443-814-5715 - Baltimore Escorts - sexy exotic new BOOTIE 24 - 5610798 - My Provider Guide",
+  "uri": "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/1386460800/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/1386460800/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/personororganization"
+        ],
+        "name": [
+          "4438145715"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-4438145715"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/1386460800/offer"
+    ],
+    "name": [
+      "Nyla"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "myproviderguide.com"
+      ]
+    },
+    "description": [
+      "My name is nyla I'm classy and 100 percent natural I'm ready to have a good time with a very generous gentleman that I could pamper and spoil and treat you like the king you are and nothing less 4438145715\n"
+    ],
+    "url": "http://www.myproviderguide.com/escorts/baltimore/free-posts/w4m/5610798_sexy-exotic-new-bootie.html",
+    "uri": "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/1386460800/webpage",
+    "dateCreated": "2013-12-08T00:00:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/82495DBDEE32B6477866353A296DF6D60AE1B7BE/1386460800/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "171238"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2012-10-11T13:51:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Lancaster",
+        "addressRegion": "Pennsylvania",
+        "addressCountry": "United States",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/1349963460/place",
+    "name": [
+      "Lancaster, Pennsylvania, United States"
+    ]
+  },
+  "title": "610-849-3929",
+  "uri": "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/1349963460/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/1349963460/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/personororganization"
+        ],
+        "name": [
+          "6108493929"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-6108493929"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/1349963460/offer"
+    ],
+    "personAge": [
+      "37"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "eroticmugshots.com"
+      ]
+    },
+    "description": [
+      "...JENNA....<br/>If You Are Looking For BEAUTY, PATIENCE, PERSONALITY All Wrapped Into One Exquisite Package, YOU FOUND HER. My services are TOP QUALITY and I can guarantee satisfaction. ESCAPE WITH ME. I Have Gorgeous & Sexy Features With Great Assets ;) Curvy & Sexy *Soft Silky tan Skin & *Seductive Eyes. I Have A Friendly Demeanor That You Will Love. And I'm Always In The Mood For Company.. NO PRIVATE CALLS BRIEF TEXT MESSAGES ONLY. (610)849-3929.&nbsp;Call <u>610-849-3929</u>.\n"
+    ],
+    "url": "http://eroticmugshots.com/easternshore-escorts/610-849-3929/?pid=12425462",
+    "uri": "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/1349963460/webpage",
+    "dateCreated": "2012-10-11T13:51:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7C0A54241D6A1FFAD7019CD1C54B20EC29B33754/1349963460/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "20261758"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-04-03T16:15:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Mississippi",
+        "a": "PostalAddress"
+      }
+    ],
+    "geo": {
+      "a": "GeoCoordinates",
+      "lat": "32.3547",
+      "lon": "-89.3985"
+    },
+    "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/place",
+    "name": [
+      "Mississippi"
+    ]
+  },
+  "title": "Brittney sexy black persuian 45$ in calls only - mississippi escorts - backpage.com",
+  "priceSpecification": [
+    {
+      "a": "PriceSpecification",
+      "name": [
+        "75-per-30min"
+      ],
+      "price": "75",
+      "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/pricespecification30",
+      "billingIncrement": "30",
+      "unitCode": "MIN"
+    },
+    {
+      "a": "PriceSpecification",
+      "unitCode": "MIN",
+      "price": "45",
+      "name": [
+        "45-per-15min",
+        "15"
+      ],
+      "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/pricespecification15"
+    },
+    {
+      "a": "PriceSpecification",
+      "name": [
+        "115-per-60min"
+      ],
+      "price": "115",
+      "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/pricespecification",
+      "billingIncrement": "60",
+      "unitCode": "MIN"
+    }
+  ],
+  "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/personororganization"
+        ],
+        "name": [
+          "6015004047"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-6015004047"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/offer"
+    ],
+    "personAge": [
+      "18"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "backpage.com"
+      ]
+    },
+    "description": [
+      "Call me im waiting 601-500-4047<br>\n10mins 35$<br>\n15mins 45<br>\n20mins 55$<br>\n25mins 60<br>\n30mins 75$<br>\n1hr 115$\n"
+    ],
+    "url": "http://mississippi.backpage.com/FemaleEscorts/brittney-sexy-black-persuian-45-in-calls-only-18/5605648",
+    "uri": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/webpage",
+    "dateCreated": "2014-04-03T16:15:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/8033D338876B431C328CFA6D7D0AAA77BF26C86E/1396541700/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "37869622"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-12-19T00:00:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "San Bernardino",
+        "addressRegion": "California",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/1418947200/place",
+    "name": [
+      "San Bernardino, California"
+    ]
+  },
+  "title": "619-247-1725 - Escort ad in San Bernardino, California | Incall Special 80",
+  "uri": "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/1418947200/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/1418947200/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/personororganization"
+        ],
+        "name": [
+          "6192471725"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-6192471725"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/1418947200/offer"
+    ],
+    "personAge": [
+      "22"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "escortsincollege.com"
+      ]
+    },
+    "description": [
+      "Looking for a satisfying Pleasure with no drama, complications or strings attached? Hello gentlemen, I am  JENNY  a sexy, sophisticated, & classy Cuban & Hawaiian a Companionship you won't regret meeting. Satisfaction is just around the corner...Come Spoil yourself in the most delicious way I will be waiting for ur call Available.   Call FOR SPECIALS 1OO% Real Pictures Incall/Out call & Car Fun Toe Curling Experience Six One nine 2 Four 7 One 7 Two Five (420friendly)    \r\n See my menu of services on my profile BEFORE CALLING...\n"
+    ],
+    "url": "http://619-247-1725.escortsincollege.com/incall-special-80-2450764.html",
+    "uri": "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/1418947200/webpage",
+    "dateCreated": "2014-12-19T00:00:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7F9B9744D6FF07E94E288217FFC8CF591A880E26/1418947200/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "45197402"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-02-07T00:00:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Scranton",
+        "addressRegion": "Pennsylvania",
+        "addressCountry": "United States",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/1391731200/place",
+    "name": [
+      "Scranton, Pennsylvania, United States"
+    ]
+  },
+  "title": "201-344-0089 - Escort ad in Scranton, Pennsylvania | New In Town ! Don't Miss Out !",
+  "uri": "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/1391731200/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/1391731200/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/personororganization"
+        ],
+        "name": [
+          "2013440089"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-2013440089"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/1391731200/offer"
+    ],
+    "personAge": [
+      "19"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "escortphonelist.com"
+      ]
+    },
+    "description": [
+      "Hey gentlemen Kaiden here in town . New to the area and looking for some new company  I'm outgoing, discreet, and very easy to please .  I'm looking for respectful gentlemen ONLY . Un-rushed service .\n36b , 5\"4, 140 lbs & a banging body \ndon't be SHYY give me a ring \nKaiden 201*344*0089 \n NO BLOCKED CALLSOR TEXTS please call :). <a href='/more.php?article=142'>Me and my friends are on Adult Finder </a> so you can find us all on there if you want... sweet_loli<br /><br />\n"
+    ],
+    "url": "http://201-344-0089.escortphonelist.com/new-in-town-dont-miss-out-1605405.html",
+    "uri": "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/1391731200/webpage",
+    "dateCreated": "2014-02-07T00:00:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7CA176B3CF492E9B4F1473D7DDEDFA1833089D35/1391731200/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "13602455"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2015-01-05T14:15:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Fort Worth",
+        "addressRegion": "Texas",
+        "a": "PostalAddress"
+      }
+    ],
+    "geo": {
+      "a": "GeoCoordinates",
+      "lat": "32.7254",
+      "lon": "-97.3208"
+    },
+    "uri": "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/1420467300/place",
+    "name": [
+      "Fort Worth, Texas"
+    ]
+  },
+  "title": "RN : TELEMETRY STAT 31 (DAYS) Job - (arlington, texas) - fort worth customer service jobs - backpage.com",
+  "uri": "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/1420467300/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "uri": "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/personororganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/1420467300/offer"
+    ]
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/1420467300/offer"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "backpage.com"
+      ]
+    },
+    "description": [
+      "RN : TELEMETRY STAT 31 (DAYS)<br>Location: Texas Health Arlington Memorial<br>Job ID: 63787<br>Department: Telemetry<br>Area of Interest: RN<br>Job Type: Full Time<br>Shift: 1st<br>Relocation Provided: <br>Travel Required: No<br>Specialty: TM<br>Job Function: RN<br>Qualifications/Duties<br>Basic Qualifications:<br>Graduate of an accredited school of Nursing<br>BSN preferred<br>Current RN license to practice in the state of Texas<br>Current CPR/BCLS for Healthcare Providers<br>Current ACLS or obtain within 6 month of hire<br>1 : 2 years of RN telemetry experience<br>Will consider applicants with at least 2 years of strong Med/Surg in the acute care (Hospital Setting)<br>Patient&#x27;s assessment and time management skills<br>Must be a team player, have good communication skills and able to work in fast paced environment<br>Basic computer skills a must : computerized charting.<br>Monitoring knowledge helpful.<br>Hours/Schedule: Full:time; 7:00 am : 7:00 pm; 3 : 12 hour shifts; with weekends and holidays requires<br>Practices within the regulations of the Texas Nurse Practice Act. Serves as a role model, intra/interdisciplinary collaborator and coordinator for quality patient care.<br>Duties:<br>Delivers care to patients utilizing the Nursing Process<br>- assesses the patient<br>- plans the care of the patient<br>- intervenes as appropriate<br>- evaluates the effectiveness of interventions<br>- Incorporates age specific safety/infection control measures into patient care.<br>- Initiates action to meet patient and/or significant others need for information<br>- Maintains continuity of patient care inter:shift, inter:hospital, and while expediting out of hospital transfers<br>Maintains professional accountability<br>Maintains and enhances nursing skills<br>Serves as patient advocate<br>Communicates per department expectations<br>Provides for patient privacy and dignity<br>Adapts to changes in workload assignment functioning as Resource/Charge Nurse as needed<br>LI:ZW1<br>Entity Information<br>Texas Health Arlington Memorial Hospital, a 369:bed, full:service medical center, has been serving Arlington and surrounding communities since 1958. Hospital services include emergency medicine, cardiac care, neurosciences, women&#x27;s care, orthopedics and an advanced imaging center. Texas Health Arlington Memorial is an accredited Cycle IV Chest Pain Center by the Society of Chest Pain Centers and a Commission on Cancer(R) accredited facility, with over 1,600 employees, 250 volunteers and 630 physicians on its medical staff. We invite you to join us in furthering your career and our accomplishments and philosophy of excellence.<br>We are an Equal Opportunity Employer and do not discriminate against applicants due to race, ethnicity, gender, veteran status, or on the basis of disability or any other federal, state or local protected class.\n\t\t\t\t\t<p>Source: <a rel=\"nofollow\" target=\"_blank\" href=\"http://www.tiptopjob.com/jobs/38184397_job.asp?source=backpage\">http://www.tiptopjob.com/jobs/38184397_job.asp?source=backpage</a></p>\n"
+    ],
+    "url": "http://fortworth.backpage.com/CustomerServiceJobs/rn-telemetry-stat-31-days-job-arlington-texas/31020076",
+    "uri": "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/1420467300/webpage",
+    "dateCreated": "2015-01-05T14:15:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7B81DB2CFA5D5EFC5773FDF0858F3B69670DB47C/1420467300/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "47888487"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2015-05-14T22:08:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "San Marcos",
+        "addressRegion": "Texas",
+        "a": "PostalAddress"
+      }
+    ],
+    "geo": {
+      "a": "GeoCoordinates",
+      "lat": "29.8833",
+      "lon": "-97.9414"
+    },
+    "uri": "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/1431641280/place",
+    "name": [
+      "San Marcos, Texas"
+    ]
+  },
+  "title": "Data Entry Admin Clerk - (Blanco) - San Marcos administrative & office, assistant and secretary jobs - backpage.com",
+  "uri": "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/1431641280/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/1431641280/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/personororganization"
+        ],
+        "name": [
+          "9539010116"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9539010116"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/1431641280/offer"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "backpage.com"
+      ]
+    },
+    "description": [
+      "Immediate Openings for Data Entry Clerks. We offer competitive pay and great benefits. We are looking for you to have recent experience but is not required. We will train all new hires and offer paid training! Competitive pay $13.50 to $24.50 depending on shift Click Apply!\n\t\t\t\t\t<p>Source: <a rel=\"nofollow\" target=\"_blank\" href=\"http://www.juju.com/jad/00000000jen456?partnerid=af0e5911314cbc501beebaca7889739d&amp;exported=True&amp;channel=staticfile&amp;hosted_timestamp=0042a345f27ac5dcad38883def3452b576fa11468e9539010116ff376af876ef\">http://www.juju.com/jad/00000000jen456?partnerid=af0e5911314cbc501beebaca7889739d&amp;exported=True&amp;channel=staticfile&amp;hosted_timestamp=0042a345f27ac5dcad38883def3452b576fa11468e9539010116ff376af876ef</a></p>\n"
+    ],
+    "url": "http://sanmarcos.backpage.com/AdminOfficeJobs/data-entry-admin-clerk-blanco/11806193",
+    "uri": "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/1431641280/webpage",
+    "dateCreated": "2015-05-14T22:08:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7C71D5B9BB8BF634012507ED81B29A8913A79BF3/1431641280/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "62249708"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2015-01-09T11:05:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Staten Island",
+        "addressRegion": "New York",
+        "a": "PostalAddress"
+      }
+    ],
+    "geo": {
+      "a": "GeoCoordinates",
+      "lat": "40.5795",
+      "lon": "-74.1502"
+    },
+    "uri": "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/1420801500/place",
+    "name": [
+      "Staten Island, New York"
+    ]
+  },
+  "title": "Live Escort Reviews - 347-749-4315 - _L _A_T_I_N_A_S come take a look Hurry ____ we are waiting papi - 20",
+  "uri": "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/1420801500/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/1420801500/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/personororganization"
+        ],
+        "name": [
+          "3477494315"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-3477494315"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/1420801500/offer"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "liveescortreviews.com"
+      ]
+    },
+    "description": [
+      "_L _A_T_I_N_A_S come take a look Hurry ____ we are waiting papi - 20\n"
+    ],
+    "url": "http://liveescortreviews.com/ad/statenisland/347-749-4315/1/14122",
+    "uri": "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/1420801500/webpage",
+    "dateCreated": "2015-01-09T11:05:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7C7C46EF7BD814B303C87DBC4A9D67FB185184F6/1420801500/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "47536552"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-07-30T15:42:44",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Lafayette",
+        "addressRegion": "Indiana",
+        "addressCountry": "United States",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/1406734964/place",
+    "name": [
+      "Lafayette, Indiana, United States"
+    ]
+  },
+  "title": "615-512-9504 - I HoPe YoU didn t OrDeR DEsErT BeCAUsE I jUsT ArRiVeD 22 | 615-512-9504 on EscortsInThe.US",
+  "uri": "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/1406734964/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/1406734964/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/personororganization"
+        ],
+        "name": [
+          "6155129504"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-6155129504"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/1406734964/offer"
+    ],
+    "personAge": [
+      "22"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "escortsinthe.us"
+      ]
+    },
+    "description": [
+      "I'm back by popular demand come on inno pimps or black people under 25I love couples and do mostly all fetishes.Don't think about just do itask for Hershey615 512 9504. Call 615-512-9504 <br/>See my other ads <a href='/more.php?article=156'>here</a>\n"
+    ],
+    "url": "http://escortsinthe.us/615-512-9504/?pid=10932682",
+    "uri": "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/1406734964/webpage",
+    "dateCreated": "2014-07-30T15:42:44",
+    "mainEntity": "http://dig.isi.edu/ht/data/7AB781005E2289380AFEE27D32F67CC53D5561BB/1406734964/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "30170848"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2015-02-08T19:36:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "North Carolina",
+        "addressRegion": "North Carolina",
+        "a": "PostalAddress"
+      }
+    ],
+    "geo": {
+      "a": "GeoCoordinates",
+      "lat": "35.7596",
+      "lon": "-79.0193"
+    },
+    "uri": "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/1423424160/place",
+    "name": [
+      "North Carolina, North Carolina"
+    ]
+  },
+  "title": "Perky Tits Nice Ass And Great Mouth to Serve You - north carolina escorts - backpage.com",
+  "uri": "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/1423424160/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": [
+      "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/1423424160/offer"
+    ],
+    "telephone": [
+      {
+        "a": "PhoneNumber",
+        "owner": [
+          "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/personororganization"
+        ],
+        "name": [
+          "9197091287"
+        ],
+        "uri": "http://dig.isi.edu/ht/data/phonenumber/x-9197091287"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "offers": [
+      "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/1423424160/offer"
+    ],
+    "personAge": [
+      "34"
+    ],
+    "uri": "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": {
+      "a": "Organization",
+      "name": [
+        "backpage.com"
+      ]
+    },
+    "description": [
+      "Blonde 5 3 100lb 32b.<br>\nTaylor 919 709 1287<br>\nGenerious White men only call when ready no texting. In and out calls. Fetish friendly.\nCome and be my birthday present.\n"
+    ],
+    "url": "http://northcarolina.backpage.com/FemaleEscorts/perky-tits-nice-ass-and-great-mouth-to-serve-you/18898918",
+    "uri": "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/1423424160/webpage",
+    "dateCreated": "2015-02-08T19:36:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/83CB4700025B1DBEED010744B6126C9E2BED0D55/1423424160/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "50852875"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-05-08T00:00:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "address": [
+      {
+        "addressLocality": "Kelowna",
+        "addressRegion": "British Columbia",
+        "addressCountry": "Canada",
+        "a": "PostalAddress"
+      },
+      {
+        "addressLocality": "Kelowna",
+        "addressRegion": "British Columbia",
+        "a": "PostalAddress"
+      }
+    ],
+    "uri": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/1399507200/place",
+    "name": [
+      "Kelowna, British Columbia",
+      "Kelowna, British Columbia, Canada"
+    ]
+  },
+  "title": "250-900-7565 - Escort ad in Kelowna, British Columbia | Sexy Little Mattress Kitten",
+  "uri": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/1399507200/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "makesOffer": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/1399507200/offer",
+    "telephone": {
+      "a": "PhoneNumber",
+      "owner": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/personororganization",
+      "name": "2509007565",
+      "uri": "http://dig.isi.edu/ht/data/phonenumber/x-2509007565"
+    },
+    "uri": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/personororganization"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "hairColor": [
+      "brown"
+    ],
+    "offers": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/1399507200/offer",
+    "personAge": "31",
+    "uri": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/adultservice"
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": [
+      {
+        "a": "Organization",
+        "name": "escortphonelist.com"
+      },
+      {
+        "a": "Organization",
+        "name": "escortphonelist.com"
+      },
+      {
+        "a": "Organization",
+        "name": "escortphonelist.com"
+      },
+      {
+        "a": "Organization",
+        "name": [
+          "escortphonelist.com"
+        ]
+      }
+    ],
+    "description": [
+      "Sexy, sweet little seductress.Fit and tanned.Light golden brunette, 5'-5\", 117lbs, 34B.Easy going and loving what I do.Photos and videos are real and recent (oldest from April 12-13,2015).I can wear any of the outfits upon request.NO PARTIERS PLEASE.New gorgeous discrete incall.Independent. \n250-900-7565. <a href='/more.php?article=142'>Me and my friends are on Adult Finder </a> so you can find us all on there if you want... nood4u<br /><br />\n",
+      "Sexy, sweet little seductress.Fit and tanned.Light golden brunette, 5'-5\", 117lbs, 34B.Easy going and loving what I do.Photos and videos are real and recent (oldest from April 12-13,2015).I can wear any of the outfits upon request.NO PARTIERS PLEASE.New gorgeous discrete incall.Independent. \n250-900-7565. <a href='/more.php?article=142'>Me and my friends are on Adult Finder </a> so you can find us all on there if you want... smooth_thigh<br /><br />\n",
+      "Sexy, sweet little seductress.Fit and tanned.Light golden brunette, 5'-5\", 117lbs, 34B.Easy going and loving what I do.Photos and videos are real and recent (oldest from April 12-13,2015).I can wear any of the outfits upon request.NO PARTIERS PLEASE.New gorgeous discrete incall.Independent. \n250-900-7565. <a href='/more.php?article=142'>Me and my friends are on Adult Finder </a> so you can find us all on there if you want... sticky_dolce<br /><br />\n",
+      "Sexy, sweet little seductress.Fit and tanned.Light golden brunette, 5'-5\", 117lbs, 34B.Easy going and loving what I do.Photos and videos are real and recent (oldest from April 12-13,2015).I can wear any of the outfits upon request.NO PARTIERS PLEASE.New gorgeous discrete incall.Independent. \n250-900-7565. <a href='/more.php?article=142'>Me and my friends are on Adult Finder </a> so you can find us all on there if you want... sweet_poosy<br /><br />\n",
+      "Sexy, sweet little seductress.Fit and tanned.Light golden brunette, 5'-5\", 117lbs, 34B.Easy going and loving what I do.Photos and videos are real and recent (oldest from April 12-13,2015).I can wear any of the outfits upon request.NO PARTIERS PLEASE.New gorgeous discrete incall.Independent. \n250-900-7565. <a href='/more.php?article=142'>Me and my friends are on Adult Finder </a> so you can find us all on there if you want... sweetNsmooth<br /><br />\n",
+      "Sexy, sweet little seductress.Fit and tanned.Light golden brunette, 5'-5\", 117lbs, 34B.Easy going and loving what I do.Photos and videos are real and recent (oldest from April 12-13,2015).I can wear any of the outfits upon request.NO PARTIERS PLEASE.New gorgeous discrete incall.Independent. \n250-900-7565. I also have many <a href='/more.php?article=142'>pics on Adult Finder</a> that you can see<br /><br />\n"
+    ],
+    "url": "http://250-900-7565.escortphonelist.com/sexy-little-mattress-kitten-1824191.html",
+    "uri": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/1399507200/webpage",
+    "dateCreated": "2014-05-08T00:00:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7A72C1B225EA4AB6DA3F6120FB9094D416B83450/1399507200/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "15431706",
+    "18650070",
+    "19118284",
+    "20716774",
+    "21245974",
+    "21609091",
+    "36850138"
+  ]
+}
+{
+  "a": "Offer",
+  "validFrom": "2014-05-06T23:59:00",
+  "availableAtOrFrom": {
+    "a": "Place",
+    "uri": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/1399420740/place"
+  },
+  "title": "Day off tomorrow, any body want to hang tonight? - w4m",
+  "uri": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/1399420740/offer",
+  "seller": {
+    "a": "PersonOrOrganization",
+    "uri": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/personororganization",
+    "makesOffer": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/1399420740/offer"
+  },
+  "itemOffered": {
+    "a": "AdultService",
+    "personAge": "21",
+    "uri": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/adultservice",
+    "eyeColor": [
+      "green"
+    ],
+    "offers": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/1399420740/offer",
+    "hairColor": [
+      "brown"
+    ]
+  },
+  "mainEntityOfPage": {
+    "a": "WebPage",
+    "publisher": [
+      {
+        "a": "Organization",
+        "name": "craigslist.org"
+      },
+      {
+        "a": "Organization",
+        "name": [
+          "craigslist.org"
+        ]
+      }
+    ],
+    "description": [
+      "I finally have a day off tomorrow after a ridiculous work/ school stretch. Planning on doing nothing productive and having lots of fun. And lots of drinks. Anybody else able to play hooky on a Wednesday ? <br>\nI'm a first year law student and barely in Jefferson, usually hang out uptown. I'm white, brown hair green eyes, 26 and 420 friendly. I hate TV and drama, enjoy intelligent conversations and hedonistic fun. play ___________ \"\"\"hot420kiss\"\"\" ________ vÃ­a Gmalllll\n",
+      "I finally have a day off tomorrow after a ridiculous work/ school stretch. Planning on doing nothing productive and having lots of fun. And lots of drinks. Anybody else able to play hooky on a Wednesday ? <br>\nI'm a first year law student and barely in Jefferson, usually hang out uptown. I'm white, brown hair green eyes, 26 and 420 friendly. I hate TV and drama, enjoy intelligent conversations and hedonistic fun. play ___________ \"\"\"hot420kiss\"\"\" ________ vía Gmalllll\n"
+    ],
+    "url": "http://montana.craigslist.org/cas/4458294702.html",
+    "uri": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/1399420740/webpage",
+    "dateCreated": "2014-05-06T23:59:00",
+    "mainEntity": "http://dig.isi.edu/ht/data/7DD78729C006024C6BF64EF6F2E391D073CCE983/1399420740/offer"
+  },
+  "@context": "https://raw.githubusercontent.com/usc-isi-i2/dig-alignment/development/versions/2.0/karma/context.json",
+  "identifier": [
+    "21299032",
+    "53346821",
+    "53429126"
+  ]
+}
