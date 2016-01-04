@@ -1,0 +1,80 @@
+{
+    "innerPath": "",
+    "size": 10,
+    "histo": {
+        "blond": 800651,
+        "brown": 593897,
+        "NONE": 290564,
+        "black": 194449,
+        "red": 140429,
+        "blonde": 24759,
+        "auburn": 14470,
+        "gray": 6521,
+        "brunette": 3323,
+        "light brown": 1807
+    },
+    "result": {
+        "aggregations": {
+            "termAgg": {
+                "sum_other_doc_count": 4105,
+                "doc_count_error_upper_bound": 0,
+                "buckets": [
+                    {
+                        "doc_count": 800651,
+                        "key": "blond"
+                    },
+                    {
+                        "doc_count": 593897,
+                        "key": "brown"
+                    },
+                    {
+                        "doc_count": 290564,
+                        "key": "NONE"
+                    },
+                    {
+                        "doc_count": 194449,
+                        "key": "black"
+                    },
+                    {
+                        "doc_count": 140429,
+                        "key": "red"
+                    },
+                    {
+                        "doc_count": 24759,
+                        "key": "blonde"
+                    },
+                    {
+                        "doc_count": 14470,
+                        "key": "auburn"
+                    },
+                    {
+                        "doc_count": 6521,
+                        "key": "gray"
+                    },
+                    {
+                        "doc_count": 3323,
+                        "key": "brunette"
+                    },
+                    {
+                        "doc_count": 1807,
+                        "key": "light brown"
+                    }
+                ]
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 18938913,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 163
+    },
+    "fieldName": "hairColor",
+    "docType": "adultservice"
+}

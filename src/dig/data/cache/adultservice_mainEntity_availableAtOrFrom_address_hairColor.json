@@ -1,0 +1,80 @@
+{
+    "result": {
+        "hits": {
+            "hits": [],
+            "max_score": 0.0,
+            "total": 18938913
+        },
+        "took": 175,
+        "_shards": {
+            "failed": 0,
+            "successful": 20,
+            "total": 20
+        },
+        "aggregations": {
+            "termAgg": {
+                "doc_count_error_upper_bound": 0,
+                "buckets": [
+                    {
+                        "key": "blond",
+                        "doc_count": 800651
+                    },
+                    {
+                        "key": "brown",
+                        "doc_count": 593897
+                    },
+                    {
+                        "key": "NONE",
+                        "doc_count": 290564
+                    },
+                    {
+                        "key": "black",
+                        "doc_count": 194449
+                    },
+                    {
+                        "key": "red",
+                        "doc_count": 140429
+                    },
+                    {
+                        "key": "blonde",
+                        "doc_count": 24759
+                    },
+                    {
+                        "key": "auburn",
+                        "doc_count": 14470
+                    },
+                    {
+                        "key": "gray",
+                        "doc_count": 6521
+                    },
+                    {
+                        "key": "brunette",
+                        "doc_count": 3323
+                    },
+                    {
+                        "key": "light brown",
+                        "doc_count": 1807
+                    }
+                ],
+                "sum_other_doc_count": 4105
+            }
+        },
+        "timed_out": false
+    },
+    "fieldName": "hairColor",
+    "histo": {
+        "blond": 800651,
+        "brown": 593897,
+        "NONE": 290564,
+        "black": 194449,
+        "red": 140429,
+        "blonde": 24759,
+        "auburn": 14470,
+        "gray": 6521,
+        "brunette": 3323,
+        "light brown": 1807
+    },
+    "size": 10,
+    "docType": "adultservice",
+    "innerPath": ""
+}

@@ -1,0 +1,38 @@
+{
+    "innerPath": "priceSpecification",
+    "size": 10,
+    "histo": {
+        "MIN": 2460808
+    },
+    "result": {
+        "aggregations": {
+            "toplevelAgg": {
+                "termAgg": {
+                    "sum_other_doc_count": 0,
+                    "doc_count_error_upper_bound": 0,
+                    "buckets": [
+                        {
+                            "doc_count": 2460808,
+                            "key": "MIN"
+                        }
+                    ]
+                },
+                "doc_count": 2460808
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 19134836,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 645
+    },
+    "fieldName": "unitCode",
+    "docType": "offer"
+}

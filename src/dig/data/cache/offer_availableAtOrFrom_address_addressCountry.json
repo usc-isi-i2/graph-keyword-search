@@ -1,0 +1,588 @@
+{
+    "innerPath": "availableAtOrFrom.address",
+    "size": 200,
+    "histo": {
+        "United States": 3437281,
+        "Canada": 913382,
+        "India": 89560,
+        "United Kingdom": 67778,
+        "Australia": 43572,
+        "China": 26680,
+        "Mexico": 26123,
+        "Ecuador": 17069,
+        "Chile": 14786,
+        "France": 14507,
+        "South Korea": 14006,
+        "Germany": 13951,
+        "Ireland": 13940,
+        "Malaysia": 11653,
+        "Spain": 11538,
+        "Greece": 9715,
+        "Switzerland": 8699,
+        "Italy": 8274,
+        "Peru": 7251,
+        "Japan": 7059,
+        "Brazil": 6442,
+        "South Africa": 6366,
+        "Singapore": 5128,
+        "Philippines": 5016,
+        "Colombia": 4794,
+        "United Arab Emirates": 4771,
+        "Czech Republic": 4670,
+        "Romania": 4377,
+        "Portugal": 4376,
+        "Ukraine": 4314,
+        "Indonesia": 3905,
+        "New Zealand": 3552,
+        "Panama": 3549,
+        "El Salvador": 3253,
+        "Austria": 3153,
+        "Israel": 3111,
+        "Argentina": 3014,
+        "Belgium": 2566,
+        "Poland": 2297,
+        "Denmark": 2134,
+        "Costa Rica": 2056,
+        "Venezuela": 1940,
+        "Hungary": 1788,
+        "Sweden": 1680,
+        "Turkey": 1506,
+        "Guatemala": 1492,
+        "Bulgaria": 1419,
+        "Puerto Rico": 1259,
+        "Pakistan": 866,
+        "New Caledonia": 728,
+        "Gabon": 726,
+        "Norway": 629,
+        "Seychelles": 629,
+        "Laos": 618,
+        "Macau": 574,
+        "Tunisia": 558,
+        "Azerbaijan": 467,
+        "Taiwan": 461,
+        "Morocco": 457,
+        "Bolivia": 398,
+        "Malta": 395,
+        "Egypt": 394,
+        "Netherlands": 380,
+        "Cayman Islands": 356,
+        "Jamaica": 346,
+        "Finland": 339,
+        "Mongolia": 314,
+        "Montserrat": 288,
+        "Bangladesh": 274,
+        "Albania": 263,
+        "Luxembourg": 232,
+        "Niger": 229,
+        "Nigeria": 196,
+        "Montenegro": 190,
+        "Uruguay": 190,
+        "Dominican Republic": 175,
+        "Sudan": 145,
+        "Belarus": 143,
+        "Mozambique": 129,
+        "Thailand": 122,
+        "Sao Tome And Principe": 118,
+        "Cameroon": 116,
+        "American Samoa": 82,
+        "Netherlands Antilles": 78,
+        "Norfolk Island": 78,
+        "Namibia": 75,
+        "Burma": 70,
+        "Nicaragua": 64,
+        "Slovakia": 62,
+        "Svalbard and Jan Mayen Islands": 55,
+        "East Timor": 54,
+        "Vietnam": 19,
+        "Iceland": 15,
+        "Bahrain": 12,
+        "Qatar": 12,
+        "Kuwait": 11,
+        "Lebanon": 11,
+        "Saudi Arabia": 10,
+        "Cyprus": 6,
+        "Jordan": 6,
+        "Oman": 4,
+        "Estonia": 3,
+        "Guam": 3,
+        "Serbia": 2,
+        "Angola": 1,
+        "Benin": 1,
+        "Botswana": 1,
+        "Mali": 1,
+        "Northern Mariana Islands": 1,
+        "Sierra Leone": 1,
+        "Somalia": 1
+    },
+    "result": {
+        "aggregations": {
+            "toplevelAgg": {
+                "termAgg": {
+                    "sum_other_doc_count": 0,
+                    "doc_count_error_upper_bound": 0,
+                    "buckets": [
+                        {
+                            "doc_count": 3437281,
+                            "key": "United States"
+                        },
+                        {
+                            "doc_count": 913382,
+                            "key": "Canada"
+                        },
+                        {
+                            "doc_count": 89560,
+                            "key": "India"
+                        },
+                        {
+                            "doc_count": 67778,
+                            "key": "United Kingdom"
+                        },
+                        {
+                            "doc_count": 43572,
+                            "key": "Australia"
+                        },
+                        {
+                            "doc_count": 26680,
+                            "key": "China"
+                        },
+                        {
+                            "doc_count": 26123,
+                            "key": "Mexico"
+                        },
+                        {
+                            "doc_count": 17069,
+                            "key": "Ecuador"
+                        },
+                        {
+                            "doc_count": 14786,
+                            "key": "Chile"
+                        },
+                        {
+                            "doc_count": 14507,
+                            "key": "France"
+                        },
+                        {
+                            "doc_count": 14006,
+                            "key": "South Korea"
+                        },
+                        {
+                            "doc_count": 13951,
+                            "key": "Germany"
+                        },
+                        {
+                            "doc_count": 13940,
+                            "key": "Ireland"
+                        },
+                        {
+                            "doc_count": 11653,
+                            "key": "Malaysia"
+                        },
+                        {
+                            "doc_count": 11538,
+                            "key": "Spain"
+                        },
+                        {
+                            "doc_count": 9715,
+                            "key": "Greece"
+                        },
+                        {
+                            "doc_count": 8699,
+                            "key": "Switzerland"
+                        },
+                        {
+                            "doc_count": 8274,
+                            "key": "Italy"
+                        },
+                        {
+                            "doc_count": 7251,
+                            "key": "Peru"
+                        },
+                        {
+                            "doc_count": 7059,
+                            "key": "Japan"
+                        },
+                        {
+                            "doc_count": 6442,
+                            "key": "Brazil"
+                        },
+                        {
+                            "doc_count": 6366,
+                            "key": "South Africa"
+                        },
+                        {
+                            "doc_count": 5128,
+                            "key": "Singapore"
+                        },
+                        {
+                            "doc_count": 5016,
+                            "key": "Philippines"
+                        },
+                        {
+                            "doc_count": 4794,
+                            "key": "Colombia"
+                        },
+                        {
+                            "doc_count": 4771,
+                            "key": "United Arab Emirates"
+                        },
+                        {
+                            "doc_count": 4670,
+                            "key": "Czech Republic"
+                        },
+                        {
+                            "doc_count": 4377,
+                            "key": "Romania"
+                        },
+                        {
+                            "doc_count": 4376,
+                            "key": "Portugal"
+                        },
+                        {
+                            "doc_count": 4314,
+                            "key": "Ukraine"
+                        },
+                        {
+                            "doc_count": 3905,
+                            "key": "Indonesia"
+                        },
+                        {
+                            "doc_count": 3552,
+                            "key": "New Zealand"
+                        },
+                        {
+                            "doc_count": 3549,
+                            "key": "Panama"
+                        },
+                        {
+                            "doc_count": 3253,
+                            "key": "El Salvador"
+                        },
+                        {
+                            "doc_count": 3153,
+                            "key": "Austria"
+                        },
+                        {
+                            "doc_count": 3111,
+                            "key": "Israel"
+                        },
+                        {
+                            "doc_count": 3014,
+                            "key": "Argentina"
+                        },
+                        {
+                            "doc_count": 2566,
+                            "key": "Belgium"
+                        },
+                        {
+                            "doc_count": 2297,
+                            "key": "Poland"
+                        },
+                        {
+                            "doc_count": 2134,
+                            "key": "Denmark"
+                        },
+                        {
+                            "doc_count": 2056,
+                            "key": "Costa Rica"
+                        },
+                        {
+                            "doc_count": 1940,
+                            "key": "Venezuela"
+                        },
+                        {
+                            "doc_count": 1788,
+                            "key": "Hungary"
+                        },
+                        {
+                            "doc_count": 1680,
+                            "key": "Sweden"
+                        },
+                        {
+                            "doc_count": 1506,
+                            "key": "Turkey"
+                        },
+                        {
+                            "doc_count": 1492,
+                            "key": "Guatemala"
+                        },
+                        {
+                            "doc_count": 1419,
+                            "key": "Bulgaria"
+                        },
+                        {
+                            "doc_count": 1259,
+                            "key": "Puerto Rico"
+                        },
+                        {
+                            "doc_count": 866,
+                            "key": "Pakistan"
+                        },
+                        {
+                            "doc_count": 728,
+                            "key": "New Caledonia"
+                        },
+                        {
+                            "doc_count": 726,
+                            "key": "Gabon"
+                        },
+                        {
+                            "doc_count": 629,
+                            "key": "Norway"
+                        },
+                        {
+                            "doc_count": 629,
+                            "key": "Seychelles"
+                        },
+                        {
+                            "doc_count": 618,
+                            "key": "Laos"
+                        },
+                        {
+                            "doc_count": 574,
+                            "key": "Macau"
+                        },
+                        {
+                            "doc_count": 558,
+                            "key": "Tunisia"
+                        },
+                        {
+                            "doc_count": 467,
+                            "key": "Azerbaijan"
+                        },
+                        {
+                            "doc_count": 461,
+                            "key": "Taiwan"
+                        },
+                        {
+                            "doc_count": 457,
+                            "key": "Morocco"
+                        },
+                        {
+                            "doc_count": 398,
+                            "key": "Bolivia"
+                        },
+                        {
+                            "doc_count": 395,
+                            "key": "Malta"
+                        },
+                        {
+                            "doc_count": 394,
+                            "key": "Egypt"
+                        },
+                        {
+                            "doc_count": 380,
+                            "key": "Netherlands"
+                        },
+                        {
+                            "doc_count": 356,
+                            "key": "Cayman Islands"
+                        },
+                        {
+                            "doc_count": 346,
+                            "key": "Jamaica"
+                        },
+                        {
+                            "doc_count": 339,
+                            "key": "Finland"
+                        },
+                        {
+                            "doc_count": 314,
+                            "key": "Mongolia"
+                        },
+                        {
+                            "doc_count": 288,
+                            "key": "Montserrat"
+                        },
+                        {
+                            "doc_count": 274,
+                            "key": "Bangladesh"
+                        },
+                        {
+                            "doc_count": 263,
+                            "key": "Albania"
+                        },
+                        {
+                            "doc_count": 232,
+                            "key": "Luxembourg"
+                        },
+                        {
+                            "doc_count": 229,
+                            "key": "Niger"
+                        },
+                        {
+                            "doc_count": 196,
+                            "key": "Nigeria"
+                        },
+                        {
+                            "doc_count": 190,
+                            "key": "Montenegro"
+                        },
+                        {
+                            "doc_count": 190,
+                            "key": "Uruguay"
+                        },
+                        {
+                            "doc_count": 175,
+                            "key": "Dominican Republic"
+                        },
+                        {
+                            "doc_count": 145,
+                            "key": "Sudan"
+                        },
+                        {
+                            "doc_count": 143,
+                            "key": "Belarus"
+                        },
+                        {
+                            "doc_count": 129,
+                            "key": "Mozambique"
+                        },
+                        {
+                            "doc_count": 122,
+                            "key": "Thailand"
+                        },
+                        {
+                            "doc_count": 118,
+                            "key": "Sao Tome And Principe"
+                        },
+                        {
+                            "doc_count": 116,
+                            "key": "Cameroon"
+                        },
+                        {
+                            "doc_count": 82,
+                            "key": "American Samoa"
+                        },
+                        {
+                            "doc_count": 78,
+                            "key": "Netherlands Antilles"
+                        },
+                        {
+                            "doc_count": 78,
+                            "key": "Norfolk Island"
+                        },
+                        {
+                            "doc_count": 75,
+                            "key": "Namibia"
+                        },
+                        {
+                            "doc_count": 70,
+                            "key": "Burma"
+                        },
+                        {
+                            "doc_count": 64,
+                            "key": "Nicaragua"
+                        },
+                        {
+                            "doc_count": 62,
+                            "key": "Slovakia"
+                        },
+                        {
+                            "doc_count": 55,
+                            "key": "Svalbard and Jan Mayen Islands"
+                        },
+                        {
+                            "doc_count": 54,
+                            "key": "East Timor"
+                        },
+                        {
+                            "doc_count": 19,
+                            "key": "Vietnam"
+                        },
+                        {
+                            "doc_count": 15,
+                            "key": "Iceland"
+                        },
+                        {
+                            "doc_count": 12,
+                            "key": "Bahrain"
+                        },
+                        {
+                            "doc_count": 12,
+                            "key": "Qatar"
+                        },
+                        {
+                            "doc_count": 11,
+                            "key": "Kuwait"
+                        },
+                        {
+                            "doc_count": 11,
+                            "key": "Lebanon"
+                        },
+                        {
+                            "doc_count": 10,
+                            "key": "Saudi Arabia"
+                        },
+                        {
+                            "doc_count": 6,
+                            "key": "Cyprus"
+                        },
+                        {
+                            "doc_count": 6,
+                            "key": "Jordan"
+                        },
+                        {
+                            "doc_count": 4,
+                            "key": "Oman"
+                        },
+                        {
+                            "doc_count": 3,
+                            "key": "Estonia"
+                        },
+                        {
+                            "doc_count": 3,
+                            "key": "Guam"
+                        },
+                        {
+                            "doc_count": 2,
+                            "key": "Serbia"
+                        },
+                        {
+                            "doc_count": 1,
+                            "key": "Angola"
+                        },
+                        {
+                            "doc_count": 1,
+                            "key": "Benin"
+                        },
+                        {
+                            "doc_count": 1,
+                            "key": "Botswana"
+                        },
+                        {
+                            "doc_count": 1,
+                            "key": "Mali"
+                        },
+                        {
+                            "doc_count": 1,
+                            "key": "Northern Mariana Islands"
+                        },
+                        {
+                            "doc_count": 1,
+                            "key": "Sierra Leone"
+                        },
+                        {
+                            "doc_count": 1,
+                            "key": "Somalia"
+                        }
+                    ]
+                },
+                "doc_count": 19048975
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 19134836,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 658
+    },
+    "fieldName": "addressCountry",
+    "docType": "offer"
+}

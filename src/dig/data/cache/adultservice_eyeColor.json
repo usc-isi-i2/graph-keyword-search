@@ -1,0 +1,80 @@
+{
+    "innerPath": "",
+    "size": 10,
+    "histo": {
+        "blue": 417359,
+        "brown": 357211,
+        "green": 271477,
+        "hazel": 157814,
+        "NONE": 147784,
+        "gray": 1475,
+        "bluegreen": 699,
+        "other": 470,
+        "black": 344,
+        "grey": 230
+    },
+    "result": {
+        "aggregations": {
+            "termAgg": {
+                "sum_other_doc_count": 182,
+                "doc_count_error_upper_bound": 0,
+                "buckets": [
+                    {
+                        "doc_count": 417359,
+                        "key": "blue"
+                    },
+                    {
+                        "doc_count": 357211,
+                        "key": "brown"
+                    },
+                    {
+                        "doc_count": 271477,
+                        "key": "green"
+                    },
+                    {
+                        "doc_count": 157814,
+                        "key": "hazel"
+                    },
+                    {
+                        "doc_count": 147784,
+                        "key": "NONE"
+                    },
+                    {
+                        "doc_count": 1475,
+                        "key": "gray"
+                    },
+                    {
+                        "doc_count": 699,
+                        "key": "bluegreen"
+                    },
+                    {
+                        "doc_count": 470,
+                        "key": "other"
+                    },
+                    {
+                        "doc_count": 344,
+                        "key": "black"
+                    },
+                    {
+                        "doc_count": 230,
+                        "key": "grey"
+                    }
+                ]
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 18938913,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 153
+    },
+    "fieldName": "eyeColor",
+    "docType": "adultservice"
+}

@@ -1,0 +1,130 @@
+{
+    "result": {
+        "hits": {
+            "hits": [],
+            "max_score": 0.0,
+            "total": 18938913
+        },
+        "took": 370,
+        "_shards": {
+            "failed": 0,
+            "successful": 20,
+            "total": 20
+        },
+        "aggregations": {
+            "termAgg": {
+                "doc_count_error_upper_bound": 0,
+                "buckets": [
+                    {
+                        "key": "21",
+                        "doc_count": 1826674
+                    },
+                    {
+                        "key": "22",
+                        "doc_count": 1701587
+                    },
+                    {
+                        "key": "23",
+                        "doc_count": 1501388
+                    },
+                    {
+                        "key": "24",
+                        "doc_count": 1134161
+                    },
+                    {
+                        "key": "20",
+                        "doc_count": 1097452
+                    },
+                    {
+                        "key": "25",
+                        "doc_count": 998810
+                    },
+                    {
+                        "key": "19",
+                        "doc_count": 768720
+                    },
+                    {
+                        "key": "26",
+                        "doc_count": 562991
+                    },
+                    {
+                        "key": "27",
+                        "doc_count": 339779
+                    },
+                    {
+                        "key": "18",
+                        "doc_count": 298557
+                    },
+                    {
+                        "key": "28",
+                        "doc_count": 284403
+                    },
+                    {
+                        "key": "30",
+                        "doc_count": 208781
+                    },
+                    {
+                        "key": "29",
+                        "doc_count": 172750
+                    },
+                    {
+                        "key": "35",
+                        "doc_count": 106270
+                    },
+                    {
+                        "key": "32",
+                        "doc_count": 80302
+                    },
+                    {
+                        "key": "40",
+                        "doc_count": 78929
+                    },
+                    {
+                        "key": "33",
+                        "doc_count": 66792
+                    },
+                    {
+                        "key": "34",
+                        "doc_count": 63926
+                    },
+                    {
+                        "key": "31",
+                        "doc_count": 63896
+                    },
+                    {
+                        "key": "39",
+                        "doc_count": 56478
+                    }
+                ],
+                "sum_other_doc_count": 585828
+            }
+        },
+        "timed_out": false
+    },
+    "fieldName": "personAge",
+    "histo": {
+        "21": 1826674,
+        "22": 1701587,
+        "23": 1501388,
+        "24": 1134161,
+        "20": 1097452,
+        "25": 998810,
+        "19": 768720,
+        "26": 562991,
+        "27": 339779,
+        "18": 298557,
+        "28": 284403,
+        "30": 208781,
+        "29": 172750,
+        "35": 106270,
+        "32": 80302,
+        "40": 78929,
+        "33": 66792,
+        "34": 63926,
+        "31": 63896,
+        "39": 56478
+    },
+    "size": 20,
+    "docType": "adultservice",
+    "innerPath": ""
+}

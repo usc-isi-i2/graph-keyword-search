@@ -1,0 +1,378 @@
+{
+    "innerPath": "publisher",
+    "size": 200,
+    "histo": {
+        "backpage.com": 6626670,
+        "liveescortreviews.com": 4430217,
+        "eroticmugshots.com": 3619806,
+        "escortphonelist.com": 1369644,
+        "escortsincollege.com": 989545,
+        "escortads.xxx": 559255,
+        "escortsinthe.us": 404115,
+        "cityxguide.com": 343635,
+        "myproviderguide.com": 258545,
+        "craigslist.org": 176413,
+        "massagetroll.com": 104352,
+        "escortsin.ca": 84333,
+        "cityvibe.com": 80038,
+        "naughtyreviews.com": 77046,
+        "backpage.mx": 47010,
+        "rubads.com": 38425,
+        "adultsearch.com": 27062,
+        "classivox.com": 24186,
+        "en.craigslist.ca": 18062,
+        "craigslist.co.uk": 17225,
+        "justlanded.com": 15256,
+        "workabroad.ph": 10337,
+        "craigslist.co.kr": 8568,
+        "craigslist.com.sg": 8199,
+        "en.craigslist.co.uk": 7766,
+        "fr.craigslist.ca": 7376,
+        "craigslist.com.au": 6437,
+        "en.craigslist.com.ph": 5726,
+        "craigslist.com.cn": 5544,
+        "es.craigslist.com.mx": 5472,
+        "craigslist.co.in": 5034,
+        "sipsap.com": 3539,
+        "es.craigslist.org": 3109,
+        "en.craigslist.org": 2180,
+        "myredbook.com": 2082,
+        "craigslist.hk": 1831,
+        "chinadaily.com": 1758,
+        "craigslist.co.th": 1154,
+        "de.craigslist.de": 931,
+        "craigslist.jp": 905,
+        "fr.craigslist.fr": 762,
+        "manpowervacancy.com": 527,
+        "tl.craigslist.com.ph": 472,
+        "gmdu.net": 468,
+        "ca.craigslist.es": 413,
+        "af.craigslist.co.za": 250,
+        "it.craigslist.it": 202,
+        "en.craigslist.co.za": 198,
+        "tr.craigslist.com.tr": 192,
+        "es.craigslist.es": 121,
+        "da.craigslist.dk": 120,
+        "craigslist.co.nz": 103,
+        "de.craigslist.ch": 102,
+        "pt.craigslist.org": 89,
+        "sv.craigslist.se": 74,
+        "craigslist.com.tw": 73,
+        "alibaba.com": 60,
+        "no.craigslist.org": 50,
+        "fi.craigslist.fi": 35,
+        "pt.craigslist.pt": 32,
+        "fr.craigslist.ch": 29,
+        "craigslist.gr": 23,
+        "craigslist.cz": 22,
+        "craigslist.pl": 20,
+        "fm.alibaba.com": 18,
+        "fr.craigslist.org": 14,
+        "en.alibaba.com": 10,
+        "trustpass.alibaba.com": 9,
+        "craigslist.ch": 4
+    },
+    "result": {
+        "aggregations": {
+            "toplevelAgg": {
+                "termAgg": {
+                    "sum_other_doc_count": 0,
+                    "doc_count_error_upper_bound": 0,
+                    "buckets": [
+                        {
+                            "doc_count": 6626670,
+                            "key": "backpage.com"
+                        },
+                        {
+                            "doc_count": 4430217,
+                            "key": "liveescortreviews.com"
+                        },
+                        {
+                            "doc_count": 3619806,
+                            "key": "eroticmugshots.com"
+                        },
+                        {
+                            "doc_count": 1369644,
+                            "key": "escortphonelist.com"
+                        },
+                        {
+                            "doc_count": 989545,
+                            "key": "escortsincollege.com"
+                        },
+                        {
+                            "doc_count": 559255,
+                            "key": "escortads.xxx"
+                        },
+                        {
+                            "doc_count": 404115,
+                            "key": "escortsinthe.us"
+                        },
+                        {
+                            "doc_count": 343635,
+                            "key": "cityxguide.com"
+                        },
+                        {
+                            "doc_count": 258545,
+                            "key": "myproviderguide.com"
+                        },
+                        {
+                            "doc_count": 176413,
+                            "key": "craigslist.org"
+                        },
+                        {
+                            "doc_count": 104352,
+                            "key": "massagetroll.com"
+                        },
+                        {
+                            "doc_count": 84333,
+                            "key": "escortsin.ca"
+                        },
+                        {
+                            "doc_count": 80038,
+                            "key": "cityvibe.com"
+                        },
+                        {
+                            "doc_count": 77046,
+                            "key": "naughtyreviews.com"
+                        },
+                        {
+                            "doc_count": 47010,
+                            "key": "backpage.mx"
+                        },
+                        {
+                            "doc_count": 38425,
+                            "key": "rubads.com"
+                        },
+                        {
+                            "doc_count": 27062,
+                            "key": "adultsearch.com"
+                        },
+                        {
+                            "doc_count": 24186,
+                            "key": "classivox.com"
+                        },
+                        {
+                            "doc_count": 18062,
+                            "key": "en.craigslist.ca"
+                        },
+                        {
+                            "doc_count": 17225,
+                            "key": "craigslist.co.uk"
+                        },
+                        {
+                            "doc_count": 15256,
+                            "key": "justlanded.com"
+                        },
+                        {
+                            "doc_count": 10337,
+                            "key": "workabroad.ph"
+                        },
+                        {
+                            "doc_count": 8568,
+                            "key": "craigslist.co.kr"
+                        },
+                        {
+                            "doc_count": 8199,
+                            "key": "craigslist.com.sg"
+                        },
+                        {
+                            "doc_count": 7766,
+                            "key": "en.craigslist.co.uk"
+                        },
+                        {
+                            "doc_count": 7376,
+                            "key": "fr.craigslist.ca"
+                        },
+                        {
+                            "doc_count": 6437,
+                            "key": "craigslist.com.au"
+                        },
+                        {
+                            "doc_count": 5726,
+                            "key": "en.craigslist.com.ph"
+                        },
+                        {
+                            "doc_count": 5544,
+                            "key": "craigslist.com.cn"
+                        },
+                        {
+                            "doc_count": 5472,
+                            "key": "es.craigslist.com.mx"
+                        },
+                        {
+                            "doc_count": 5034,
+                            "key": "craigslist.co.in"
+                        },
+                        {
+                            "doc_count": 3539,
+                            "key": "sipsap.com"
+                        },
+                        {
+                            "doc_count": 3109,
+                            "key": "es.craigslist.org"
+                        },
+                        {
+                            "doc_count": 2180,
+                            "key": "en.craigslist.org"
+                        },
+                        {
+                            "doc_count": 2082,
+                            "key": "myredbook.com"
+                        },
+                        {
+                            "doc_count": 1831,
+                            "key": "craigslist.hk"
+                        },
+                        {
+                            "doc_count": 1758,
+                            "key": "chinadaily.com"
+                        },
+                        {
+                            "doc_count": 1154,
+                            "key": "craigslist.co.th"
+                        },
+                        {
+                            "doc_count": 931,
+                            "key": "de.craigslist.de"
+                        },
+                        {
+                            "doc_count": 905,
+                            "key": "craigslist.jp"
+                        },
+                        {
+                            "doc_count": 762,
+                            "key": "fr.craigslist.fr"
+                        },
+                        {
+                            "doc_count": 527,
+                            "key": "manpowervacancy.com"
+                        },
+                        {
+                            "doc_count": 472,
+                            "key": "tl.craigslist.com.ph"
+                        },
+                        {
+                            "doc_count": 468,
+                            "key": "gmdu.net"
+                        },
+                        {
+                            "doc_count": 413,
+                            "key": "ca.craigslist.es"
+                        },
+                        {
+                            "doc_count": 250,
+                            "key": "af.craigslist.co.za"
+                        },
+                        {
+                            "doc_count": 202,
+                            "key": "it.craigslist.it"
+                        },
+                        {
+                            "doc_count": 198,
+                            "key": "en.craigslist.co.za"
+                        },
+                        {
+                            "doc_count": 192,
+                            "key": "tr.craigslist.com.tr"
+                        },
+                        {
+                            "doc_count": 121,
+                            "key": "es.craigslist.es"
+                        },
+                        {
+                            "doc_count": 120,
+                            "key": "da.craigslist.dk"
+                        },
+                        {
+                            "doc_count": 103,
+                            "key": "craigslist.co.nz"
+                        },
+                        {
+                            "doc_count": 102,
+                            "key": "de.craigslist.ch"
+                        },
+                        {
+                            "doc_count": 89,
+                            "key": "pt.craigslist.org"
+                        },
+                        {
+                            "doc_count": 74,
+                            "key": "sv.craigslist.se"
+                        },
+                        {
+                            "doc_count": 73,
+                            "key": "craigslist.com.tw"
+                        },
+                        {
+                            "doc_count": 60,
+                            "key": "alibaba.com"
+                        },
+                        {
+                            "doc_count": 50,
+                            "key": "no.craigslist.org"
+                        },
+                        {
+                            "doc_count": 35,
+                            "key": "fi.craigslist.fi"
+                        },
+                        {
+                            "doc_count": 32,
+                            "key": "pt.craigslist.pt"
+                        },
+                        {
+                            "doc_count": 29,
+                            "key": "fr.craigslist.ch"
+                        },
+                        {
+                            "doc_count": 23,
+                            "key": "craigslist.gr"
+                        },
+                        {
+                            "doc_count": 22,
+                            "key": "craigslist.cz"
+                        },
+                        {
+                            "doc_count": 20,
+                            "key": "craigslist.pl"
+                        },
+                        {
+                            "doc_count": 18,
+                            "key": "fm.alibaba.com"
+                        },
+                        {
+                            "doc_count": 14,
+                            "key": "fr.craigslist.org"
+                        },
+                        {
+                            "doc_count": 10,
+                            "key": "en.alibaba.com"
+                        },
+                        {
+                            "doc_count": 9,
+                            "key": "trustpass.alibaba.com"
+                        },
+                        {
+                            "doc_count": 4,
+                            "key": "craigslist.ch"
+                        }
+                    ]
+                },
+                "doc_count": 19403280
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 19134834,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 442
+    },
+    "fieldName": "name",
+    "docType": "webpage"
+}

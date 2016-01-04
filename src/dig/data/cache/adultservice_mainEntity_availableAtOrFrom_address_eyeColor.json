@@ -1,0 +1,80 @@
+{
+    "result": {
+        "hits": {
+            "hits": [],
+            "max_score": 0.0,
+            "total": 18938913
+        },
+        "took": 159,
+        "_shards": {
+            "failed": 0,
+            "successful": 20,
+            "total": 20
+        },
+        "aggregations": {
+            "termAgg": {
+                "doc_count_error_upper_bound": 0,
+                "buckets": [
+                    {
+                        "key": "blue",
+                        "doc_count": 417359
+                    },
+                    {
+                        "key": "brown",
+                        "doc_count": 357211
+                    },
+                    {
+                        "key": "green",
+                        "doc_count": 271477
+                    },
+                    {
+                        "key": "hazel",
+                        "doc_count": 157814
+                    },
+                    {
+                        "key": "NONE",
+                        "doc_count": 147784
+                    },
+                    {
+                        "key": "gray",
+                        "doc_count": 1475
+                    },
+                    {
+                        "key": "bluegreen",
+                        "doc_count": 699
+                    },
+                    {
+                        "key": "other",
+                        "doc_count": 470
+                    },
+                    {
+                        "key": "black",
+                        "doc_count": 344
+                    },
+                    {
+                        "key": "grey",
+                        "doc_count": 230
+                    }
+                ],
+                "sum_other_doc_count": 182
+            }
+        },
+        "timed_out": false
+    },
+    "fieldName": "eyeColor",
+    "histo": {
+        "blue": 417359,
+        "brown": 357211,
+        "green": 271477,
+        "hazel": 157814,
+        "NONE": 147784,
+        "gray": 1475,
+        "bluegreen": 699,
+        "other": 470,
+        "black": 344,
+        "grey": 230
+    },
+    "size": 10,
+    "docType": "adultservice",
+    "innerPath": ""
+}

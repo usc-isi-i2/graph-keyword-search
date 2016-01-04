@@ -1,0 +1,1033 @@
+{
+    "innerPath": "availableAtOrFrom.address",
+    "size": 200,
+    "histo": {
+        "New York": 295204,
+        "Chicago": 283836,
+        "Los Angeles": 282937,
+        "Orange County": 261897,
+        "Atlanta": 255968,
+        "Houston": 246034,
+        "Phoenix": 230620,
+        "Toronto": 216907,
+        "San Diego": 199514,
+        "San Jose": 195727,
+        "Boston": 190240,
+        "Miami": 183613,
+        "North Jersey": 182345,
+        "Detroit": 177559,
+        "Denver": 176762,
+        "Las Vegas": 171269,
+        "Philadelphia": 170762,
+        "Northern Virginia": 163169,
+        "Washington Dc": 160662,
+        "Dallas": 154018,
+        "Baltimore": 153586,
+        "San Francisco": 153132,
+        "Calgary": 147611,
+        "Seattle": 147045,
+        "Charlotte": 145044,
+        "Orlando": 143869,
+        "Tampa": 143013,
+        "Inland Empire": 139380,
+        "Sacramento": 135079,
+        "Edmonton": 133551,
+        "Manhattan": 129403,
+        "Portland": 125774,
+        "Montreal": 123608,
+        "San Antonio": 119595,
+        "Austin": 119061,
+        "Raleigh": 117607,
+        "Memphis": 116427,
+        "Queens": 108683,
+        "Long Beach": 105535,
+        "Fort Lauderdale": 104199,
+        "Ontario": 103448,
+        "Cleveland": 101837,
+        "Brooklyn": 99388,
+        "Columbus": 99045,
+        "Ottawa": 98693,
+        "Long Island": 97033,
+        "South Jersey": 96060,
+        "East Bay": 95733,
+        "West Palm Beach": 95083,
+        "Jacksonville": 93430,
+        "Kansas City": 92620,
+        "St Louis": 91421,
+        "New Orleans": 89873,
+        "Hartford": 89235,
+        "Indianapolis": 89093,
+        "Columbia": 88136,
+        "Milwaukee": 85886,
+        "Birmingham": 85345,
+        "San Fernando Valley": 85339,
+        "Hamilton": 84907,
+        "Ventura": 81707,
+        "Nashville": 81483,
+        "Central Jersey": 81055,
+        "Vancouver": 77788,
+        "Greensboro": 76239,
+        "Pittsburgh": 75124,
+        "Tacoma": 74160,
+        "London": 73986,
+        "San Fernando": 73899,
+        "Little Rock": 73275,
+        "Oklahoma City": 72101,
+        "Washington": 70689,
+        "New Haven": 70684,
+        "Louisville": 70539,
+        "Bronx": 70002,
+        "Dallas Fort Worth": 69951,
+        "Southern Maryland": 69549,
+        "Richmond": 67972,
+        "Georgia": 67506,
+        "Colorado Springs": 67161,
+        "Baton Rouge": 65465,
+        "Charleston": 65182,
+        "Tucson": 64602,
+        "Ft Lauderdale": 63305,
+        "Salt Lake City": 63284,
+        "Illinois": 60920,
+        "Minneapolis St Paul": 60743,
+        "Albany": 60490,
+        "Cincinnati": 60219,
+        "Fayetteville": 58668,
+        "Norfolk": 58420,
+        "Oakland East Bay": 57976,
+        "Virginia Beach": 57067,
+        "Wichita": 55489,
+        "Albuquerque": 54599,
+        "North Carolina": 54424,
+        "Odessa": 54202,
+        "Providence": 53914,
+        "Springfield": 53471,
+        "Buffalo": 52926,
+        "Fort Myers": 52642,
+        "Washington D C": 51817,
+        "San Gabriel Valley": 51389,
+        "Westchester": 50865,
+        "Everett": 50442,
+        "Minneapolis": 49830,
+        "Huntsville": 49713,
+        "South Coast": 49628,
+        "Greenville": 48845,
+        "Honolulu": 48523,
+        "Jackson": 48491,
+        "Alberta": 48058,
+        "Michigan": 47843,
+        "Ohio": 47484,
+        "Worcester": 46861,
+        "Reno": 46585,
+        "Madison": 46576,
+        "Pennsylvania": 46160,
+        "Jersey Shore": 45902,
+        "North Bay": 44914,
+        "Saskatoon": 44421,
+        "Omaha": 43375,
+        "Santa Barbara": 42763,
+        "San Bernardino": 42071,
+        "Bakersfield": 41680,
+        "Akron": 41317,
+        "Arizona": 40800,
+        "Fresno": 40764,
+        "Lafayette": 40546,
+        "Palm Springs": 40355,
+        "New Jersey": 39470,
+        "Rochester": 39416,
+        "Killeen": 39271,
+        "Colorado": 39077,
+        "Missouri": 37975,
+        "Massachusetts": 37952,
+        "Tennessee": 37784,
+        "El Paso": 37698,
+        "Hudson Valley": 37442,
+        "Kitchener": 37040,
+        "Syracuse": 36282,
+        "Nevada": 35715,
+        "Riverside": 35621,
+        "Lexington": 35615,
+        "Barrie": 35565,
+        "Daytona": 35503,
+        "Savannah": 35208,
+        "Virginia": 34948,
+        "Tulsa": 34590,
+        "Delhi": 34352,
+        "South Bend": 33516,
+        "Knoxville": 33205,
+        "Chesapeake": 33138,
+        "Oregon": 32748,
+        "Augusta": 32653,
+        "Des Moines": 32436,
+        "Wisconsin": 32407,
+        "Monterey": 32328,
+        "Delaware": 32126,
+        "Chattanooga": 32059,
+        "Beaumont": 32000,
+        "Anchorage": 31944,
+        "Winnipeg": 31858,
+        "Minot": 31615,
+        "Corpus Christi": 31520,
+        "New Hampshire": 31489,
+        "Montgomery": 31423,
+        "Pensacola": 31244,
+        "Macon": 31194,
+        "Modesto": 29732,
+        "Allentown": 29687,
+        "Indiana": 29647,
+        "Santa Cruz": 29619,
+        "Mumbai": 29547,
+        "Quito": 29498,
+        "Louisiana": 29118,
+        "Myrtle Beach": 29112,
+        "South Carolina": 28939,
+        "Tyler": 28884,
+        "Niagara": 28818,
+        "Palmdale": 28666,
+        "Toledo": 28382,
+        "Sarasota": 28097,
+        "Tallahassee": 27557,
+        "Victoria": 27517,
+        "San Diego County": 27455,
+        "Denton": 27376,
+        "Mobile": 27189,
+        "Minnesota": 26810,
+        "Wilmington": 26802,
+        "Mcallen": 26770,
+        "Fort Collins": 26667,
+        "British Columbia": 25758,
+        "Scranton": 25646,
+        "Salem": 25550,
+        "Grand Rapids": 25459,
+        "Fargo": 25401,
+        "Bangalore": 25357,
+        "Harrisburg": 25004,
+        "Red Deer": 24747
+    },
+    "result": {
+        "aggregations": {
+            "toplevelAgg": {
+                "termAgg": {
+                    "sum_other_doc_count": 4120752,
+                    "doc_count_error_upper_bound": 20,
+                    "buckets": [
+                        {
+                            "doc_count": 295204,
+                            "key": "New York"
+                        },
+                        {
+                            "doc_count": 283836,
+                            "key": "Chicago"
+                        },
+                        {
+                            "doc_count": 282937,
+                            "key": "Los Angeles"
+                        },
+                        {
+                            "doc_count": 261897,
+                            "key": "Orange County"
+                        },
+                        {
+                            "doc_count": 255968,
+                            "key": "Atlanta"
+                        },
+                        {
+                            "doc_count": 246034,
+                            "key": "Houston"
+                        },
+                        {
+                            "doc_count": 230620,
+                            "key": "Phoenix"
+                        },
+                        {
+                            "doc_count": 216907,
+                            "key": "Toronto"
+                        },
+                        {
+                            "doc_count": 199514,
+                            "key": "San Diego"
+                        },
+                        {
+                            "doc_count": 195727,
+                            "key": "San Jose"
+                        },
+                        {
+                            "doc_count": 190240,
+                            "key": "Boston"
+                        },
+                        {
+                            "doc_count": 183613,
+                            "key": "Miami"
+                        },
+                        {
+                            "doc_count": 182345,
+                            "key": "North Jersey"
+                        },
+                        {
+                            "doc_count": 177559,
+                            "key": "Detroit"
+                        },
+                        {
+                            "doc_count": 176762,
+                            "key": "Denver"
+                        },
+                        {
+                            "doc_count": 171269,
+                            "key": "Las Vegas"
+                        },
+                        {
+                            "doc_count": 170762,
+                            "key": "Philadelphia"
+                        },
+                        {
+                            "doc_count": 163169,
+                            "key": "Northern Virginia"
+                        },
+                        {
+                            "doc_count": 160662,
+                            "key": "Washington Dc"
+                        },
+                        {
+                            "doc_count": 154018,
+                            "key": "Dallas"
+                        },
+                        {
+                            "doc_count": 153586,
+                            "key": "Baltimore"
+                        },
+                        {
+                            "doc_count": 153132,
+                            "key": "San Francisco"
+                        },
+                        {
+                            "doc_count": 147611,
+                            "key": "Calgary"
+                        },
+                        {
+                            "doc_count": 147045,
+                            "key": "Seattle"
+                        },
+                        {
+                            "doc_count": 145044,
+                            "key": "Charlotte"
+                        },
+                        {
+                            "doc_count": 143869,
+                            "key": "Orlando"
+                        },
+                        {
+                            "doc_count": 143013,
+                            "key": "Tampa"
+                        },
+                        {
+                            "doc_count": 139380,
+                            "key": "Inland Empire"
+                        },
+                        {
+                            "doc_count": 135079,
+                            "key": "Sacramento"
+                        },
+                        {
+                            "doc_count": 133551,
+                            "key": "Edmonton"
+                        },
+                        {
+                            "doc_count": 129403,
+                            "key": "Manhattan"
+                        },
+                        {
+                            "doc_count": 125774,
+                            "key": "Portland"
+                        },
+                        {
+                            "doc_count": 123608,
+                            "key": "Montreal"
+                        },
+                        {
+                            "doc_count": 119595,
+                            "key": "San Antonio"
+                        },
+                        {
+                            "doc_count": 119061,
+                            "key": "Austin"
+                        },
+                        {
+                            "doc_count": 117607,
+                            "key": "Raleigh"
+                        },
+                        {
+                            "doc_count": 116427,
+                            "key": "Memphis"
+                        },
+                        {
+                            "doc_count": 108683,
+                            "key": "Queens"
+                        },
+                        {
+                            "doc_count": 105535,
+                            "key": "Long Beach"
+                        },
+                        {
+                            "doc_count": 104199,
+                            "key": "Fort Lauderdale"
+                        },
+                        {
+                            "doc_count": 103448,
+                            "key": "Ontario"
+                        },
+                        {
+                            "doc_count": 101837,
+                            "key": "Cleveland"
+                        },
+                        {
+                            "doc_count": 99388,
+                            "key": "Brooklyn"
+                        },
+                        {
+                            "doc_count": 99045,
+                            "key": "Columbus"
+                        },
+                        {
+                            "doc_count": 98693,
+                            "key": "Ottawa"
+                        },
+                        {
+                            "doc_count": 97033,
+                            "key": "Long Island"
+                        },
+                        {
+                            "doc_count": 96060,
+                            "key": "South Jersey"
+                        },
+                        {
+                            "doc_count": 95733,
+                            "key": "East Bay"
+                        },
+                        {
+                            "doc_count": 95083,
+                            "key": "West Palm Beach"
+                        },
+                        {
+                            "doc_count": 93430,
+                            "key": "Jacksonville"
+                        },
+                        {
+                            "doc_count": 92620,
+                            "key": "Kansas City"
+                        },
+                        {
+                            "doc_count": 91421,
+                            "key": "St Louis"
+                        },
+                        {
+                            "doc_count": 89873,
+                            "key": "New Orleans"
+                        },
+                        {
+                            "doc_count": 89235,
+                            "key": "Hartford"
+                        },
+                        {
+                            "doc_count": 89093,
+                            "key": "Indianapolis"
+                        },
+                        {
+                            "doc_count": 88136,
+                            "key": "Columbia"
+                        },
+                        {
+                            "doc_count": 85886,
+                            "key": "Milwaukee"
+                        },
+                        {
+                            "doc_count": 85345,
+                            "key": "Birmingham"
+                        },
+                        {
+                            "doc_count": 85339,
+                            "key": "San Fernando Valley"
+                        },
+                        {
+                            "doc_count": 84907,
+                            "key": "Hamilton"
+                        },
+                        {
+                            "doc_count": 81707,
+                            "key": "Ventura"
+                        },
+                        {
+                            "doc_count": 81483,
+                            "key": "Nashville"
+                        },
+                        {
+                            "doc_count": 81055,
+                            "key": "Central Jersey"
+                        },
+                        {
+                            "doc_count": 77788,
+                            "key": "Vancouver"
+                        },
+                        {
+                            "doc_count": 76239,
+                            "key": "Greensboro"
+                        },
+                        {
+                            "doc_count": 75124,
+                            "key": "Pittsburgh"
+                        },
+                        {
+                            "doc_count": 74160,
+                            "key": "Tacoma"
+                        },
+                        {
+                            "doc_count": 73986,
+                            "key": "London"
+                        },
+                        {
+                            "doc_count": 73899,
+                            "key": "San Fernando"
+                        },
+                        {
+                            "doc_count": 73275,
+                            "key": "Little Rock"
+                        },
+                        {
+                            "doc_count": 72101,
+                            "key": "Oklahoma City"
+                        },
+                        {
+                            "doc_count": 70689,
+                            "key": "Washington"
+                        },
+                        {
+                            "doc_count": 70684,
+                            "key": "New Haven"
+                        },
+                        {
+                            "doc_count": 70539,
+                            "key": "Louisville"
+                        },
+                        {
+                            "doc_count": 70002,
+                            "key": "Bronx"
+                        },
+                        {
+                            "doc_count": 69951,
+                            "key": "Dallas Fort Worth"
+                        },
+                        {
+                            "doc_count": 69549,
+                            "key": "Southern Maryland"
+                        },
+                        {
+                            "doc_count": 67972,
+                            "key": "Richmond"
+                        },
+                        {
+                            "doc_count": 67506,
+                            "key": "Georgia"
+                        },
+                        {
+                            "doc_count": 67161,
+                            "key": "Colorado Springs"
+                        },
+                        {
+                            "doc_count": 65465,
+                            "key": "Baton Rouge"
+                        },
+                        {
+                            "doc_count": 65182,
+                            "key": "Charleston"
+                        },
+                        {
+                            "doc_count": 64602,
+                            "key": "Tucson"
+                        },
+                        {
+                            "doc_count": 63305,
+                            "key": "Ft Lauderdale"
+                        },
+                        {
+                            "doc_count": 63284,
+                            "key": "Salt Lake City"
+                        },
+                        {
+                            "doc_count": 60920,
+                            "key": "Illinois"
+                        },
+                        {
+                            "doc_count": 60743,
+                            "key": "Minneapolis St Paul"
+                        },
+                        {
+                            "doc_count": 60490,
+                            "key": "Albany"
+                        },
+                        {
+                            "doc_count": 60219,
+                            "key": "Cincinnati"
+                        },
+                        {
+                            "doc_count": 58668,
+                            "key": "Fayetteville"
+                        },
+                        {
+                            "doc_count": 58420,
+                            "key": "Norfolk"
+                        },
+                        {
+                            "doc_count": 57976,
+                            "key": "Oakland East Bay"
+                        },
+                        {
+                            "doc_count": 57067,
+                            "key": "Virginia Beach"
+                        },
+                        {
+                            "doc_count": 55489,
+                            "key": "Wichita"
+                        },
+                        {
+                            "doc_count": 54599,
+                            "key": "Albuquerque"
+                        },
+                        {
+                            "doc_count": 54424,
+                            "key": "North Carolina"
+                        },
+                        {
+                            "doc_count": 54202,
+                            "key": "Odessa"
+                        },
+                        {
+                            "doc_count": 53914,
+                            "key": "Providence"
+                        },
+                        {
+                            "doc_count": 53471,
+                            "key": "Springfield"
+                        },
+                        {
+                            "doc_count": 52926,
+                            "key": "Buffalo"
+                        },
+                        {
+                            "doc_count": 52642,
+                            "key": "Fort Myers"
+                        },
+                        {
+                            "doc_count": 51817,
+                            "key": "Washington D C"
+                        },
+                        {
+                            "doc_count": 51389,
+                            "key": "San Gabriel Valley"
+                        },
+                        {
+                            "doc_count": 50865,
+                            "key": "Westchester"
+                        },
+                        {
+                            "doc_count": 50442,
+                            "key": "Everett"
+                        },
+                        {
+                            "doc_count": 49830,
+                            "key": "Minneapolis"
+                        },
+                        {
+                            "doc_count": 49713,
+                            "key": "Huntsville"
+                        },
+                        {
+                            "doc_count": 49628,
+                            "key": "South Coast"
+                        },
+                        {
+                            "doc_count": 48845,
+                            "key": "Greenville"
+                        },
+                        {
+                            "doc_count": 48523,
+                            "key": "Honolulu"
+                        },
+                        {
+                            "doc_count": 48491,
+                            "key": "Jackson"
+                        },
+                        {
+                            "doc_count": 48058,
+                            "key": "Alberta"
+                        },
+                        {
+                            "doc_count": 47843,
+                            "key": "Michigan"
+                        },
+                        {
+                            "doc_count": 47484,
+                            "key": "Ohio"
+                        },
+                        {
+                            "doc_count": 46861,
+                            "key": "Worcester"
+                        },
+                        {
+                            "doc_count": 46585,
+                            "key": "Reno"
+                        },
+                        {
+                            "doc_count": 46576,
+                            "key": "Madison"
+                        },
+                        {
+                            "doc_count": 46160,
+                            "key": "Pennsylvania"
+                        },
+                        {
+                            "doc_count": 45902,
+                            "key": "Jersey Shore"
+                        },
+                        {
+                            "doc_count": 44914,
+                            "key": "North Bay"
+                        },
+                        {
+                            "doc_count": 44421,
+                            "key": "Saskatoon"
+                        },
+                        {
+                            "doc_count": 43375,
+                            "key": "Omaha"
+                        },
+                        {
+                            "doc_count": 42763,
+                            "key": "Santa Barbara"
+                        },
+                        {
+                            "doc_count": 42071,
+                            "key": "San Bernardino"
+                        },
+                        {
+                            "doc_count": 41680,
+                            "key": "Bakersfield"
+                        },
+                        {
+                            "doc_count": 41317,
+                            "key": "Akron"
+                        },
+                        {
+                            "doc_count": 40800,
+                            "key": "Arizona"
+                        },
+                        {
+                            "doc_count": 40764,
+                            "key": "Fresno"
+                        },
+                        {
+                            "doc_count": 40546,
+                            "key": "Lafayette"
+                        },
+                        {
+                            "doc_count": 40355,
+                            "key": "Palm Springs"
+                        },
+                        {
+                            "doc_count": 39470,
+                            "key": "New Jersey"
+                        },
+                        {
+                            "doc_count": 39416,
+                            "key": "Rochester"
+                        },
+                        {
+                            "doc_count": 39271,
+                            "key": "Killeen"
+                        },
+                        {
+                            "doc_count": 39077,
+                            "key": "Colorado"
+                        },
+                        {
+                            "doc_count": 37975,
+                            "key": "Missouri"
+                        },
+                        {
+                            "doc_count": 37952,
+                            "key": "Massachusetts"
+                        },
+                        {
+                            "doc_count": 37784,
+                            "key": "Tennessee"
+                        },
+                        {
+                            "doc_count": 37698,
+                            "key": "El Paso"
+                        },
+                        {
+                            "doc_count": 37442,
+                            "key": "Hudson Valley"
+                        },
+                        {
+                            "doc_count": 37040,
+                            "key": "Kitchener"
+                        },
+                        {
+                            "doc_count": 36282,
+                            "key": "Syracuse"
+                        },
+                        {
+                            "doc_count": 35715,
+                            "key": "Nevada"
+                        },
+                        {
+                            "doc_count": 35621,
+                            "key": "Riverside"
+                        },
+                        {
+                            "doc_count": 35615,
+                            "key": "Lexington"
+                        },
+                        {
+                            "doc_count": 35565,
+                            "key": "Barrie"
+                        },
+                        {
+                            "doc_count": 35503,
+                            "key": "Daytona"
+                        },
+                        {
+                            "doc_count": 35208,
+                            "key": "Savannah"
+                        },
+                        {
+                            "doc_count": 34948,
+                            "key": "Virginia"
+                        },
+                        {
+                            "doc_count": 34590,
+                            "key": "Tulsa"
+                        },
+                        {
+                            "doc_count": 34352,
+                            "key": "Delhi"
+                        },
+                        {
+                            "doc_count": 33516,
+                            "key": "South Bend"
+                        },
+                        {
+                            "doc_count": 33205,
+                            "key": "Knoxville"
+                        },
+                        {
+                            "doc_count": 33138,
+                            "key": "Chesapeake"
+                        },
+                        {
+                            "doc_count": 32748,
+                            "key": "Oregon"
+                        },
+                        {
+                            "doc_count": 32653,
+                            "key": "Augusta"
+                        },
+                        {
+                            "doc_count": 32436,
+                            "key": "Des Moines"
+                        },
+                        {
+                            "doc_count": 32407,
+                            "key": "Wisconsin"
+                        },
+                        {
+                            "doc_count": 32328,
+                            "key": "Monterey"
+                        },
+                        {
+                            "doc_count": 32126,
+                            "key": "Delaware"
+                        },
+                        {
+                            "doc_count": 32059,
+                            "key": "Chattanooga"
+                        },
+                        {
+                            "doc_count": 32000,
+                            "key": "Beaumont"
+                        },
+                        {
+                            "doc_count": 31944,
+                            "key": "Anchorage"
+                        },
+                        {
+                            "doc_count": 31858,
+                            "key": "Winnipeg"
+                        },
+                        {
+                            "doc_count": 31615,
+                            "key": "Minot"
+                        },
+                        {
+                            "doc_count": 31520,
+                            "key": "Corpus Christi"
+                        },
+                        {
+                            "doc_count": 31489,
+                            "key": "New Hampshire"
+                        },
+                        {
+                            "doc_count": 31423,
+                            "key": "Montgomery"
+                        },
+                        {
+                            "doc_count": 31244,
+                            "key": "Pensacola"
+                        },
+                        {
+                            "doc_count": 31194,
+                            "key": "Macon"
+                        },
+                        {
+                            "doc_count": 29732,
+                            "key": "Modesto"
+                        },
+                        {
+                            "doc_count": 29687,
+                            "key": "Allentown"
+                        },
+                        {
+                            "doc_count": 29647,
+                            "key": "Indiana"
+                        },
+                        {
+                            "doc_count": 29619,
+                            "key": "Santa Cruz"
+                        },
+                        {
+                            "doc_count": 29547,
+                            "key": "Mumbai"
+                        },
+                        {
+                            "doc_count": 29498,
+                            "key": "Quito"
+                        },
+                        {
+                            "doc_count": 29118,
+                            "key": "Louisiana"
+                        },
+                        {
+                            "doc_count": 29112,
+                            "key": "Myrtle Beach"
+                        },
+                        {
+                            "doc_count": 28939,
+                            "key": "South Carolina"
+                        },
+                        {
+                            "doc_count": 28884,
+                            "key": "Tyler"
+                        },
+                        {
+                            "doc_count": 28818,
+                            "key": "Niagara"
+                        },
+                        {
+                            "doc_count": 28666,
+                            "key": "Palmdale"
+                        },
+                        {
+                            "doc_count": 28382,
+                            "key": "Toledo"
+                        },
+                        {
+                            "doc_count": 28097,
+                            "key": "Sarasota"
+                        },
+                        {
+                            "doc_count": 27557,
+                            "key": "Tallahassee"
+                        },
+                        {
+                            "doc_count": 27517,
+                            "key": "Victoria"
+                        },
+                        {
+                            "doc_count": 27455,
+                            "key": "San Diego County"
+                        },
+                        {
+                            "doc_count": 27376,
+                            "key": "Denton"
+                        },
+                        {
+                            "doc_count": 27189,
+                            "key": "Mobile"
+                        },
+                        {
+                            "doc_count": 26810,
+                            "key": "Minnesota"
+                        },
+                        {
+                            "doc_count": 26802,
+                            "key": "Wilmington"
+                        },
+                        {
+                            "doc_count": 26770,
+                            "key": "Mcallen"
+                        },
+                        {
+                            "doc_count": 26667,
+                            "key": "Fort Collins"
+                        },
+                        {
+                            "doc_count": 25758,
+                            "key": "British Columbia"
+                        },
+                        {
+                            "doc_count": 25646,
+                            "key": "Scranton"
+                        },
+                        {
+                            "doc_count": 25550,
+                            "key": "Salem"
+                        },
+                        {
+                            "doc_count": 25459,
+                            "key": "Grand Rapids"
+                        },
+                        {
+                            "doc_count": 25401,
+                            "key": "Fargo"
+                        },
+                        {
+                            "doc_count": 25357,
+                            "key": "Bangalore"
+                        },
+                        {
+                            "doc_count": 25004,
+                            "key": "Harrisburg"
+                        },
+                        {
+                            "doc_count": 24747,
+                            "key": "Red Deer"
+                        }
+                    ]
+                },
+                "doc_count": 19048975
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 19134836,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 899
+    },
+    "fieldName": "addressLocality",
+    "docType": "offer"
+}

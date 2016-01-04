@@ -1,0 +1,1033 @@
+{
+    "innerPath": "availableAtOrFrom.address",
+    "size": 200,
+    "histo": {
+        "California": 2226956,
+        "Texas": 1040937,
+        "Florida": 965499,
+        "New York": 924855,
+        "Ontario": 584823,
+        "B Window": 509532,
+        "North Carolina": 454361,
+        "Pennsylvania": 418948,
+        "Ohio": 400560,
+        "Georgia": 376667,
+        "Virginia": 375678,
+        "New Jersey": 357561,
+        "Illinois": 354213,
+        "Washington": 349118,
+        "Arizona": 330304,
+        "Michigan": 312457,
+        "Alberta": 301953,
+        "Colorado": 298074,
+        "Massachusetts": 297181,
+        "Tennessee": 262587,
+        "Missouri": 251853,
+        "Louisiana": 233150,
+        "Wisconsin": 216104,
+        "Nevada": 213989,
+        "South Carolina": 212551,
+        "Alabama": 212080,
+        "District Of Columbia": 210632,
+        "Oregon": 203750,
+        "Maryland": 197674,
+        "Indiana": 196135,
+        "Connecticut": 190109,
+        "Minnesota": 152777,
+        "S": 136672,
+        "Kentucky": 126770,
+        "British Columbia": 123130,
+        "Iowa": 118734,
+        "Oklahoma": 113228,
+        "Quebec": 109150,
+        "Mississippi": 106848,
+        "Arkansas": 106736,
+        "Utah": 91112,
+        "Kansas": 86212,
+        "New Mexico": 84652,
+        "Hawaii": 68806,
+        "North Dakota": 68636,
+        "Nebraska": 67263,
+        "West Virginia": 63543,
+        "Saskatchewan": 54390,
+        "Idaho": 46662,
+        "Rhode Island": 43521,
+        "Alaska": 29144,
+        "Manitoba": 23524,
+        "New Hampshire": 21673,
+        "Maine": 20250,
+        "Maharashtra": 20152,
+        "Pichincha": 17069,
+        "Delhi": 16956,
+        "Santiago Metropolitan Region": 14786,
+        "Karnataka": 10892,
+        "Australia": 10724,
+        "Montana": 10304,
+        "Delaware": 9860,
+        "Attica": 9713,
+        "Federal District": 9138,
+        "Nsw": 9094,
+        "South Dakota": 8516,
+        "Vermont": 8407,
+        "Wyoming": 8243,
+        "UK": 8032,
+        "Hong Kong": 7923,
+        "Puerto Rico": 6532,
+        "Leinster": 6409,
+        "Baja California": 6136,
+        "Andhra Pradesh": 5711,
+        "Vic": 5609,
+        "Gujarat": 5176,
+        "Goa": 5127,
+        "Tamil Nadu": 4978,
+        "National Capital Region": 4736,
+        "Rajasthan": 4613,
+        "Guangdong": 4483,
+        "Qld": 4433,
+        "Bucharest": 4370,
+        "Northern Ireland": 4243,
+        "Nova Scotia": 3818,
+        "Jakarta": 3799,
+        "West Bengal": 3627,
+        "Gauteng": 3490,
+        "SA": 3402,
+        "Chandigarh": 3381,
+        "Jal": 3314,
+        "North Holland": 3234,
+        "Munster": 3154,
+        "S O Paulo": 3066,
+        "West Midlands": 3026,
+        "Vienna": 3018,
+        "Liaoning": 3000,
+        "Buenos Aires": 2838,
+        "Lisbon": 2827,
+        "Barcelona": 2641,
+        "West Yorkshire": 2637,
+        "City Of Edinburgh": 2554,
+        "Kerala": 2519,
+        "Glasgow City": 2459,
+        "Merseyside": 2369,
+        "Act": 2324,
+        "New Brunswick": 2221,
+        "Aberdeen City": 2176,
+        "Kbenhavn": 2134,
+        "South Yorkshire": 2083,
+        "Uttar Pradesh": 2039,
+        "City Of Bristol": 2011,
+        "Northwest Territories": 1925,
+        "Western Cape": 1872,
+        "Madhya Pradesh": 1802,
+        "Tas": 1782,
+        "Odisha": 1750,
+        "S Dermanland Uppland": 1646,
+        "Balearic Islands": 1581,
+        "The City Of Brighton And Hove": 1506,
+        "Lombardy": 1481,
+        "Sichuan": 1470,
+        "Cdiz": 1374,
+        "Sonora": 1280,
+        "Madrid": 1263,
+        "Sinaloa": 1247,
+        "Tyne And Wear": 1239,
+        "Guanajuato": 1184,
+        "Chihuahua": 1145,
+        "England": 1087,
+        "Sardinia": 1049,
+        "Rome": 1003,
+        "Kwazulu Natal": 1002,
+        "South Holland": 963,
+        "Wales": 954,
+        "Oaxaca": 904,
+        "Granada": 881,
+        "Fukuoka Prefecture": 876,
+        "Rio De Janeiro": 859,
+        "Algarve": 855,
+        "Forli Cesena": 845,
+        "Jiangsu": 833,
+        "Canary Islands": 795,
+        "Lousiana": 780,
+        "Sevilla": 757,
+        "Miyagi Prefecture": 704,
+        "Porto": 693,
+        "Calabria": 690,
+        "Alicante": 684,
+        "Hokkaido Prefecture": 650,
+        "Liguria": 649,
+        "Zhejiang": 637,
+        "Oslo": 629,
+        "Umbria": 594,
+        "Guerrero": 584,
+        "Bath And North East Somerset": 580,
+        "Capelle Les Grands": 571,
+        "Veracruz": 564,
+        "Valencia": 541,
+        "North Brabant": 532,
+        "Okinawa Prefecture": 524,
+        "Cear": 488,
+        "Biscay": 467,
+        "Newfoundland and Labrador": 456,
+        "Minas Gerais": 451,
+        "Hubei": 448,
+        "Sicily": 448,
+        "M Laga": 445,
+        "Shaanxi": 442,
+        "Utrecht": 442,
+        "Nuevo Leon": 423,
+        "Hiroshima Prefecture": 367,
+        "Bologna": 353,
+        "Aichi Prefecture": 350,
+        "Campania": 345,
+        "Paran": 321,
+        "Bahia": 315,
+        "Tuscany": 307,
+        "Pernambuco": 300,
+        "Piedmont": 289,
+        "Central Visayas": 276,
+        "Rio Grande Do Sul": 257,
+        "Mexico": 237,
+        "Venice": 218,
+        "Puebla": 190,
+        "Tower Isle": 183,
+        "Yucat N": 169,
+        "Mt 59901": 115,
+        "Jalisco": 74,
+        "AU": 69,
+        "Managua": 63,
+        "Lnd": 62,
+        "New South Wales": 61,
+        "U04": 49,
+        "11": 47,
+        "RM": 46,
+        "Victoria": 43,
+        "BA": 42,
+        "LI": 41,
+        "Queensland": 38
+    },
+    "result": {
+        "aggregations": {
+            "toplevelAgg": {
+                "termAgg": {
+                    "sum_other_doc_count": 1896,
+                    "doc_count_error_upper_bound": 0,
+                    "buckets": [
+                        {
+                            "doc_count": 2226956,
+                            "key": "California"
+                        },
+                        {
+                            "doc_count": 1040937,
+                            "key": "Texas"
+                        },
+                        {
+                            "doc_count": 965499,
+                            "key": "Florida"
+                        },
+                        {
+                            "doc_count": 924855,
+                            "key": "New York"
+                        },
+                        {
+                            "doc_count": 584823,
+                            "key": "Ontario"
+                        },
+                        {
+                            "doc_count": 509532,
+                            "key": "B Window"
+                        },
+                        {
+                            "doc_count": 454361,
+                            "key": "North Carolina"
+                        },
+                        {
+                            "doc_count": 418948,
+                            "key": "Pennsylvania"
+                        },
+                        {
+                            "doc_count": 400560,
+                            "key": "Ohio"
+                        },
+                        {
+                            "doc_count": 376667,
+                            "key": "Georgia"
+                        },
+                        {
+                            "doc_count": 375678,
+                            "key": "Virginia"
+                        },
+                        {
+                            "doc_count": 357561,
+                            "key": "New Jersey"
+                        },
+                        {
+                            "doc_count": 354213,
+                            "key": "Illinois"
+                        },
+                        {
+                            "doc_count": 349118,
+                            "key": "Washington"
+                        },
+                        {
+                            "doc_count": 330304,
+                            "key": "Arizona"
+                        },
+                        {
+                            "doc_count": 312457,
+                            "key": "Michigan"
+                        },
+                        {
+                            "doc_count": 301953,
+                            "key": "Alberta"
+                        },
+                        {
+                            "doc_count": 298074,
+                            "key": "Colorado"
+                        },
+                        {
+                            "doc_count": 297181,
+                            "key": "Massachusetts"
+                        },
+                        {
+                            "doc_count": 262587,
+                            "key": "Tennessee"
+                        },
+                        {
+                            "doc_count": 251853,
+                            "key": "Missouri"
+                        },
+                        {
+                            "doc_count": 233150,
+                            "key": "Louisiana"
+                        },
+                        {
+                            "doc_count": 216104,
+                            "key": "Wisconsin"
+                        },
+                        {
+                            "doc_count": 213989,
+                            "key": "Nevada"
+                        },
+                        {
+                            "doc_count": 212551,
+                            "key": "South Carolina"
+                        },
+                        {
+                            "doc_count": 212080,
+                            "key": "Alabama"
+                        },
+                        {
+                            "doc_count": 210632,
+                            "key": "District Of Columbia"
+                        },
+                        {
+                            "doc_count": 203750,
+                            "key": "Oregon"
+                        },
+                        {
+                            "doc_count": 197674,
+                            "key": "Maryland"
+                        },
+                        {
+                            "doc_count": 196135,
+                            "key": "Indiana"
+                        },
+                        {
+                            "doc_count": 190109,
+                            "key": "Connecticut"
+                        },
+                        {
+                            "doc_count": 152777,
+                            "key": "Minnesota"
+                        },
+                        {
+                            "doc_count": 136672,
+                            "key": "S"
+                        },
+                        {
+                            "doc_count": 126770,
+                            "key": "Kentucky"
+                        },
+                        {
+                            "doc_count": 123130,
+                            "key": "British Columbia"
+                        },
+                        {
+                            "doc_count": 118734,
+                            "key": "Iowa"
+                        },
+                        {
+                            "doc_count": 113228,
+                            "key": "Oklahoma"
+                        },
+                        {
+                            "doc_count": 109150,
+                            "key": "Quebec"
+                        },
+                        {
+                            "doc_count": 106848,
+                            "key": "Mississippi"
+                        },
+                        {
+                            "doc_count": 106736,
+                            "key": "Arkansas"
+                        },
+                        {
+                            "doc_count": 91112,
+                            "key": "Utah"
+                        },
+                        {
+                            "doc_count": 86212,
+                            "key": "Kansas"
+                        },
+                        {
+                            "doc_count": 84652,
+                            "key": "New Mexico"
+                        },
+                        {
+                            "doc_count": 68806,
+                            "key": "Hawaii"
+                        },
+                        {
+                            "doc_count": 68636,
+                            "key": "North Dakota"
+                        },
+                        {
+                            "doc_count": 67263,
+                            "key": "Nebraska"
+                        },
+                        {
+                            "doc_count": 63543,
+                            "key": "West Virginia"
+                        },
+                        {
+                            "doc_count": 54390,
+                            "key": "Saskatchewan"
+                        },
+                        {
+                            "doc_count": 46662,
+                            "key": "Idaho"
+                        },
+                        {
+                            "doc_count": 43521,
+                            "key": "Rhode Island"
+                        },
+                        {
+                            "doc_count": 29144,
+                            "key": "Alaska"
+                        },
+                        {
+                            "doc_count": 23524,
+                            "key": "Manitoba"
+                        },
+                        {
+                            "doc_count": 21673,
+                            "key": "New Hampshire"
+                        },
+                        {
+                            "doc_count": 20250,
+                            "key": "Maine"
+                        },
+                        {
+                            "doc_count": 20152,
+                            "key": "Maharashtra"
+                        },
+                        {
+                            "doc_count": 17069,
+                            "key": "Pichincha"
+                        },
+                        {
+                            "doc_count": 16956,
+                            "key": "Delhi"
+                        },
+                        {
+                            "doc_count": 14786,
+                            "key": "Santiago Metropolitan Region"
+                        },
+                        {
+                            "doc_count": 10892,
+                            "key": "Karnataka"
+                        },
+                        {
+                            "doc_count": 10724,
+                            "key": "Australia"
+                        },
+                        {
+                            "doc_count": 10304,
+                            "key": "Montana"
+                        },
+                        {
+                            "doc_count": 9860,
+                            "key": "Delaware"
+                        },
+                        {
+                            "doc_count": 9713,
+                            "key": "Attica"
+                        },
+                        {
+                            "doc_count": 9138,
+                            "key": "Federal District"
+                        },
+                        {
+                            "doc_count": 9094,
+                            "key": "Nsw"
+                        },
+                        {
+                            "doc_count": 8516,
+                            "key": "South Dakota"
+                        },
+                        {
+                            "doc_count": 8407,
+                            "key": "Vermont"
+                        },
+                        {
+                            "doc_count": 8243,
+                            "key": "Wyoming"
+                        },
+                        {
+                            "doc_count": 8032,
+                            "key": "UK"
+                        },
+                        {
+                            "doc_count": 7923,
+                            "key": "Hong Kong"
+                        },
+                        {
+                            "doc_count": 6532,
+                            "key": "Puerto Rico"
+                        },
+                        {
+                            "doc_count": 6409,
+                            "key": "Leinster"
+                        },
+                        {
+                            "doc_count": 6136,
+                            "key": "Baja California"
+                        },
+                        {
+                            "doc_count": 5711,
+                            "key": "Andhra Pradesh"
+                        },
+                        {
+                            "doc_count": 5609,
+                            "key": "Vic"
+                        },
+                        {
+                            "doc_count": 5176,
+                            "key": "Gujarat"
+                        },
+                        {
+                            "doc_count": 5127,
+                            "key": "Goa"
+                        },
+                        {
+                            "doc_count": 4978,
+                            "key": "Tamil Nadu"
+                        },
+                        {
+                            "doc_count": 4736,
+                            "key": "National Capital Region"
+                        },
+                        {
+                            "doc_count": 4613,
+                            "key": "Rajasthan"
+                        },
+                        {
+                            "doc_count": 4483,
+                            "key": "Guangdong"
+                        },
+                        {
+                            "doc_count": 4433,
+                            "key": "Qld"
+                        },
+                        {
+                            "doc_count": 4370,
+                            "key": "Bucharest"
+                        },
+                        {
+                            "doc_count": 4243,
+                            "key": "Northern Ireland"
+                        },
+                        {
+                            "doc_count": 3818,
+                            "key": "Nova Scotia"
+                        },
+                        {
+                            "doc_count": 3799,
+                            "key": "Jakarta"
+                        },
+                        {
+                            "doc_count": 3627,
+                            "key": "West Bengal"
+                        },
+                        {
+                            "doc_count": 3490,
+                            "key": "Gauteng"
+                        },
+                        {
+                            "doc_count": 3402,
+                            "key": "SA"
+                        },
+                        {
+                            "doc_count": 3381,
+                            "key": "Chandigarh"
+                        },
+                        {
+                            "doc_count": 3314,
+                            "key": "Jal"
+                        },
+                        {
+                            "doc_count": 3234,
+                            "key": "North Holland"
+                        },
+                        {
+                            "doc_count": 3154,
+                            "key": "Munster"
+                        },
+                        {
+                            "doc_count": 3066,
+                            "key": "S O Paulo"
+                        },
+                        {
+                            "doc_count": 3026,
+                            "key": "West Midlands"
+                        },
+                        {
+                            "doc_count": 3018,
+                            "key": "Vienna"
+                        },
+                        {
+                            "doc_count": 3000,
+                            "key": "Liaoning"
+                        },
+                        {
+                            "doc_count": 2838,
+                            "key": "Buenos Aires"
+                        },
+                        {
+                            "doc_count": 2827,
+                            "key": "Lisbon"
+                        },
+                        {
+                            "doc_count": 2641,
+                            "key": "Barcelona"
+                        },
+                        {
+                            "doc_count": 2637,
+                            "key": "West Yorkshire"
+                        },
+                        {
+                            "doc_count": 2554,
+                            "key": "City Of Edinburgh"
+                        },
+                        {
+                            "doc_count": 2519,
+                            "key": "Kerala"
+                        },
+                        {
+                            "doc_count": 2459,
+                            "key": "Glasgow City"
+                        },
+                        {
+                            "doc_count": 2369,
+                            "key": "Merseyside"
+                        },
+                        {
+                            "doc_count": 2324,
+                            "key": "Act"
+                        },
+                        {
+                            "doc_count": 2221,
+                            "key": "New Brunswick"
+                        },
+                        {
+                            "doc_count": 2176,
+                            "key": "Aberdeen City"
+                        },
+                        {
+                            "doc_count": 2134,
+                            "key": "Kbenhavn"
+                        },
+                        {
+                            "doc_count": 2083,
+                            "key": "South Yorkshire"
+                        },
+                        {
+                            "doc_count": 2039,
+                            "key": "Uttar Pradesh"
+                        },
+                        {
+                            "doc_count": 2011,
+                            "key": "City Of Bristol"
+                        },
+                        {
+                            "doc_count": 1925,
+                            "key": "Northwest Territories"
+                        },
+                        {
+                            "doc_count": 1872,
+                            "key": "Western Cape"
+                        },
+                        {
+                            "doc_count": 1802,
+                            "key": "Madhya Pradesh"
+                        },
+                        {
+                            "doc_count": 1782,
+                            "key": "Tas"
+                        },
+                        {
+                            "doc_count": 1750,
+                            "key": "Odisha"
+                        },
+                        {
+                            "doc_count": 1646,
+                            "key": "S Dermanland Uppland"
+                        },
+                        {
+                            "doc_count": 1581,
+                            "key": "Balearic Islands"
+                        },
+                        {
+                            "doc_count": 1506,
+                            "key": "The City Of Brighton And Hove"
+                        },
+                        {
+                            "doc_count": 1481,
+                            "key": "Lombardy"
+                        },
+                        {
+                            "doc_count": 1470,
+                            "key": "Sichuan"
+                        },
+                        {
+                            "doc_count": 1374,
+                            "key": "Cdiz"
+                        },
+                        {
+                            "doc_count": 1280,
+                            "key": "Sonora"
+                        },
+                        {
+                            "doc_count": 1263,
+                            "key": "Madrid"
+                        },
+                        {
+                            "doc_count": 1247,
+                            "key": "Sinaloa"
+                        },
+                        {
+                            "doc_count": 1239,
+                            "key": "Tyne And Wear"
+                        },
+                        {
+                            "doc_count": 1184,
+                            "key": "Guanajuato"
+                        },
+                        {
+                            "doc_count": 1145,
+                            "key": "Chihuahua"
+                        },
+                        {
+                            "doc_count": 1087,
+                            "key": "England"
+                        },
+                        {
+                            "doc_count": 1049,
+                            "key": "Sardinia"
+                        },
+                        {
+                            "doc_count": 1003,
+                            "key": "Rome"
+                        },
+                        {
+                            "doc_count": 1002,
+                            "key": "Kwazulu Natal"
+                        },
+                        {
+                            "doc_count": 963,
+                            "key": "South Holland"
+                        },
+                        {
+                            "doc_count": 954,
+                            "key": "Wales"
+                        },
+                        {
+                            "doc_count": 904,
+                            "key": "Oaxaca"
+                        },
+                        {
+                            "doc_count": 881,
+                            "key": "Granada"
+                        },
+                        {
+                            "doc_count": 876,
+                            "key": "Fukuoka Prefecture"
+                        },
+                        {
+                            "doc_count": 859,
+                            "key": "Rio De Janeiro"
+                        },
+                        {
+                            "doc_count": 855,
+                            "key": "Algarve"
+                        },
+                        {
+                            "doc_count": 845,
+                            "key": "Forli Cesena"
+                        },
+                        {
+                            "doc_count": 833,
+                            "key": "Jiangsu"
+                        },
+                        {
+                            "doc_count": 795,
+                            "key": "Canary Islands"
+                        },
+                        {
+                            "doc_count": 780,
+                            "key": "Lousiana"
+                        },
+                        {
+                            "doc_count": 757,
+                            "key": "Sevilla"
+                        },
+                        {
+                            "doc_count": 704,
+                            "key": "Miyagi Prefecture"
+                        },
+                        {
+                            "doc_count": 693,
+                            "key": "Porto"
+                        },
+                        {
+                            "doc_count": 690,
+                            "key": "Calabria"
+                        },
+                        {
+                            "doc_count": 684,
+                            "key": "Alicante"
+                        },
+                        {
+                            "doc_count": 650,
+                            "key": "Hokkaido Prefecture"
+                        },
+                        {
+                            "doc_count": 649,
+                            "key": "Liguria"
+                        },
+                        {
+                            "doc_count": 637,
+                            "key": "Zhejiang"
+                        },
+                        {
+                            "doc_count": 629,
+                            "key": "Oslo"
+                        },
+                        {
+                            "doc_count": 594,
+                            "key": "Umbria"
+                        },
+                        {
+                            "doc_count": 584,
+                            "key": "Guerrero"
+                        },
+                        {
+                            "doc_count": 580,
+                            "key": "Bath And North East Somerset"
+                        },
+                        {
+                            "doc_count": 571,
+                            "key": "Capelle Les Grands"
+                        },
+                        {
+                            "doc_count": 564,
+                            "key": "Veracruz"
+                        },
+                        {
+                            "doc_count": 541,
+                            "key": "Valencia"
+                        },
+                        {
+                            "doc_count": 532,
+                            "key": "North Brabant"
+                        },
+                        {
+                            "doc_count": 524,
+                            "key": "Okinawa Prefecture"
+                        },
+                        {
+                            "doc_count": 488,
+                            "key": "Cear"
+                        },
+                        {
+                            "doc_count": 467,
+                            "key": "Biscay"
+                        },
+                        {
+                            "doc_count": 456,
+                            "key": "Newfoundland and Labrador"
+                        },
+                        {
+                            "doc_count": 451,
+                            "key": "Minas Gerais"
+                        },
+                        {
+                            "doc_count": 448,
+                            "key": "Hubei"
+                        },
+                        {
+                            "doc_count": 448,
+                            "key": "Sicily"
+                        },
+                        {
+                            "doc_count": 445,
+                            "key": "M Laga"
+                        },
+                        {
+                            "doc_count": 442,
+                            "key": "Shaanxi"
+                        },
+                        {
+                            "doc_count": 442,
+                            "key": "Utrecht"
+                        },
+                        {
+                            "doc_count": 423,
+                            "key": "Nuevo Leon"
+                        },
+                        {
+                            "doc_count": 367,
+                            "key": "Hiroshima Prefecture"
+                        },
+                        {
+                            "doc_count": 353,
+                            "key": "Bologna"
+                        },
+                        {
+                            "doc_count": 350,
+                            "key": "Aichi Prefecture"
+                        },
+                        {
+                            "doc_count": 345,
+                            "key": "Campania"
+                        },
+                        {
+                            "doc_count": 321,
+                            "key": "Paran"
+                        },
+                        {
+                            "doc_count": 315,
+                            "key": "Bahia"
+                        },
+                        {
+                            "doc_count": 307,
+                            "key": "Tuscany"
+                        },
+                        {
+                            "doc_count": 300,
+                            "key": "Pernambuco"
+                        },
+                        {
+                            "doc_count": 289,
+                            "key": "Piedmont"
+                        },
+                        {
+                            "doc_count": 276,
+                            "key": "Central Visayas"
+                        },
+                        {
+                            "doc_count": 257,
+                            "key": "Rio Grande Do Sul"
+                        },
+                        {
+                            "doc_count": 237,
+                            "key": "Mexico"
+                        },
+                        {
+                            "doc_count": 218,
+                            "key": "Venice"
+                        },
+                        {
+                            "doc_count": 190,
+                            "key": "Puebla"
+                        },
+                        {
+                            "doc_count": 183,
+                            "key": "Tower Isle"
+                        },
+                        {
+                            "doc_count": 169,
+                            "key": "Yucat N"
+                        },
+                        {
+                            "doc_count": 115,
+                            "key": "Mt 59901"
+                        },
+                        {
+                            "doc_count": 74,
+                            "key": "Jalisco"
+                        },
+                        {
+                            "doc_count": 69,
+                            "key": "AU"
+                        },
+                        {
+                            "doc_count": 63,
+                            "key": "Managua"
+                        },
+                        {
+                            "doc_count": 62,
+                            "key": "Lnd"
+                        },
+                        {
+                            "doc_count": 61,
+                            "key": "New South Wales"
+                        },
+                        {
+                            "doc_count": 49,
+                            "key": "U04"
+                        },
+                        {
+                            "doc_count": 47,
+                            "key": "11"
+                        },
+                        {
+                            "doc_count": 46,
+                            "key": "RM"
+                        },
+                        {
+                            "doc_count": 43,
+                            "key": "Victoria"
+                        },
+                        {
+                            "doc_count": 42,
+                            "key": "BA"
+                        },
+                        {
+                            "doc_count": 41,
+                            "key": "LI"
+                        },
+                        {
+                            "doc_count": 38,
+                            "key": "Queensland"
+                        }
+                    ]
+                },
+                "doc_count": 19048975
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 19134836,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 621
+    },
+    "fieldName": "addressRegion",
+    "docType": "offer"
+}

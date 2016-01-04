@@ -1,0 +1,43 @@
+{
+    "innerPath": "priceSpecification",
+    "size": 10,
+    "histo": {
+        "30": 1129545,
+        "60": 1081386
+    },
+    "result": {
+        "aggregations": {
+            "toplevelAgg": {
+                "termAgg": {
+                    "sum_other_doc_count": 0,
+                    "doc_count_error_upper_bound": 0,
+                    "buckets": [
+                        {
+                            "doc_count": 1129545,
+                            "key": "30"
+                        },
+                        {
+                            "doc_count": 1081386,
+                            "key": "60"
+                        }
+                    ]
+                },
+                "doc_count": 2460808
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 19134836,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 520
+    },
+    "fieldName": "billingIncrement",
+    "docType": "offer"
+}

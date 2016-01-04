@@ -1,0 +1,1033 @@
+{
+    "innerPath": "priceSpecification",
+    "size": 200,
+    "histo": {
+        "100-per-30min": 271858,
+        "15": 249877,
+        "200-per-60min": 209421,
+        "80-per-30min": 139656,
+        "120-per-30min": 134264,
+        "150-per-60min": 118470,
+        "150-per-30min": 114034,
+        "100-per-60min": 95885,
+        "180-per-60min": 70608,
+        "160-per-60min": 70240,
+        "120-per-60min": 66106,
+        "60-per-30min": 58338,
+        "140-per-30min": 53742,
+        "200-per-30min": 53534,
+        "250-per-60min": 51888,
+        "60-per-15min": 51225,
+        "80-per-15min": 46830,
+        "140-per-60min": 46588,
+        "300-per-60min": 41906,
+        "100-per-15min": 39805,
+        "160-per-30min": 36753,
+        "40-per-60min": 36721,
+        "80-per-60min": 31148,
+        "50-per-15min": 30384,
+        "70-per-30min": 27497,
+        "220-per-60min": 27390,
+        "50-per-30min": 24096,
+        "40-per-30min": 19334,
+        "60-per-60min": 18788,
+        "90-per-30min": 18562,
+        "180-per-30min": 18535,
+        "125-per-30min": 18252,
+        "75-per-30min": 17628,
+        "130-per-60min": 17215,
+        "50-per-60min": 16774,
+        "130-per-30min": 16371,
+        "40-per-15min": 13228,
+        "250-per-30min": 13171,
+        "90-per-60min": 13030,
+        "240-per-60min": 12493,
+        "70-per-15min": 11852,
+        "30-per-60min": 11658,
+        "400-per-60min": 10765,
+        "20-per-60min": 10725,
+        "20-per-15min": 10399,
+        "350-per-60min": 10254,
+        "170-per-60min": 9405,
+        "35-per-30min": 8781,
+        "260-per-60min": 8619,
+        "300-per-30min": 8230,
+        "30-per-30min": 7619,
+        "120-per-15min": 7330,
+        "85-per-30min": 6946,
+        "500-per-60min": 6700,
+        "65-per-30min": 6639,
+        "45-per-30min": 5925,
+        "70-per-60min": 5564,
+        "125-per-60min": 5432,
+        "175-per-60min": 5019,
+        "150-per-15min": 4985,
+        "175-per-30min": 4976,
+        "110-per-30min": 4917,
+        "75-per-15min": 4898,
+        "45-per-60min": 4720,
+        "220-per-30min": 4668,
+        "280-per-60min": 4227,
+        "65-per-15min": 3647,
+        "110-per-60min": 2947,
+        "240-per-30min": 2818,
+        "20-per-30min": 2743,
+        "55-per-30min": 2698,
+        "170-per-30min": 2694,
+        "45-per-15min": 2621,
+        "25-per-60min": 2599,
+        "600-per-60min": 2424,
+        "75-per-60min": 2330,
+        "225-per-60min": 2072,
+        "30-per-15min": 2035,
+        "450-per-60min": 1900,
+        "25-per-30min": 1851,
+        "350-per-30min": 1847,
+        "85-per-60min": 1689,
+        "140-per-15min": 1678,
+        "125-per-15min": 1671,
+        "200-per-15min": 1639,
+        "230-per-60min": 1622,
+        "190-per-60min": 1620,
+        "90-per-15min": 1607,
+        "35-per-15min": 1606,
+        "400-per-30min": 1599,
+        "225-per-30min": 1490,
+        "65-per-60min": 1440,
+        "55-per-15min": 1404,
+        "95-per-30min": 1368,
+        "260-per-30min": 1351,
+        "25-per-15min": 1310,
+        "115-per-30min": 1215,
+        "35-per-60min": 1190,
+        "195-per-60min": 1157,
+        "320-per-60min": 1066,
+        "160-per-15min": 1050,
+        "700-per-60min": 984,
+        "500-per-30min": 967,
+        "280-per-30min": 962,
+        "85-per-15min": 956,
+        "55-per-60min": 942,
+        "135-per-30min": 929,
+        "800-per-60min": 855,
+        "95-per-60min": 844,
+        "360-per-60min": 753,
+        "550-per-60min": 701,
+        "210-per-60min": 665,
+        "135-per-60min": 656,
+        "180-per-15min": 607,
+        "275-per-60min": 586,
+        "530-per-60min": 578,
+        "130-per-15min": 562,
+        "165-per-60min": 552,
+        "145-per-30min": 514,
+        "185-per-60min": 507,
+        "900-per-60min": 507,
+        "270-per-60min": 498,
+        "190-per-30min": 486,
+        "380-per-60min": 477,
+        "500-per-15min": 470,
+        "580-per-30min": 452,
+        "145-per-60min": 425,
+        "420-per-60min": 401,
+        "480-per-60min": 384,
+        "450-per-30min": 379,
+        "230-per-30min": 360,
+        "165-per-30min": 356,
+        "325-per-60min": 309,
+        "115-per-60min": 308,
+        "340-per-60min": 302,
+        "600-per-30min": 291,
+        "480-per-30min": 260,
+        "110-per-15min": 247,
+        "880-per-60min": 241,
+        "440-per-60min": 238,
+        "530-per-30min": 236,
+        "430-per-30min": 234,
+        "300-per-15min": 232,
+        "650-per-60min": 225,
+        "715-per-60min": 225,
+        "750-per-60min": 223,
+        "250-per-15min": 220,
+        "475-per-30min": 217,
+        "275-per-30min": 210,
+        "800-per-30min": 208,
+        "475-per-60min": 207,
+        "175-per-15min": 205,
+        "285-per-60min": 202,
+        "105-per-30min": 199,
+        "105-per-60min": 194,
+        "215-per-60min": 193,
+        "410-per-30min": 192,
+        "155-per-60min": 186,
+        "220-per-15min": 186,
+        "930-per-60min": 184,
+        "105-per-15min": 182,
+        "540-per-60min": 182,
+        "290-per-60min": 180,
+        "810-per-60min": 180,
+        "950-per-60min": 180,
+        "900-per-30min": 179,
+        "415-per-60min": 175,
+        "260-per-15min": 174,
+        "360-per-15min": 172,
+        "780-per-30min": 170,
+        "620-per-15min": 169,
+        "510-per-60min": 164,
+        "380-per-30min": 162,
+        "310-per-60min": 154,
+        "410-per-60min": 154,
+        "95-per-15min": 153,
+        "375-per-60min": 150,
+        "575-per-30min": 149,
+        "560-per-30min": 147,
+        "360-per-30min": 141,
+        "185-per-30min": 139,
+        "210-per-30min": 135,
+        "405-per-30min": 135,
+        "700-per-30min": 134,
+        "510-per-15min": 133,
+        "760-per-30min": 133,
+        "850-per-30min": 132,
+        "320-per-30min": 130,
+        "155-per-30min": 128,
+        "495-per-30min": 127,
+        "605-per-30min": 127,
+        "330-per-60min": 125,
+        "170-per-15min": 122,
+        "600-per-15min": 117,
+        "285-per-30min": 115,
+        "840-per-60min": 115,
+        "365-per-60min": 109,
+        "240-per-15min": 108,
+        "510-per-30min": 108,
+        "550-per-30min": 107
+    },
+    "result": {
+        "aggregations": {
+            "toplevelAgg": {
+                "termAgg": {
+                    "sum_other_doc_count": 10401,
+                    "doc_count_error_upper_bound": 0,
+                    "buckets": [
+                        {
+                            "doc_count": 271858,
+                            "key": "100-per-30min"
+                        },
+                        {
+                            "doc_count": 249877,
+                            "key": "15"
+                        },
+                        {
+                            "doc_count": 209421,
+                            "key": "200-per-60min"
+                        },
+                        {
+                            "doc_count": 139656,
+                            "key": "80-per-30min"
+                        },
+                        {
+                            "doc_count": 134264,
+                            "key": "120-per-30min"
+                        },
+                        {
+                            "doc_count": 118470,
+                            "key": "150-per-60min"
+                        },
+                        {
+                            "doc_count": 114034,
+                            "key": "150-per-30min"
+                        },
+                        {
+                            "doc_count": 95885,
+                            "key": "100-per-60min"
+                        },
+                        {
+                            "doc_count": 70608,
+                            "key": "180-per-60min"
+                        },
+                        {
+                            "doc_count": 70240,
+                            "key": "160-per-60min"
+                        },
+                        {
+                            "doc_count": 66106,
+                            "key": "120-per-60min"
+                        },
+                        {
+                            "doc_count": 58338,
+                            "key": "60-per-30min"
+                        },
+                        {
+                            "doc_count": 53742,
+                            "key": "140-per-30min"
+                        },
+                        {
+                            "doc_count": 53534,
+                            "key": "200-per-30min"
+                        },
+                        {
+                            "doc_count": 51888,
+                            "key": "250-per-60min"
+                        },
+                        {
+                            "doc_count": 51225,
+                            "key": "60-per-15min"
+                        },
+                        {
+                            "doc_count": 46830,
+                            "key": "80-per-15min"
+                        },
+                        {
+                            "doc_count": 46588,
+                            "key": "140-per-60min"
+                        },
+                        {
+                            "doc_count": 41906,
+                            "key": "300-per-60min"
+                        },
+                        {
+                            "doc_count": 39805,
+                            "key": "100-per-15min"
+                        },
+                        {
+                            "doc_count": 36753,
+                            "key": "160-per-30min"
+                        },
+                        {
+                            "doc_count": 36721,
+                            "key": "40-per-60min"
+                        },
+                        {
+                            "doc_count": 31148,
+                            "key": "80-per-60min"
+                        },
+                        {
+                            "doc_count": 30384,
+                            "key": "50-per-15min"
+                        },
+                        {
+                            "doc_count": 27497,
+                            "key": "70-per-30min"
+                        },
+                        {
+                            "doc_count": 27390,
+                            "key": "220-per-60min"
+                        },
+                        {
+                            "doc_count": 24096,
+                            "key": "50-per-30min"
+                        },
+                        {
+                            "doc_count": 19334,
+                            "key": "40-per-30min"
+                        },
+                        {
+                            "doc_count": 18788,
+                            "key": "60-per-60min"
+                        },
+                        {
+                            "doc_count": 18562,
+                            "key": "90-per-30min"
+                        },
+                        {
+                            "doc_count": 18535,
+                            "key": "180-per-30min"
+                        },
+                        {
+                            "doc_count": 18252,
+                            "key": "125-per-30min"
+                        },
+                        {
+                            "doc_count": 17628,
+                            "key": "75-per-30min"
+                        },
+                        {
+                            "doc_count": 17215,
+                            "key": "130-per-60min"
+                        },
+                        {
+                            "doc_count": 16774,
+                            "key": "50-per-60min"
+                        },
+                        {
+                            "doc_count": 16371,
+                            "key": "130-per-30min"
+                        },
+                        {
+                            "doc_count": 13228,
+                            "key": "40-per-15min"
+                        },
+                        {
+                            "doc_count": 13171,
+                            "key": "250-per-30min"
+                        },
+                        {
+                            "doc_count": 13030,
+                            "key": "90-per-60min"
+                        },
+                        {
+                            "doc_count": 12493,
+                            "key": "240-per-60min"
+                        },
+                        {
+                            "doc_count": 11852,
+                            "key": "70-per-15min"
+                        },
+                        {
+                            "doc_count": 11658,
+                            "key": "30-per-60min"
+                        },
+                        {
+                            "doc_count": 10765,
+                            "key": "400-per-60min"
+                        },
+                        {
+                            "doc_count": 10725,
+                            "key": "20-per-60min"
+                        },
+                        {
+                            "doc_count": 10399,
+                            "key": "20-per-15min"
+                        },
+                        {
+                            "doc_count": 10254,
+                            "key": "350-per-60min"
+                        },
+                        {
+                            "doc_count": 9405,
+                            "key": "170-per-60min"
+                        },
+                        {
+                            "doc_count": 8781,
+                            "key": "35-per-30min"
+                        },
+                        {
+                            "doc_count": 8619,
+                            "key": "260-per-60min"
+                        },
+                        {
+                            "doc_count": 8230,
+                            "key": "300-per-30min"
+                        },
+                        {
+                            "doc_count": 7619,
+                            "key": "30-per-30min"
+                        },
+                        {
+                            "doc_count": 7330,
+                            "key": "120-per-15min"
+                        },
+                        {
+                            "doc_count": 6946,
+                            "key": "85-per-30min"
+                        },
+                        {
+                            "doc_count": 6700,
+                            "key": "500-per-60min"
+                        },
+                        {
+                            "doc_count": 6639,
+                            "key": "65-per-30min"
+                        },
+                        {
+                            "doc_count": 5925,
+                            "key": "45-per-30min"
+                        },
+                        {
+                            "doc_count": 5564,
+                            "key": "70-per-60min"
+                        },
+                        {
+                            "doc_count": 5432,
+                            "key": "125-per-60min"
+                        },
+                        {
+                            "doc_count": 5019,
+                            "key": "175-per-60min"
+                        },
+                        {
+                            "doc_count": 4985,
+                            "key": "150-per-15min"
+                        },
+                        {
+                            "doc_count": 4976,
+                            "key": "175-per-30min"
+                        },
+                        {
+                            "doc_count": 4917,
+                            "key": "110-per-30min"
+                        },
+                        {
+                            "doc_count": 4898,
+                            "key": "75-per-15min"
+                        },
+                        {
+                            "doc_count": 4720,
+                            "key": "45-per-60min"
+                        },
+                        {
+                            "doc_count": 4668,
+                            "key": "220-per-30min"
+                        },
+                        {
+                            "doc_count": 4227,
+                            "key": "280-per-60min"
+                        },
+                        {
+                            "doc_count": 3647,
+                            "key": "65-per-15min"
+                        },
+                        {
+                            "doc_count": 2947,
+                            "key": "110-per-60min"
+                        },
+                        {
+                            "doc_count": 2818,
+                            "key": "240-per-30min"
+                        },
+                        {
+                            "doc_count": 2743,
+                            "key": "20-per-30min"
+                        },
+                        {
+                            "doc_count": 2698,
+                            "key": "55-per-30min"
+                        },
+                        {
+                            "doc_count": 2694,
+                            "key": "170-per-30min"
+                        },
+                        {
+                            "doc_count": 2621,
+                            "key": "45-per-15min"
+                        },
+                        {
+                            "doc_count": 2599,
+                            "key": "25-per-60min"
+                        },
+                        {
+                            "doc_count": 2424,
+                            "key": "600-per-60min"
+                        },
+                        {
+                            "doc_count": 2330,
+                            "key": "75-per-60min"
+                        },
+                        {
+                            "doc_count": 2072,
+                            "key": "225-per-60min"
+                        },
+                        {
+                            "doc_count": 2035,
+                            "key": "30-per-15min"
+                        },
+                        {
+                            "doc_count": 1900,
+                            "key": "450-per-60min"
+                        },
+                        {
+                            "doc_count": 1851,
+                            "key": "25-per-30min"
+                        },
+                        {
+                            "doc_count": 1847,
+                            "key": "350-per-30min"
+                        },
+                        {
+                            "doc_count": 1689,
+                            "key": "85-per-60min"
+                        },
+                        {
+                            "doc_count": 1678,
+                            "key": "140-per-15min"
+                        },
+                        {
+                            "doc_count": 1671,
+                            "key": "125-per-15min"
+                        },
+                        {
+                            "doc_count": 1639,
+                            "key": "200-per-15min"
+                        },
+                        {
+                            "doc_count": 1622,
+                            "key": "230-per-60min"
+                        },
+                        {
+                            "doc_count": 1620,
+                            "key": "190-per-60min"
+                        },
+                        {
+                            "doc_count": 1607,
+                            "key": "90-per-15min"
+                        },
+                        {
+                            "doc_count": 1606,
+                            "key": "35-per-15min"
+                        },
+                        {
+                            "doc_count": 1599,
+                            "key": "400-per-30min"
+                        },
+                        {
+                            "doc_count": 1490,
+                            "key": "225-per-30min"
+                        },
+                        {
+                            "doc_count": 1440,
+                            "key": "65-per-60min"
+                        },
+                        {
+                            "doc_count": 1404,
+                            "key": "55-per-15min"
+                        },
+                        {
+                            "doc_count": 1368,
+                            "key": "95-per-30min"
+                        },
+                        {
+                            "doc_count": 1351,
+                            "key": "260-per-30min"
+                        },
+                        {
+                            "doc_count": 1310,
+                            "key": "25-per-15min"
+                        },
+                        {
+                            "doc_count": 1215,
+                            "key": "115-per-30min"
+                        },
+                        {
+                            "doc_count": 1190,
+                            "key": "35-per-60min"
+                        },
+                        {
+                            "doc_count": 1157,
+                            "key": "195-per-60min"
+                        },
+                        {
+                            "doc_count": 1066,
+                            "key": "320-per-60min"
+                        },
+                        {
+                            "doc_count": 1050,
+                            "key": "160-per-15min"
+                        },
+                        {
+                            "doc_count": 984,
+                            "key": "700-per-60min"
+                        },
+                        {
+                            "doc_count": 967,
+                            "key": "500-per-30min"
+                        },
+                        {
+                            "doc_count": 962,
+                            "key": "280-per-30min"
+                        },
+                        {
+                            "doc_count": 956,
+                            "key": "85-per-15min"
+                        },
+                        {
+                            "doc_count": 942,
+                            "key": "55-per-60min"
+                        },
+                        {
+                            "doc_count": 929,
+                            "key": "135-per-30min"
+                        },
+                        {
+                            "doc_count": 855,
+                            "key": "800-per-60min"
+                        },
+                        {
+                            "doc_count": 844,
+                            "key": "95-per-60min"
+                        },
+                        {
+                            "doc_count": 753,
+                            "key": "360-per-60min"
+                        },
+                        {
+                            "doc_count": 701,
+                            "key": "550-per-60min"
+                        },
+                        {
+                            "doc_count": 665,
+                            "key": "210-per-60min"
+                        },
+                        {
+                            "doc_count": 656,
+                            "key": "135-per-60min"
+                        },
+                        {
+                            "doc_count": 607,
+                            "key": "180-per-15min"
+                        },
+                        {
+                            "doc_count": 586,
+                            "key": "275-per-60min"
+                        },
+                        {
+                            "doc_count": 578,
+                            "key": "530-per-60min"
+                        },
+                        {
+                            "doc_count": 562,
+                            "key": "130-per-15min"
+                        },
+                        {
+                            "doc_count": 552,
+                            "key": "165-per-60min"
+                        },
+                        {
+                            "doc_count": 514,
+                            "key": "145-per-30min"
+                        },
+                        {
+                            "doc_count": 507,
+                            "key": "185-per-60min"
+                        },
+                        {
+                            "doc_count": 507,
+                            "key": "900-per-60min"
+                        },
+                        {
+                            "doc_count": 498,
+                            "key": "270-per-60min"
+                        },
+                        {
+                            "doc_count": 486,
+                            "key": "190-per-30min"
+                        },
+                        {
+                            "doc_count": 477,
+                            "key": "380-per-60min"
+                        },
+                        {
+                            "doc_count": 470,
+                            "key": "500-per-15min"
+                        },
+                        {
+                            "doc_count": 452,
+                            "key": "580-per-30min"
+                        },
+                        {
+                            "doc_count": 425,
+                            "key": "145-per-60min"
+                        },
+                        {
+                            "doc_count": 401,
+                            "key": "420-per-60min"
+                        },
+                        {
+                            "doc_count": 384,
+                            "key": "480-per-60min"
+                        },
+                        {
+                            "doc_count": 379,
+                            "key": "450-per-30min"
+                        },
+                        {
+                            "doc_count": 360,
+                            "key": "230-per-30min"
+                        },
+                        {
+                            "doc_count": 356,
+                            "key": "165-per-30min"
+                        },
+                        {
+                            "doc_count": 309,
+                            "key": "325-per-60min"
+                        },
+                        {
+                            "doc_count": 308,
+                            "key": "115-per-60min"
+                        },
+                        {
+                            "doc_count": 302,
+                            "key": "340-per-60min"
+                        },
+                        {
+                            "doc_count": 291,
+                            "key": "600-per-30min"
+                        },
+                        {
+                            "doc_count": 260,
+                            "key": "480-per-30min"
+                        },
+                        {
+                            "doc_count": 247,
+                            "key": "110-per-15min"
+                        },
+                        {
+                            "doc_count": 241,
+                            "key": "880-per-60min"
+                        },
+                        {
+                            "doc_count": 238,
+                            "key": "440-per-60min"
+                        },
+                        {
+                            "doc_count": 236,
+                            "key": "530-per-30min"
+                        },
+                        {
+                            "doc_count": 234,
+                            "key": "430-per-30min"
+                        },
+                        {
+                            "doc_count": 232,
+                            "key": "300-per-15min"
+                        },
+                        {
+                            "doc_count": 225,
+                            "key": "650-per-60min"
+                        },
+                        {
+                            "doc_count": 225,
+                            "key": "715-per-60min"
+                        },
+                        {
+                            "doc_count": 223,
+                            "key": "750-per-60min"
+                        },
+                        {
+                            "doc_count": 220,
+                            "key": "250-per-15min"
+                        },
+                        {
+                            "doc_count": 217,
+                            "key": "475-per-30min"
+                        },
+                        {
+                            "doc_count": 210,
+                            "key": "275-per-30min"
+                        },
+                        {
+                            "doc_count": 208,
+                            "key": "800-per-30min"
+                        },
+                        {
+                            "doc_count": 207,
+                            "key": "475-per-60min"
+                        },
+                        {
+                            "doc_count": 205,
+                            "key": "175-per-15min"
+                        },
+                        {
+                            "doc_count": 202,
+                            "key": "285-per-60min"
+                        },
+                        {
+                            "doc_count": 199,
+                            "key": "105-per-30min"
+                        },
+                        {
+                            "doc_count": 194,
+                            "key": "105-per-60min"
+                        },
+                        {
+                            "doc_count": 193,
+                            "key": "215-per-60min"
+                        },
+                        {
+                            "doc_count": 192,
+                            "key": "410-per-30min"
+                        },
+                        {
+                            "doc_count": 186,
+                            "key": "155-per-60min"
+                        },
+                        {
+                            "doc_count": 186,
+                            "key": "220-per-15min"
+                        },
+                        {
+                            "doc_count": 184,
+                            "key": "930-per-60min"
+                        },
+                        {
+                            "doc_count": 182,
+                            "key": "105-per-15min"
+                        },
+                        {
+                            "doc_count": 182,
+                            "key": "540-per-60min"
+                        },
+                        {
+                            "doc_count": 180,
+                            "key": "290-per-60min"
+                        },
+                        {
+                            "doc_count": 180,
+                            "key": "810-per-60min"
+                        },
+                        {
+                            "doc_count": 180,
+                            "key": "950-per-60min"
+                        },
+                        {
+                            "doc_count": 179,
+                            "key": "900-per-30min"
+                        },
+                        {
+                            "doc_count": 175,
+                            "key": "415-per-60min"
+                        },
+                        {
+                            "doc_count": 174,
+                            "key": "260-per-15min"
+                        },
+                        {
+                            "doc_count": 172,
+                            "key": "360-per-15min"
+                        },
+                        {
+                            "doc_count": 170,
+                            "key": "780-per-30min"
+                        },
+                        {
+                            "doc_count": 169,
+                            "key": "620-per-15min"
+                        },
+                        {
+                            "doc_count": 164,
+                            "key": "510-per-60min"
+                        },
+                        {
+                            "doc_count": 162,
+                            "key": "380-per-30min"
+                        },
+                        {
+                            "doc_count": 154,
+                            "key": "310-per-60min"
+                        },
+                        {
+                            "doc_count": 154,
+                            "key": "410-per-60min"
+                        },
+                        {
+                            "doc_count": 153,
+                            "key": "95-per-15min"
+                        },
+                        {
+                            "doc_count": 150,
+                            "key": "375-per-60min"
+                        },
+                        {
+                            "doc_count": 149,
+                            "key": "575-per-30min"
+                        },
+                        {
+                            "doc_count": 147,
+                            "key": "560-per-30min"
+                        },
+                        {
+                            "doc_count": 141,
+                            "key": "360-per-30min"
+                        },
+                        {
+                            "doc_count": 139,
+                            "key": "185-per-30min"
+                        },
+                        {
+                            "doc_count": 135,
+                            "key": "210-per-30min"
+                        },
+                        {
+                            "doc_count": 135,
+                            "key": "405-per-30min"
+                        },
+                        {
+                            "doc_count": 134,
+                            "key": "700-per-30min"
+                        },
+                        {
+                            "doc_count": 133,
+                            "key": "510-per-15min"
+                        },
+                        {
+                            "doc_count": 133,
+                            "key": "760-per-30min"
+                        },
+                        {
+                            "doc_count": 132,
+                            "key": "850-per-30min"
+                        },
+                        {
+                            "doc_count": 130,
+                            "key": "320-per-30min"
+                        },
+                        {
+                            "doc_count": 128,
+                            "key": "155-per-30min"
+                        },
+                        {
+                            "doc_count": 127,
+                            "key": "495-per-30min"
+                        },
+                        {
+                            "doc_count": 127,
+                            "key": "605-per-30min"
+                        },
+                        {
+                            "doc_count": 125,
+                            "key": "330-per-60min"
+                        },
+                        {
+                            "doc_count": 122,
+                            "key": "170-per-15min"
+                        },
+                        {
+                            "doc_count": 117,
+                            "key": "600-per-15min"
+                        },
+                        {
+                            "doc_count": 115,
+                            "key": "285-per-30min"
+                        },
+                        {
+                            "doc_count": 115,
+                            "key": "840-per-60min"
+                        },
+                        {
+                            "doc_count": 109,
+                            "key": "365-per-60min"
+                        },
+                        {
+                            "doc_count": 108,
+                            "key": "240-per-15min"
+                        },
+                        {
+                            "doc_count": 108,
+                            "key": "510-per-30min"
+                        },
+                        {
+                            "doc_count": 107,
+                            "key": "550-per-30min"
+                        }
+                    ]
+                },
+                "doc_count": 2460808
+            }
+        },
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "failed": 0
+        },
+        "hits": {
+            "total": 19134836,
+            "hits": [],
+            "max_score": 0.0
+        },
+        "timed_out": false,
+        "took": 1629
+    },
+    "fieldName": "name",
+    "docType": "offer"
+}
